@@ -4,8 +4,7 @@ date: "2013-10-13"
 categories:
 - Ecotech
 tags:
-- bicycles
-- pedal power
+- r
 ---
 
 Back in 2009 I moved from York to Sheffield to start a PhD on the [Energy Futures](http://e-futures.group.shef.ac.uk/page/home/) 4 year Doctoral Training Centre. 
