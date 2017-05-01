@@ -1,7 +1,7 @@
 baseurl = "/"
 relativeurls = true
 languageCode = "en-us"
-title = "A Hugo website"
+title = "Robin Lovelace's website. Energy. Transport. Technology. Change the World."
 theme = "hugo-lithium-theme"
 googleAnalytics = ""
 disqusShortname = ""
