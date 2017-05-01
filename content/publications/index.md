@@ -1,0 +1,123 @@
+---
+title: Publications
+output: md_document
+bibliography: ~/allrefs.bib
+---
+
+This is a list of my publications to date:
+
+## Books
+
+- Gillespie, C., Lovelace, R., 2016. Efficient R Programming: A Practical Guide to Smarter Programming. [O’Reilly Media](http://shop.oreilly.com/product/0636920047995.do), and as a free learning resource from its [website](https://csgillespie.github.io/efficientR/). 
+
+- Lovelace, R., Dumont, M., 2016. Spatial microsimulation with R. [CRC Press](https://www.crcpress.com/Spatial-Microsimulation-with-R/Lovelace-Dumont/p/book/9781498711548) and (to see source code) [github](https://github.com/Robinlovelace/spatial-microsim-book).
+
+- Lovelace, R., & McLoughlin, A., 2014. Engineering in Development: Transport. Engineers Without Borders (UK), [Draft](http://eprints.whiterose.ac.uk/77557/) (high resolution images - 24 Mb). [Final version (2.4 Mb - recommended)](http://robinlovelace.net/publications/eind-transport-mcloughlin-lovelace-2014-final.pdf).
+
+## Book chapters
+
+- Cheshire, J. & Lovelace, R., 2014.  Spatial data visualisation with R. In *Geocomputation, a Practical Primer*. Preprint available online via [github](https://github.com/geocomPP/sdv/raw/master/chapter.pdf) and [ResearchGate](https://www.researchgate.net/publication/274697165_Spatial_data_visualisation_with_R).
+
+
+## Journal articles
+
+- Lovelace, R., Goodman, A., Aldred, R., Berkoff, N., Abbas, A., Woodcock, J., 2017. The Propensity to Cycle Tool: An open source online system for sustainable transport planning. Journal of Transport and Land Use 10. [doi:10.5198/jtlu.2016.862](http://dx.doi.org/10.5198/jtlu.2016.862).
+
+    - Source code: [github.com/npct/pct](https://github.com/npct/pct).
+
+- Lovelace, R., Roberts, H., Kellar, I., 2016. Who, where, when: the demographic and geographic distribution of bicycle crashes in West Yorkshire. [Transportation Research Part F: Traffic Psychology and Behaviour, Bicycling and bicycle safety 41, Part B](http://www.sciencedirect.com/science/article/pii/S136984781500039X). [doi:10.1016/j.trf.2015.02.010](https://doi.org/10.1016/j.trf.2015.02.010).
+
+    - Open access version: [eprints.whiterose.ac.uk/83930/](http://eprints.whiterose.ac.uk/83930/).
+    
+    - Source code: [ github.com/Robinlovelace/bikeR](http://github.com/Robinlovelace/bikeR).
+
+- Wilson, T., Lovelace, R., Evans, A.J., 2016. A Path Toward the Use of Trail Users’ Tweets to Assess Effectiveness of the Environmental Stewardship Scheme: An Exploratory Analysis of the Pennine Way National Trail. Appl. Spatial Analysis 1–29. [doi:10.1007/s12061-016-9201-7](http://dx.doi.org/10.1007/s12061-016-9201-7).
+
+    - Open access version: [eprints.whiterose.ac.uk/103589](http://eprints.whiterose.ac.uk/103589/).
+
+
+- Uttley, J., Lovelace, R., 2016. Cycling promotion schemes and long-term behavioural change: A case study from the University of Sheffield. Case Studies on Transport Policy 4. [doi:10.1016/j.cstp.2016.01.001](https://doi.org/10.1016/j.cstp.2016.01.001).
+
+    - Open access version: [eprints.whiterose.ac.uk/79074](http://eprints.whiterose.ac.uk/79074/7/cycle-challenge-lovelace10.pdf)
+    
+- Lovelace, R., 2016. Mapping out the future of cycling. Get Britain Cycling 5, 22–24.
+
+    - Open Access version: [eprints.whiterose.ac.uk/100080](http://eprints.whiterose.ac.uk/100080/1/Get_Britain_Cycling_2016_PCT.pdf)
+    
+- Lovelace, R., Birkin, M., Cross, P., Clarke, M., 2016. From Big Noise to Big Data: Toward the Verification of Large Data sets for Understanding Regional Retail Flows. Geographical Analysis 48, [59–81. doi:10.1111/gean.12081](http://onlinelibrary.wiley.com/doi/10.1111/gean.12081/full).
+
+- Lovelace, R., Ballas, D., Birkin, M.M.H., van Leeuwen, E., Ballas, D., van Leeuwen, E., Birkin, M.M.H., 2015. Evaluating the performance of Iterative Proportional Fitting for spatial microsimulation: new tests for an established technique. [Journal of Artificial Societies and Social Simulation 18, 21](http://jasss.soc.surrey.ac.uk/18/2/21.html).
+
+- Lovelace, R., Malleson, N., Harland, K., & Birkin, M., 2014. Geotagged tweets to inform a spatial interaction model: a case study of museums. [arXiv preprint](http://arxiv.org/abs/1403.5118).
+
+- Lovelace, R., Ballas, D., & Watson, M. 2014. A spatial microsimulation approach for the analysis of commuter patterns: from individual to regional levels. *Journal of Transport Geography, 34, 282-296.* [doi: 10.1016/j.jtrangeo.2013.07.008](http://dx.doi.org/10.1016/j.jtrangeo.2013.07.008). Preprint [available online](http://www.personal.leeds.ac.uk/~georl/papers/smsim-4-transport.pdf).
+
+- Lovelace, R., & Philips, I. 2014. The ‘oil vulnerability’of commuter patterns: A case study from Yorkshire and the Humber, UK. *Geoforum*, 51, 169-182 [doi: 10.1016/j.geoforum.2013.11.005](http://dx.doi.org/10.1016/j.geoforum.2013.11.005) . Preprint [available online](http://eprints.whiterose.ac.uk/77115/).
+
+- Lovelace, R., & Ballas, D. 2013. “Truncate, replicate, sample”: A method for creating integer weights for spatial microsimulation. Computers, Environment and Urban Systems, 41, 1–11. [doi10.1016/j.compenvurbsys.2013.03.004](http://dx.doi.org/10.1016/j.compenvurbsys.2013.03.004). Preprint available via [arXiv](http://arxiv.org/abs/1303.5228) and 
+[preprint](http://www.personal.leeds.ac.uk/~georl/papers/truncate-replicate-sample-preprint.pdf). 
+
+- Lovelace, R., & Temple, L. 2012. Carbon Capture and Storage: bury the myth and focus on alternatives. [Metis](http://www.ippr.org/publication/55/9674/metis-volume-3), 3. Full article available [here](http://www.personal.leeds.ac.uk/~georl/papers/CCS-myth-IPPR.pdf).
+
+- Lovelace, R., Beck, S. B. M., Watson, M., & Wild, A. 2011.
+Assessing the energy implications of replacing car trips with bicycle 
+trips in Sheffield, UK. *Energy Policy, 39(4)*, 2075-2087. Elsevier. [doi:10.1016/j.enpol.2011.01.051](http://doi.org/10.1016/j.enpol.2011.01.051) preprint [available online](http://www.personal.leeds.ac.uk/~georl/papers/modal-shift-preprint.pdf).
+
+- Lovelace, R. 2008. Energy: efficiency gains alone won’t reduce emissions. 
+<em>Nature</em>, <em>455</em>(7212), 460. Nature Publishing Group. [doi:10.1038/455461a](http://doi.org/10.1038/455461a), also available <a href="http://www.personal.leeds.ac.uk/~georl/papers/Lovelace%20-%202008%20-%20Energy%20efficiency%20gains%20alone%20won%27t%20reduce%20emissions.pdf">here</a>.
+
+## Printed magazine articles
+
+- Lovelace, R. 2014. Jornadas de SIG Libre: A European Digital Mapping Conference. Geoinformatics, 17(4), 12. Available online from [Geoinformatics.com](http://fluidbook.geoinformatics.com/GEO-Informatics_4_2014/#/12/).
+
+<!--TODO: add link2 preprint-->
+
+- Doctoral Students Who Publish. University of Sheffield Doctoral Times, Spring 2013. p. 6. Sheffield. Magazine [available online](http://www.sheffield.ac.uk/polopoly_fs/1.271737!/file/DoctoralTimes-Spring2013.pdf).
+
+- On Yer Bike. *Now Then*, December 2012. Sheffield. Available [online](http://nowthenmagazine.com/issue-57/on-yer-bike/).
+
+- The mystery of Sheffield’s steepest hill. _Now Then_, February 2012. Sheffield. Available online from [nowthenmagazine.com](http://nowthenmagazine.com/sheffield/issue-47/hills/).
+
+- Bike trailers. *Now Then*, September 2011. Sheffield. Available online as [html](http://nowthenmagazine.com/issue-42/bike-trailers/) or [pdf](http://www.personal.leeds.ac.uk/~georl/papers/Trailer12-accepted.pdf).
+
+- The Ecotechnic Future. [Now Then Magazine](http://nowthenmagazine.com/sheffield/issue-37/the-ecotechnic-future/), March 2011. Sheffield. 
+
+- Fear. <em>Now Then</em>, November 2010, p. 22-23. Sheffield. <a href="http://nowthenmagazine.com/issue-33/fear/">Html</a> or <a href="http://www.personal.leeds.ac.uk/Ecotechnic-NT-37.pdf">pdf</a>. [Pdf version](http://eprints.whiterose.ac.uk/77321/13/lovelacecycle-touring.pdf) also available.
+
+- Energy futures. <em>Now Then</em>, June 2010, p. 16-17. Sheffield. <a href="http://www.personal.leeds.ac.uk/~georl/papers/Energy_futures.pdf">Html</a> or [pdf](http://nowthenmagazine.com/wp-content/themes/nowthen/backissues/nt27_jun10.pdf).
+
+## Book reviews
+
+- Sage Handbook of Transport Studies, Jean-Paul Rodrigue, Theo Notteboom, Jon Shaw (Eds.). Sage, London 2013. £95, Hardback, ISBN: 978-1-84920-789-8, *Journal of Transport Geography*, [http://dx.doi.org/10.1016/j.jtrangeo.2014.05.002](http://dx.doi.org/10.1016/j.jtrangeo.2014.05.002).
+
+- The future Is not what it used to be: a review for optimists. *Environmental Values*. 23, 2, 114. Preprint [available online](http://eprints.whiterose.ac.uk/77320/).
+
+- [Sacred Economics](http://sacred-economics.com/). *Now Then Magazine*, 59, February, p. 8. [Available online](http://nowthenmagazine.com/issue-59/sacred-economics/).
+
+## Online magazines
+
+- Lovelace, R. and Temple, L. 2012. Carbon capture and storage: time to bury the myth? [*Responding to Climate Change*](http://www.rtcc.org/2012/10/02/carbon-capture-and-storage-time-to-bury-the-myth/), 15 October. 
+
+- Lovelace, R. 2011. Assessing the energy implication of political intervention. <em><a href="http://www.theoildrum.com/node/7798#more">The Oil Drum</a></em>.
+
+- Lovelace, R. 2010, Cycle-touring: a vision of post-peak holidays? <em><a href="http://campfire.theoildrum.com/node/6396">The Oil Drum</a>: Campfire</em>. 
+
+- Lovelace, R. 2010. How to Set Up and Run a Bicycle Repair Company. <em><a href="http://campfire.theoildrum.com/node/5976">The Oil Drum</a>: Campfire</em>.
+
+## User guides and tutorials
+
+- Lovelace, R. 2014. Introducing spatial microsimulation with R: a practical. In-depth tutorial on spatial microsimulation for an [NCRM Short Course](http://www.ncrm.ac.uk/training/show.php?article=4786) and available as an [NCRM working paper](http://eprints.ncrm.ac.uk/3348/). Latest version [available on GitHub](https://github.com/Robinlovelace/smsim-course/raw/master/handout.pdf).
+
+- Lovelace, R. 2014. Harnessing Open Street Map Data with R and QGIS. Leeds School of Geography practical Working Paper. Available on [EloGeo](http://elogeo.nottingham.ac.uk/xmlui/browse?value=Lovelace%2C+Robin&type=author).
+
+- Lovelace, R. and Cheshire, J. 2014 and ongoing). Introduction to visualising spatial data in R. Tutorial for NCRM Short Course. Updated version hosted on [GitHub](https://github.com/Robinlovelace/Creating-maps-in-R), original hosted by the [National Centre for Research Methods](http://eprints.ncrm.ac.uk/3295/).
+
+- Lovelace, R. 2013. Supplementary information: a user manual for the integerisation of IPF weights using R, 1–18. Available online on arXiv or from the [University of Leeds](http://www.personal.leeds.ac.uk/~georl/papers/supplement-3.pdf)
+
+- Lovelace, R. 2013. Open Source Data and Methods: A tutorial using crowd-sourced data for store location analysis (p. 20). Sheffield. Download from [here](http://robinlovelace.net/publications/osm-tutorial-final-2.pdf).
+
+-  Acosta, L. and Sergio, A. 2012) gvSIG Batoví: an educational resource for Plan Ceibal. Guide to open source GIS software (translator from Spanish to English). [Available here](http://elogeo.nottingham.ac.uk/xmlui/handle/url/149), on the [E-learning of the Open Geospatial community (ELOGeo) ](http://elogeo.nottingham.ac.uk/xmlui/)website.
+
+## Thesis
+
+- Lovelace, R. 2014. The energy costs of commuting: a spatial microsimulation approach. University of Sheffield. Viva (16/12/2013) examined by professors [Michael Batty](http://www.ucl.ac.uk/bartlett/people/?school=casa&upi=JMBAT23) and [Charles Pattie](http://www.sheffield.ac.uk/geography/staff/pattie_charles). Entire thesis document and example code and data available from a [GitHub repository](https://github.com/robinlovelace/thesis-reproducible).
