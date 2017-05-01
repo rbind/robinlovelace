@@ -1,0 +1,6 @@
+old = setwd("robinlovelace.github.io/")
+system("git add -A")
+system("git status")
+system("git commit -m 'Update blog'")
+system("git pull")
+system("git push")
