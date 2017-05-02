@@ -9,7 +9,9 @@ Welcome to my website. My aim for it is to provide a place for me to get my work
 
 ## About me
 
-I'm a geographer and environmental scientist specialising in [spatial data analysis](https://www.crcpress.com/Spatial-Microsimulation-with-R/Lovelace-Dumont/p/book/9781498711548) and [R programming](https://csgillespie.github.io/efficientR/). Based at the Institute for Transport Studies ([ITS](https://www.its.leeds.ac.uk/people/r.lovelace)) I have a growing interest in transport modelling, as illustrated by a [book review](http://eprints.whiterose.ac.uk/102373/1/urban-travel-rl.pdf) of a [book](http://www.e-elgar.com/shop/forecasting-urban-travel) on the subject @boyce_forecasting_2015.
+I'm a geographer and environmental scientist specialising in [spatial data analysis](https://www.crcpress.com/Spatial-Microsimulation-with-R/Lovelace-Dumont/p/book/9781498711548) and [R programming](https://csgillespie.github.io/efficientR/).
+
+Based at the Leeds Institute for Transport Studies ([ITS](https://www.its.leeds.ac.uk/people/r.lovelace)) I have a growing interest in transport modelling, as illustrated by a [book review](http://eprints.whiterose.ac.uk/102373/1/urban-travel-rl.pdf) of a [book](http://www.e-elgar.com/shop/forecasting-urban-travel) on the subject @boyce_forecasting_2015.
 
 I studied Geography at the [University of Bristol](http://www.bristol.ac.uk/geography/) after moving out of my home town of Hereford where I went to [Weobley High School](http://weobleyhigh.co.uk/) out in rural northwest Herefordshire and the Hereford [Sixth Form College](http://www.hereford.ac.uk/). 
 
