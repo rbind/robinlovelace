@@ -1,0 +1,208 @@
+---
+title: "Data carpentry for sustainable transport planning: the Propensity to Cycle Tool"
+author: "Robin Lovelace"
+date: "2017-05-02"
+subtitle: "University of Liverpool's Laboratory for Geographic Data Science"
+output:
+  ioslides_presentation:
+    widescreen: true
+    transition: slower
+    logo: ../../static/images/its-logo-square.png
+---
+
+## Why data carpentry?
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Data analysts and &#39;scientists&#39;: don&#39;t wrangle, munge or &#39;hack&#39; your valuable datasets. Use <a href="https://twitter.com/hashtag/datacarpentry?src=hash">#datacarpentry</a>: <a href="https://t.co/gXrlIJH91R">https://t.co/gXrlIJH91R</a> <a href="https://t.co/GSWS7O7zBz">pic.twitter.com/GSWS7O7zBz</a></p>&mdash; Robin Lovelace (@robinlovelace) <a href="https://twitter.com/robinlovelace/status/833622374037721089">February 20, 2017</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+- If you 'hack' or 'munge' data, it won't scale
+- So ultimately it's about being able to handle Big Data
+- We'll cover the basics of data frames and tibbles
+- And the basics of **dplyr**, an excellent package for data carpentry
+    - **dplyr** is also compatible with the **sf** package
+
+## The data frame
+
+The humble data frame is at the heart of most analysis projects:
+
+```{r}
+d = data.frame(x = 1:3, y = c("A", "B", "C"))
+d
+```
+
+In reality this is a list, making function work on each column:
+
+```{r}
+summary(d)
+plot(d)
+```
+
+## Subsetting
+
+In base R, there are many ways to subset:
+
+```{r}
+d[1,] # the first line
+d[,1] # the first column
+d$x # the first column
+d [1] # the first column, as a data frame
+```
+
+## The tibble
+
+Recently the data frame has been extended:
+
+```{r}
+library("tibble")
+dt = tibble(x = 1:3, y = c("A", "B", "C"))
+dt
+```
+
+## Advantages of the tibble
+
+It comes down to efficiency and usability
+
+ - When printed, the tibble diff reports class
+ - Character vectors are not coerced into factors
+ - When printing a tibble diff to screen, only the first ten rows are displayed
+ 
+## dplyr
+
+Like tibbles, has advantages over historic ways of doing things
+
+- Type stability (data frame in, data frame out)
+- Consistent functions - functions not `[` do everything
+- Piping make complex operations easy
+
+```{r, eval=FALSE}
+ghg_ems %>%
+  filter(!grepl("World|Europe", Country)) %>% 
+  group_by(Country) %>% 
+  summarise(Mean = mean(Transportation),
+            Growth = diff(range(Transportation))) %>%
+  top_n(3, Growth) %>%
+  arrange(desc(Growth))
+```
+
+```{r}
+# dplyr must be loaded with
+library(dplyr)
+```
+
+## Why pipes?
+
+```{r, eval=FALSE}
+wb_ineq %>% 
+  filter(grepl("g", Country)) %>%
+  group_by(Year) %>%
+  summarise(gini = mean(gini, na.rm  = TRUE)) %>%
+  arrange(desc(gini)) %>%
+  top_n(n = 5)
+```
+
+vs
+
+```{r, eval=FALSE}
+top_n(
+  arrange(
+    summarise(
+      group_by(
+        filter(wb_ineq, grepl("g", Country)),
+        Year),
+      gini = mean(gini, na.rm  = TRUE)),
+    desc(gini)),
+  n = 5)
+```
+
+## Subsetting with dplyr
+
+Only 1 way to do it, making life simpler:
+
+```{r}
+select(dt, x) # select columns
+slice(dt, 2) # 'slice' rows
+```
+
+# How we've used this in the PCT
+
+## Worked example: pct data in West Yorksire
+
+- We'll download and visualise some transport data
+
+```{r}
+u_pct = "https://github.com/npct/pct-data/raw/master/west-yorkshire/l.Rds"
+if(!file.exists("l.Rds"))
+  download.file(u_pct, "l.Rds")
+library(stplanr)
+l = readRDS("l.Rds")
+plot(l)
+```
+
+## Analysing where people walk
+
+```{r}
+sel_walk = l$foot > 9
+l_walk = l[sel_walk,]
+plot(l)
+plot(l_walk, add = T, col = "red")
+
+library(dplyr) # for next slide...
+```
+
+## Doing it with sf (!)
+
+```{r, eval=FALSE}
+l_walk1 = l %>% filter(All > 10) # fails
+```
+
+```{r}
+library(sf)
+l_sf = st_as_sf(l)
+plot(l_sf[6])
+```
+
+## Subsetting with sf | much easier
+
+```{r, eval=FALSE}
+l_walk2 = l_sf %>% 
+  filter(foot > 9)
+plot(l_sf[6])
+plot(l_walk2, add = T)
+```
+
+## Subsetting with sf | results
+
+```{r, echo=FALSE}
+l_walk2 = l_sf %>% 
+  filter(foot > 9)
+
+# plot the result
+plot(l_sf[6])
+plot(l_walk2, add = T)
+```
+
+## A more advanced example
+
+```{r}
+l_sf$distsf = as.numeric(st_length(l_sf))
+l_drive_short2 = l_sf %>% 
+  filter(distsf < 1000) %>% 
+  filter(car_driver > foot)
+```
+
+## Result: where people drive short distances rather than drive
+
+```{r}
+library(tmap)
+tmap_mode("view")
+qtm(l_drive_short2)
+```
+
+## Overall results: the [PCT](http://pct.bike/)
+
+```{r, echo=FALSE}
+knitr::include_graphics("https://previews.magnoliabox.com/corbis/flat/42-32403684/MUS-FAPC2020_500.jpg")
+```
+
+
+
