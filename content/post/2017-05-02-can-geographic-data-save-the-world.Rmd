@@ -1,0 +1,26 @@
+---
+title: Can Geographic Data Save the World?
+author: "Robin Lovelace"
+date: '2017-05-02'
+slug: ''
+categories: []
+tags: []
+bibliography: ~/allrefs.bib
+---
+
+I presented today on the use of geographic data in policy. The purpose of this post is to share the slides, audio and some of the ideas resulting from the talk for the benefit of people unable to attend in person.
+
+The venue influenced the title: the University of Liverpool's Geographic Data Science Laboratory ([GDSL]()) is a research powerhouse churning out dozens of papers close to the cutting-edge of the field.^[
+The name of the discipline, broadly be defined geographic data analysis, modelling and visualisation, is an interesting topic in its own right. The preferred term to describe this body of work shifts over time, and depending on who you ask.
+
+Over the years it has been referred to as Geographic Information Systems (GIS, which sounds rather old school nowadays), the more academic-sounding Geographic Information Science (GISc), the concise term of Geocomputation and the more recently coined term of Geographic Data Science (GDS).
+]
+
+This was inspired by [@arribas-bel_accidental_2014].
+
+```{r}
+library(mapview)
+l = readRDS("~/npct/pct-data/isle-of-wight/l.Rds")
+mapview(l)
+```
+
