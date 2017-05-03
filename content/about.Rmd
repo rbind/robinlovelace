@@ -5,7 +5,7 @@ output: md_document
 
 ## Welcome
 
-Welcome to my website. The aim is to provide a place for getting my work and ideas out there quickly and in the wider world. I hope you find something here of use and interest. Enjoy your visit!
+Welcome to my website. The aim is to provide a place for getting my work and ideas out there quickly and better linked-in with the wider world. I hope you find something here of use and interest. Enjoy your visit!
 
 ## About me
 
