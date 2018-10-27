@@ -24,21 +24,21 @@ I've finally found some time to update my blog and do a bit of thinking, about t
 
 The transport 'flow' on any particular segment of the transport networks is the aggregate (sum) of trips that pass through it [@hollander_transport_2016].
 Finding the flow across a transport network based on input data composed of individual routes, is therefore an aggregation problem.
-It requires a more complex solution than that provided by the `aggregate()` function in the base R package **stats**, however, because the geometry of the output `LINESTRING`s will be fundamentally different than the input `LINESTRINGS` of the routes: a route network is composed of many small way segments, but a route is a single long `LINESTRING`.
+It requires a more complex solution than that provided by the `aggregate()` function in the base R [@rcoreteam_language_2018] package **stats**, however, because the geometry of the output `LINESTRING`s will be fundamentally different than the input `LINESTRINGS` of the routes: a route network is composed of many small way segments, but a route is a single long `LINESTRING`.
 
 ## Aggregating lines with overline() MKI
 
 Creating such a route network, with aggregated values per segment, is the problem that the [`overline()`](https://ropensci.github.io/stplanr/reference/overline.html) function in the R package [**stplanr**](https://github.com/ropensci/stplanr) was designed to solve (see a 3.5 yr-old question on [gis.stackexchange.com](https://gis.stackexchange.com/questions/139681/overlaying-lines-and-aggregating-their-values-for-overlapping-segments) for more context).
 
 The function works well and is the basis of the Route Network layer (MSOA) in the Propensity to Cycle Tool ([PCT](http://www.pct.bike/)).
-In fact it was developed precisely for this purpose, as illustrated in the image below, which shows a common visualisation/analysis problem encountered by transport researchers when working with multiple routes: overlapping routes are not easy to identify from non-overlapping routes:
+In fact it was developed precisely for this purpose, as illustrated in the image below, which shows a common visualization/analysis problem encountered by transport researchers when working with multiple routes: overlapping routes are not easy to identify from non-overlapping routes:
 notice the red lines in the centre of Leeds in the image look the same as the red lines on the outskirts, despite representing much more movement.
 
 ```{r, echo=FALSE, fig.cap="Demonstration of the need for line aggregation from a very early version of the Propensity to Cycle Tool, developed at the 'Hack my Route' data dive at [ODI Leeds](https://twitter.com/search?q=%23hackmyroute&src=typd)."}
 knitr::include_graphics("https://raw.githubusercontent.com/npct/pct-team/master/figures/early.png")
 ```
 
-To overcome the problem `overline()` was born, and it works (on a tiny datset of 2 lines) as follows:
+To overcome the problem `overline()` was born (credit to Barry Rowlingson who wrote the foundations of the function), and it works (on a tiny dataset of 2 lines) as follows:
 
 ```{r, fig.cap="Illustration of the overline() function for line aggregation in action on a tiny example dataset. Note the left-most line is wider than the two lines that feed into it, demonstrating how line aggregation can be used to estimate flow on a road network."}
 library(stplanr)
@@ -57,9 +57,9 @@ knitr::include_graphics("https://raw.githubusercontent.com/npct/pct-team/master/
 
 This works great and the resulting network is used for strategic network planning: you can download route network data in the 'Region data' tab of the PCT [@lovelace_propensity_2017]. The route network data for Leeds can, for example, be downloaded as a `.geojson` file from [here](https://github.com/npct/pct-outputs-regional-notR/raw/master/commute/msoa/west-yorkshire/rnet.geojson). 
 
-But there are some issues: the function works on the older `SpatialLinesDataFrame` class defined in the **sp** package.
-This data class has been superceded by the simpler `sf` class in the [**sf**](https://github.com/r-spatial/sf) package, which is faster than **sp** for [some](https://github.com/ATFutures/geobench) (if not many) operations.
-Furthermore, another issue with `overline()` is that in edge cases when 2 lines meet, the resulting aggregated line can be loner than it should.
+But there are some issues: the function works on the older `SpatialLinesDataFrame` class defined in the **sp** package [@pebesma_simple_2018].
+This data class has been superseded by the simpler `sf` class in the [**sf**](https://github.com/r-spatial/sf) package, which is faster than **sp** for [some](https://github.com/ATFutures/geobench) (if not many) operations.
+Another issue with `overline()` is that in some cases when 2 lines meet, the resulting aggregated line can be longer than it should be.
 So there are performance and functionality issues to address.
 Rather than solve them all here, this post sets-out the issue using reproducible code and suggests next steps for a new `overline()` function (or perhaps just an updated `overline.sf()` function which currently just wraps `overline.sp()`).
 
@@ -153,7 +153,7 @@ overline_sf2 = function(sl, attrib) {
 ```
 
 If you are new to scripts/algorithms/functions, it may be worth taking a look at the new [Algorithms](https://geocompr.robinlovelace.net/algorithms.html) chapter in our near-complete book that teaches a range of geographic methods that use R [@lovelace_geocomputation_2019].
-Now the method has been put in a function, we can compare its performance with the pre-existing `overline()` function for comparison:
+Now the method has been put in a function, we can compare its performance with the per-existing `overline()` function for comparison:
 
 ```{r time}
 bench::mark(check = F,
@@ -169,8 +169,8 @@ More work needed!
 
 ## Next steps
 
-The next step is to generalise this method so it works for many (potentially thousands) of lines in a way that scales, something that should help on the visualisation side, a topic that attracts much interest (see for example this [gis.stackexchange post](https://gis.stackexchange.com/questions/778/representation-of-network-flows) on the subject and, more broadly, a recent [article](https://nowosad.github.io/post/maps-distortion/) showing how to make animated maps by Jakub Nowosad).
-There is also work to do on performance but, as Donal Knuth said [@knuth_computer_1974]:
+The next step is to generalist this method so it works for many (potentially thousands) of lines in a way that scales, something that should help on the visualization side, a topic that attracts much interest (see for example this [gis.stackexchange post](https://gis.stackexchange.com/questions/778/representation-of-network-flows) on the subject and, more broadly, a recent [article](https://nowosad.github.io/post/maps-distortion/) showing how to make animated maps by Jakub Nowosad).
+There is also work to do on performance but, as Donald Knuth said [@knuth_computer_1974]:
 
 > premature optimization is the root of all evil (or at least most of it) in programming
 
