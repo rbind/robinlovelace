@@ -1,0 +1,87 @@
+---
+title: Aggregating lines
+author: ~
+date: '2018-10-27'
+slug: aggregating-lines
+categories: []
+tags: []
+---
+
+The transport 'flow' on any particular segment of the transport networks is the aggregate (sum) of trips that pass through it.
+Finding the flow across a transport network based on input data composed of individual routes, is therefore an aggregation problem.
+It requires a more complex solution than that provided by the `aggregate()` function in the base R package **stats**, however, because the geometry of the output `LINESTRING`s will be fundamentally different than the input `LINESTRINGS` of the routes: a route network is composed of many small way segments, but a route is a single long `LINESTRING`.
+
+Creating such a route network, with aggregated values per segment, is the problem that the `overline()` function in **stplanr** was designed to solve. 
+Rather that starting from scratch and writing a geographic algorithm from the ground-up, we will start by exploring solutions provided by existing packages, notably **sf**, which provides an interface to the `GEOS` library.
+
+Let's start simple, with just 2 lines, which have an associated amount of flow (with illustrative values of 2 and 5 in this case):
+
+```{r}
+library(stplanr)
+sl = routes_fast_sf[2:3, ]
+sl$value = c(2, 5)
+```
+
+These lines clearly have a decent amount of overlap, which can be extracted using the function `st_intersection()`:
+
+```{r}
+sl_intersection = sf::st_intersection(sl[1, ], sl[2, ])
+plot(sl$geometry, lwd = 9, col = sf::sf.colors(2, alpha = 0.5))
+plot(sl_intersection, add = TRUE)
+```
+
+Furthermore, we can find the aggregated value associated with this new segment as follows:
+
+```{r}
+sl_intersection$value = sum(sl_intersection$value, sl_intersection$value.1)
+```
+
+We still do not have a full route network composed of 3 non-overlapping lines, however:
+the original lines need to be 'clipped' so that they do not overlap with `sl_intersection`.
+This can be done as follows:
+
+```{r}
+sl_seg1 = sf::st_difference(sl[1, ], sl_intersection)
+sl_seg2 = sf::st_difference(sl[2, ], sl_intersection)
+plot(sl$geometry, lwd = 9, col = sf::sf.colors(2, alpha = 0.5))
+plot(sl_seg1, add = TRUE)
+plot(sl_seg2, add = TRUE)
+```
+
+We now have all the geographic components needed for a route network.
+The only remaining task is to combine them, using `rbind`, right?
+Not quite: the following command fails:
+
+```{r, error=TRUE}
+rnet = rbind(sl_seg1, sl_seg2, sl_intersection)
+```
+
+Lesson: we need to be more careful in isolating the value to aggregate.
+We will therefore run the previous stages again, but with `attrib` set to the attribute we would like to aggregate over (`value` in this case):
+
+```{r}
+attrib = "value"
+attrib1 = paste0(attrib, ".1")
+sl_intersection = sf::st_intersection(sl[1, attrib], sl[2, attrib])
+sl_intersection[[attrib]] = sl_intersection[[attrib]] + sl_intersection[[attrib1]]
+sl_intersection[[attrib1]] = NULL
+```
+
+That leaves us with a 'clean' object that only has a value (7) for the attribute column name we want (`value`).
+
+On this basis we can proceed to create the other segments, keeping only the column we're interested in. To save time and typing, we'll create both segments in a single command:
+
+```{r}
+sl_seg = sf::st_difference(sl[attrib], sf::st_geometry(sl_intersection))
+rnet = rbind(sl_intersection, sl_seg)
+```
+
+It worked! Now we're in a position to plot the resulting route network, with 'width' proportional to the flow along each segment:
+
+```{r}
+plot(rnet, lwd = rnet$value)
+```
+
+The next step is to generalise this method so it works for many (potentially thousands) of lines in a way that scales. That will (hopefully) be the topic of the next blog post.
+
+

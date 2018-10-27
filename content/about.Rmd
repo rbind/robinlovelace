@@ -1,5 +1,5 @@
 ---
-bibliography: ~/allrefs.bib
+bibliography: /home/robin/allrefs.bib
 output: md_document
 ---
 

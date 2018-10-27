@@ -59,7 +59,7 @@ var ClusterLayerStore = function () {
 exports.default = ClusterLayerStore;
 
 
-},{"./util":15}],2:[function(require,module,exports){
+},{"./util":17}],2:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -91,6 +91,15 @@ var ControlStore = function () {
         this._controlsNoId.push(control);
       }
       this._map.addControl(control);
+    }
+  }, {
+    key: "get",
+    value: function get(id) {
+      var control = null;
+      if (this._controlsById[id]) {
+        control = this._controlsById[id];
+      }
+      return control;
     }
   }, {
     key: "remove",
@@ -164,7 +173,7 @@ function getCRS(crsOptions) {
         crsOptions.options.bounds = _leaflet2.default.bounds(crsOptions.options.bounds);
       }
       if (crsOptions.options && crsOptions.options.transformation) {
-        crsOptions.options.transformation = _leaflet2.default.Transformation(crsOptions.options.transformation[0], crsOptions.options.transformation[1], crsOptions.options.transformation[2], crsOptions.options.transformation[3]);
+        crsOptions.options.transformation = new _leaflet2.default.Transformation(crsOptions.options.transformation[0], crsOptions.options.transformation[1], crsOptions.options.transformation[2], crsOptions.options.transformation[3]);
       }
       crs = new _proj4leaflet2.default.CRS(crsOptions.code, crsOptions.proj4def, crsOptions.options);
       break;
@@ -175,14 +184,17 @@ function getCRS(crsOptions) {
       if (crsOptions.options && crsOptions.options.transformation) {
         crsOptions.options.transformation = _leaflet2.default.Transformation(crsOptions.options.transformation[0], crsOptions.options.transformation[1], crsOptions.options.transformation[2], crsOptions.options.transformation[3]);
       }
-      crs = new _proj4leaflet2.default.CRS.TMS(crsOptions.code, crsOptions.proj4def, crsOptions.projectedBounds, crsOptions.options);
+      // L.Proj.CRS.TMS is deprecated as of Leaflet 1.x, fall back to L.Proj.CRS
+      //crs = new Proj4Leaflet.CRS.TMS(crsOptions.code, crsOptions.proj4def,
+      //crsOptions.projectedBounds, crsOptions.options);
+      crs = new _proj4leaflet2.default.CRS(crsOptions.code, crsOptions.proj4def, crsOptions.options);
       break;
   }
   return crs;
 }
 
 
-},{"./global/leaflet":8,"./global/proj4leaflet":9}],4:[function(require,module,exports){
+},{"./global/leaflet":10,"./global/proj4leaflet":11}],4:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -266,7 +278,7 @@ var DataFrame = function () {
     }
   }, {
     key: "get",
-    value: function get(row, col) {
+    value: function get(row, col, missingOK) {
       var _this3 = this;
 
       if (row > this.effectiveLength) throw new Error("Row argument was out of bounds: " + row + " > " + this.effectiveLength);
@@ -289,7 +301,9 @@ var DataFrame = function () {
       } else if (typeof col === "number") {
         colIndex = col;
       }
-      if (colIndex < 0 || colIndex > this.columns.length) throw new Error("Unknown column index: " + col);
+      if (colIndex < 0 || colIndex > this.columns.length) {
+        if (missingOK) return void 0;else throw new Error("Unknown column index: " + col);
+      }
 
       return this.columns[colIndex][row % this.columns[colIndex].length];
     }
@@ -306,7 +320,7 @@ var DataFrame = function () {
 exports.default = DataFrame;
 
 
-},{"./util":15}],5:[function(require,module,exports){
+},{"./util":17}],5:[function(require,module,exports){
 "use strict";
 
 var _leaflet = require("./global/leaflet");
@@ -319,17 +333,99 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // images that Leaflet needs but doesn't load into the page. Instead, we'll set
 // data URIs for the default marker, and let any others be loaded via CDN.
 if (typeof _leaflet2.default.Icon.Default.imagePath === "undefined") {
-  _leaflet2.default.Icon.Default.imagePath = "http://cdn.leafletjs.com/leaflet-0.7.3/images";
-
-  if (_leaflet2.default.Browser.retina) {
-    _leaflet2.default.Icon.Default.prototype.options.iconUrl = "data:image/png;base64,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";
-  } else {
-    _leaflet2.default.Icon.Default.prototype.options.iconUrl = "data:image/png;base64,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";
+  // if in a local file, support http
+  switch (window.location.protocol) {
+    case "http:":
+      // don't force http site to be done with https
+      _leaflet2.default.Icon.Default.imagePath = "http://cdn.leafletjs.com/leaflet/v1.3.1/images/";
+      break;
+    default:
+      // file
+      // https
+      // otherwise use https as it works on files and https
+      _leaflet2.default.Icon.Default.imagePath = "https://unpkg.com/leaflet@1.3.1/dist/images/";
+      break;
   }
+  // don't know how to make this dataURI work since
+  //  will be appended to Defaul.imagePath above
+  /*
+  if (L.Browser.retina) {
+    L.Icon.Default.prototype.options.iconUrl = "data:image/png;base64,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";
+  } else {
+    L.Icon.Default.prototype.options.iconUrl = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAApCAYAAADAk4LOAAAGmklEQVRYw7VXeUyTZxjvNnfELFuyIzOabermMZEeQC/OclkO49CpOHXOLJl/CAURuYbQi3KLgEhbrhZ1aDwmaoGqKII6odATmH/scDFbdC7LvFqOCc+e95s2VG50X/LLm/f4/Z7neY/ne18aANCmAr5E/xZf1uDOkTcGcWR6hl9247tT5U7Y6SNvWsKT63P58qbfeLJG8M5qcgTknrvvrdDbsT7Ml+tv82X6vVxJE33aRmgSyYtcWVMqX97Yv2JvW39UhRE2HuyBL+t+gK1116ly06EeWFNlAmHxlQE0OMiV6mQCScusKRlhS3QLeVJdl1+23h5dY4FNB3thrbYboqptEFlphTC1hSpJnbRvxP4NWgsE5Jyz86QNNi/5qSUTGuFk1gu54tN9wuK2wc3o+Wc13RCmsoBwEqzGcZsxsvCSy/9wJKf7UWf1mEY8JWfewc67UUoDbDjQC+FqK4QqLVMGGR9d2wurKzqBk3nqIT/9zLxRRjgZ9bqQgub+DdoeCC03Q8j+0QhFhBHR/eP3U/zCln7Uu+hihJ1+bBNffLIvmkyP0gpBZWYXhKussK6mBz5HT6M1Nqpcp+mBCPXosYQfrekGvrjewd59/GvKCE7TbK/04/ZV5QZYVWmDwH1mF3xa2Q3ra3DBC5vBT1oP7PTj4C0+CcL8c7C2CtejqhuCnuIQHaKHzvcRfZpnylFfXsYJx3pNLwhKzRAwAhEqG0SpusBHfAKkxw3w4627MPhoCH798z7s0ZnBJ/MEJbZSbXPhER2ih7p2ok/zSj2cEJDd4CAe+5WYnBCgR2uruyEw6zRoW6/DWJ/OeAP8pd/BGtzOZKpG8oke0SX6GMmRk6GFlyAc59K32OTEinILRJRchah8HQwND8N435Z9Z0FY1EqtxUg+0SO6RJ/mmXz4VuS+DpxXC3gXmZwIL7dBSH4zKE50wESf8qwVgrP1EIlTO5JP9Igu0aexdh28F1lmAEGJGfh7jE6ElyM5Rw/FDcYJjWhbeiBYoYNIpc2FT/SILivp0F1ipDWk4BIEo2VuodEJUifhbiltnNBIXPUFCMpthtAyqws/BPlEF/VbaIxErdxPphsU7rcCp8DohC+GvBIPJS/tW2jtvTmmAeuNO8BNOYQeG8G/2OzCJ3q+soYB5i6NhMaKr17FSal7GIHheuV3uSCY8qYVuEm1cOzqdWr7ku/R0BDoTT+DT+ohCM6/CCvKLKO4RI+dXPeAuaMqksaKrZ7L3FE5FIFbkIceeOZ2OcHO6wIhTkNo0ffgjRGxEqogXHYUPHfWAC/lADpwGcLRY3aeK4/oRGCKYcZXPVoeX/kelVYY8dUGf8V5EBRbgJXT5QIPhP9ePJi428JKOiEYhYXFBqou2Guh+p/mEB1/RfMw6rY7cxcjTrneI1FrDyuzUSRm9miwEJx8E/gUmqlyvHGkneiwErR21F3tNOK5Tf0yXaT+O7DgCvALTUBXdM4YhC/IawPU+2PduqMvuaR6eoxSwUk75ggqsYJ7VicsnwGIkZBSXKOUww73WGXyqP+J2/b9c+gi1YAg/xpwck3gJuucNrh5JvDPvQr0WFXf0piyt8f8/WI0hV4pRxxkQZdJDfDJNOAmM0Ag8jyT6hz0WGXWuP94Yh2jcfjmXAGvHCMslRimDHYuHuDsy2QtHuIavznhbYURq5R57KpzBBRZKPJi8eQg48h4j8SDdowifdIrEVdU+gbO6QNvRRt4ZBthUaZhUnjlYObNagV3keoeru3rU7rcuceqU1mJBxy+BWZYlNEBH+0eH4vRiB+OYybU2hnblYlTvkHinM4m54YnxSyaZYSF6R3jwgP7udKLGIX6r/lbNa9N6y5MFynjWDtrHd75ZvTYAPO/6RgF0k76mQla3FGq7dO+cH8sKn0Vo7nDllwAhqwLPkxrHwWmHJOo+AKJ4rab5OgrM7rVu8eWb2Pu0Dh4eDgXoOfvp7Y7QeqknRmvcTBEyq9m/HQQSCSz6LHq3z0yzsNySRfMS253wl2KyRDbcZPcfJKjZmSEOjcxyi+Y8dUOtsIEH6R2wNykdqrkYJ0RV92H0W58pkfQk7cKevsLK10Py8SdMGfXNXATY+pPbyJR/ET6n9nIfztNtZYRV9XniQu9IA2vOVgy4ir7GCLVmmd+zjkH0eAF9Po6K61pmCXHxU5rHMYd1ftc3owjwRSVRzLjKvqZEty6cRUD7jGqiOdu5HG6MdHjNcNYGqfDm5YRzLBBCCDl/2bk8a8gdbqcfwECu62Fg/HrggAAAABJRU5ErkJggg==";
+  }
+  */
 }
 
 
-},{"./global/leaflet":8}],6:[function(require,module,exports){
+},{"./global/leaflet":10}],6:[function(require,module,exports){
+"use strict";
+
+var _leaflet = require("./global/leaflet");
+
+var _leaflet2 = _interopRequireDefault(_leaflet);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// add texxtsize, textOnly, and style
+_leaflet2.default.Tooltip.prototype.options.textsize = "10px";
+_leaflet2.default.Tooltip.prototype.options.textOnly = false;
+_leaflet2.default.Tooltip.prototype.options.style = null;
+
+// copy original layout to not completely stomp it.
+var initLayoutOriginal = _leaflet2.default.Tooltip.prototype._initLayout;
+
+_leaflet2.default.Tooltip.prototype._initLayout = function () {
+  initLayoutOriginal.call(this);
+  this._container.style.fontSize = this.options.textsize;
+
+  if (this.options.textOnly) {
+    _leaflet2.default.DomUtil.addClass(this._container, "leaflet-tooltip-text-only");
+  }
+
+  if (this.options.style) {
+    for (var property in this.options.style) {
+      this._container.style[property] = this.options.style[property];
+    }
+  }
+};
+
+
+},{"./global/leaflet":10}],7:[function(require,module,exports){
+"use strict";
+
+var _leaflet = require("./global/leaflet");
+
+var _leaflet2 = _interopRequireDefault(_leaflet);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var protocolRegex = /^\/\//;
+var upgrade_protocol = function upgrade_protocol(urlTemplate) {
+  if (protocolRegex.test(urlTemplate)) {
+    if (window.location.protocol === "file:") {
+      // if in a local file, support http
+      // http should auto upgrade if necessary
+      urlTemplate = "http:" + urlTemplate;
+    }
+  }
+  return urlTemplate;
+};
+
+var originalLTileLayerInitialize = _leaflet2.default.TileLayer.prototype.initialize;
+_leaflet2.default.TileLayer.prototype.initialize = function (urlTemplate, options) {
+  urlTemplate = upgrade_protocol(urlTemplate);
+  originalLTileLayerInitialize.call(this, urlTemplate, options);
+};
+
+var originalLTileLayerWMSInitialize = _leaflet2.default.TileLayer.WMS.prototype.initialize;
+_leaflet2.default.TileLayer.WMS.prototype.initialize = function (urlTemplate, options) {
+  urlTemplate = upgrade_protocol(urlTemplate);
+  originalLTileLayerWMSInitialize.call(this, urlTemplate, options);
+};
+
+
+},{"./global/leaflet":10}],8:[function(require,module,exports){
 (function (global){
 "use strict";
 
@@ -340,7 +436,7 @@ exports.default = global.HTMLWidgets;
 
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],7:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 (function (global){
 "use strict";
 
@@ -351,7 +447,7 @@ exports.default = global.jQuery;
 
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],8:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 (function (global){
 "use strict";
 
@@ -362,7 +458,7 @@ exports.default = global.L;
 
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],9:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 (function (global){
 "use strict";
 
@@ -373,7 +469,7 @@ exports.default = global.L.Proj;
 
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],10:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 (function (global){
 "use strict";
 
@@ -384,7 +480,7 @@ exports.default = global.Shiny;
 
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],11:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 "use strict";
 
 var _jquery = require("./global/jquery");
@@ -420,6 +516,10 @@ var _methods = require("./methods");
 var _methods2 = _interopRequireDefault(_methods);
 
 require("./fixup-default-icon");
+
+require("./fixup-default-tooltip");
+
+require("./fixup-url-protocol");
 
 var _dataframe = require("./dataframe");
 
@@ -619,6 +719,22 @@ _htmlwidgets2.default.widget({
           explicitView = true;
           methods.fitBounds.apply(map, data.fitBounds);
         }
+        if (data.flyTo) {
+          if (!explicitView && !map.leafletr.hasRendered) {
+            // must be done to give a initial starting point
+            map.fitWorld();
+          }
+          explicitView = true;
+          map.flyTo.apply(map, data.flyTo);
+        }
+        if (data.flyToBounds) {
+          if (!explicitView && !map.leafletr.hasRendered) {
+            // must be done to give a initial starting point
+            map.fitWorld();
+          }
+          explicitView = true;
+          methods.flyToBounds.apply(map, data.flyToBounds);
+        }
         if (data.options.center) {
           explicitView = true;
         }
@@ -694,7 +810,8 @@ if (_htmlwidgets2.default.shinyMode) {
 }
 
 
-},{"./cluster-layer-store":1,"./control-store":2,"./crs_utils":3,"./dataframe":4,"./fixup-default-icon":5,"./global/htmlwidgets":6,"./global/jquery":7,"./global/leaflet":8,"./global/shiny":10,"./layer-manager":12,"./methods":13,"./util":15}],12:[function(require,module,exports){
+},{"./cluster-layer-store":1,"./control-store":2,"./crs_utils":3,"./dataframe":4,"./fixup-default-icon":5,"./fixup-default-tooltip":6,"./fixup-url-protocol":7,"./global/htmlwidgets":8,"./global/jquery":9,"./global/leaflet":10,"./global/shiny":12,"./layer-manager":14,"./methods":15,"./util":17}],14:[function(require,module,exports){
+(function (global){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -739,6 +856,8 @@ var LayerManager = function () {
     //           }
     // }
     this._byStamp = {};
+    // {<crosstalkGroupName>: {<key>: [<stamp>, <stamp>, ...], ...}}
+    this._byCrosstalkGroup = {};
 
     // END layer indices
 
@@ -750,12 +869,14 @@ var LayerManager = function () {
 
   _createClass(LayerManager, [{
     key: "addLayer",
-    value: function addLayer(layer, category, layerId, group) {
+    value: function addLayer(layer, category, layerId, group, ctGroup, ctKey) {
+      var _this = this;
+
       // Was a group provided?
       var hasId = typeof layerId === "string";
       var grouped = typeof group === "string";
 
-      var stamp = _leaflet2.default.Util.stamp(layer);
+      var stamp = _leaflet2.default.Util.stamp(layer) + "";
 
       // This will be the default layer group to add the layer to.
       // We may overwrite this let before using it (i.e. if a group is assigned).
@@ -793,18 +914,159 @@ var LayerManager = function () {
       this._byCategory[category][stamp] = layer;
 
       // Update stamp index
-      this._byStamp[stamp] = {
+      var layerInfo = this._byStamp[stamp] = {
         layer: layer,
         group: group,
+        ctGroup: ctGroup,
+        ctKey: ctKey,
         layerId: layerId,
         category: category,
-        container: container
+        container: container,
+        hidden: false
       };
 
+      // Update crosstalk group index
+      if (ctGroup) {
+        (function () {
+          if (layer.setStyle) {
+            // Need to save this info so we know what to set opacity to later
+            layer.options.origOpacity = typeof layer.options.opacity !== "undefined" ? layer.options.opacity : 0.5;
+            layer.options.origFillOpacity = typeof layer.options.fillOpacity !== "undefined" ? layer.options.fillOpacity : 0.2;
+          }
+
+          var ctg = _this._byCrosstalkGroup[ctGroup];
+          if (!ctg) {
+            (function () {
+              ctg = _this._byCrosstalkGroup[ctGroup] = {};
+              var crosstalk = global.crosstalk;
+
+              var handleFilter = function handleFilter(e) {
+                if (!e.value) {
+                  var groupKeys = Object.keys(ctg);
+                  for (var i = 0; i < groupKeys.length; i++) {
+                    var key = groupKeys[i];
+                    var _layerInfo = _this._byStamp[ctg[key]];
+                    _this._setVisibility(_layerInfo, true);
+                  }
+                } else {
+                  var selectedKeys = {};
+                  for (var _i = 0; _i < e.value.length; _i++) {
+                    selectedKeys[e.value[_i]] = true;
+                  }
+                  var _groupKeys = Object.keys(ctg);
+                  for (var _i2 = 0; _i2 < _groupKeys.length; _i2++) {
+                    var _key = _groupKeys[_i2];
+                    var _layerInfo2 = _this._byStamp[ctg[_key]];
+                    _this._setVisibility(_layerInfo2, selectedKeys[_groupKeys[_i2]]);
+                  }
+                }
+              };
+              var filterHandle = new crosstalk.FilterHandle(ctGroup);
+              filterHandle.on("change", handleFilter);
+
+              var handleSelection = function handleSelection(e) {
+                if (!e.value || !e.value.length) {
+                  var groupKeys = Object.keys(ctg);
+                  for (var i = 0; i < groupKeys.length; i++) {
+                    var key = groupKeys[i];
+                    var _layerInfo3 = _this._byStamp[ctg[key]];
+                    _this._setOpacity(_layerInfo3, 1.0);
+                  }
+                } else {
+                  var selectedKeys = {};
+                  for (var _i3 = 0; _i3 < e.value.length; _i3++) {
+                    selectedKeys[e.value[_i3]] = true;
+                  }
+                  var _groupKeys2 = Object.keys(ctg);
+                  for (var _i4 = 0; _i4 < _groupKeys2.length; _i4++) {
+                    var _key2 = _groupKeys2[_i4];
+                    var _layerInfo4 = _this._byStamp[ctg[_key2]];
+                    _this._setOpacity(_layerInfo4, selectedKeys[_groupKeys2[_i4]] ? 1.0 : 0.2);
+                  }
+                }
+              };
+              var selHandle = new crosstalk.SelectionHandle(ctGroup);
+              selHandle.on("change", handleSelection);
+
+              setTimeout(function () {
+                handleFilter({ value: filterHandle.filteredKeys });
+                handleSelection({ value: selHandle.value });
+              }, 100);
+            })();
+          }
+
+          if (!ctg[ctKey]) ctg[ctKey] = [];
+          ctg[ctKey].push(stamp);
+        })();
+      }
+
       // Add to container
-      container.addLayer(layer);
+      if (!layerInfo.hidden) container.addLayer(layer);
 
       return oldLayer;
+    }
+  }, {
+    key: "brush",
+    value: function brush(bounds, extraInfo) {
+      var _this2 = this;
+
+      /* eslint-disable no-console */
+
+      // For each Crosstalk group...
+      Object.keys(this._byCrosstalkGroup).forEach(function (ctGroupName) {
+        var ctg = _this2._byCrosstalkGroup[ctGroupName];
+        var selection = [];
+        // ...iterate over each Crosstalk key (each of which may have multiple
+        // layers)...
+        Object.keys(ctg).forEach(function (ctKey) {
+          // ...and for each layer...
+          ctg[ctKey].forEach(function (stamp) {
+            var layerInfo = _this2._byStamp[stamp];
+            // ...if it's something with a point...
+            if (layerInfo.layer.getLatLng) {
+              // ... and it's inside the selection bounds...
+              // TODO: Use pixel containment, not lat/lng containment
+              if (bounds.contains(layerInfo.layer.getLatLng())) {
+                // ...add the key to the selection.
+                selection.push(ctKey);
+              }
+            }
+          });
+        });
+        new global.crosstalk.SelectionHandle(ctGroupName).set(selection, extraInfo);
+      });
+    }
+  }, {
+    key: "unbrush",
+    value: function unbrush(extraInfo) {
+      Object.keys(this._byCrosstalkGroup).forEach(function (ctGroupName) {
+        new global.crosstalk.SelectionHandle(ctGroupName).clear(extraInfo);
+      });
+    }
+  }, {
+    key: "_setVisibility",
+    value: function _setVisibility(layerInfo, visible) {
+      if (layerInfo.hidden ^ visible) {
+        return;
+      } else if (visible) {
+        layerInfo.container.addLayer(layerInfo.layer);
+        layerInfo.hidden = false;
+      } else {
+        layerInfo.container.removeLayer(layerInfo.layer);
+        layerInfo.hidden = true;
+      }
+    }
+  }, {
+    key: "_setOpacity",
+    value: function _setOpacity(layerInfo, opacity) {
+      if (layerInfo.layer.setOpacity) {
+        layerInfo.layer.setOpacity(opacity);
+      } else if (layerInfo.layer.setStyle) {
+        layerInfo.layer.setStyle({
+          opacity: opacity * layerInfo.layer.options.origOpacity,
+          fillOpacity: opacity * layerInfo.layer.options.origFillOpacity
+        });
+      }
     }
   }, {
     key: "getLayer",
@@ -814,20 +1076,20 @@ var LayerManager = function () {
   }, {
     key: "removeLayer",
     value: function removeLayer(category, layerIds) {
-      var _this = this;
+      var _this3 = this;
 
       // Find layer info
       _jquery2.default.each((0, _util.asArray)(layerIds), function (i, layerId) {
-        var layer = _this._byLayerId[_this._layerIdKey(category, layerId)];
+        var layer = _this3._byLayerId[_this3._layerIdKey(category, layerId)];
         if (layer) {
-          _this._removeLayer(layer);
+          _this3._removeLayer(layer);
         }
       });
     }
   }, {
     key: "clearLayers",
     value: function clearLayers(category) {
-      var _this2 = this;
+      var _this4 = this;
 
       // Find all layers in _byCategory[category]
       var catTable = this._byCategory[category];
@@ -842,7 +1104,7 @@ var LayerManager = function () {
         stamps.push(k);
       });
       _jquery2.default.each(stamps, function (i, stamp) {
-        _this2._removeLayer(stamp);
+        _this4._removeLayer(stamp);
       });
     }
   }, {
@@ -865,20 +1127,29 @@ var LayerManager = function () {
   }, {
     key: "getVisibleGroups",
     value: function getVisibleGroups() {
-      var _this3 = this;
+      var _this5 = this;
 
       var result = [];
       _jquery2.default.each(this._groupContainers, function (k, v) {
-        if (_this3._map.hasLayer(v)) {
+        if (_this5._map.hasLayer(v)) {
           result.push(k);
         }
       });
       return result;
     }
   }, {
+    key: "getAllGroupNames",
+    value: function getAllGroupNames() {
+      var result = [];
+      _jquery2.default.each(this._groupContainers, function (k, v) {
+        result.push(k);
+      });
+      return result;
+    }
+  }, {
     key: "clearGroup",
     value: function clearGroup(group) {
-      var _this4 = this;
+      var _this6 = this;
 
       // Find all layers in _byGroup[group]
       var groupTable = this._byGroup[group];
@@ -893,7 +1164,7 @@ var LayerManager = function () {
         stamps.push(k);
       });
       _jquery2.default.each(stamps, function (i, stamp) {
-        _this4._removeLayer(stamp);
+        _this6._removeLayer(stamp);
       });
     }
   }, {
@@ -907,6 +1178,7 @@ var LayerManager = function () {
       this._byCategory = {};
       this._byLayerId = {};
       this._byStamp = {};
+      this._byCrosstalkGroup = {};
       _jquery2.default.each(this._categoryContainers, clearLayerGroup);
       this._categoryContainers = {};
       _jquery2.default.each(this._groupContainers, clearLayerGroup);
@@ -936,6 +1208,18 @@ var LayerManager = function () {
       }
       delete this._byCategory[layerInfo.category][stamp];
       delete this._byStamp[stamp];
+      if (layerInfo.ctGroup) {
+        var ctGroup = this._byCrosstalkGroup[layerInfo.ctGroup];
+        var layersForKey = ctGroup[layerInfo.ctKey];
+        var idx = layersForKey ? layersForKey.indexOf(stamp) : -1;
+        if (idx >= 0) {
+          if (layersForKey.length === 1) {
+            delete ctGroup[layerInfo.ctKey];
+          } else {
+            layersForKey.splice(idx, 1);
+          }
+        }
+      }
     }
   }, {
     key: "_layerIdKey",
@@ -950,7 +1234,8 @@ var LayerManager = function () {
 exports.default = LayerManager;
 
 
-},{"./global/jquery":7,"./global/leaflet":8,"./util":15}],13:[function(require,module,exports){
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{"./global/jquery":9,"./global/leaflet":10,"./util":17}],15:[function(require,module,exports){
 (function (global){
 "use strict";
 
@@ -1002,10 +1287,18 @@ function mouseHandler(mapId, layerId, group, eventName, extraInfo) {
   return function (e) {
     if (!_htmlwidgets2.default.shinyMode) return;
 
+    var latLng = e.target.getLatLng ? e.target.getLatLng() : e.latlng;
+    if (latLng) {
+      // retrieve only lat, lon values to remove prototype
+      //   and extra parameters added by 3rd party modules
+      // these objects are for json serialization, not javascript
+      var latLngVal = _leaflet2.default.latLng(latLng); // make sure it has consistent shape
+      latLng = { lat: latLngVal.lat, lng: latLngVal.lng };
+    }
     var eventInfo = _jquery2.default.extend({
       id: layerId,
       ".nonce": Math.random() // force reactivity
-    }, group !== null ? { group: group } : null, e.target.getLatLng ? e.target.getLatLng() : e.latlng, extraInfo);
+    }, group !== null ? { group: group } : null, latLng, extraInfo);
 
     _shiny2.default.onInputChange(mapId + "_" + eventName, eventInfo);
   };
@@ -1025,8 +1318,16 @@ methods.setView = function (center, zoom, options) {
   this.setView(center, zoom, options);
 };
 
-methods.fitBounds = function (lat1, lng1, lat2, lng2) {
-  this.fitBounds([[lat1, lng1], [lat2, lng2]]);
+methods.fitBounds = function (lat1, lng1, lat2, lng2, options) {
+  this.fitBounds([[lat1, lng1], [lat2, lng2]], options);
+};
+
+methods.flyTo = function (center, zoom, options) {
+  this.flyTo(center, zoom, options);
+};
+
+methods.flyToBounds = function (lat1, lng1, lat2, lng2, options) {
+  this.flyToBounds([[lat1, lng1], [lat2, lng2]], options);
 };
 
 methods.setMaxBounds = function (lat1, lng1, lat2, lng2) {
@@ -1127,7 +1428,7 @@ function addMarkers(map, df, group, clusterOptions, clusterId, markerFunc) {
           if (cluster) {
             clusterGroup.clusterLayerStore.add(marker, thisId);
           } else {
-            this.layerManager.addLayer(marker, "marker", thisId, thisGroup);
+            this.layerManager.addLayer(marker, "marker", thisId, thisGroup, df.get(i, "ctGroup", true), df.get(i, "ctKey", true));
           }
           var popup = df.get(i, "popup");
           var popupOptions = df.get(i, "popupOptions");
@@ -1142,18 +1443,19 @@ function addMarkers(map, df, group, clusterOptions, clusterId, markerFunc) {
           var labelOptions = df.get(i, "labelOptions");
           if (label !== null) {
             if (labelOptions !== null) {
-              if (labelOptions.noHide) {
-                marker.bindLabel(label, labelOptions).showLabel();
+              if (labelOptions.permanent) {
+                marker.bindTooltip(label, labelOptions).openTooltip();
               } else {
-                marker.bindLabel(label, labelOptions);
+                marker.bindTooltip(label, labelOptions);
               }
             } else {
-              marker.bindLabel(label);
+              marker.bindTooltip(label);
             }
           }
           marker.on("click", mouseHandler(this.id, thisId, thisGroup, "marker_click", extraInfo), this);
           marker.on("mouseover", mouseHandler(this.id, thisId, thisGroup, "marker_mouseover", extraInfo), this);
           marker.on("mouseout", mouseHandler(this.id, thisId, thisGroup, "marker_mouseout", extraInfo), this);
+          marker.on("dragend", mouseHandler(this.id, thisId, thisGroup, "marker_dragend", extraInfo), this);
         }).call(_this3);
       }
     };
@@ -1170,7 +1472,7 @@ function addMarkers(map, df, group, clusterOptions, clusterId, markerFunc) {
 
 methods.addGenericMarkers = addMarkers;
 
-methods.addMarkers = function (lat, lng, icon, layerId, group, options, popup, popupOptions, clusterOptions, clusterId, label, labelOptions) {
+methods.addMarkers = function (lat, lng, icon, layerId, group, options, popup, popupOptions, clusterOptions, clusterId, label, labelOptions, crosstalkOptions) {
   var icondf = void 0;
   var getIcon = void 0;
 
@@ -1217,7 +1519,7 @@ methods.addMarkers = function (lat, lng, icon, layerId, group, options, popup, p
 
   if (!(_jquery2.default.isEmptyObject(lat) || _jquery2.default.isEmptyObject(lng)) || _jquery2.default.isNumeric(lat) && _jquery2.default.isNumeric(lng)) {
 
-    var df = new _dataframe2.default().col("lat", lat).col("lng", lng).col("layerId", layerId).col("group", group).col("popup", popup).col("popupOptions", popupOptions).col("label", label).col("labelOptions", labelOptions).cbind(options);
+    var df = new _dataframe2.default().col("lat", lat).col("lng", lng).col("layerId", layerId).col("group", group).col("popup", popup).col("popupOptions", popupOptions).col("label", label).col("labelOptions", labelOptions).cbind(options).cbind(crosstalkOptions || {});
 
     if (icon) icondf.effectiveLength = df.nrow();
 
@@ -1229,7 +1531,7 @@ methods.addMarkers = function (lat, lng, icon, layerId, group, options, popup, p
   }
 };
 
-methods.addAwesomeMarkers = function (lat, lng, icon, layerId, group, options, popup, popupOptions, clusterOptions, clusterId, label, labelOptions) {
+methods.addAwesomeMarkers = function (lat, lng, icon, layerId, group, options, popup, popupOptions, clusterOptions, clusterId, label, labelOptions, crosstalkOptions) {
   var icondf = void 0;
   var getIcon = void 0;
   if (icon) {
@@ -1245,13 +1547,16 @@ methods.addAwesomeMarkers = function (lat, lng, icon, layerId, group, options, p
         return new _leaflet2.default.AwesomeMarkers.icon();
       }
 
+      if (opts.squareMarker) {
+        opts.className = "awesome-marker awesome-marker-square";
+      }
       return new _leaflet2.default.AwesomeMarkers.icon(opts);
     };
   }
 
   if (!(_jquery2.default.isEmptyObject(lat) || _jquery2.default.isEmptyObject(lng)) || _jquery2.default.isNumeric(lat) && _jquery2.default.isNumeric(lng)) {
 
-    var df = new _dataframe2.default().col("lat", lat).col("lng", lng).col("layerId", layerId).col("group", group).col("popup", popup).col("popupOptions", popupOptions).col("label", label).col("labelOptions", labelOptions).cbind(options);
+    var df = new _dataframe2.default().col("lat", lat).col("lng", lng).col("layerId", layerId).col("group", group).col("popup", popup).col("popupOptions", popupOptions).col("label", label).col("labelOptions", labelOptions).cbind(options).cbind(crosstalkOptions || {});
 
     if (icon) icondf.effectiveLength = df.nrow();
 
@@ -1273,7 +1578,7 @@ function addLayers(map, category, df, layerFunc) {
         (function () {
           var thisId = df.get(i, "layerId");
           var thisGroup = df.get(i, "group");
-          _this4.layerManager.addLayer(layer, category, thisId, thisGroup);
+          _this4.layerManager.addLayer(layer, category, thisId, thisGroup, df.get(i, "ctGroup", true), df.get(i, "ctKey", true));
           if (layer.bindPopup) {
             var popup = df.get(i, "popup");
             var popupOptions = df.get(i, "popupOptions");
@@ -1285,14 +1590,14 @@ function addLayers(map, category, df, layerFunc) {
               }
             }
           }
-          if (layer.bindLabel) {
+          if (layer.bindTooltip) {
             var label = df.get(i, "label");
             var labelOptions = df.get(i, "labelOptions");
             if (label !== null) {
               if (labelOptions !== null) {
-                layer.bindLabel(label, labelOptions);
+                layer.bindTooltip(label, labelOptions);
               } else {
-                layer.bindLabel(label);
+                layer.bindTooltip(label);
               }
             }
           }
@@ -1339,9 +1644,9 @@ function addLayers(map, category, df, layerFunc) {
 
 methods.addGenericLayers = addLayers;
 
-methods.addCircles = function (lat, lng, radius, layerId, group, options, popup, popupOptions, label, labelOptions, highlightOptions) {
+methods.addCircles = function (lat, lng, radius, layerId, group, options, popup, popupOptions, label, labelOptions, highlightOptions, crosstalkOptions) {
   if (!(_jquery2.default.isEmptyObject(lat) || _jquery2.default.isEmptyObject(lng)) || _jquery2.default.isNumeric(lat) && _jquery2.default.isNumeric(lng)) {
-    var df = new _dataframe2.default().col("lat", lat).col("lng", lng).col("radius", radius).col("layerId", layerId).col("group", group).col("popup", popup).col("popupOptions", popupOptions).col("label", label).col("labelOptions", labelOptions).col("highlightOptions", highlightOptions).cbind(options);
+    var df = new _dataframe2.default().col("lat", lat).col("lng", lng).col("radius", radius).col("layerId", layerId).col("group", group).col("popup", popup).col("popupOptions", popupOptions).col("label", label).col("labelOptions", labelOptions).col("highlightOptions", highlightOptions).cbind(options).cbind(crosstalkOptions || {});
 
     addLayers(this, "shape", df, function (df, i) {
       if (_jquery2.default.isNumeric(df.get(i, "lat")) && _jquery2.default.isNumeric(df.get(i, "lng")) && _jquery2.default.isNumeric(df.get(i, "radius"))) {
@@ -1353,9 +1658,9 @@ methods.addCircles = function (lat, lng, radius, layerId, group, options, popup,
   }
 };
 
-methods.addCircleMarkers = function (lat, lng, radius, layerId, group, options, clusterOptions, clusterId, popup, popupOptions, label, labelOptions) {
+methods.addCircleMarkers = function (lat, lng, radius, layerId, group, options, clusterOptions, clusterId, popup, popupOptions, label, labelOptions, crosstalkOptions) {
   if (!(_jquery2.default.isEmptyObject(lat) || _jquery2.default.isEmptyObject(lng)) || _jquery2.default.isNumeric(lat) && _jquery2.default.isNumeric(lng)) {
-    var df = new _dataframe2.default().col("lat", lat).col("lng", lng).col("radius", radius).col("layerId", layerId).col("group", group).col("popup", popup).col("popupOptions", popupOptions).col("label", label).col("labelOptions", labelOptions).cbind(options);
+    var df = new _dataframe2.default().col("lat", lat).col("lng", lng).col("radius", radius).col("layerId", layerId).col("group", group).col("popup", popup).col("popupOptions", popupOptions).col("label", label).col("labelOptions", labelOptions).cbind(crosstalkOptions || {}).cbind(options);
 
     addMarkers(this, df, group, clusterOptions, clusterId, function (df, i) {
       return _leaflet2.default.circleMarker([df.get(i, "lat"), df.get(i, "lng")], df.get(i));
@@ -1373,11 +1678,11 @@ methods.addPolylines = function (polygons, layerId, group, options, popup, popup
 
     addLayers(this, "shape", df, function (df, i) {
       var shapes = df.get(i, "shapes");
-      for (var j = 0; j < shapes.length; j++) {
-        shapes[j] = _htmlwidgets2.default.dataframeToD3(shapes[j]);
-      }
+      shapes = shapes.map(function (shape) {
+        return _htmlwidgets2.default.dataframeToD3(shape[0]);
+      });
       if (shapes.length > 1) {
-        return _leaflet2.default.multiPolyline(shapes, df.get(i));
+        return _leaflet2.default.polyline(shapes, df.get(i));
       } else {
         return _leaflet2.default.polyline(shapes[0], df.get(i));
       }
@@ -1436,10 +1741,16 @@ methods.addPolygons = function (polygons, layerId, group, options, popup, popupO
     var df = new _dataframe2.default().col("shapes", polygons).col("layerId", layerId).col("group", group).col("popup", popup).col("popupOptions", popupOptions).col("label", label).col("labelOptions", labelOptions).col("highlightOptions", highlightOptions).cbind(options);
 
     addLayers(this, "shape", df, function (df, i) {
-      var shapes = df.get(i, "shapes");
-      for (var j = 0; j < shapes.length; j++) {
-        shapes[j] = _htmlwidgets2.default.dataframeToD3(shapes[j]);
-      }
+      // This code used to use L.multiPolygon, but that caused
+      // double-click on a multipolygon to fail to zoom in on the
+      // map. Surprisingly, putting all the rings in a single
+      // polygon seems to still work; complicated multipolygons
+      // are still rendered correctly.
+      var shapes = df.get(i, "shapes").map(function (polygon) {
+        return polygon.map(_htmlwidgets2.default.dataframeToD3);
+      }).reduce(function (acc, val) {
+        return acc.concat(val);
+      }, []);
       return _leaflet2.default.polygon(shapes, df.get(i));
     });
   }
@@ -1573,11 +1884,17 @@ methods.removeControl = function (layerId) {
   this.controls.remove(layerId);
 };
 
+methods.getControl = function (layerId) {
+  this.controls.get(layerId);
+};
+
 methods.clearControls = function () {
   this.controls.clear();
 };
 
 methods.addLegend = function (options) {
+  var _this5 = this;
+
   var legend = _leaflet2.default.control({ position: options.position });
   var gradSpan = void 0;
 
@@ -1620,7 +1937,7 @@ methods.addLegend = function (options) {
         var leftDiv = (0, _jquery2.default)("<div/>").css("float", "left"),
             rightDiv = (0, _jquery2.default)("<div/>").css("float", "left");
         leftDiv.append(gradSpan);
-        (0, _jquery2.default)(div).append(leftDiv).append(rightDiv).append((0, _jquery2.default)("<br clear=\"both\"/>"));
+        (0, _jquery2.default)(div).append(leftDiv).append(rightDiv).append((0, _jquery2.default)("<br>"));
 
         // Have to attach the div to the body at this early point, so that the
         // svg text getComputedTextLength() actually works, below.
@@ -1658,17 +1975,17 @@ methods.addLegend = function (options) {
           height: totalHeight + vMargin * 2 + "px"
         });
 
-        if (options.na_color) {
-          (0, _jquery2.default)(div).append("<div><i style=\"background:" + options.na_color + "\"></i> " + options.na_label + "</div>");
+        if (options.na_color && _jquery2.default.inArray(options.na_label, labels) < 0) {
+          (0, _jquery2.default)(div).append("<div><i style=\"" + "background:" + options.na_color + ";opacity:" + options.opacity + ";margin-right:" + labelPadding + "px" + ";\"></i>" + options.na_label + "</div>");
         }
       })();
     } else {
-      if (options.na_color) {
+      if (options.na_color && _jquery2.default.inArray(options.na_label, labels) < 0) {
         colors.push(options.na_color);
         labels.push(options.na_label);
       }
       for (var i = 0; i < colors.length; i++) {
-        legendHTML += "<i style=\"background:" + colors[i] + ";opacity:" + options.opacity + "\"></i> " + labels[i] + "<br/>";
+        legendHTML += "<i style=\"background:" + colors[i] + ";opacity:" + options.opacity + "\"></i> " + labels[i] + "<br>";
       }
       div.innerHTML = legendHTML;
     }
@@ -1676,11 +1993,42 @@ methods.addLegend = function (options) {
     return div;
   };
 
+  if (options.group) {
+    (function () {
+      // Auto generate a layerID if not provided
+      if (!options.layerId) {
+        options.layerId = _leaflet2.default.Util.stamp(legend);
+      }
+
+      var map = _this5;
+      map.on("overlayadd", function (e) {
+        if (e.name === options.group) {
+          map.controls.add(legend, options.layerId);
+        }
+      });
+      map.on("overlayremove", function (e) {
+        if (e.name === options.group) {
+          map.controls.remove(options.layerId);
+        }
+      });
+      map.on("groupadd", function (e) {
+        if (e.name === options.group) {
+          map.controls.add(legend, options.layerId);
+        }
+      });
+      map.on("groupremove", function (e) {
+        if (e.name === options.group) {
+          map.controls.remove(options.layerId);
+        }
+      });
+    })();
+  }
+
   this.controls.add(legend, options.layerId);
 };
 
 methods.addLayersControl = function (baseGroups, overlayGroups, options) {
-  var _this5 = this;
+  var _this6 = this;
 
   // Only allow one layers control at a time
   methods.removeLayersControl.call(this);
@@ -1688,35 +2036,35 @@ methods.addLayersControl = function (baseGroups, overlayGroups, options) {
   var firstLayer = true;
   var base = {};
   _jquery2.default.each((0, _util.asArray)(baseGroups), function (i, g) {
-    var layer = _this5.layerManager.getLayerGroup(g, true);
+    var layer = _this6.layerManager.getLayerGroup(g, true);
     if (layer) {
       base[g] = layer;
 
       // Check if >1 base layers are visible; if so, hide all but the first one
-      if (_this5.hasLayer(layer)) {
+      if (_this6.hasLayer(layer)) {
         if (firstLayer) {
           firstLayer = false;
         } else {
-          _this5.removeLayer(layer);
+          _this6.removeLayer(layer);
         }
       }
     }
   });
   var overlay = {};
   _jquery2.default.each((0, _util.asArray)(overlayGroups), function (i, g) {
-    var layer = _this5.layerManager.getLayerGroup(g, true);
+    var layer = _this6.layerManager.getLayerGroup(g, true);
     if (layer) {
       overlay[g] = layer;
     }
   });
 
-  var layersControl = _leaflet2.default.control.layers(base, overlay, options).addTo(this);
-  this.currentLayersControl = layersControl;
+  this.currentLayersControl = _leaflet2.default.control.layers(base, overlay, options);
+  this.addControl(this.currentLayersControl);
 };
 
 methods.removeLayersControl = function () {
   if (this.currentLayersControl) {
-    this.currentLayersControl.removeFrom(this);
+    this.removeControl(this.currentLayersControl);
     this.currentLayersControl = null;
   }
 };
@@ -1732,31 +2080,80 @@ methods.addScaleBar = function (options) {
 
 methods.removeScaleBar = function () {
   if (this.currentScaleBar) {
-    this.currentScaleBar.removeFrom(this);
+    this.currentScaleBar.remove();
     this.currentScaleBar = null;
   }
 };
 
 methods.hideGroup = function (group) {
-  var _this6 = this;
-
-  _jquery2.default.each((0, _util.asArray)(group), function (i, g) {
-    var layer = _this6.layerManager.getLayerGroup(g, true);
-    if (layer) {
-      _this6.removeLayer(layer);
-    }
-  });
-};
-
-methods.showGroup = function (group) {
   var _this7 = this;
 
   _jquery2.default.each((0, _util.asArray)(group), function (i, g) {
     var layer = _this7.layerManager.getLayerGroup(g, true);
     if (layer) {
-      _this7.addLayer(layer);
+      _this7.removeLayer(layer);
     }
   });
+};
+
+methods.showGroup = function (group) {
+  var _this8 = this;
+
+  _jquery2.default.each((0, _util.asArray)(group), function (i, g) {
+    var layer = _this8.layerManager.getLayerGroup(g, true);
+    if (layer) {
+      _this8.addLayer(layer);
+    }
+  });
+};
+
+function setupShowHideGroupsOnZoom(map) {
+  if (map.leafletr._hasInitializedShowHideGroups) {
+    return;
+  }
+  map.leafletr._hasInitializedShowHideGroups = true;
+
+  function setVisibility(layer, visible, group) {
+    if (visible !== map.hasLayer(layer)) {
+      if (visible) {
+        map.addLayer(layer);
+        map.fire("groupadd", { "name": group, "layer": layer });
+      } else {
+        map.removeLayer(layer);
+        map.fire("groupremove", { "name": group, "layer": layer });
+      }
+    }
+  }
+
+  function showHideGroupsOnZoom() {
+    if (!map.layerManager) return;
+
+    var zoom = map.getZoom();
+    map.layerManager.getAllGroupNames().forEach(function (group) {
+      var layer = map.layerManager.getLayerGroup(group, false);
+      if (layer && typeof layer.zoomLevels !== "undefined") {
+        setVisibility(layer, layer.zoomLevels === true || layer.zoomLevels.indexOf(zoom) >= 0, group);
+      }
+    });
+  }
+
+  map.showHideGroupsOnZoom = showHideGroupsOnZoom;
+  map.on("zoomend", showHideGroupsOnZoom);
+}
+
+methods.setGroupOptions = function (group, options) {
+  var _this9 = this;
+
+  _jquery2.default.each((0, _util.asArray)(group), function (i, g) {
+    var layer = _this9.layerManager.getLayerGroup(g, true);
+    // This slightly tortured check is because 0 is a valid value for zoomLevels
+    if (typeof options.zoomLevels !== "undefined" && options.zoomLevels !== null) {
+      layer.zoomLevels = (0, _util.asArray)(options.zoomLevels);
+    }
+  });
+
+  setupShowHideGroupsOnZoom(this);
+  this.showHideGroupsOnZoom();
 };
 
 methods.addRasterImage = function (uri, bounds, opacity, attribution, layerId, group) {
@@ -1833,11 +2230,15 @@ methods.addRasterImage = function (uri, bounds, opacity, attribution, layerId, g
   var imgDataCallbacks = [];
 
   // Consumers of imgData, w, and h can call this to be notified when data
-  // is available. Unlike most async/promise-based APIs, the callback will
-  // be invoked immediately/synchronously if the data is already available.
+  // is available.
   function getImageData(callback) {
     if (imgData != null) {
-      callback(imgData, w, h, imgDataMipMapper);
+      // Must not invoke the callback immediately; it's too confusing and
+      // fragile to have a function invoke the callback *either* immediately
+      // or in the future. Better to be consistent here.
+      setTimeout(function () {
+        callback(imgData, w, h, imgDataMipMapper);
+      }, 0);
     } else {
       imgDataCallbacks.push(callback);
     }
@@ -1874,17 +2275,29 @@ methods.addRasterImage = function (uri, bounds, opacity, attribution, layerId, g
   };
   img.src = uri;
 
-  var canvasTiles = _leaflet2.default.tileLayer.canvas({
+  var canvasTiles = _leaflet2.default.gridLayer({
     opacity: opacity,
     attribution: attribution,
     detectRetina: true,
     async: true
   });
 
-  canvasTiles.drawTile = function (canvas, tilePoint, zoom) {
+  // NOTE: The done() function MUST NOT be invoked until after the current
+  // tick; done() looks in Leaflet's tile cache for the current tile, and
+  // since it's still being constructed, it won't be found.
+  canvasTiles.createTile = function (tilePoint, done) {
+    var zoom = tilePoint.z;
+    var canvas = _leaflet2.default.DomUtil.create("canvas");
+    var error = void 0;
+
+    // setup tile width and height according to the options
+    var size = this.getTileSize();
+    canvas.width = size.x;
+    canvas.height = size.y;
+
     getImageData(function (imgData, w, h, mipmapper) {
       try {
-        var _ret7 = function () {
+        var _ret8 = function () {
           // The Context2D we'll being drawing onto. It's always 256x256.
           var ctx = canvas.getContext("2d");
 
@@ -2008,11 +2421,14 @@ methods.addRasterImage = function (uri, bounds, opacity, attribution, layerId, g
           }
         }();
 
-        if ((typeof _ret7 === "undefined" ? "undefined" : _typeof(_ret7)) === "object") return _ret7.v;
+        if ((typeof _ret8 === "undefined" ? "undefined" : _typeof(_ret8)) === "object") return _ret8.v;
+      } catch (e) {
+        error = e;
       } finally {
-        canvasTiles.tileDrawn(canvas);
+        done(error, canvas);
       }
     });
+    return canvas;
   };
 
   this.layerManager.addLayer(canvasTiles, "image", layerId, group);
@@ -2029,21 +2445,92 @@ methods.clearImages = function () {
 methods.addMeasure = function (options) {
   // if a measureControl already exists, then remove it and
   //   replace with a new one
-  if (this.measureControl) {
-    this.measureControl.removeFrom(this);
-  }
+  methods.removeMeasure.call(this);
   this.measureControl = _leaflet2.default.control.measure(options);
-  this.measureControl.addTo(this);
+  this.addControl(this.measureControl);
 };
 
 methods.removeMeasure = function () {
-  this.measureControl.removeFrom(this);
-  delete this.measureControl;
+  if (this.measureControl) {
+    this.removeControl(this.measureControl);
+    this.measureControl = null;
+  }
+};
+
+methods.addSelect = function (ctGroup) {
+  var _this10 = this;
+
+  methods.removeSelect.call(this);
+
+  this._selectButton = _leaflet2.default.easyButton({
+    states: [{
+      stateName: "select-inactive",
+      icon: "ion-qr-scanner",
+      title: "Make a selection",
+      onClick: function onClick(btn, map) {
+        btn.state("select-active");
+        _this10._locationFilter = new _leaflet2.default.LocationFilter2();
+
+        if (ctGroup) {
+          (function () {
+            var selectionHandle = new global.crosstalk.SelectionHandle(ctGroup);
+            selectionHandle.on("change", function (e) {
+              if (e.sender !== selectionHandle) {
+                if (_this10._locationFilter) {
+                  _this10._locationFilter.disable();
+                  btn.state("select-inactive");
+                }
+              }
+            });
+            var handler = function handler(e) {
+              _this10.layerManager.brush(_this10._locationFilter.getBounds(), { sender: selectionHandle });
+            };
+            _this10._locationFilter.on("enabled", handler);
+            _this10._locationFilter.on("change", handler);
+            _this10._locationFilter.on("disabled", function () {
+              selectionHandle.close();
+              _this10._locationFilter = null;
+            });
+          })();
+        }
+
+        _this10._locationFilter.addTo(map);
+      }
+    }, {
+      stateName: "select-active",
+      icon: "ion-close-round",
+      title: "Dismiss selection",
+      onClick: function onClick(btn, map) {
+        btn.state("select-inactive");
+        _this10._locationFilter.disable();
+        // If explicitly dismissed, clear the crosstalk selections
+        _this10.layerManager.unbrush();
+      }
+    }]
+  });
+
+  this._selectButton.addTo(this);
+};
+
+methods.removeSelect = function () {
+  if (this._locationFilter) {
+    this._locationFilter.disable();
+  }
+
+  if (this._selectButton) {
+    this.removeControl(this._selectButton);
+    this._selectButton = null;
+  }
+};
+
+methods.createMapPane = function (name, zIndex) {
+  this.createPane(name);
+  this.getPane(name).style.zIndex = zIndex;
 };
 
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./cluster-layer-store":1,"./crs_utils":3,"./dataframe":4,"./global/htmlwidgets":6,"./global/jquery":7,"./global/leaflet":8,"./global/shiny":10,"./mipmapper":14,"./util":15}],14:[function(require,module,exports){
+},{"./cluster-layer-store":1,"./crs_utils":3,"./dataframe":4,"./global/htmlwidgets":8,"./global/jquery":9,"./global/leaflet":10,"./global/shiny":12,"./mipmapper":16,"./util":17}],16:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2059,6 +2546,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 // pixel of the original image has some contribution to the downscaled image)
 // as opposed to a single-step downscaling which will discard a lot of data
 // (and with sparse images at small scales can give very surprising results).
+
 var Mipmapper = function () {
   function Mipmapper(img) {
     _classCallCheck(this, Mipmapper);
@@ -2149,7 +2637,7 @@ var Mipmapper = function () {
 exports.default = Mipmapper;
 
 
-},{}],15:[function(require,module,exports){
+},{}],17:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2191,4 +2679,4 @@ function asArray(value) {
 }
 
 
-},{}]},{},[11]);
+},{}]},{},[13]);

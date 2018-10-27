@@ -1,0 +1,18 @@
+---
+title: 'Selected presentations'
+date: ''
+---
+
+I've done dozens of presentations over the years.
+This is a list of slides and further information from some of my favourites:
+
+- [ICTs para la (ciclo)inclusión](pedalea.html#1)
+    - Invited lecture in Chile at the [Seminario del Transporte a la Movilidad y Accesibilidad](https://m.facebook.com/LabCambiarnos/?refid=17) (in Spanish), 2018-10-05
+
+- [Severance, parallels and integration](cs-infra.html#1)
+    - Plenary lecture at the [Cycling & Society conference](http://www.cyclingandsociety.org/2018programme/), Bristol, 2018-09-06
+    - Audio from the talk is available [here](https://www.robinlovelace.net/presentations/cs-infra.ogg).
+
+- [Can Geographic Data Save the World?](can-gds-save-world.html#1)
+    - Invited seminar at the University of Liverpool's [Geographic Data Science Lab](https://www.liverpool.ac.uk/geographic-data-science/), 2017-05-02 
+

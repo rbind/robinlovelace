@@ -5,7 +5,7 @@ date: '2017-05-02'
 slug: ''
 categories: []
 tags: []
-bibliography: ~/allrefs.bib
+bibliography: /home/robin/allrefs.bib
 output: 
   html_document: 
     toc: yes

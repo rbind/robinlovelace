@@ -1,7 +1,7 @@
 ---
 title: Publications
 output: md_document
-bibliography: ~/allrefs.bib
+bibliography: /home/robin/allrefs.bib
 ---
 
 This is a list of my publications to date:
