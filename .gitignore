@@ -8,3 +8,4 @@ static-old
 themes
 static/2*
 static/talks/*.Rds
+static/post/
