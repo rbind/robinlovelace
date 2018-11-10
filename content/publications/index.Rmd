@@ -4,9 +4,13 @@ output: md_document
 bibliography: /home/robin/allrefs.bib
 ---
 
-This is a list of my publications to date:
+<!-- This is a list of my publications to date: -->
+
 
 ## Books
+
+- Lovelace, R., Nowosad, J., Meunchow, J., 2019. Geocomputation with R. [CRC Press](https://www.crcpress.com/Geocomputation-with-R/Lovelace-Nowosad-Munchow/p/book/9781138304512).
+
 
 - Gillespie, C., Lovelace, R., 2016. Efficient R Programming: A Practical Guide to Smarter Programming. [O’Reilly Media](http://shop.oreilly.com/product/0636920047995.do), and as a free learning resource from its [website](https://csgillespie.github.io/efficientR/). 
 
@@ -14,12 +18,21 @@ This is a list of my publications to date:
 
 - Lovelace, R., & McLoughlin, A., 2014. Engineering in Development: Transport. Engineers Without Borders (UK), [Draft](http://eprints.whiterose.ac.uk/77557/) (high resolution images - 24 Mb). [Final version (2.4 Mb - recommended)](http://robinlovelace.net/publications/eind-transport-mcloughlin-lovelace-2014-final.pdf).
 
-## Book chapters
-
-- Cheshire, J. & Lovelace, R., 2014.  Spatial data visualisation with R. In *Geocomputation, a Practical Primer*. Preprint available online via [github](https://github.com/geocomPP/sdv/raw/master/chapter.pdf) and [ResearchGate](https://www.researchgate.net/publication/274697165_Spatial_data_visualisation_with_R).
-
-
 ## Journal articles
+
+- Morton, C., Lovelace, R., Philips, I., Anable, J., 2018. Fuel price differentials and car ownership: A spatial analysis of diesel cars in Northern Ireland. Transportation Research Part D: Transport and Environment 63, 755–768. https://doi.org/10.1016/j.trd.2018.07.008
+
+- Woodcock, J., Abbas, A., Ullrich, A., Tainio, M., Lovelace, R., Sá, T.H., Westgate, K., Goodman, A., 2018. Development of the Impacts of Cycling Tool (ICT): A modelling study and web tool for evaluating health and environmental impacts of cycling uptake. PLOS Medicine 15, e1002622. https://doi.org/10.1371/journal.pmed.1002622
+
+- Morton, C., Lovelace, R., Anable, J., 2017. Exploring the effect of local transport policies on the adoption of low emission vehicles: Evidence from the London Congestion Charge and Hybrid Electric Vehicles. Transport Policy 60, 34–46. https://doi.org/10.1016/j.tranpol.2017.08.007
+
+- Aldred, R., Watson, T., Lovelace, R., Woodcock, J., 2017. Barriers to investing in cycling: Stakeholder views from England. Transportation Research Part A: Policy and Practice. https://doi.org/10.1016/j.tra.2017.11.003
+
+- Moreno-Monroy, A.I., Lovelace, R., Ramos, F.R., 2017. Public transport and school location impacts on educational inequalities: Insights from São Paulo. Journal of Transport Geography 67. https://doi.org/10.1016/j.jtrangeo.2017.08.012
+
+- Padgham, M., Lovelace, R., Salmon, M., Rudis, B., 2017. osmdata. The Journal of Open Source Software 2. https://doi.org/10.21105/joss.00305
+
+- Smith, A., Lovelace, R., Birkin, M., 2017. Population Synthesis with Quasirandom Integer Sampling. Journal of Artificial Societies and Social Simulation 20, 14. https://doi.org/10.18564/jasss.3550
 
 - Lovelace, R., Goodman, A., Aldred, R., Berkoff, N., Abbas, A., Woodcock, J., 2017. The Propensity to Cycle Tool: An open source online system for sustainable transport planning. Journal of Transport and Land Use 10. [doi:10.5198/jtlu.2016.862](http://dx.doi.org/10.5198/jtlu.2016.862).
 
@@ -65,6 +78,10 @@ trips in Sheffield, UK. *Energy Policy, 39(4)*, 2075-2087. Elsevier. [doi:10.101
 
 - Lovelace, R. 2008. Energy: efficiency gains alone won’t reduce emissions. 
 <em>Nature</em>, <em>455</em>(7212), 460. Nature Publishing Group. [doi:10.1038/455461a](http://doi.org/10.1038/455461a), also available <a href="http://www.personal.leeds.ac.uk/~georl/papers/Lovelace%20-%202008%20-%20Energy%20efficiency%20gains%20alone%20won%27t%20reduce%20emissions.pdf">here</a>.
+
+## Book chapters
+
+- Cheshire, J. & Lovelace, R., 2014.  Spatial data visualisation with R. In *Geocomputation, a Practical Primer*. Preprint available online via [github](https://github.com/geocomPP/sdv/raw/master/chapter.pdf) and [ResearchGate](https://www.researchgate.net/publication/274697165_Spatial_data_visualisation_with_R).
 
 ## Printed magazine articles
 
@@ -121,3 +138,11 @@ trips in Sheffield, UK. *Energy Policy, 39(4)*, 2075-2087. Elsevier. [doi:10.101
 ## Thesis
 
 - Lovelace, R. 2014. The energy costs of commuting: a spatial microsimulation approach. University of Sheffield. Viva (16/12/2013) examined by professors [Michael Batty](http://www.ucl.ac.uk/bartlett/people/?school=casa&upi=JMBAT23) and [Charles Pattie](http://www.sheffield.ac.uk/geography/staff/pattie_charles). Entire thesis document and example code and data available from a [GitHub repository](https://github.com/robinlovelace/thesis-reproducible).
+
+## Further info
+
+For more information on my publications please see:
+
+- [Google Scholar](http://scholar.google.co.uk/citations?user=xDJHVCAAAAAJ&hl=en)
+- [Orcid](https://orcid.org/0000-0001-5679-6536)
+- [GitHub](https://github.com/Robinlovelace), where I publish most of the code I write for packages/papers
