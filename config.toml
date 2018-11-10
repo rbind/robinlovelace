@@ -4,8 +4,9 @@ languageCode = "en-us"
 title = "Robin Lovelace's website. Energy. Transport. Technology. Change the World."
 theme = "hugo-lithium"
 googleAnalytics = ""
-disqusShortname = ""
+disqusShortname = "robinlovelace"
 ignoreFiles = ["\\.Rmd$", "_files$", "_cache$"]
+
 
 [permalinks]
     post = "/:year/:month/:day/:slug/"
