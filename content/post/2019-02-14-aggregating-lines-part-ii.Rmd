@@ -14,7 +14,8 @@ knitr::opts_chunk$set(
   message = FALSE,
   warning = FALSE,
   collapse = TRUE,
-  comment = "#>"
+  comment = "#>",
+  eval = FALSE
 )
 ```
 The [previous post](https://www.robinlovelace.net/2018/10/27/aggregating-lines/) demonstrated a new method to aggregate overlapping lines.
