@@ -9,7 +9,7 @@ bibliography: /home/robin/allrefs.bib
 
 ## Books
 
-- Lovelace, R., Nowosad, J., Meunchow, J., 2019. Geocomputation with R. [CRC Press](https://www.crcpress.com/Geocomputation-with-R/Lovelace-Nowosad-Munchow/p/book/9781138304512).
+- Lovelace, R., Nowosad, J., Meunchow, J., 2019. Geocomputation with R. [CRC Press](https://www.crcpress.com/Geocomputation-with-R/Lovelace-Nowosad-Munchow/p/book/9781138304512). Available in physical form on [Amazon](https://www.amazon.com/Geocomputation-Chapman-Hall-Robin-Lovelace/dp/1138304514/) and [Wordery](https://wordery.com/geocomputation-with-r-robin-lovelace-9781138304512) and online at [robinlovelace.net](http://geocompr.robinlovelace.net/). Solutions website: [geocompr.github.io](https://geocompr.github.io/) Source code: [github.com/robinlovelace/geocompr](https://github.com/robinlovelace/geocompr)
 
 
 - Gillespie, C., Lovelace, R., 2016. Efficient R Programming: A Practical Guide to Smarter Programming. [O’Reilly Media](http://shop.oreilly.com/product/0636920047995.do), and as a free learning resource from its [website](https://csgillespie.github.io/efficientR/). 
@@ -19,6 +19,14 @@ bibliography: /home/robin/allrefs.bib
 - Lovelace, R., & McLoughlin, A., 2014. Engineering in Development: Transport. Engineers Without Borders (UK), [Draft](http://eprints.whiterose.ac.uk/77557/) (high resolution images - 24 Mb). [Final version (2.4 Mb - recommended)](http://robinlovelace.net/publications/eind-transport-mcloughlin-lovelace-2014-final.pdf).
 
 ## Journal articles
+
+- Goodman, A., Fridman-Rojas, I., Aldred, R., Woodcock, J., Lovelace, R., 2019. Assessing the Potential for Uptake of Cycling to School: A Case Study of England. Journal of Transport & Health 5, S73. https://doi.org/10.1016/j.jth.2017.05.221
+
+- Lovelace, R., Morgan, M., Hama, L., Padgham, Mark, Padgham, M, 2019. stats19 A package for working with open road crash data. Journal of Open Source Software 4, 1181. https://doi.org/10.21105/joss.01181. Package website: https://itsleeds.github.io/stats19/.
+
+- Lovelace, R., Ellison, R., 2018. stplanr: A Package for Transport Planning. The R Journal 10, 7–23. https://doi.org/10.32614/RJ-2018-053. Package home: https://github.com/ropensci/stplanr
+
+- Monsivais, P., Francis, O., Lovelace, R., Chang, M., Strachan, E., Burgoine, T.H. 2018. Data visualisation to support obesity policy: case studies of data tools for planning and transport policy in the UK. Apollo - University of Cambridge Repository. https://doi.org/10.17863/cam.34009
 
 - Morton, C., Lovelace, R., Philips, I., Anable, J., 2018. Fuel price differentials and car ownership: A spatial analysis of diesel cars in Northern Ireland. Transportation Research Part D: Transport and Environment 63, 755–768. https://doi.org/10.1016/j.trd.2018.07.008
 
