@@ -18,8 +18,8 @@ ignoreFiles = ["\\.Rmd$", "_files$", "_cache$"]
     name = "Publications"
     url = "/publications/"
 [[menu.main]]
-    name = "Presentations"
-    url = "/presentations/index.html"
+    name = "Seminars"
+    url = "/presentations/"
 [[menu.main]]
     name = "GitHub"
     url = "https://github.com/robinlovelace"

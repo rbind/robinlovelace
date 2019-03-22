@@ -1,17 +1,23 @@
 ---
-title: 'Selected presentations'
-date: ''
+title: "Seminars, invited talks and workshops"
+output: md_document
+bibliography: /home/robin/allrefs.bib
 ---
 
-I've done dozens of presentations over the years.
-This is a list of slides and further information from some of my favourites:
+This is a selection of seminars, invited talks and workshops I've delivered, or will be delivering, ordered by date:
 
-- [Geocomputation with R Empower yourself with free software and geo* data](https://www.robinlovelace.net/presentations/nurd.html#1)
-    - Keynote lecture for the [ Northwest Universities R Day](https://twitter.com/hashtag/NWURday?src=hash), 2018-10-31
+- [test3](2019-satRday-newcastle)
+
+
+
+- Geocomputation with R: Empower yourself with free software and geo* data (2018-10-31)
+    - Keynote talk for the [ Northwest Universities R Day](https://twitter.com/hashtag/NWURday?src=hash), Manchester
+    - [Slides](https://www.robinlovelace.net/presentations/nurd.html#1)
     - [Audio](https://www.robinlovelace.net/presentations/nurd.ogg)
 
-- [ICTs para la (ciclo)inclusión](pedalea.html#1)
+- ICTs para la (ciclo)inclusión
     - Invited lecture in Chile at the [Seminario del Transporte a la Movilidad y Accesibilidad](https://m.facebook.com/LabCambiarnos/?refid=17) (in Spanish), 2018-10-05
+    - [Slides](pedalea.html#1)
 
 - [Severance, parallels and integration](cs-infra.html#1)
     - Plenary lecture at the [Cycling & Society conference](http://www.cyclingandsociety.org/2018programme/), Bristol, 2018-09-06
