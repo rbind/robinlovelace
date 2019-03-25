@@ -1,0 +1,13 @@
+---
+date: 2019-04-30
+title: "Geocomputation with R: from inception to physical book"
+slug: geocompr-launch
+---
+
+### Lecture and book launch, part of [Leeds Digital Festival](https://leedsdigitalfestival.org/)
+
+
+This talk will introduce [*Geocomputation with R*](https://geocompr.robinlovelace.net/), a new book on R for geographic data that has just been published.
+Aimed at people new to the subject, I'll provide some examples to show the power of programming with open source software for high-performance, reproducible mapping and geographic analyis.
+I will cover a bit of the history but focus on visualisation, which is key to using data to understand the world.
+Finally, I will provide some pointers for people wanting to get *stuck in* and use geocomputation to better understand the world, influence policy and have fun with maps

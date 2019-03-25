@@ -1,6 +1,6 @@
 ---
 date: 2019-04-06
-title: "Keynote: Geocomputation with R: Reproducible Geo* workflows"
+title: "Keynote talk on geocomputation, SatRdays Newcastle"
 slug: satRday-keynote
 ---
 
