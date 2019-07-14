@@ -1,0 +1,56 @@
+Session,Speaker,Title
+Keynote,Julia Stewart Lowndes,R for better science in less time
+Shiny 1,Kamil Wais,Logging and Analyzing Events in Complex Shiny Apps
+Shiny 1,Hannah De Los Santos,mwshiny: Connecting Shiny Across Multiple Windows
+Shiny 1,Riccardo PorrecaRoland Schmid,Shiny app deployment and integration into a custom website gallery
+Shiny 1,Machteld Varewyck,Automated Surveys and Reports for Expert Elicitation with Shiny
+Data handling,Hadley Wickham,Enhancements to data tidying
+Data handling,Romain Francois,n() cool #dplyr things
+Data handling,Zhuo Jia Dai,You don't need Spark for this - larger-than-RAM data manipulation with disk.frame
+Data handling,Yves Croissant,Data frames for grouped data: the gdata.frame package
+Data handling,Thierry Onkelinx,git2rdata: storing dataframes in a plain text format suitable for version control
+Models 1,Georges MonetteJohn Fox,A Generalized Framework for Parametric Regression Splines
+Models 1,Michela Battauz,Regularized estimation of the nominal response model
+Models 1,Alessandro Gasparini,merlin - mixed effects regression for linear and nonlinear models
+Models 1,Ruggero Bellio,Modern likelihood-frequentist inference with the likelihoodAsy package
+Models 1,Genaro Sucarrat,General-to-Specific (GETS) Modelling with User-Specified Estimators and Models
+Applications 1,Rezgar Arabzadeh,Application of WRSS in Water and Energy Analysis; An object oriented R package for large-scale water resources operation
+Applications 1,Emanuele Cordano,An R Package for the Distributed Hydrological Model GEOtop
+Applications 1,Friedrich-Claus Grueber,Big data analysis for power plant operational data for optimizing engineering design in R / Shiny
+Applications 1,Priyanga Dilini Talagala,Anomaly Detection in R
+Applications 1,Daniel Grose,Collective and Point Anomaly Detection in R
+Education,Kenia Wiedemann,Mathematical Modeling with R: Embedding Computational Thinking into High School Math Classes in the United States
+Education,Irene Steves,Teaching data science with puzzles
+Education,Alethea Rea,Teaching R and statistics to higher degree research students and industry professionals
+Education,Colin Rundel,ghclass: an R package for managing classes with GitHub
+Education,Mine Cetinkaya-Rundel,Data Science in a Box
+Multivariate analysis,Fabien Llobell,ClustBlock: a package for clustering datasets
+Multivariate analysis,Margot Selosse,ordinalClust: an R package for analyzing ordinal data.
+Multivariate analysis,Amandine Schmutz,"funHDDC, a R package to cluster univariate and multivariate functional data"
+Multivariate analysis,Maikol Solís,Using the package `simple features` (sf) for sensitivity analysis
+Multivariate analysis,Michael Friendly,Visualizing multivariate linear models in R
+Shiny 2,Vincent Guyader,Golem : A Framework for Building Robust & Production Ready Shiny Apps
+Shiny 2,Kelly Obriant,Art of the Feature Toggle: Patterns for maintaining and improving Shiny applications over time
+Shiny 2,Alexandra TurcanRuan Pearce-Authers,Data for all: Empowering teams with scalable Shiny applications
+Shiny 2,Filip Stachura,Best practices for building Shiny enterprise applications
+Applications 2,Peter Jaksons,Using AI and R to help improve the quality and health of your personalised food basket.
+Applications 2,Sarah N. Musy,Variation of patient turnover on a 30-minutes basis for 3 years: analysis of routine data of a Swiss University Hospital
+Applications 2,Hyesop Shin,Bridging agent-based modelling and R with nlrx: simulating pedestrian's long-term exposure to air pollution
+Applications 2,Hae-Yoon Jung,Simulation of the physical movement for Machine Learning with R: Simulation of Robot gait Optimization Using GA
+"Social science, marketing & business",Frédéric Vanwindekens,Visualisation of open-ended interviews through qualitative coding and cognitive mapping
+"Social science, marketing & business",Chris Chapman,choicetools: a package for conjoint analysis and best-worst surveys
+"Social science, marketing & business",Andreas Alfons,Robust mediation analysis using the R package robmed
+"Social science, marketing & business",Gert Janssenswillen,propro: Enhancing Discovered Process Models using Bayesian Inference and MCMC
+Movement & transport,Rocio Joo,Navigating through the R packages for movement
+Movement & transport,Mohammad Mehdi Moradi,"Classes, methods and data analysis for trajectories"
+Movement & transport,Christine Thomas-Agnan,Modelling spatial flows with R
+Movement & transport,Robin Lovelace,R for Transport Planning
+Reproducibility,Quentin Fazilleau,Package flextable: a grammar to produce tabular reporting from R
+Reproducibility,Leah Welty,Connecting R/R Markdown and Microsoft Word using StatTag for Collaborative Reproducibility
+Reproducibility,Sébastien Rochette,"The ""Rmd first"" method: when projects start with the documentation"
+Reproducibility,Peter Baker,R gnumaker: easy Makefile construction for enhancing reproducible research
+Bioinformatics 1,Marijke Van Moerbeke,Multi-data learning with M-ABC: extending your ABC's
+Bioinformatics 1,Toby Hocking,Fast and Optimal Peak Detection in Large Genomic Data via the PeakSegDisk Package
+Bioinformatics 1,Guillaume Devailly,PEREpigenomics: a shiny app to visualize Roadmap Epigenomics data
+Bioinformatics 1,Vahid Nassiri,clustDRM: an R package and Shiny app for modeling high- throughput dose-response data
+Keynote,Julie Josse,A missing value tour in R

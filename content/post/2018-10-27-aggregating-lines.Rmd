@@ -6,7 +6,6 @@ slug: aggregating-lines
 categories: []
 tags: []
 bibliography: /home/robin/allrefs.bib
-csl: /home/robin/programs/styles-master/nature.csl
 ---
 
 ```{r, include=FALSE}
