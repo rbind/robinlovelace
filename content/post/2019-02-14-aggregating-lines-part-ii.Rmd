@@ -3,8 +3,8 @@ title: Aggregating lines, part II
 author: ~
 date: '2019-02-14'
 slug: aggregating-lines-part-ii
-categories: []
-tags: []
+categories: [r]
+tags: [stplanr]
 ---
 
 ```{r setup, include = FALSE}

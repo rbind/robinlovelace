@@ -4,8 +4,8 @@ title: Six great things about UseR! 2019
 author: ~
 date: '2019-07-13'
 slug: user2019
-categories: []
-tags: []
+categories: [r]
+tags: [toulouse, conference]
 bibliography: /home/robin/allrefs.bib
 ---
 
@@ -13,6 +13,7 @@ UseR! is the highest profile and, I believe, most popular annual meeting for R a
 For those who have been living under a stone for the past decade ;) R is an open source statistical programming language that has seen explosive growth since 'data science' became a buzzword.
 Although I've been using R for around a decade, and heavily for around five years, [UseR! 2019](http://user2019.r-project.org/) was the first UseR! I attended.
 I went with some preconceptions: I thought it would be like previous R events that I had attended, including the European R Users Meeting (ERUM) and SatRdays, but bigger.
+
 
 ![](http://user2019.r-project.org/static/img/useR2019.png)
 
