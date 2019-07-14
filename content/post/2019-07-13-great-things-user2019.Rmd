@@ -89,7 +89,7 @@ This could involve the local organisers and people living nearby attending in pe
 
 # 3. Relaxed atmosphere
 
-The final great thing about UseR! 2019 was less objective but equally important: the social atmosphere.
+Another great thing about UseR! 2019 was less objective but equally important: the social atmosphere.
 The most reason why it had such a good vibe, I guess, was the attendees: in my experience R users, and people involved in the open source community in general, tend to friendly, humble and team-orientated.
 Of course, this is how how conferences should be and many are, but I couldn't help notice a contrast between the humility of by 'big names' in the R community and the sense of self importance of some (albeit a small minority) high profile academics.
 
