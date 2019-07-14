@@ -51,6 +51,13 @@ They ranged from Bettina Grün's highly technical yet accessible keynote on new 
 It was rollercoaster ride to the publication of this just open-sourced package, which enables shiny apps to generate scripts underlying the dynamic results.
 This could enable step change in the level of reproducibility of interactive web applications (vested interest: I'm the lead developer of the large shiny application, the [Propensity to Cycle Tool](http://www.pct.bike/) that would benefit from being more reproducible).
 
+All of the keynote speeches are available on YouTube, as disseminated in the Tweet below:
+
+```{r, echo=FALSE}
+blogdown::shortcode("tweet", "1150115187430760448")
+```
+
+
 # 2. Worldwide dissemination
 
 Not everyone has the time, energy or money to go to UseR!.
