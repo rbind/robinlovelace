@@ -21,7 +21,7 @@ It exceeded my expectations in many ways.
 Despite only seeing part of it (I missed the tutorials on the Tuesday and the latter part of the final day on Friday), I learned many things from it.
 Inspired by the 'useR aftRglow', I wrote some notes, some of which are worth sharing.
 The [organising committee of User! 2019](http://user2019.r-project.org/organization/) (hats off to you for an amazing event) has lessons for anyone thinking of putting on a successful event for research, software development, or anything aiming to encourage a friendly symposium vibe.
-Here are some of the things that made it such an enlightening event.
+Here are some of the things that made it great.
 
 # 1. Diverse formats
 
@@ -36,7 +36,7 @@ Instead of having only a couple of talk types (e.g. 15 minute presentation, 1 ho
 
 - Morning/afternoon tutorials, which took place on the Tuesday, allowing people to learn in depth about new methods/packages/approaches.
 - A 'tidyverse development' day, which apparently involved physically taking issues and working on them in parallel, with a gong struck for every Pull Request accepted (this makes me wonder if the same technique can be used in other software ecosystems).
-- Poster sessions, perhaps not an innovative thing in its own right, but at UseR! the poster showing event was preceded by Lightning Talks of ~1 minute each, so participants could identify which posters they would most like to visit.
+- Poster sessions, perhaps not an innovative thing in its own right, but at UseR! the poster showing session was preceded by Lightning Talks of ~1 minute each, so participants could identify which posters they would most like to visit.
 - Lightning talk sessions, where participants had 5 minutes to convey the core message of their research.
 These sessions were organised in themes and I chaired 'Applications and Methods' session, which contained some fascinating work.
 
@@ -45,7 +45,7 @@ Colin Gillespie went into stand-up comedy mode to deliver a vital message: that 
 [Mine Çetinkaya-Rundel](https://en.wikipedia.org/wiki/Mine_%C3%87etinkaya-Rundel) used the metaphore of cooking to highlight the importance of digital learning environments for effective classrooms: would you rather cook in a unfinished kitchen or a complete one?
 Use of a stable, in browser interface, as shown in the [Data Science in a Box](https://twitter.com/minebocek/status/1148904275550121984) project, can overcome the barrier of software installation to research, with clear implications for organisations: get a working instance of RStudio Server.
 
-Event the Keynotes were diverse, as can be seen from the [UseR website](http://user2019.r-project.org/program/).
+Even the Keynotes were diverse, as can be seen from the [UseR website](http://user2019.r-project.org/program/).
 There wasn't just one central 'keynote speaker' at the event but 6, half of whom were women, and with representatives from commercial, academic and [non-profit](http://user2019.r-project.org/program/#julien) organsiations.
 The diversity of topics they covered was also impressive.
 They ranged from Bettina Grün's highly technical yet accessible keynote on new models and packages for clustering data to Joe Cheng's talk on [shinymeta](https://github.com/rstudio/shinymeta).
@@ -161,7 +161,7 @@ I met many people whose work I've seen online but never had the pleasure of meet
 
 Of course there was much serendipity which is probably inevitable at an event of this size.
 I had the honour of meeting many of my R heroes, who were all fun and friendly, demonstrating that it is possible to be high flying while humble.
-On the train back I sat next R Core Team member Michael Meachler, and learned about the messages emitted every time packages such as `stplanr`, which depend on packages that use `R.oo`, are loaded:
+On the train back I sat next R Core Team member Martin Meachler, and learned about the messages emitted every time packages such as `stplanr`, which depend on packages that use `R.oo`, are loaded:
 
 ```{r}
 library(stplanr)
