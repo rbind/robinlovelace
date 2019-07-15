@@ -39,6 +39,8 @@ This website was built using open source software. It uses [Hugo](https://gohugo
 
 If you're interested in my earlier work, please check-out:
 
+- Other posts by me on [R-Bloggers](https://www.r-bloggers.com/author/robin-lovelace-r/).
+
 - My old Wordpress site at [robinlovelace.wordpress.com/](https://robinlovelace.wordpress.com/).
 
 - Older posts hosted on an [earlier version of this website](http://robinlovelace.net/old-site.html).
