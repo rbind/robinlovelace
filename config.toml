@@ -1,4 +1,4 @@
-baseurl = "/"
+baseurl = "https://www.robinlovelace.net/"
 relativeurls = true
 languageCode = "en-us"
 title = "Robin Lovelace's website. Energy. Transport. Technology. Change the World."
