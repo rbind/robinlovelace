@@ -4,9 +4,9 @@ title: Six great things about UseR! 2019
 author: ~
 date: '2019-07-13'
 slug: user2019
-categories: [r]
+categories: [conferences]
 tags: [toulouse, conference]
-bibliography: /home/robin/allrefs.bib
+bibliography: allrefs.bib
 ---
 
 UseR! is the highest profile and, I believe, most popular annual meeting for R enthusiasts, known affectionately as 'UseRs' for the purposes of the event.
