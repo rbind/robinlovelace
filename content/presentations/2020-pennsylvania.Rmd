@@ -13,3 +13,7 @@ Institute for Urban Research ([Penn IUR](https://penniur.upenn.edu/)) of
 the University of [Pennsylvania](https://www.upenn.edu). 
 
 - Slides: [Transport Data Science: from regional to street levels](https://www.robinlovelace.net/presentations/2020-04-06-pennsylvania-tds-regional-street.html)
+- Video link: [Zoom](https://zoom.us/rec/play/vpZ_dOir_DI3G4eXuQSDBfUtW428eqOs1idL8_BczhvmUndQOlLwZeBGMee7lvtR2pEHjJpPcFJUlqbf?continueMode=true)
+
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Yesterday I delivered a remote lecture for the <a href="https://twitter.com/PennMUSA?ref_src=twsrc%5Etfw">@PennMUSA</a> program.<br><br>I&#39;ve made the slides open access, and reproducible, for anyone interested in learning about transport data science: <a href="https://t.co/6O7Q9Z2ad3">https://t.co/6O7Q9Z2ad3</a><br><br>Video/audio: watch this space! <a href="https://t.co/0adLI2EQGA">pic.twitter.com/0adLI2EQGA</a></p>&mdash; Robin Lovelace (@robinlovelace) <a href="https://twitter.com/robinlovelace/status/1247466231759876102?ref_src=twsrc%5Etfw">April 7, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
