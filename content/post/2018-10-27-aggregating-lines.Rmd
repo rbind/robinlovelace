@@ -9,7 +9,7 @@ bibliography: /home/robin/allrefs.bib
 ---
 
 ```{r, include=FALSE}
-knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+knitr::opts_chunk$set(warning = FALSE, message = FALSE, eval = FALSE)
 ```
 
 
