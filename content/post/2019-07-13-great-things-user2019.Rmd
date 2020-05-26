@@ -17,7 +17,7 @@ That was true, but it was bigger and better, exceeding my expectations in many w
 
 
 
-![](http://user2019.r-project.org/static/img/useR2019.png)
+![](https://user2019.r-project.org/static/img/useR2019.png)
 
 Despite only seeing part of it (I missed the tutorials on the Tuesday and the latter part of the final day on Friday), I learned many things from it.
 Inspired by the 'useR aftRglow', I wrote some of these down on the train journey back home.
