@@ -1,0 +1,184 @@
+---
+title: Can Geographic Data Save the World?
+author: "Robin Lovelace"
+date: '2017-05-02'
+slug: ''
+categories: []
+tags: []
+bibliography: /home/robin/allrefs.bib
+output: 
+  html_document: 
+    toc: yes
+---
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<script src="/rmarkdown-libs/jquery/jquery.min.js"></script>
+<link href="/rmarkdown-libs/leaflet/leaflet.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/leaflet/leaflet.js"></script>
+<link href="/rmarkdown-libs/leafletfix/leafletfix.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/Proj4Leaflet/proj4-compressed.js"></script>
+<script src="/rmarkdown-libs/Proj4Leaflet/proj4leaflet.js"></script>
+<link href="/rmarkdown-libs/rstudio_leaflet/rstudio_leaflet.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/leaflet-binding/leaflet.js"></script>
+<script src="/rmarkdown-libs/leaflet-providers/leaflet-providers_1.9.0.js"></script>
+<script src="/rmarkdown-libs/leaflet-providers-plugin/leaflet-providers-plugin.js"></script>
+<script src="/rmarkdown-libs/clipboard/setClipboardText.js"></script>
+
+
+<p>I presented yesterday on the use of geographic data in policy in a flamboyantly named talk: Can geographic data save the world (slides available from <a href="https://rpubs.com/RobinLovelace/272796">rpubs.com/Robinlovelace</a>). The purpose of this post is to share the slides, <a href="https://www.dropbox.com/s/5x3baro4hrpj57g/gdsl.wav?dl=0">audio</a> and some of the ideas resulting from the talk, for the benefit of people interested in the topic but unable to attend.</p>
+<p>If you just want to sit back and enjoy the slides with audio, rather than read this article, <a href="https://www.dropbox.com/s/5x3baro4hrpj57g/gdsl.wav?dl=0">click here for the audio</a> and enjoy the slides below. Otherwise please keep reading!</p>
+<iframe src="https://rpubs.com/RobinLovelace/272796" height="800" width="1000">
+</iframe>
+<p>The venue influenced the title. The University of Liverpool’s Geographic Data Science Laboratory (<a href="https://geographicdatascience.com/">GDSL</a>) is a research powerhouse churning out papers close in the field.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
+<div id="what-is-geographic-data-science" class="section level2">
+<h2>What is Geographic Data Science</h2>
+<p>The talk started with an introduction that defined terms, in which I set-out what I thought made GDS different from its older brother GIS:</p>
+<pre><code>## Warning: `frame_data()` is deprecated as of lifecycle 2.0.0.
+## Please use `tribble()` instead.
+## This warning is displayed once every 8 hours.
+## Call `lifecycle::last_warnings()` to see where this warning was generated.</code></pre>
+<table>
+<caption><span id="tab:unnamed-chunk-2">Table 1: </span>Comparison between Geographic Information Systems (GIS) and Geographic Data Science (GDS) research.</caption>
+<thead>
+<tr class="header">
+<th align="left">Attribute</th>
+<th align="left">GIS</th>
+<th align="left">GDS</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Home disciplines</td>
+<td align="left">Geography</td>
+<td align="left">Geography, Computing, Statistics</td>
+</tr>
+<tr class="even">
+<td align="left">Software focus</td>
+<td align="left">Graphic User Interface</td>
+<td align="left">Code</td>
+</tr>
+<tr class="odd">
+<td align="left">Reproduciblility</td>
+<td align="left">Minimal</td>
+<td align="left">Maximal</td>
+</tr>
+</tbody>
+</table>
+<p>This was an important distinction to make in the context of having policy impact: by being open and transparent (and therefore using code rather than a non-reproducible Graphical User Interface) geographical research maximises its chances of altering decisions.</p>
+<p>Why?</p>
+<p>Simple: because if more people can see the data and, crucially, reproduce the results, more people will trust your research and be influenced by it.</p>
+<p>The importance of clear methods enabled by scripted, reproducible analysis workflow, is even greater in the age of Big Data, which myself and colleagues have defined broadly as “unconventional datasets that are difficult to analyze
+using established methods” (i.e. those that cannot easily be solved with established products such as Microsoft Excel and ESRI’s ArcMAP) <span class="citation">(<a href="#ref-lovelace_big_2016" role="doc-biblioref">Lovelace et al. 2016</a>)</span>.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
+</div>
+<div id="case-study-the-propensity-to-cycle-tool" class="section level2">
+<h2>Case study: the Propensity to Cycle Tool</h2>
+<p>The Propensity to Cycle Tool (PCT) is a good case study highlighting the potential policy impacts of geographical research.</p>
+<p>Partly inspired by <span class="citation"><a href="#ref-singleton_gis_2014" role="doc-biblioref">Singleton</a> (<a href="#ref-singleton_gis_2014" role="doc-biblioref">2014</a>)</span> (which was written by a founding member of the GDSL), the PCT provides an open source evidence base highlighting where cycling has the greatest potential to grow. Crucially, the PCT is publicly accessible, meaning that not only transport planning professionals but also members of the public can use it.</p>
+<p>If you are interested in the cycling potential at the local level in England, or if you are interested in the visualisation of geographic information at multiple levels (area, desire line, route and route network levels in this case), please take a look at the video and have a play at <a href="http://www.pct.bike/">www.pct.bike</a>.</p>
+<p>Key to the tools’ potential for policy impact is its wide ranging scenarios of change which included Government Target to double cycling by 2025 and a more ambitious Go Dutch scenario in which we cycle as much as the Dutch to, accounting for geographical differences in trip distances and hilliness. The difference between the two scenarios is substantial, as illustrated by the figure below.</p>
+<div class="figure"><span id="fig:unnamed-chunk-3"></span>
+<img src="https://github.com/npct/pct/raw/master/flow-model/leeds-rnet-gov-go.png" alt="The Route Network layer illustrating the shifting spatial distribution of cycling flows in Leeds under Government Target (top) and Go Dutch (bottom) scenarios."  />
+<p class="caption">
+Figure 1: The Route Network layer illustrating the shifting spatial distribution of cycling flows in Leeds under Government Target (top) and Go Dutch (bottom) scenarios.
+</p>
+</div>
+<p>For a detailed account of the methods (or geographic data science if you like) underlying information on the Propensity to Cycle Tool, I recommend checking out a paper on the subject by myself and other members of the team published in the <a href="https://www.jtlu.org/index.php/jtlu/article/view/862">Journal of Transport and Land Use</a> <span class="citation">(<a href="#ref-lovelace_propensity_2017" role="doc-biblioref">Lovelace et al. 2017</a>)</span>.</p>
+</div>
+<div id="a-reproducible-example" class="section level2">
+<h2>A reproducible example</h2>
+<p>Actions can speak louder than words or, as Linus Torvalds <a href="https://lkml.org/lkml/2000/8/25/132">said</a>:<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></p>
+<blockquote>
+<p>Talk is cheap. Show me the code.</p>
+</blockquote>
+<p>On that basis, to show what I meant by reproducibility and ‘data carpentry’ <span class="citation">(<a href="#ref-gillespie_efficient_2016" role="doc-biblioref"><strong>gillespie_efficient_2016?</strong></a>)</span> (a concept mentioned in the slides not discussed in audio for lack of time) I provided some some example code that illustrated the kinds of techniques underlying the PCT.</p>
+<p>First download and visualise some transport data (from the Isle of Wight as, the smallest region in the PCT):</p>
+<pre class="r"><code>u_pct = &quot;https://github.com/npct/pct-data/raw/master/isle-of-wight/l.Rds&quot;
+if(!file.exists(&quot;l.Rds&quot;))
+  download.file(u_pct, &quot;l.Rds&quot;)
+l = readRDS(&quot;l.Rds&quot;)
+library(sp)
+plot(l)</code></pre>
+<pre><code>## Warning in wkt(obj): CRS object has no comment</code></pre>
+<p><img src="/post/2017-05-02-can-geographic-data-save-the-world_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>Now that we have an idea of the commute patterns in the area, and the nature of ‘OD’ data (converted to geographical desire lines with the <strong><a href="https://github.com/ropensci/stplanr">stplanr</a></strong> package), we can do some analysis.</p>
+<pre class="r"><code>sel_walk = l$foot &gt; 9
+l_walk = l[sel_walk,]
+plot(l)</code></pre>
+<pre><code>## Warning in wkt(obj): CRS object has no comment</code></pre>
+<pre class="r"><code>plot(l_walk, add = T, col = &quot;red&quot;, lwd = 3)</code></pre>
+<p><img src="/post/2017-05-02-can-geographic-data-save-the-world_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<pre class="r"><code>library(dplyr) # for next slide...</code></pre>
+<p>The above code subsets all the lines that have 10 or more people walking to work in the 2011 census and plots the results (as you’d expect the shorter trips are more commonly walked). It works, but could be interpretted as a little clunky. Enter <a href="https://github.com/tidyverse/dplyr"><strong>dplyr</strong></a>, a package for data science <span class="citation">(<a href="#ref-grolemund_r_2016" role="doc-biblioref"><strong>grolemund_r_2016?</strong></a>)</span>:</p>
+<pre class="r"><code>l_walk1 = l %&gt;% filter(All &gt; 10) # fails</code></pre>
+<p>Doh! That code nice ‘clean’ (well certainly consistent) code does not work because <code>Spatial</code> objects are not compatible with the pipe operator <code>%&gt;%</code> syntax.</p>
+<p>Enter the <a href="https://github.com/edzer/sfr"><strong>sf</strong></a> package, which represents a step change in how R handles spatial data. First let’s convert that <code>l</code> object into a ‘simple feature’ object:</p>
+<pre class="r"><code>library(sf)</code></pre>
+<pre><code>## Linking to GEOS 3.8.0, GDAL 3.0.4, PROJ 7.0.0</code></pre>
+<pre class="r"><code>l_sf = st_as_sf(l)
+class(l_sf)</code></pre>
+<pre><code>## [1] &quot;sf&quot;         &quot;data.frame&quot;</code></pre>
+<pre class="r"><code>plot(l_sf[6:15])</code></pre>
+<pre><code>## Warning: plotting the first 9 out of 10 attributes; use max.plot = 10 to plot
+## all</code></pre>
+<p><img src="/post/2017-05-02-can-geographic-data-save-the-world_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>Other than plotting multiples, one for each variable, objects of class <code>sf</code> behave much like objects of class <code>Spatial</code>, except they are also fully fledged data frames. This is what allows them to be subsetted with <strong>dplyr</strong>’s <code>%&gt;%</code> operator (reproducing the square bracket subsetting above):</p>
+<pre class="r"><code>l_walk2 = l_sf %&gt;% 
+  filter(foot &gt; 9)
+plot(l_sf[6])
+plot(l_walk2, add = T, lwd = 3)</code></pre>
+<pre><code>## Warning in plot.sf(l_walk2, add = T, lwd = 3): ignoring all but the first
+## attribute</code></pre>
+<p><img src="/post/2017-05-02-can-geographic-data-save-the-world_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p>A more advanced example involves the following: take all trips in the study area less than 1km and find those in which driving a car is more common than walking (areas that could have a major car dependency issue, the policy-relevant part):</p>
+<pre class="r"><code>l_sf$distsf = as.numeric(st_length(l_sf))
+l_drive_short = l_sf %&gt;% 
+  filter(distsf &lt; 1000) %&gt;% 
+  filter(car_driver &gt; foot)</code></pre>
+<pre class="r"><code>library(tmap)
+tmap_mode(&quot;view&quot;)</code></pre>
+<pre><code>## tmap mode set to interactive viewing</code></pre>
+<pre class="r"><code>qtm(l_drive_short)</code></pre>
+<div id="htmlwidget-1" style="width:672px;height:480px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"createMapPane","args":["tmap401",401]},{"method":"createMapPane","args":["tmap402",402]},{"method":"addProviderTiles","args":["Esri.WorldGrayCanvas",null,"Esri.WorldGrayCanvas",{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"pane":"tilePane"}]},{"method":"addProviderTiles","args":["OpenStreetMap",null,"OpenStreetMap",{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"pane":"tilePane"}]},{"method":"addProviderTiles","args":["Esri.WorldTopoMap",null,"Esri.WorldTopoMap",{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"pane":"tilePane"}]},{"method":"addPolylines","args":[[[[{"lng":[-1.29752372353896,-1.31007696611688],"lat":[50.7571531462466,50.7534150222859]}]]],"TRUE.","l_drive_short",{"interactive":true,"className":"","pane":"tmap401","stroke":true,"color":"#000000","weight":1,"opacity":1,"fill":false,"fillColor":"#000000","fillOpacity":0.2,"dashArray":"none","smoothFactor":1,"noClip":false},"<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:15px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>TRUE<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>is_two_way<\/nobr><\/td><td align=\"right\"><nobr>TRUE<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>dist<\/nobr><\/td><td align=\"right\"><nobr>0.977<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>id<\/nobr><\/td><td align=\"right\"><nobr>E02003581 E02003582<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>msoa1<\/nobr><\/td><td align=\"right\"><nobr>E02003581<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>msoa2<\/nobr><\/td><td align=\"right\"><nobr>E02003582<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>all<\/nobr><\/td><td align=\"right\"><nobr>759<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>light_rail<\/nobr><\/td><td align=\"right\"><nobr>0<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>train<\/nobr><\/td><td align=\"right\"><nobr>2<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>bus<\/nobr><\/td><td align=\"right\"><nobr>24<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>taxi<\/nobr><\/td><td align=\"right\"><nobr>2<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>motorbike<\/nobr><\/td><td align=\"right\"><nobr>9<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>car_driver<\/nobr><\/td><td align=\"right\"><nobr>344<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>car_passenger<\/nobr><\/td><td align=\"right\"><nobr>44<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>bicycle<\/nobr><\/td><td align=\"right\"><nobr>50<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>foot<\/nobr><\/td><td align=\"right\"><nobr>282<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>other<\/nobr><\/td><td align=\"right\"><nobr>2<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>govtarget_slc<\/nobr><\/td><td align=\"right\"><nobr>76.28<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>govtarget_sic<\/nobr><\/td><td align=\"right\"><nobr>26.28<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>govtarget_slw<\/nobr><\/td><td align=\"right\"><nobr>271.5<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>govtarget_siw<\/nobr><\/td><td align=\"right\"><nobr>-10.45<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>govtarget_sld<\/nobr><\/td><td align=\"right\"><nobr>331.2<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>govtarget_sid<\/nobr><\/td><td align=\"right\"><nobr>-12.75<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>gendereq_slc<\/nobr><\/td><td align=\"right\"><nobr>89.35<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>gendereq_sic<\/nobr><\/td><td align=\"right\"><nobr>39.35<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>gendereq_slw<\/nobr><\/td><td align=\"right\"><nobr>266.4<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>gendereq_siw<\/nobr><\/td><td align=\"right\"><nobr>-15.63<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>gendereq_sld<\/nobr><\/td><td align=\"right\"><nobr>325.0<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>gendereq_sid<\/nobr><\/td><td align=\"right\"><nobr>-18.99<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>dutch_slc<\/nobr><\/td><td align=\"right\"><nobr>221.2<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>dutch_sic<\/nobr><\/td><td align=\"right\"><nobr>171.2<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>dutch_slw<\/nobr><\/td><td align=\"right\"><nobr>213.9<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>dutch_siw<\/nobr><\/td><td align=\"right\"><nobr>-68.12<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>dutch_sld<\/nobr><\/td><td align=\"right\"><nobr>260.9<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>dutch_sid<\/nobr><\/td><td align=\"right\"><nobr>-83.12<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>ebike_slc<\/nobr><\/td><td align=\"right\"><nobr>298.0<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>ebike_sic<\/nobr><\/td><td align=\"right\"><nobr>248.0<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>ebike_slw<\/nobr><\/td><td align=\"right\"><nobr>183.3<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>ebike_siw<\/nobr><\/td><td align=\"right\"><nobr>-98.66<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>ebike_sld<\/nobr><\/td><td align=\"right\"><nobr>223.6<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>ebike_sid<\/nobr><\/td><td align=\"right\"><nobr>-120.4<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>base_sldeath_webtag<\/nobr><\/td><td align=\"right\"><nobr>-0.001<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>base_slvalue_webtag<\/nobr><\/td><td align=\"right\"><nobr>2,613<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>govtarget_sldeath_webtag<\/nobr><\/td><td align=\"right\"><nobr>-0.002<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>govtarget_slvalue_webtag<\/nobr><\/td><td align=\"right\"><nobr>3,984<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>govtarget_sideath_webtag<\/nobr><\/td><td align=\"right\"><nobr>-0.001<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>govtarget_sivalue_webtag<\/nobr><\/td><td align=\"right\"><nobr>1,371<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>gendereq_sldeath_webtag<\/nobr><\/td><td align=\"right\"><nobr>-0.002<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>gendereq_slvalue_webtag<\/nobr><\/td><td align=\"right\"><nobr>3,800<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>gendereq_sideath_webtag<\/nobr><\/td><td align=\"right\"><nobr>-0.001<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>gendereq_sivalue_webtag<\/nobr><\/td><td align=\"right\"><nobr>1,187<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>dutch_sldeath_webtag<\/nobr><\/td><td align=\"right\"><nobr>-0.005<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>dutch_slvalue_webtag<\/nobr><\/td><td align=\"right\"><nobr>9,212<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>dutch_sideath_webtag<\/nobr><\/td><td align=\"right\"><nobr>-0.004<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>dutch_sivalue_webtag<\/nobr><\/td><td align=\"right\"><nobr>6,599<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>ebike_sldeath_webtag<\/nobr><\/td><td align=\"right\"><nobr>0.002<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>ebike_slvalue_webtag<\/nobr><\/td><td align=\"right\"><nobr>-3,751<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>ebike_sideath_webtag<\/nobr><\/td><td align=\"right\"><nobr>0.003<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>ebike_sivalue_webtag<\/nobr><\/td><td align=\"right\"><nobr>-6,364<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>base_sldeath_heat<\/nobr><\/td><td align=\"right\"><nobr>-0.001<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>base_slvalue_heat<\/nobr><\/td><td align=\"right\"><nobr>2,105<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>govtarget_sldeath_heat<\/nobr><\/td><td align=\"right\"><nobr>-0.002<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>govtarget_slvalue_heat<\/nobr><\/td><td align=\"right\"><nobr>3,209<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>govtarget_sideath_heat<\/nobr><\/td><td align=\"right\"><nobr>-0.001<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>govtarget_sivalue_heat<\/nobr><\/td><td align=\"right\"><nobr>1,104<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>gendereq_sldeath_heat<\/nobr><\/td><td align=\"right\"><nobr>-0.002<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>gendereq_slvalue_heat<\/nobr><\/td><td align=\"right\"><nobr>3,060<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>gendereq_sideath_heat<\/nobr><\/td><td align=\"right\"><nobr>-0.001<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>gendereq_sivalue_heat<\/nobr><\/td><td align=\"right\"><nobr>955<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>dutch_sldeath_heat<\/nobr><\/td><td align=\"right\"><nobr>-0.004<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>dutch_slvalue_heat<\/nobr><\/td><td align=\"right\"><nobr>7,589<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>dutch_sideath_heat<\/nobr><\/td><td align=\"right\"><nobr>-0.003<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>dutch_sivalue_heat<\/nobr><\/td><td align=\"right\"><nobr>5,484<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>ebike_sldeath_heat<\/nobr><\/td><td align=\"right\"><nobr>0.000<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>ebike_slvalue_heat<\/nobr><\/td><td align=\"right\"><nobr>-185<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>ebike_sideath_heat<\/nobr><\/td><td align=\"right\"><nobr>0.001<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>ebike_sivalue_heat<\/nobr><\/td><td align=\"right\"><nobr>-2,290<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>base_slco2<\/nobr><\/td><td align=\"right\"><nobr>-1,341<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>govtarget_slco2<\/nobr><\/td><td align=\"right\"><nobr>-2,047<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>govtarget_sico2<\/nobr><\/td><td align=\"right\"><nobr>-706<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>gendereq_slco2<\/nobr><\/td><td align=\"right\"><nobr>-2,392<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>gendereq_sico2<\/nobr><\/td><td align=\"right\"><nobr>-1,051<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>dutch_slco2<\/nobr><\/td><td align=\"right\"><nobr>-5,945<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>dutch_sico2<\/nobr><\/td><td align=\"right\"><nobr>-4,604<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>ebike_slco2<\/nobr><\/td><td align=\"right\"><nobr>-8,009<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>ebike_sico2<\/nobr><\/td><td align=\"right\"><nobr>-6,668<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>geo_label1<\/nobr><\/td><td align=\"right\"><nobr>Isle of Wight 001<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>geo_label2<\/nobr><\/td><td align=\"right\"><nobr>Isle of Wight 002<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>dist_fast<\/nobr><\/td><td align=\"right\"><nobr>1.089<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>dist_quiet<\/nobr><\/td><td align=\"right\"><nobr>1.085<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>time_fast<\/nobr><\/td><td align=\"right\"><nobr>393<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>time_quiet<\/nobr><\/td><td align=\"right\"><nobr>399<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>cirquity<\/nobr><\/td><td align=\"right\"><nobr>1.115<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>distq_f<\/nobr><\/td><td align=\"right\"><nobr>0.996<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>avslope<\/nobr><\/td><td align=\"right\"><nobr>3.122<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>avslope_q<\/nobr><\/td><td align=\"right\"><nobr>3.122<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>clc<\/nobr><\/td><td align=\"right\"><nobr>6.588<\/nobr><\/td><\/tr><tr><td style=\"color: #888888;\"><nobr>distsf<\/nobr><\/td><td align=\"right\"><nobr>978.6<\/nobr><\/td><\/tr><\/table><\/div>",null,"TRUE",{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addLayersControl","args":[["Esri.WorldGrayCanvas","OpenStreetMap","Esri.WorldTopoMap"],"l_drive_short",{"collapsed":true,"autoZIndex":true,"position":"topleft"}]},{"method":"addScaleBar","args":[{"maxWidth":100,"metric":true,"imperial":false,"updateWhenIdle":true,"position":"bottomright"}]}],"limits":{"lat":[50.7534150222859,50.7571531462466],"lng":[-1.31007696611688,-1.29752372353896]},"fitBounds":[50.7534150222859,-1.31007696611688,50.7571531462466,-1.29752372353896,[]]},"evals":[],"jsHooks":{"render":[{"code":"function(el, x, data) {\n  return (\n      function(el, x, data) {\n      // get the leaflet map\n      var map = this; //HTMLWidgets.find('#' + el.id);\n      // we need a new div element because we have to handle\n      // the mouseover output separately\n      // debugger;\n      function addElement () {\n      // generate new div Element\n      var newDiv = $(document.createElement('div'));\n      // append at end of leaflet htmlwidget container\n      $(el).append(newDiv);\n      //provide ID and style\n      newDiv.addClass('lnlt');\n      newDiv.css({\n      'position': 'relative',\n      'bottomleft':  '0px',\n      'background-color': 'rgba(255, 255, 255, 0.7)',\n      'box-shadow': '0 0 2px #bbb',\n      'background-clip': 'padding-box',\n      'margin': '0',\n      'padding-left': '5px',\n      'color': '#333',\n      'font': '9px/1.5 \"Helvetica Neue\", Arial, Helvetica, sans-serif',\n      'z-index': '700',\n      });\n      return newDiv;\n      }\n\n\n      // check for already existing lnlt class to not duplicate\n      var lnlt = $(el).find('.lnlt');\n\n      if(!lnlt.length) {\n      lnlt = addElement();\n\n      // grab the special div we generated in the beginning\n      // and put the mousmove output there\n\n      map.on('mousemove', function (e) {\n      if (e.originalEvent.ctrlKey) {\n      if (document.querySelector('.lnlt') === null) lnlt = addElement();\n      lnlt.text(\n                           ' lon: ' + (e.latlng.lng).toFixed(5) +\n                           ' | lat: ' + (e.latlng.lat).toFixed(5) +\n                           ' | zoom: ' + map.getZoom() +\n                           ' | x: ' + L.CRS.EPSG3857.project(e.latlng).x.toFixed(0) +\n                           ' | y: ' + L.CRS.EPSG3857.project(e.latlng).y.toFixed(0) +\n                           ' | epsg: 3857 ' +\n                           ' | proj4: +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs ');\n      } else {\n      if (document.querySelector('.lnlt') === null) lnlt = addElement();\n      lnlt.text(\n                      ' lon: ' + (e.latlng.lng).toFixed(5) +\n                      ' | lat: ' + (e.latlng.lat).toFixed(5) +\n                      ' | zoom: ' + map.getZoom() + ' ');\n      }\n      });\n\n      // remove the lnlt div when mouse leaves map\n      map.on('mouseout', function (e) {\n      var strip = document.querySelector('.lnlt');\n      if( strip !==null) strip.remove();\n      });\n\n      };\n\n      //$(el).keypress(67, function(e) {\n      map.on('preclick', function(e) {\n      if (e.originalEvent.ctrlKey) {\n      if (document.querySelector('.lnlt') === null) lnlt = addElement();\n      lnlt.text(\n                      ' lon: ' + (e.latlng.lng).toFixed(5) +\n                      ' | lat: ' + (e.latlng.lat).toFixed(5) +\n                      ' | zoom: ' + map.getZoom() + ' ');\n      var txt = document.querySelector('.lnlt').textContent;\n      console.log(txt);\n      //txt.innerText.focus();\n      //txt.select();\n      setClipboardText('\"' + txt + '\"');\n      }\n      });\n\n      }\n      ).call(this.getMap(), el, x, data);\n}","data":null}]}}</script>
+</div>
+<div id="discussion" class="section level2">
+<h2>Discussion</h2>
+<p>I was happy to find the talk was attended by a range of people, appropriate for a seminar about getting researchers down from the ivory towers.</p>
+<p>Someone from local government asked me if the above analysis to find short desire lines, along which more people drive than walk, could be applied in Liverpool (yes - the above code is a good starting point for working out how!).</p>
+<p>I was also asked how the PCT methodology could engage with established methods in transport planning. This is something that myself and others on the PCT team have discussed and it’s certainly given me a reason to revisit how best to do that (I don’t have a clear solution at the moment).</p>
+</div>
+<div id="conclusion" class="section level2">
+<h2>Conclusion</h2>
+<p>Geographical research clearly can have policy impacts. Calling this ‘saving the world’ may seem like hyperbole, but it in my experience it can help communicate the message that publicly-funded academics usually work in the public interest, for the ‘greater good.’</p>
+<p>Clearly the amount and direction of the policy impacts of your work will vary depending on a range of factors, many of which will be outside your sphere of influence. However, if you are a (geographical) ‘data scientist,’ it seems that ensuring that the ‘science’ in your title is taken seriously can greatly improve your policy impact.</p>
+<p>Thus reproducibility and free publication of data and results should not be seen as a bureaucratic burden. It can help you save the world.</p>
+</div>
+<div id="references" class="section level2 unnumbered">
+<h2>References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-arribas-bel_accidental_2014" class="csl-entry">
+Arribas-Bel, Daniel. 2014. <span>“Accidental, Open and Everywhere: <span>Emerging</span> Data Sources for the Understanding of Cities.”</span> <em>Applied Geography</em> 49: 45–53.
+</div>
+<div id="ref-lovelace_big_2016" class="csl-entry">
+Lovelace, Robin, Mark Birkin, Philip Cross, and Martin Clarke. 2016. <span>“From <span>Big Noise</span> to <span>Big Data</span>: <span>Toward</span> the <span>Verification</span> of <span>Large Data</span> Sets for <span>Understanding Regional Retail Flows</span>.”</span> <em>Geographical Analysis</em> 48 (1): 59–81. <a href="https://doi.org/10.1111/gean.12081">https://doi.org/10.1111/gean.12081</a>.
+</div>
+<div id="ref-lovelace_propensity_2017" class="csl-entry">
+Lovelace, Robin, Anna Goodman, Rachel Aldred, Nikolai Berkoff, Ali Abbas, and James Woodcock. 2017. <span>“The <span>Propensity</span> to <span>Cycle Tool</span>: <span>An</span> Open Source Online System for Sustainable Transport Planning.”</span> <em>Journal of Transport and Land Use</em> 10 (1). <a href="https://doi.org/10.5198/jtlu.2016.862">https://doi.org/10.5198/jtlu.2016.862</a>.
+</div>
+<div id="ref-singleton_gis_2014" class="csl-entry">
+Singleton, Alex. 2014. <span>“A <span>GIS</span> Approach to Modelling <span>Co2</span> Emissions Associated with the Pupil-School Commute.”</span> <em>International Journal of Geographical Information Science</em> 28 (2): 256–73. <a href="https://doi.org/10.1080/13658816.2013.832765">https://doi.org/10.1080/13658816.2013.832765</a>.
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>
+The name of the discipline, broadly be defined geographic data analysis, modelling and visualisation, is an interesting topic in its own right. The preferred term to describe this body of work shifts over time, and depending on who you ask.
+Over the years it has been referred to as Geographic Information Systems (GIS, which sounds rather old school nowadays), the more academic-sounding Geographic Information Science (GISc), the concise term of Geocomputation and the more recently coined term of Geographic Data Science (GDS).<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>See <span class="citation"><a href="#ref-arribas-bel_accidental_2014" role="doc-biblioref">Arribas-Bel</a> (<a href="#ref-arribas-bel_accidental_2014" role="doc-biblioref">2014</a>)</span> for an alternative geographical take on Big Data.<a href="#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>
+If I’m waxing lyrical about reproducibility and code I should practice what I preach. The source code of this article can be found at <a href="https://github.com/rbind/robinlovelace/blob/master/content/post/2017-05-02-can-geographic-data-save-the-world.Rmd">github.com/rbind/robinlovelace</a>. <a href="#fnref3" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
