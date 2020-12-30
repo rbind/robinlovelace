@@ -45,13 +45,13 @@ social:
   link: /#contact
 - icon: twitter
   icon_pack: fab
-  link: https://twitter.com/gcushen
+  link: https://twitter.com/robinlovelace
 - icon: graduation-cap
   icon_pack: fas
   link: https://scholar.google.co.uk/citations?user=xDJHVCAAAAAJ&hl=en
 - icon: github
   icon_pack: fab
-  link: https://github.com/gcushen
+  link: https://github.com/robinlovelace
 - icon: linkedin
   icon_pack: fab
   link: https://www.linkedin.com/
@@ -61,4 +61,7 @@ title: Robin Lovelace
 
 Robin is associate professor of transport data science at the Institute for Transport Studies, University of Leeds.
 
-{{< icon name="download" pack="fas" >}} Download my {{< staticref "media/demo_resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
+<!--
+# todo: add resume
+# {{< icon name="download" pack="fas" >}} Download my {{< staticref "media/demo_resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
+-->
