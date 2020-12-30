@@ -23,28 +23,28 @@ date_format: Jan 2006
 #   Leave other parameters empty if not required.
 #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
 item:
-- certificate_url: https://www.coursera.org
+- certificate_url: 
   date_end: ""
-  date_start: "2018-10-01"
+  date_start: "2021-02-01"
   description: ""
-  organization: Coursera
-  organization_url: https://www.coursera.org
-  title: Neural Networks and Deep Learning
+  organization: University of Leeds
+  organization_url: https://github.com/ITSLeeds/TDS
+  title: Module Developer and Lead, Transport Data Science
   url: ""
-- certificate_url: https://www.edx.org
+# - certificate_url: https://www.edx.org
+#   date_end: ""
+#   date_start: "2018-03-01"
+#   description: Formulated informed blockchain models, hypotheses, and use cases.
+#   organization: edX
+#   organization_url: https://www.edx.org
+#   title: Blockchain Fundamentals
+#   url: https://www.edx.org/professional-certificate/uc-berkeleyx-blockchain-fundamentals
+- certificate_url:
   date_end: ""
-  date_start: "2018-03-01"
-  description: Formulated informed blockchain models, hypotheses, and use cases.
-  organization: edX
-  organization_url: https://www.edx.org
-  title: Blockchain Fundamentals
-  url: https://www.edx.org/professional-certificate/uc-berkeleyx-blockchain-fundamentals
-- certificate_url: https://www.datacamp.com
-  date_end: "2017-12-21"
-  date_start: "2017-07-01"
-  description: ""
-  organization: DataCamp
-  organization_url: https://www.datacamp.com
-  title: 'Object-Oriented Programming in R: S3 and R6 Course'
-  url: ""
+  date_start: "2019-11-01"
+  description: "The Propensity to Cycle Tool was voted the winning project, ahead of submissions from Transport for London and Oxford City Council. The PCT is a free, open-source tool for transport planning that provides open access data and interactive evidence for cycleway network planning."
+  organization: TransTech
+  organization_url: 
+  title: 'Open Data Award'
+  url: "http://landor.co.uk/transtech/thewinners.php"
 ---
