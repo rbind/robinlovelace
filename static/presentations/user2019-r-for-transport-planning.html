@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <title>R for transport planning</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Robin Lovelace, Institute for Transport Studies and Leeds Institute for Data Analytics, University of Leeds" />
+    <link href="slides_files/remark-css/default.css" rel="stylesheet" />
+    <link href="slides_files/remark-css/default-fonts.css" rel="stylesheet" />
+    <script src="slides_files/htmlwidgets/htmlwidgets.js"></script>
+    <script src="slides_files/plotly-binding/plotly.js"></script>
+    <script src="slides_files/typedarray/typedarray.min.js"></script>
+    <script src="slides_files/jquery/jquery.min.js"></script>
+    <link href="slides_files/crosstalk/css/crosstalk.css" rel="stylesheet" />
+    <script src="slides_files/crosstalk/js/crosstalk.min.js"></script>
+    <link href="slides_files/plotly-htmlwidgets-css/plotly-htmlwidgets.css" rel="stylesheet" />
+    <script src="slides_files/plotly-main/plotly-latest.min.js"></script>
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# R for transport planning
+## Making it more data-driven, modular and open
+### Robin Lovelace, Institute for Transport Studies and Leeds Institute for Data Analytics, University of Leeds
+### 2019-07-10, <a href="http://user2019.r-project.org">UseR 2019</a>
+
+---
+
+
+
+
+
+# Abstract
+
+&lt;font color="grey"&gt;&lt;/font&gt;
+&lt;font color="grey"&gt;Since the first release of R on CRAN, in 1997, its use in many fields has grown rapidly. Lai et al. (2019), for example, suggest that &lt;/font&gt; more than 50% of research articles published in Ecology use R &lt;font color="grey"&gt; in some way.
+
+--
+
+Much like many ecological datasets, &lt;/font&gt;transport datasets tend to be large, diverse and have spatial and temporal attributes.&lt;font color="grey"&gt;
+
+--
+
+Unlike Ecology, Transport Planning has been a slow adopter of R, with a much lower percentage of papers using the language. This raises the question: why? After exploring this question, in relation to dominant transport planning software products, the talk will sketch of what an open source transport planning 'ecosystem' could look like. Based on my own experience, of developing the stplanr package and teaching practitioners, the talk will discuss the importance of building &lt;/font&gt;'communities of practice, for transport planners making the switch to R&lt;font color="grey"&gt;. These observations relate to others promoting R in new environments, and link to the wider question of how to advocate for open source software in wider society.&lt;/font&gt;
+
+&lt;!-- Context: in this session: http://user2019.r-project.org/talk_schedule/ --&gt;
+&lt;!-- 14:00 		Movement &amp; transport 	Rocio Joo --&gt;
+&lt;!-- 	Navigating through the R packages for movement 	Angela Li 	Ariane 1+2 	 --&gt;
+&lt;!-- 14:18 		Movement &amp; transport 	Mohammad Mehdi Moradi --&gt;
+&lt;!-- 	Classes, methods and data analysis for trajectories 	Angela Li 	Ariane 1+2 	 --&gt;
+&lt;!-- 14:36 		Movement &amp; transport 	Christine Thomas-Agnan --&gt;
+&lt;!-- 	Modelling spatial flows with R 	Angela Li 	Ariane 1+2 	 --&gt;
+&lt;!-- 14:54 		Movement &amp; transport 	Robin Lovelace --&gt;
+&lt;!-- 	R for Transport Planning 	Angela Li 	Ariane 1+2 --&gt;
+
+---
+
+background-image: url(car-free-leeds.png)
+background-size: cover
+class: center, top
+
+--
+
+# A dream
+
+Source: [leedscyclingcampaign.co.uk](http://www.leedscyclingcampaign.co.uk/CarFreeSundays)
+
+&lt;!-- Add image from car free day in Leeds --&gt;
+
+---
+
+**The reality**: Source: [photo from run this morning](https://www.flickr.com/photos/97888609@N02/48247197386/in/album-72157709543796761/lightbox/)
+
+&lt;a data-flickr-embed="true" data-context="true"  href="https://www.flickr.com/photos/97888609@N02/48247197386/in/album-72157709543796761/lightbox/" title="IMG_20190710_063516"&gt;&lt;img src="https://live.staticflickr.com/65535/48247197386_391eb748b5_c.jpg" width="800" height="600" alt="IMG_20190710_063516"&gt;&lt;/a&gt;&lt;script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"&gt;&lt;/script&gt;
+
+
+
+---
+
+&lt;img src="https://pbs.twimg.com/media/DOH94nXUIAAgcll.jpg" width="50%" /&gt;
+
+Amsterdam in the 1970s. Via [Brent Toderian](https://twitter.com/BrentToderian)
+
+---
+
+&lt;img src="https://pbs.twimg.com/media/DJaWCo0U8AAzQGW.jpg:large" width="70%" /&gt;
+
+Amsterdam in the 2010s [Brent Toderian](https://twitter.com/BrentToderian)
+
+For more, see historical photos of Amsterdam, e.g. from [fastcompany.com](https://www.fastcompany.com/3052699/these-historical-photos-show-how-amsterdam-turned-itself-into-a-bike-riders-paradise)
+
+
+---
+
+background-image: url(road-casualties.png)
+background-size: cover
+class: left, bottom
+
+Road casualty rates worldwide. Source: WHO. Code: [Robinlovelace/useR2019](https://github.com/Robinlovelace/useR2019)
+
+Transport is the number 1 cause of death among young people (WHO [2018](https://www.who.int/violence_injury_prevention/road_safety_status/2018/en/))
+
+
+
+???
+
+- Fast growing source of energy use and pollution 
+- No 'upper limit' on use
+- Inequalities
+- Number 1 cause of death and injury among young people wide
+
+---
+
+# Transport emissions
+
+&gt; With-out  aggressive  and  sustained  mitigation  policies  being  implemented,  transport  sector  emissions  could  increase  faster  than  in  the  other  energy end-use sectors and could lead to more than a doubling of CO2 emissions by 2050. ([IPCC, 2015](https://www.ipcc.ch/site/assets/uploads/2018/02/ipcc_wg3_ar5_full.pdf))
+
+--
+
+Transport is hard to decarbonise  (Creutzig et al. [2015](https://science.sciencemag.org/content/350/6263/911))
+
+--
+
+Technological change is slow and uncertain.
+Demand reduction is required. 
+
+International Energy Agency's optimistic '[SDS](https://www.iea.org/weo/weomodel/sds/)' scenario:
+
+<div id="htmlwidget-fd5f4109a0ba9eca4da2" style="width:504px;height:288px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-fd5f4109a0ba9eca4da2">{"x":{"data":[{"x":[2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2020,2025,2030],"y":[5.757330139,5.788782784,5.927863204,6.061801968,6.338642644,6.473184126,6.619485384,6.82715492,6.835590435,6.702085503,6.987265405,7.091786215,7.162347348,7.358231685,7.481625205,7.699035601,7.85123826,7.985531305,8.03432696,8.096102647,7.931631026,7.325545654],"text":["year: 2000<br />gtco2: 5.757330","year: 2001<br />gtco2: 5.788783","year: 2002<br />gtco2: 5.927863","year: 2003<br />gtco2: 6.061802","year: 2004<br />gtco2: 6.338643","year: 2005<br />gtco2: 6.473184","year: 2006<br />gtco2: 6.619485","year: 2007<br />gtco2: 6.827155","year: 2008<br />gtco2: 6.835590","year: 2009<br />gtco2: 6.702086","year: 2010<br />gtco2: 6.987265","year: 2011<br />gtco2: 7.091786","year: 2012<br />gtco2: 7.162347","year: 2013<br />gtco2: 7.358232","year: 2014<br />gtco2: 7.481625","year: 2015<br />gtco2: 7.699036","year: 2016<br />gtco2: 7.851238","year: 2017<br />gtco2: 7.985531","year: 2018<br />gtco2: 8.034327","year: 2020<br />gtco2: 8.096103","year: 2025<br />gtco2: 7.931631","year: 2030<br />gtco2: 7.325546"],"type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"rgba(0,0,0,1)","dash":"solid"},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":28.7853881278539,"r":7.30593607305936,"b":42.7397260273973,"l":43.1050228310502},"plot_bgcolor":"rgba(235,235,235,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[1998.5,2031.5],"tickmode":"array","ticktext":["2000","2010","2020","2030"],"tickvals":[2000,2010,2020,2030],"categoryorder":"array","categoryarray":["2000","2010","2020","2030"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"year","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[5.6403915136,8.2130412724],"tickmode":"array","ticktext":["6.0","6.5","7.0","7.5","8.0"],"tickvals":[6,6.5,7,7.5,8],"categoryorder":"array","categoryarray":["6.0","6.5","7.0","7.5","8.0"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"gtco2","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.88976377952756,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","showSendToCloud":false},"source":"A","attrs":{"1b532de72ccc":{"x":{},"y":{},"type":"scatter"}},"cur_data":"1b532de72ccc","visdat":{"1b532de72ccc":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+
+
+---
+
+# Why transport planning with R?
+
+- Integration of most transport planning tasks into a single workflow. For example, the Propensity to Cycle Tool ([www.pct.bike](http://www.pct.bike/)) (Lovelace et al. 2017; Goodman et al. 2019)
+
+.pull-left[
+
+- Geographic data
+
+  - Strong geo community
+- Reproducibility
+  - Transport is inherently part of the democratic process 
+
+- Good transport decision making requires public understanding. R is outstanding at visualisation. 
+
+]
+
+--
+
+.pull-right[
+
+
+&lt;img src="stplanr-rjournal.png" width="100%" /&gt;
+
+]
+
+## +There is a growing R-transport community
+
+&lt;!-- list pkgs here --&gt;
+
+???
+
+ R has a strong and cohesive spatial community
+ 
+ Transport is inherently part of the democratic desision-making process making transparency key. Reproducibility is a strength of R.
+
+---
+
+
+background-image: url(https://raw.githubusercontent.com/moveability/moveability/master/demo-lines.png)
+background-size: cover
+class: center, middle, inverse
+
+# The R for transport landscape
+
+Source [github.com/moveability/moveability](https://github.com/moveability/moveability)
+
+---
+
+### An urban transport hierarchy ([www.smartertransport.uk](https://www.smartertransport.uk/the-urban-transport-hierarchy-defined/))
+
+![](https://www.smartertransport.uk/wp-content/uploads/2019/05/Urban-transport-hierarchy-with-costs.png)
+
+---
+
+# The R transport ecosystem by mode
+
+.pull-left[
+
+
+Walking
+
+- [`moveability`](https://github.com/moveability/moveability)
+- [walkscoreAPI](https://cran.r-project.org/package=walkscoreAPI)
+- [walkalytics](https://github.com/zumbov2/walkalytics) 
+
+Cycling
+
+- [cyclestreets](https://cran.r-project.org/package=cyclestreets)
+- [bikedata](https://github.com/ropensci/bikedata)
+- [cycleRtools](https://cran.r-project.org/web/packages/cycleRtools/vignettes/cycling_data_analysis.html) (sport cycling)
+
+Public transport
+
+- [tidytransit](https://github.com/r-transit/tidytransit)
+
+Multi-modal transport
+
+- [openrouteservice](https://github.com/GIScience/openrouteservice-r)
+- [opentriplanner](https://github.com/ITSLeeds/opentripplanner)
+
+]
+
+--
+
+.pull-right[
+
+
+```r
+# To install these packages:
+
+install.packages(
+  "walkscoreAPI",
+  "walkalytics",
+  "cyclestreets",
+  "bikedata",
+  "cycleRtools"
+  "tidytransit"
+  )
+
+remotes::install_github(
+  "moveability/moveability",
+  "itsleeds/opentripplanner",
+  "GIScience/openrouteservice-r"
+)
+```
+
+]
+
+---
+
+
+# Transport ecosystem by geographic level
+
+.pull-left[
+
+Area based analysis
+
+- [sf](https://github.com/r-spatial/sf)
+- [raster](https://cran.r-project.org/package=raster)
+- [INLA](https://paula-moraga.github.io/book-geospatial/) 
+
+Origin destination data
+
+- [stplanr](https://cran.r-project.org/package=raster)
+- [flows package](https://cran.r-project.org/web/packages/flows/vignettes/flows.html) 
+
+Routes
+
+- [trajectories](https://cran.r-project.org/package=raster)
+- Routing services 
+
+Route networks
+
+- [SpatialLinesNetwork](https://ropensci.github.io/stplanr/reference/SpatialLinesNetwork.html) class
+- [sfnetworks](https://github.com/luukvdmeer/sfnetworks) - upcoming blog post: github.com/spnethack/spnethack
+
+]
+
+--
+
+.pull-right[
+
+
+```r
+# To install these packages:
+
+install.packages(
+  "sf",
+  "raster",
+  "stplanr",
+  "flows"
+  )
+
+remotes::install_github(
+  "luukvdmeer/sfnetworks"
+)
+```
+
+Useful guiding principle in Transport Planning (see [transport](https://geocompr.robinlovelace.net/transport.html) chapter in *Geocomputation with R*)
+
+- Note: there are many other packages for transport planning- not comprehensive lists
+
+]
+
+---
+
+background-image: url(https://raw.githubusercontent.com/npct/pct-team/master/figures/sdna-san-fran.png)
+background-size: cover
+class: center, middle
+
+--
+
+# Current transport software
+
+## Credit: Crispin Cooper, author of C++ library sDNA
+
+---
+
+.right-column[
+
+### The four stage model
+
+![](https://www.researchgate.net/profile/Marek_Drliciak/publication/271423569/figure/fig1/AS:562670382350336@1511162481936/The-classic-four-stage-transport-model-4.png)&lt;!-- --&gt;
+
+Still dominates transport planning models (Boyce and Williams 2015)
+]
+
+--
+
+### Software landscape
+
+- Dominated by a few proprietary products
+
+- Limited support community online 
+
+- High degree of lock-in
+
+- Limited cross-department collaboration
+
+---
+
+# Existing products
+
+&lt;table&gt;
+&lt;caption&gt;Sample of transport modelling software in use by practitioners. Note: citation counts based on searches for company/developer name, the product name and 'transport'. Data source: Google Scholar searches, October 2018.&lt;/caption&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Software &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Company/Developer &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Company HQ &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Licence &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Citations &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Visum &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; PTV &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Germany &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Proprietary &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1810 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; MATSim &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; TU Berlin &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Germany &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Open source (GPL) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1470 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; TransCAD &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Caliper &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; USA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Proprietary &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1360 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; SUMO &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; DLR &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Germany &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Open source (EPL) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1310 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Emme &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; INRO &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Canada &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Proprietary &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 780 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Cube &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Citilabs &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; USA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Proprietary &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 400 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; sDNA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Cardiff University &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; UK &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Proprietary &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 170 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+
+# User support
+
+Getting help is vital for leaning/improving software
+
+--
+
+
+
+&lt;img src="transport-planning-proposal.png" width="1413" /&gt;
+
+
+&lt;!-- --- --&gt;
+
+&lt;!-- # Online communities --&gt;
+
+&lt;!-- - [gis.stackexchange.com](https://gis.stackexchange.com/questions) has 21,314 questions  --&gt;
+
+&lt;!-- - [r-sig-geo](http://r-sig-geo.2731867.n2.nabble.com/) has 1000s of posts --&gt;
+
+&lt;!-- - RStudio's Discourse community has 65,000+ posts already! --&gt;
+
+&lt;!-- -- --&gt;
+
+&lt;!-- - No transport equivalent (e.g. earthscience.stackexchange.com is in beta) --&gt;
+
+&lt;!-- - Potential for a Discourse forum or similar: transport is not (just) GIS --&gt;
+
+&lt;!-- --- --&gt;
+
+&lt;!-- # Best way to get support is peer-to-peer: --&gt;
+
+&lt;!-- ![](rstudio-community.png) --&gt;
+
+&lt;!-- Source: https://community.rstudio.com/about --&gt;
+
+---
+
+# Transport planning is PRICEY
+
+
+"10-Hour Service Pack $2,000" (source: [caliper.com/tcprice.htm](https://www.caliper.com/tcprice.htm))
+
+![](https://www.robinlovelace.net/presentations/price-transcad.png)&lt;!-- --&gt;
+
+Source: [google.com/search?q=transcad+price](https://www.google.com/search?q=transcad+price)
+
+---
+
+background-image: url(https://media.giphy.com/media/YlQQYUIEAZ76o/giphy.gif)
+background-size: cover
+class: center, middle
+
+
+# Where next for R-transport?
+
+---
+
+# Questions and suggestions
+
+- Shift focus to communication of what's *already possible*
+
+- 'Dev story' of existing products: A 'Better planning in less time' article, building on Lowndes et al. ([2017](https://jules32.github.io/opensci-talk/short#1))? E.g. for ([PCT.bike](http://www.pct.bike/)) 
+
+- For developers: invite others to contribute and open issues
+
+- For potential developers: consider contributing to existing projects before creating new ones
+
+- For everyone: cite code, communicate, collaborate
+
+--
+
+## Questions
+
+- Is there a need for a 'transportverse'?
+- How can we best take this forward?
+
+---
+
+class: center, bottom, inverse
+
+
+# Credits, references and further links
+
+--
+
+Boyce, D.E., Williams, H.C.W.L., 2015. Forecasting Urban Travel: Past, Present and Future. Edward Elgar Publishing.
+
+--
+
+The Propensity to Cycle Tool: http://www.pct.bike/ Lovelace, R., Goodman, A., Aldred, R., Berkoff, N., Abbas, A., Woodcock, J., 2017. The Propensity to Cycle Tool: An open source online system for sustainable transport planning. Journal of Transport and Land Use 10. https://doi.org/10.5198/jtlu.2016.862
+
+--
+
+Goodman, Anna, et al. "Scenarios of cycling to school in England, and associated health and carbon impacts: Application of the ‘Propensity to Cycle Tool’." Journal of Transport &amp; Health 12 ([2019](https://www.sciencedirect.com/science/article/pii/S2214140518301257)): 263-278.
+
+--
+
+Open source 'geocompr' book: Lovelace, R., Nowosad, J., Meunchow, J., 2019. Geocomputation with R. CRC Press: https://geocompr.robinlovelace.net/
+
+--
+
+Lovelace, Robin, and Richard Ellison. "stplanr: A package for transport planning." The R Journal 10.2 ([2018](https://journal.r-project.org/archive/2018/RJ-2018-053/index.html)): 7-23. 
+
+--
+
+To get in touch: [GitHub](https://github.com/robinlovelace/), [Twitter](https://twitter.com/robinlovelace),  or email at r. lovelace. at leeds dot ac. uk!
+
+--
+
+Safe travels!
+
+---
+
+# Other things: future of transport planning
+
+- Example: StreetMix ([streetmix.net](https://streetmix.net/))
+
+&lt;img src="http://1p40p3gwj70rhpc423s8rzjaz-wpengine.netdna-ssl.com/wp-content/uploads/2016/03/2016_0211_2ndAvePioneerSquareFlyer-streetmix.jpg" width="60%" /&gt;
+
+---
+
+# Sumo and netlogo
+
+&lt;img src="https://user-images.githubusercontent.com/1825120/46748345-41c98580-ccab-11e8-8093-b265bd36f639.gif" width="70%" /&gt;
+
+Source: [github.com/eclipse/sumo](https://github.com/eclipse/sumo/issues/2409)
+
+.pull-left[
+
+&lt;img src="https://raw.githubusercontent.com/nldoc/nlrx/master/man/figures/logo.png" width="20%" /&gt;
+
+]
+
+Source: [github.com/nldoc/nlrx](https://github.com/nldoc/nlrx)
+
+---
+
+### Gamification
+
+![](https://www.robinlovelace.net/presentations/citybound.png)&lt;!-- --&gt;
+
+- Completely open source, written in [rust](https://github.com/citybound/citybound)
+- Source: video at https://aeplay.org/citybound
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="libs/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

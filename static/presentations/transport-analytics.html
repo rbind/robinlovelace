@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <title>Transport Data Science</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Robin Lovelace" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/robot.css" rel="stylesheet" />
+    <link href="libs/remark-css/robot-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Transport Data Science
+## 🚶, 🚲, 🚌, 🚀<br/>from regional to street levels
+### Robin Lovelace
+### University of Leeds
+### 2020-05-28 (updated: 2020-01-15)
+
+---
+
+
+background-image: url(https://media.giphy.com/media/YlQQYUIEAZ76o/giphy.gif)
+background-size: cover
+class: center, middle
+
+
+# Imagining
+
+--
+
+# and modelling
+
+--
+
+# plausible
+
+--
+
+# transport futures
+
+--
+
+
+
+
+
+```r
+# to reproduce these slides do:
+pkgs = c("rgdal", "sf", "geojsonsf")
+install.packages(pkgs)
+```
+
+--
+
+
+
+
+
+The Best Self-Help Books to Read in 2019, According to Amazon and Goodreads
+
+
+???
+
+Abstract:
+
+Data Science has emerged as an area of high and consistent growth in many sectors. High tech industries such as search engine optimisation, marketing and retail analytics have been quick to adopt new workflows. Transport has arguably been slow to adapt to the transformations towards open source software (as opposed to proprietary products that still dominate), command line and scriptable interfaces (unlike the graphical user interfaces of tools such as Excel) and code sharing and version development via platforms such as GitHub. This talk demonstrates these new workflows, building on the Transport chapter in the open source book Geocomputation with R and experience developing and deploying data science tools that are having a real world impact on transport policy and practice. It will provide insight into how multiple geographic scales of analysis were used to develop the Propensity to Cycle Tool, which Robin developed in collaboration with colleagues from 4 universities and which is being used by dozens of Local Authorities to develop strategic cycle networks. Furthermore, a live demo of the recently release stats19 package, which provides fast access to crash data for road safety research, will highlight the power of reproducibility and that transport data science is a practical field best discovered by doing it and collaboration using reproducible code.
+
+---
+
+## From humble beginnings
+
+- First Transport Hackathon at ODI Leeds in February 2015
+
+- Involved identifying key routes and mapping them
+
+- For detailed description, see the first PCT paper (Lovelace et al. 2017)
+
+![](https://raw.githubusercontent.com/npct/pct-team/master/figures/early.png)&lt;!-- --&gt;
+
+---
+
+## Sharpening your programming skills
+
+
+.pull-left[
+
+![](https://csgillespie.github.io/efficientR/figures/f0_web.png)&lt;!-- --&gt;
+
+]
+
+--
+
+.pull-right[
+
+### Handy chapters:
+
+#### Efficient set-up
+
+#### Efficient workflow
+
+#### Efficient collaboration
+
+]
+
+---
+
+# Geographic data analysis
+
+.pull-left[
+
+- Chapter 1: History + 'philosophy' = important
+
+Foundations
+
+- Starting from nothing
+- Class definitions
+- Spatial/attribute operations
+- Projections 
+- Data IO
+
+Extensions
+
+- Advanced methods
+- How to build your own functions
+
+Applications
+
+- A taster of what you can do
+
+]
+
+.pull-right[
+&lt;img src="https://geocompr.robinlovelace.net/images/cover.png" height="500" /&gt;
+]
+
+---
+
+## A typology of transport datasets
+
+.pull-left[
+
+### [Transportation chapter](https://geocompr.robinlovelace.net/transport.html) 
+
+#### Geocomputation with R
+
+- Transport zones / centroids
+- Desire lines
+- Routes
+- Nodes
+- Agents
+- Route networks
+
+]
+
+.pull-right[
+
+![](https://geocompr.robinlovelace.net/figures/bristol.png)
+
+]
+
+---
+
+# Zones
+
+![](https://geocompr.robinlovelace.net/figures/zones-1.png)
+
+---
+
+### Desire lines
+
+![](https://geocompr.robinlovelace.net/figures/desire-1.png)
+
+---
+
+### Route networks
+
+![](https://blogpctbike.files.wordpress.com/2017/10/rnet-newcastle-cost-road.png)
+
+---
+
+## From code to impact
+
+&lt;img src="https://raw.githubusercontent.com/npct/pct-team/master/figures/front-page-leeds-pct-demo.png" width="90%" /&gt;
+
+--
+
+Source - https://github.com/npct which hosts national web tool PCT [www.pct.bike](http://www.pct.bike/)
+
+---
+
+class: center, middle
+
+# Thanks!
+
+Contact me at r. lovelace at leeds ac dot uk (email), `@robinlovelace` (twitter + github)
+
+--
+
+Check-out my repos at https://github.com/robinlovelace/
+
+--
+
+For more information on efficient workflows, see our book [*Efficient R Programming*](https://csgillespie.github.io/efficientR/)
+
+--
+
+Thanks to all the R developers who made this possible, including (for this presentation):
+
+[remark.js](https://remarkjs.com), [**knitr**](http://yihui.name/knitr), and [R Markdown](https://rmarkdown.rstudio.com).
+
+Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
+
+--
+
+Thanks to everyone for building a open and collaborative communities!
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="https://platform.twitter.com/widgets.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

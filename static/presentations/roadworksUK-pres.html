@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Digging in the street</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Robin Lovelace and Malcolm Morgan, ITS Leeds" />
+    <link href="roadworksUK-pres_files/remark-css/default.css" rel="stylesheet" />
+    <link href="roadworksUK-pres_files/remark-css/default-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Digging in the street
+## 🚧<br/>tools and analysis to unleash roadworks data
+### Robin Lovelace and Malcolm Morgan, ITS Leeds
+### RAC Foundation, London, 2018-11-01
+
+---
+
+
+
+
+
+
+
+## Abstract
+
+This presentation reports on the findings and outcomes of a three-month study funded by the RAC Foundation, based on data provided by Elgin, a company which hosts the website https://roadworks.org.
+The main findings on the number and type of works demonstrate the diversity of reporting conventions accross the UK, highlighting the potential for harmonisation. We'll also touch on data on 'Section 58 Restrictions'; traffic disruptions (thanks to data from TomTom); and  visitors to the roadworks.org website.
+The presentation will culminate in a live demo of the R package **roadworksUK**, software we wrote for the project.
+
+
+
+---
+background-image: url(https://media.giphy.com/media/l1cMaoSxV9KM0/giphy.gif)
+background-size: cover
+class: center, bottom, inverse
+
+???
+
+This shows us 3 things about road works: ubiquity (caused by fact roads are used for lots more than transport); impact on road users; and wider impacts.
+---
+
+# The value of visualisation/analyisis
+
+.pull-left[
+
+- It's great to have data
+
+- But it can only be used if it can be understood
+
+- And that involves visualisation
+
+- E.g. 1: Popensity to Cycle Tool: http://www.pct.bike/
+
+- E.g. 2: 'geoplumber': http://www.geoplumber.com/deck
+
+]
+
+--
+
+.pull-right[
+
+![](https://raw.githubusercontent.com/npct/pct-team/master/figures/haystack.png)&lt;!-- --&gt;![](https://raw.githubusercontent.com/npct/pct-team/master/figures/leed-bradford-lsoa-dutch.png)&lt;!-- --&gt;
+
+
+
+]
+
+---
+
+# Road works vs street works
+
+
+.pull-left[
+
+&lt;img src="https://c8.alamy.com/comp/MMFX5H/bristol-uk-11th-may-2018-workmen-seen-carrying-out-overnight-resurfacing-of-the-wells-road-a37-outbound-broadfield-road-to-airport-road-on-friday-11th-may-part-of-a-larger-on-going-scheme-bristol-city-council-and-north-east-somerset-council-made-a-joint-bid-to-the-department-of-transport-for-the-local-highways-maintenance-challenge-fund-total-amount-awarded-which-includes-a-contribution-from-each-authority-is-64m-proposed-carriageway-reconstruction-a4-and-a4174-corridors-robert-timoneyalamylivenews-MMFX5H.jpg" width="90%" /&gt;
+
+- Road works: Roadworks conducted by highway authorities (source: alamy)
+
+]
+
+--
+
+.pull-right[
+
+![](https://www.kentonline.co.uk/_media/img/JSUI48FJ0UR7J24EDRC5.jpg)&lt;!-- --&gt;
+
+- Street works: Roadworks conducted by statutory undertakers such as utility companies (source: KentOnline)
+
+]
+
+--
+
+### We use roadworks to refer to all disruptions on the road network
+
+---
+
+# Live demo
+
+.pull-left[
+
+
+- Who has heard of 'R' (before today)?
+
+- Who understands this?:
+
+
+```r
+install.packages("devtools")
+library(devtools)
+pkg = "ITSLeeds/roadworksUK"
+install_github(pkg)
+```
+
+- R is a *programming language*
+
+]
+
+.pull-right[
+
+- Good news: it's free
+
+- And increasingly easy to use
+
+- Thanks to innovations like RStudio:
+
+&lt;p&gt;&lt;a href="https://www.rstudio.com/products/RStudio/?wvideo=520zbd3tij"&gt;&lt;img src="https://embedwistia-a.akamaihd.net/deliveries/260e6e980f526abaedf8ef3378270c899da74f08.jpg?image_play_button_size=2x&amp;amp;image_crop_resized=960x540&amp;amp;image_play_button=1&amp;amp;image_play_button_color=71a5d4e0" style="width: 400px; height: 225px;" width="400" height="225"&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="https://www.rstudio.com/products/RStudio/?wvideo=520zbd3tij"&gt;RStudio IDE Overview&lt;/a&gt;&lt;/p&gt;
+
+]
+---
+
+class: center, middle
+
+# Thanks!
+
+SMany thanks to Elgin for providing the data and RAC Foundation for funding the project.
+
+lides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();</script>
+
+<script>
+(function() {
+  var i, text, code, codes = document.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+})();
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

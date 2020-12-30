@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Geocomputation for active transport planning</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Robin Lovelace" />
+    <meta name="date" content="2018-05-16" />
+    <link href="libs2/remark-css/default.css" rel="stylesheet" />
+    <link href="libs2/remark-css/default-fonts.css" rel="stylesheet" />
+    <script src="libs2/htmlwidgets/htmlwidgets.js"></script>
+    <script src="libs2/jquery/jquery.min.js"></script>
+    <link href="libs2/datatables-css/datatables-crosstalk.css" rel="stylesheet" />
+    <script src="libs2/datatables-binding/datatables.js"></script>
+    <link href="libs2/dt-core/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="libs2/dt-core/css/jquery.dataTables.extra.css" rel="stylesheet" />
+    <script src="libs2/dt-core/js/jquery.dataTables.min.js"></script>
+    <link href="libs2/crosstalk/css/crosstalk.css" rel="stylesheet" />
+    <script src="libs2/crosstalk/js/crosstalk.min.js"></script>
+    <link href="libs2/leaflet/leaflet.css" rel="stylesheet" />
+    <script src="libs2/leaflet/leaflet.js"></script>
+    <link href="libs2/leafletfix/leafletfix.css" rel="stylesheet" />
+    <script src="libs2/Proj4Leaflet/proj4-compressed.js"></script>
+    <script src="libs2/Proj4Leaflet/proj4leaflet.js"></script>
+    <link href="libs2/rstudio_leaflet/rstudio_leaflet.css" rel="stylesheet" />
+    <script src="libs2/leaflet-binding/leaflet.js"></script>
+    <script src="libs2/leaflet-providers/leaflet-providers.js"></script>
+    <script src="libs2/leaflet-providers-plugin/leaflet-providers-plugin.js"></script>
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Geocomputation for active transport planning
+## 🚲<br/>a case study of cycle network design<br/>Slides: <a href="https://github.com/Robinlovelace/erum18-transport">github.com/Robinlovelace/erum18-transport</a>
+### Robin Lovelace
+### 2018-05-16
+
+---
+
+
+
+
+# Outline
+
+.pull-left[
+
+##  The problem
+
+## Solutions
+
+## How R can help
+
+]
+
+--
+
+.pull-right[
+
+![](https://media.giphy.com/media/oedEsOtNFyODC/giphy.gif)
+
+]
+
+---
+
+# whoami
+
+.pull-left[
+- Environmental geographer
+
+- Learned R for PhD on energy and transport
+
+- Now work at the University of Leeds (ITS and LIDA)
+
+- Working on Geocomputation with R
+
+
+```r
+devtools::install_github("r-rust/gifski")
+system("youtube-dl https://youtu.be/CzxeJlgePV4 -o v.mp4")
+system("ffmpeg -i v.mp4 -t 00:00:03 -c copy out.mp4")
+system("ffmpeg -i out.mp4 frame%04d.png ")
+f = list.files(pattern = "frame")
+gifski::gifski(f, gif_file = "g.gif", width = 200, height = 200)
+```
+
+]
+
+--
+
+.pull-right[
+Image credit: Jeroen Ooms + others
+
+
+```r
+knitr::include_graphics("https://user-images.githubusercontent.com/1825120/39661313-534efd66-5047-11e8-8d99-a5597fe160ff.gif")
+```
+
+&lt;img src="https://user-images.githubusercontent.com/1825120/39661313-534efd66-5047-11e8-8d99-a5597fe160ff.gif" width="100%" /&gt;
+
+]
+
+---
+
+class: inverse, center, middle
+
+# The problem
+
+---
+background-image: url(https://pbs.twimg.com/media/DOH94nXUIAAgcll.jpg)
+background-position: 50% 50%
+class: center, bottom, inverse
+
+# Cities look a bit like this
+
+---
+
+# Transport: growing source of emissions
+
+.pull-left[
+
+
+```r
+knitr::include_graphics("https://raw.githubusercontent.com/Robinlovelace/erum18-transport/master/transport-projections-ipcc.png")
+```
+
+![](https://raw.githubusercontent.com/Robinlovelace/erum18-transport/master/transport-projections-ipcc.png)&lt;!-- --&gt;
+
+]
+
+--
+
+.pull-right[
+
+- People like to travel!
+
+- Does not 'saturate' with income
+
+- Hard to decarbonise via technology
+
+![](https://media2.giphy.com/media/3o7TKOB6oTdYPFXJmw/giphy.gif)
+![](https://media1.giphy.com/media/YlQQYUIEAZ76o/200w.gif)
+
+]
+
+---
+class: inverse, center, middle
+
+# Solutions
+
+---
+
+# Make cycling the natural choice
+
+&lt;img src="https://pbs.twimg.com/media/DJaWCo0U8AAzQGW.jpg:large" width="70%" /&gt;
+
+Source: [Brent Toderian](https://twitter.com/BrentToderian)
+
+--
+
+## For everyone: a political problem
+
+---
+
+# Another problem...
+
+&lt;img src="https://larrycuban.files.wordpress.com/2015/02/data-overload-2.jpg" width="80%" /&gt;
+
+--
+
+## Data overload
+
+&lt;!-- Source: [Larry Cuban](https://larrycuban.files.wordpress.com/2015/02/data-overload-2.jpg) --&gt;
+
+---
+class: inverse, center, middle
+
+# Technical solutions
+
+---
+
+# Simplify the data deluge
+
+Cycling network in Seville: 'basic' (77 km) and ‘complementary’ (120 km, dashed line) cycleways (from Marqués et al. 2015). Led to fourfold increase in cycling. 
+
+![](https://raw.githubusercontent.com/ATFutures/who/master/fig/sevnet2.png)&lt;!-- --&gt;
+
+---
+
+## Estimate cycling pontential: the Propensity to Cycle Tool - see [w](http://npct0.vs.mythic-beasts.com/shiny_interface/?r=west-yorkshire)[ww.pct.bike](www.pct.bike)
+
+Included in UK policy (CWIS) used by many local authorities (LCWIP)
+(Lovelace, Goodman, Aldred, Berkoff, Abbas, and Woodcock, 2017)
+
+
+&lt;img src="https://raw.githubusercontent.com/npct/pct-team/master/figures/front-page-leeds-pct-demo.png" width="70%" /&gt;
+
+---
+
+# Build infrastructure
+
+- Link between infrastructure and uptake between 2001 and 2011 in English regions
+- But how to ensure that infrastructure is effective?
+
+&lt;img src="https://raw.githubusercontent.com/cyipt/cyipt-website/master/images/ttwa-uptake.png" width="80%" /&gt;
+
+---
+
+# Identify cost-effective schemes: the CyIPT
+
+- A ~~publicly available~~ password protected web app providing accessible evidence on cycling infrastructure hosted at [www.cyipt.bike](https://www.cyipt.bike/)
+
+![](https://www.cyipt.bike/images/home-example.png)&lt;!-- --&gt;
+
+---
+class: inverse, center, middle
+
+# How R can help
+
+An open source language for statistical computing
+(R Core Team, 2018)
+
+---
+
+# Scalability
+
+<div id="htmlwidget-7f29a847bcf4d9d8a56f" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-7f29a847bcf4d9d8a56f">{"x":{"filter":"none","fillContainer":false,"data":[["1","2","3","4","5","6"],["Propensity to Cycle Tool","Prioritization Index (Larsen et al. 2013)","Permeability Assessment Tool (Payne 2014)","Usage intensity index (Zhang et al. 2014)","Bicycle share model (Parkin et al. 2008)","Cycling Potential Tool (TfL 2010)"],["National: England","Local: Montreal","Local: Dublin","Local: Belo Horizonte","National: England, Wales","Local: London"],["Online map-based  tool","GIS-based","GIS-based","GIS-based","Static results","Static results"],["Area, OD, route","Area, route, point","Area, OD, route","Area, OD, route, individual","Area, route","Area, individual"],["Area, OD, route, route network","Area","OD, route","Area, individual, route","Area","Area, population segment"],["R: Open source (AGPL)","ArcGIS: Proprietary","ArcGIS: Proprietary","ArcGIS: Proprietary","Unknown","Unknown"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Tool/method<\/th>\n      <th>Scale<\/th>\n      <th>Accessibility<\/th>\n      <th>Levels of input data<\/th>\n      <th>Levels of output<\/th>\n      <th>Software licence<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":8,"order":[],"autoWidth":false,"orderClasses":false,"columnDefs":[{"orderable":false,"targets":0}],"lengthMenu":[8,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+
+---
+
+# Visualisation
+
+- Live demo...
+
+
+```r
+# try it!
+shiny::runGitHub("robinlovelace/erum18-transport")
+```
+
+- More on shiny-leaflet integration: [Section 9.5](http://geocompr.robinlovelace.net/adv-map.html#mapping-applications) in
+(Lovelace, Nowosad, and Meunchow, 2018)
+
+- **stplanr**
+(Pebesma, 2018)
+making use of **sf**
+(Lovelace and Ellison, 2018)
+
+---
+
+# Some example shiny code
+
+
+```r
+# non-reproducible snippet
+getroads = reactive({                 
+  roads[roads$highway == input$type, ]
+})
+renderLeaflet({
+  m = tm_shape(getroads()) +
+    tm_lines(col = "red", lwd = 5) +
+  tmap_leaflet(m) # you can use tmap in shiny!
+})
+```
+
+---
+
+# Local routing
+
+.pull-left[
+
+
+```r
+fr = stplanr::geo_code(
+  "Budapest airport")
+to = stplanr::geo_code(
+  "akvarium budapest")
+# install.packages("cyclestreets")
+library(cyclestreets)
+r = journey(fr, to)
+```
+
+
+
+
+```r
+# From Martin's workshop:
+library(tmap)
+bm = leaflet::providers
+bm_cycle = bm$Thunderforest.OpenCycleMap
+m = tm_shape(r) +
+  tm_lines(col = "busynance",
+           lwd = 5) +
+  tm_scale_bar()
+```
+
+
+]
+
+.pull-right[
+
+See: [rpubs.com/RobinLovelace/389709](http://rpubs.com/RobinLovelace/389709)
+
+
+```r
+tmap_leaflet(m)
+```
+
+<div id="htmlwidget-7bc540fdb4dcb27b6a96" style="width:350px;height:400px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-7bc540fdb4dcb27b6a96">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["CartoDB.Positron",null,"CartoDB.Positron",{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"pane":"tilePane"}]},{"method":"addProviderTiles","args":["OpenStreetMap",null,"OpenStreetMap",{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"pane":"tilePane"}]},{"method":"addProviderTiles","args":["Esri.WorldTopoMap",null,"Esri.WorldTopoMap",{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"pane":"tilePane"}]},{"method":"addPolylines","args":[[[[{"lng":[19.2649,19.26536,19.26553,19.26554,19.26582,19.26602,19.26628,19.26651,19.26664],"lat":[47.42805,47.42776,47.42766,47.42765,47.42747,47.42741,47.4274,47.42744,47.42749]}]],[[{"lng":[19.26664,19.26679,19.26694,19.26745,19.26833,19.2694,19.27071,19.27102,19.28658,19.28659,19.28655,19.28601,19.28583,19.2856],"lat":[47.42749,47.42748,47.42747,47.42769,47.42836,47.42894,47.42992,47.42995,47.42037,47.42031,47.42024,47.41962,47.41947,47.4192]}]],[[{"lng":[19.2856,19.28544],"lat":[47.4192,47.41905]}]],[[{"lng":[19.28544,19.28517,19.28509,19.28495,19.28472],"lat":[47.41905,47.41873,47.41866,47.41855,47.41825]}]],[[{"lng":[19.28472,19.28456,19.28442,19.28432,19.28428,19.28425,19.28416,19.28402,19.28386,19.28347],"lat":[47.41825,47.41804,47.4178,47.41751,47.41728,47.41708,47.41677,47.41651,47.41631,47.41601]}]],[[{"lng":[19.28347,19.28176],"lat":[47.41601,47.41491]}]],[[{"lng":[19.28176,19.28135,19.28088,19.28031,19.28027],"lat":[47.41491,47.41459,47.41415,47.41352,47.41349]}]],[[{"lng":[19.28027,19.2799,19.27893,19.27841,19.27747],"lat":[47.41349,47.41312,47.4121,47.41155,47.41071]}]],[[{"lng":[19.27747,19.27503,19.275],"lat":[47.41071,47.41185,47.41191]}]],[[{"lng":[19.275,19.27348,19.27085],"lat":[47.41191,47.41252,47.41344]}]],[[{"lng":[19.27085,19.26978,19.26975],"lat":[47.41344,47.41197,47.41193]}]],[[{"lng":[19.26975,19.26954,19.26879,19.26811,19.26799,19.267,19.26603,19.26502,19.2649,19.26382,19.26282,19.26176,19.26026,19.25893,19.2588,19.25705],"lat":[47.41193,47.412,47.41224,47.41246,47.4125,47.41282,47.41314,47.41347,47.41351,47.41387,47.4142,47.41456,47.41504,47.41546,47.41551,47.41608]}]],[[{"lng":[19.25705,19.25676,19.25583,19.25554,19.25506,19.25447,19.25413,19.25397,19.25378,19.25358,19.25331,19.25313,19.25304,19.25298,19.25293,19.25289,19.25282,19.2527],"lat":[47.41608,47.41624,47.41659,47.4167,47.41686,47.41705,47.41717,47.41722,47.41727,47.41733,47.41743,47.41752,47.4176,47.41768,47.4179,47.41794,47.41798,47.41801]}]],[[{"lng":[19.2527,19.25222,19.25175,19.25116,19.25061],"lat":[47.41801,47.41803,47.41807,47.41815,47.41828]}]],[[{"lng":[19.25061,19.25018,19.24927,19.24811,19.24801,19.24797],"lat":[47.41828,47.41846,47.41875,47.41915,47.41922,47.41929]}]],[[{"lng":[19.24797,19.24799,19.24796,19.24789,19.24781,19.24772,19.24765],"lat":[47.41929,47.41935,47.41941,47.41945,47.41947,47.41946,47.41942]}]],[[{"lng":[19.24765,19.24754,19.24738,19.24595,19.24535],"lat":[47.41942,47.41939,47.41938,47.41983,47.41997]}]],[[{"lng":[19.24535,19.24443,19.24395,19.24368,19.243,19.24245,19.24178,19.2412,19.24068,19.24033,19.24,19.23972,19.23962,19.23953,19.23946,19.23854,19.23705,19.23615,19.23609,19.236,19.23596,19.23455,19.23148,19.22822,19.22588,19.2254,19.22497,19.22445,19.22395,19.22335,19.22319,19.2223,19.22226,19.22223,19.22219,19.22199,19.22156,19.22105,19.22037,19.21981,19.21933,19.21787],"lat":[47.41997,47.42033,47.42056,47.42071,47.42111,47.42145,47.4219,47.42236,47.42282,47.42314,47.42344,47.42367,47.42377,47.42385,47.42392,47.42473,47.42604,47.42682,47.4269,47.42699,47.42703,47.4283,47.43104,47.43398,47.43607,47.43647,47.43682,47.43721,47.43755,47.43797,47.43808,47.43869,47.43873,47.43875,47.43878,47.43893,47.43919,47.43945,47.43986,47.44018,47.44047,47.44134]}]],[[{"lng":[19.21787,19.21751,19.21699,19.21673,19.21654,19.21504,19.21456,19.21374,19.21333,19.2126,19.2124,19.21181,19.21105,19.21016,19.20905,19.20716,19.20485,19.20337,19.20263,19.20207,19.20172,19.20152,19.20119,19.20065,19.20001,19.19934,19.19834,19.19756,19.19742,19.19704,19.19648,19.19626,19.19596,19.19553,19.19468,19.19383,19.19281,19.19199,19.19098,19.19,19.18895,19.1858,19.18413,19.18273,19.182,19.17912,19.17816,19.17696,19.17684,19.17638,19.17584,19.17532,19.17479,19.17415,19.1729,19.17237,19.172,19.17098,19.17059,19.17016,19.16946,19.16884],"lat":[47.44134,47.44159,47.44194,47.44211,47.44222,47.44312,47.44341,47.44392,47.44418,47.44463,47.44474,47.44508,47.44554,47.44607,47.44674,47.44784,47.44925,47.45012,47.45053,47.45082,47.451,47.4511,47.45126,47.4515,47.45177,47.45204,47.45241,47.45269,47.45273,47.45285,47.45302,47.45308,47.45316,47.45326,47.45347,47.45368,47.45394,47.45412,47.45437,47.45462,47.45489,47.45563,47.45604,47.4564,47.45658,47.4573,47.45754,47.45785,47.45787,47.45801,47.45822,47.45842,47.45869,47.45901,47.45964,47.4599,47.46008,47.46057,47.46077,47.46099,47.46137,47.46168]}]],[[{"lng":[19.16884,19.16901,19.16913],"lat":[47.46168,47.46235,47.4628]}]],[[{"lng":[19.16913,19.16817,19.16681,19.16585,19.16525,19.16508,19.16458],"lat":[47.4628,47.46365,47.46472,47.46519,47.46564,47.46578,47.46616]}]],[[{"lng":[19.16458,19.16448,19.1633,19.16201,19.16166],"lat":[47.46616,47.46612,47.46555,47.46498,47.4648]}]],[[{"lng":[19.16166,19.15998,19.15983],"lat":[47.4648,47.46577,47.4659]}]],[[{"lng":[19.15983,19.15972],"lat":[47.4659,47.46591]}]],[[{"lng":[19.15972,19.15901,19.15804,19.15755,19.15732,19.15695,19.15602,19.15582,19.15548,19.15536,19.15358,19.1535,19.15341,19.15143,19.15111,19.151,19.15096,19.15076,19.15017,19.14905,19.14805,19.14637,19.14481,19.14309,19.14158,19.1415,19.13997,19.13961,19.13939,19.13849,19.13846,19.1374,19.13638,19.13571,19.13517,19.13376],"lat":[47.46591,47.46629,47.46681,47.46708,47.46721,47.46741,47.4679,47.46801,47.46819,47.46825,47.46918,47.46922,47.46927,47.4703,47.47047,47.47053,47.47055,47.47065,47.47096,47.47155,47.47206,47.47295,47.47376,47.47481,47.47569,47.47573,47.47663,47.47685,47.47699,47.4775,47.47752,47.4781,47.47885,47.47933,47.47972,47.48067]}]],[[{"lng":[19.13376,19.13362,19.13352,19.13346,19.13297,19.13289],"lat":[47.48067,47.48077,47.48087,47.48094,47.48163,47.48172]}]],[[{"lng":[19.13289,19.13257],"lat":[47.48172,47.48176]}]],[[{"lng":[19.13257,19.13263,19.13265],"lat":[47.48176,47.48182,47.48185]}]],[[{"lng":[19.13265,19.13243,19.13107,19.13082,19.13062,19.13041,19.13027,19.13006,19.12992],"lat":[47.48185,47.48189,47.48214,47.4822,47.48227,47.48237,47.48245,47.48254,47.48258]}]],[[{"lng":[19.12992,19.1298,19.12968,19.12951,19.12929,19.12911,19.12892,19.12871,19.12854,19.12835,19.12827,19.12822,19.12814,19.12799,19.12759,19.12726,19.12685,19.12678,19.12659,19.12655,19.12624,19.1254],"lat":[47.48258,47.48255,47.48253,47.48252,47.48252,47.48253,47.48255,47.48258,47.4826,47.48263,47.48264,47.48265,47.48265,47.48267,47.48271,47.48275,47.48278,47.48279,47.48281,47.48281,47.48284,47.48294]}]],[[{"lng":[19.1254,19.12538],"lat":[47.48294,47.48299]}]],[[{"lng":[19.12538,19.12488,19.1243],"lat":[47.48299,47.48304,47.4831]}]],[[{"lng":[19.1243,19.12427,19.12419,19.12409,19.12334,19.12221,19.12083,19.11927,19.11858,19.11837,19.11791,19.11738,19.11723,19.11706,19.1166,19.1137,19.11337,19.11297,19.10818,19.10803,19.1079,19.10761,19.10742,19.10738,19.10564,19.10404,19.10339,19.10334,19.1027,19.10196,19.10176,19.10153,19.10127,19.09694,19.09566,19.09541,19.09174],"lat":[47.4831,47.48309,47.48306,47.48304,47.48311,47.48323,47.48338,47.48352,47.48359,47.48365,47.48381,47.48399,47.48404,47.48409,47.48421,47.485,47.48509,47.4852,47.48647,47.48652,47.48656,47.48665,47.4867,47.48671,47.48716,47.48758,47.48775,47.48776,47.48792,47.4881,47.48815,47.4882,47.48824,47.48878,47.48894,47.48897,47.48943]}]],[[{"lng":[19.09174,19.09172],"lat":[47.48943,47.48933]}]],[[{"lng":[19.09172,19.09168],"lat":[47.48933,47.48934]}]],[[{"lng":[19.09168,19.09134],"lat":[47.48934,47.48939]}]],[[{"lng":[19.09134,19.09101,19.09092,19.09055,19.09001,19.08947,19.08772,19.08757,19.08653],"lat":[47.48939,47.48942,47.48942,47.48939,47.48935,47.48931,47.48923,47.48922,47.48917]}]],[[{"lng":[19.08653,19.08642,19.08633,19.08628,19.08485,19.0848,19.08331,19.08327],"lat":[47.48917,47.48927,47.48935,47.4894,47.49094,47.491,47.49257,47.49261]}]],[[{"lng":[19.08327,19.08321,19.08251,19.08237],"lat":[47.49261,47.49268,47.49343,47.49357]}]],[[{"lng":[19.08237,19.08228,19.08198,19.08191,19.08024,19.07961,19.0795,19.0777,19.0773,19.07723,19.07699,19.07697,19.07675,19.07653,19.07568,19.07541,19.07513,19.07487,19.0737,19.07301,19.07261,19.07176,19.07159,19.07145,19.07119,19.07103,19.07097,19.07091],"lat":[47.49357,47.49357,47.49365,47.49366,47.49406,47.4942,47.49422,47.49462,47.49471,47.49473,47.49479,47.49479,47.49485,47.4949,47.49508,47.49514,47.49521,47.49527,47.49553,47.49569,47.49582,47.49602,47.49606,47.49609,47.49615,47.49619,47.49622,47.49629]}]],[[{"lng":[19.07091,19.07076,19.0707],"lat":[47.49629,47.49688,47.49718]}]],[[{"lng":[19.0707,19.07047,19.06979],"lat":[47.49718,47.49717,47.49698]}]],[[{"lng":[19.06979,19.06969,19.06872,19.06675],"lat":[47.49698,47.49706,47.49779,47.49926]}]],[[{"lng":[19.06675,19.06583,19.0655,19.06513,19.0645,19.06363,19.06313,19.06184,19.06082,19.06061],"lat":[47.49926,47.49866,47.4985,47.49832,47.49804,47.4977,47.49751,47.49705,47.49667,47.49665]}]],[[{"lng":[19.06061,19.05985,19.05967,19.05963,19.05959,19.05952],"lat":[47.49665,47.49598,47.49583,47.49579,47.49576,47.49569]}]],[[{"lng":[19.05952,19.05935,19.05926,19.05915],"lat":[47.49569,47.49572,47.49573,47.49572]}]],[[{"lng":[19.05915,19.05903,19.05885,19.05873,19.05856,19.05848,19.05838,19.05791,19.05773,19.05731,19.05703,19.05687,19.05679,19.05669,19.05654,19.05648,19.05616,19.05585,19.0557,19.05538],"lat":[47.49572,47.49585,47.49599,47.49605,47.49613,47.49617,47.49622,47.49644,47.49652,47.49671,47.49683,47.49691,47.49695,47.49699,47.49706,47.49709,47.49724,47.49738,47.49746,47.49763]}]],[[{"lng":[19.05538,19.05508],"lat":[47.49763,47.4978]}]],[[{"lng":[19.05508,19.05497,19.05487,19.05476,19.05447],"lat":[47.4978,47.49785,47.49787,47.49784,47.49783]}]],[[{"lng":[19.05447,19.05445],"lat":[47.49783,47.49788]}]],[[{"lng":[19.05445,19.05445,19.05443],"lat":[47.49788,47.49792,47.49802]}]],[[{"lng":[19.05443,19.05437],"lat":[47.49802,47.49801]}]],[[{"lng":[19.05437,19.05433],"lat":[47.49801,47.49823]}]],[[{"lng":[19.05433,19.05438,19.05431,19.05425,19.05419],"lat":[47.49823,47.49824,47.49857,47.49856,47.49855]}]]],null,"r",{"interactive":true,"className":"","pane":"overlayPane","stroke":true,"color":["#FFF8C4","#FECF66","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#B74202","#FECF66","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4"],"weight":[5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5],"opacity":[0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7],"fill":false,"fillColor":["#FFF8C4","#FECF66","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#B74202","#FECF66","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4","#FFF8C4"],"fillOpacity":0.2,"dashArray":"none","smoothFactor":1,"noClip":false},["<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">busynance<\/td><td>472<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">busynance<\/td><td>5,680<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">busynance<\/td><td>35<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">busynance<\/td><td>231<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">busynance<\/td><td>476<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">busynance<\/td><td>303<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">busynance<\/td><td>276<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">busynance<\/td><td>542<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">busynance<\/td><td>330<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">busynance<\/td><td>572<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">busynance<\/td><td>234<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">busynance<\/td><td>3,568<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">busynance<\/td><td>3,539<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">busynance<\/td><td>674<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">busynance<\/td><td>350<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">busynance<\/td><td>107<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">busynance<\/td><td>417<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">busynance<\/td><td>17,067<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">busynance<\/td><td>8,761<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">busynance<\/td><td>217<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">busynance<\/td><td>622<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">busynance<\/td><td>395<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">busynance<\/td><td>314<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">busynance<\/td><td>10<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">busynance<\/td><td>3,391<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">busynance<\/td><td>327<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">busynance<\/td><td>105<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">busynance<\/td><td>15<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">busynance<\/td><td>270<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">busynance<\/td><td>1,164<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">busynance<\/td><td>10<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">busynance<\/td><td>82<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">busynance<\/td><td>2,769<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">busynance<\/td><td>16<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">busynance<\/td><td>5<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">busynance<\/td><td>44<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">busynance<\/td><td>774<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">busynance<\/td><td>558<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">busynance<\/td><td>244<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">busynance<\/td><td>1,955<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">busynance<\/td><td>269<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">busynance<\/td><td>178<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">busynance<\/td><td>535<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">busynance<\/td><td>807<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">busynance<\/td><td>194<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">busynance<\/td><td>41<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">busynance<\/td><td>595<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">busynance<\/td><td>29<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">busynance<\/td><td>61<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">busynance<\/td><td>12<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">busynance<\/td><td>26<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">busynance<\/td><td>10<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">busynance<\/td><td>50<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">busynance<\/td><td>74<\/td><\/tr><\/table><\/div>"],{"maxWidth":1320,"minWidth":100,"autoPan":true,"keepInView":false,"closeButton":true,"className":""},[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54],{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addLegend","args":[{"colors":["#FFF8C4","#FECF66","#F3821D","#B74202"],"labels":["0 to 5,000","5,000 to 10,000","10,000 to 15,000","15,000 to 20,000"],"na_color":null,"na_label":null,"opacity":0.7,"position":"topright","type":"factor","title":"busynance","extra":null,"layerId":null,"className":"info legend","group":"r"}]},{"method":"addLayersControl","args":[["CartoDB.Positron","OpenStreetMap","Esri.WorldTopoMap"],"r",{"collapsed":true,"autoZIndex":true,"position":"topleft"}]},{"method":"addScaleBar","args":[{"maxWidth":100,"metric":true,"imperial":false,"updateWhenIdle":true,"position":"bottomright"}]}],"limits":{"lat":[47.41071,47.49926],"lng":[19.05419,19.28659]}},"evals":[],"jsHooks":[]}</script>
+
+]
+
+---
+
+# Extracting data from routes
+
+
+```r
+r$distances[1:5]
+```
+
+```
+## [1]  159 2176   21  105  271
+```
+
+```r
+r$time[1:5]
+```
+
+```
+## [1]   52 7393   18   72   60
+```
+
+```r
+sum(r$distances) / 1000
+```
+
+```
+## [1] 24.59
+```
+
+For something on remote routing see **stplanr** or **dodgr** packages.
+
+- Vignette on fast local routing: [cran.r-project.org/package=dodgr](https://cran.r-project.org/web/packages/dodgr/vignettes/dodgr.html)
+
+---
+class: center, middle
+
+# Thanks and safe 🚶, 🚲 +  🚀!
+
+- Reproducible slides + app: [github.com/Robinlovelace/erum18-transport](https://github.com/Robinlovelace/erum18-transport)
+
+- Transport chapter in Geocomputation with R (feedback welcome):
+[geocompr.robinlovelace.net](http://geocompr.robinlovelace.net/transport.html)
+
+Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
+
+---
+class: small
+
+# References
+Lovelace, Robin and Richard Ellison (2018). _Stplanr: Sustainable
+Transport Planning_. R package version 0.2.4. URL:
+[https://github.com/ropensci/stplanr](https://github.com/ropensci/stplanr).
+
+Lovelace, Robin, Anna Goodman, Rachel Aldred, et al. (2017). "The
+Propensity to Cycle Tool: An Open Source Online System for
+Sustainable Transport Planning". In: _Journal of Transport and
+Land Use_ 10.1. ISSN: 1938-7849. DOI:
+[10.5198/jtlu.2016.862](https://doi.org/10.5198/jtlu.2016.862).
+URL:
+[https://www.jtlu.org/index.php/jtlu/article/view/862](https://www.jtlu.org/index.php/jtlu/article/view/862)
+(visited on Jun. 01, 2017).
+
+Lovelace, Robin, Jakub Nowosad and Jannes Meunchow (2018).
+_Geocomputation with R_. CRC Press. URL:
+[http://robinlovelace.net/geocompr](http://robinlovelace.net/geocompr)
+(visited on Oct. 05, 2017).
+
+Pebesma, Edzer (2018). _Sf: Simple Features for R_. R package
+version 0.6-3. URL:
+[https://github.com/r-spatial/sf/](https://github.com/r-spatial/sf/).
+
+R Core Team (2018). _R: A Language and Environment for Statistical
+Computing_. Vienna, Austria. URL:
+[https://www.R-project.org/](https://www.R-project.org/).
+
+
+&lt;img src="https://www.cyipt.bike/images/logo.png" height="100" /&gt;&lt;img src="https://raw.githubusercontent.com/cyipt/cyipt/master/figures/its-logo-square.png" height="100" /&gt;
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+  }
+});
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

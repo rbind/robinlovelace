@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Digital technology for development</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Robin Lovelace, University of Leeds" />
+    <meta name="date" content="2018-01-22" />
+    <link href="foe-devel_files/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="foe-devel_files/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Digital technology for development
+## data-driven, modular and open
+### Robin Lovelace, University of Leeds
+### 2018-01-22
+
+---
+
+
+# Abstract
+
+Digital technology is increasingly important in development work and research,
+
+- generating the evidence base on which strategic investments are made
+- providing a powerful mechanism for researching alternative futures.
+
+--
+
+---
+
+
+background-image: url(https://raw.githubusercontent.com/npct/pct-team/master/figures/sdna-san-fran.png)
+background-size: cover
+class: center, middle
+
+# Incumbent digital technologies
+
+--
+
+(Source: Crispin Cooper, author of sDNA)
+
+---
+
+# User support
+
+Getting help is vital for leaning/improving software
+
+--
+
+![](https://media.giphy.com/media/6HtgBlXu1TIac/giphy.gif)
+
+--
+
+"10-Hour Service Pack $2,000" (source: [caliper.com/tcprice.htm](https://www.caliper.com/tcprice.htm))
+
+---
+
+# Online communities
+
+- [gis.stackexchange.com](https://gis.stackexchange.com/questions) has 21,314 questions 
+
+- [r-sig-geo](http://r-sig-geo.2731867.n2.nabble.com/) has 1000s of posts
+
+- RStudio's Discourse community has 65,000+ posts already!
+
+--
+
+- No developing world equivalent (that I know of)
+
+---
+
+# Best way to get support is peer-to-peer:
+
+![](rstudio-community.png)
+
+Source: https://community.rstudio.com/about
+
+---
+
+background-image: url(https://media.giphy.com/media/YlQQYUIEAZ76o/giphy.gif)
+background-size: cover
+class: center, middle
+
+
+# Future digital tools
+
+---
+
+# Are already here I
+
+- Example: the Propensity to Cycle Tool ([PCT.bike](http://www.pct.bike/)) (Lovelace et al. 2017)
+
+![](https://raw.githubusercontent.com/npct/pct-team/master/figures/early.png)&lt;!-- --&gt;
+
+---
+
+# Are already here II
+
+- Example: the Cycling Infrastructure Prioritisation Toolkit ([CyIPT.bike](https://www.cyipt.bike))
+
+![](https://www.cyipt.bike/images/existing-edit.png)&lt;!-- --&gt;
+
+---
+
+# Are already here III
+
+- Example: StreetMix ([streetmix.net](https://streetmix.net/))
+
+&lt;img src="http://1p40p3gwj70rhpc423s8rzjaz-wpengine.netdna-ssl.com/wp-content/uploads/2016/03/2016_0211_2ndAvePioneerSquareFlyer-streetmix.jpg" width="60%" /&gt;
+
+---
+
+# Are already here IV
+
+See the 'Active Transport Tool': http://35.233.61.182/
+
+
+&lt;img src="https://raw.githubusercontent.com/ATFutures/who/master/fig/accra-flow1-interactive.png" width="70%" /&gt;
+
+---
+
+# Discussion points
+
+---
+
+### How can we make digital tech participatory?
+
+- User friendly?
+- Mobile native?
+- User input?
+
+--
+
+- But who sets-up and runs the servers?
+- How to build digital tech capacity (education)?
+
+---
+
+### Gamification
+
+&lt;img src="citybound.png" width="1587" /&gt;
+
+- Completely open source, written in [rust](https://github.com/citybound/citybound)
+- Source: video at https://aeplay.org/citybound
+
+---
+
+
+background-image: url(https://media.giphy.com/media/OMeGDxdAsMPzW/giphy.gif)
+background-size: cover
+class: center, middle, inverse
+
+
+# Thanks for listening!
+
+--
+
+A few links and references
+
+- Boyce, D.E., Williams, H.C.W.L., 2015. Forecasting Urban Travel: Past, Present and Future. Edward Elgar Publishing.
+
+- The Propensity to Cycle Tool: http://www.pct.bike/ - Lovelace, R., Goodman, A., Aldred, R., Berkoff, N., Abbas, A., Woodcock, J., 2017. The Propensity to Cycle Tool: An open source online system for sustainable transport planning. Journal of Transport and Land Use 10. https://doi.org/10.5198/jtlu.2016.862
+
+- Open source 'geocompr' book: Lovelace, R., Nowosad, J., Meunchow, J., 2019. Geocomputation with R. CRC Press.
+
+
+- The Cycling Infrastructure Prioritisation Toolkit: https://www.cyipt.bike/
+
+- Pebesma, E., 2018. Simple Features for R: Standardized Support for Spatial Vector Data. The R Journal.
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();</script>
+
+<script>
+(function() {
+  var i, text, code, codes = document.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+})();
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

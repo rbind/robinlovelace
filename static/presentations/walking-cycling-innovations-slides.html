@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <title>SUVs and pedestrian/cycle safety</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Robin Lovelace" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/robot.css" rel="stylesheet" />
+    <link href="libs/remark-css/robot-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# SUVs and pedestrian/cycle safety
+## 🚶, 🚲, 🚗, 🚚<br/>empowering planners with data
+### Robin Lovelace
+### University of Leeds
+### 2019-12-05 (updated: 2019-12-06)
+
+---
+
+
+background-image: url(https://www.jato.com/wp-content/uploads/2019/11/Chart-4-1024x401.jpg)
+
+--
+
+
+
+--
+
+
+
+
+
+
+
+--
+
+## Source [Jato: SUVs make up 40% of total car registrations](https://www.jato.com/suvs-make-up-40-of-total-car-registrations-as-the-european-market-records-its-best-october-result-since-2009/)
+
+--
+
+
+???
+
+---
+
+
+
+background-image: url(https://cdn1.carbuyer.co.uk/sites/carbuyer_d7/files/styles/insert_main_wide_image/public/car_images/peugeot_3008_cutout_best_mid_suv_2019bestbuys.jpg?itok=GMiNNkDy)
+
+--
+
+# Largely unnoticed
+
+In tax band E, D or even A - C for electrics
+
+![](https://user-images.githubusercontent.com/1825120/69948517-b4b54180-14e7-11ea-8dca-ed2172d5789e.png)
+
+---
+
+# Defining SUVs
+
+.pull-left[
+
+No standard [definition](https://en.wikipedia.org/wiki/Sport_utility_vehicle#British_English)
+
+- In USA: "rugged automotive vehicle similar to a station wagon but built on a light-truck chassis"
+- In UK: "powerful vehicle with four-wheel drive that can be driven over rough ground. The abbreviation SUV is often used."
+]
+
+.pull-right[
+
+Data on weight and height is hard to come by
+
+https://www.epa.gov/compliance-and-fuel-economy-data/data-cars-used-testing-fuel-economy
+
+MOT data excludes weight: https://www.gov.uk/transport/car-motorcycle-and-van-mot-tests
+
+But we do have good data on tax band
+
+]
+
+## Suggestion: define on weight (energy, size) + height (colision height)
+
+---
+
+
+
+---
+
+background-image: url(https://informedforlife.org/demos/FCKeditor/UserFiles/Image/weight%20graph%20with%20ave.%20passenger%20vehicle.png)
+
+Source `https://www.bogleheads.org/forum/viewtopic.php?t=281280`
+
+???
+
+Previously my cars have always been midsize sedans. Chevrolets, Mazdas, etc. My intent was and may be still to purchase a more economical commuter. I test drove a Civic, Accord, Elantra, Sonata, Camry, Mazda3, Mazda6, Corolla, and Camry. I'm nothing if not thorough about figuring this out. I've noticed a huge uptick in the average size of vehicles around me during my 2 hours of round trip commuting each day (this is a newer job).
+
+I really noticed this from the drivers seat of a Honda Civic. It seems like only about 10% of the vehicles in my area are actual cars anymore. Pickups, SUVs, Crossovers, Minivans. I never used to feel like safety was a major concern in a smaller vehicle, but it just seems like in the event of a crash I would be much more likely to be on the... squished... end of the accident. Is this unreasonable?
+---
+
+Huge cobenefits of downsizing
+
+&lt;img src="https://royalsocietypublishing.org/cms/attachment/6cf8790d-1cc3-4e01-b140-e913718b3f2e/rsta20160364f03.jpg" width="70%" /&gt;
+
+Serrenho et al (2017) The impact of reducing car weight on global emissions: the future fleet in Great Britain  https://doi.org/10.1098/rsta.2016.0364
+
+
+???
+
+2008 book by Scott Burkun aimed at software architects
+
+Too techy for me, about managing 100s of people!
+
+---
+
+### A *Sport* Utility Vehicle for the 21st Century
+
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/gZ7iGl3j10w?start=10" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+Source: [Quicab](https://www.crowdfunder.co.uk/quicab-e-assisted-cycle-taxis-for-london)
+
+- Slower
+- Lighter
+- Physical activity
+- Better air quality
+
+--
+
+### Saves lives
+
+
+???
+
+2015 book by Daniel Levitin
+
+Too techy for me, about managing 100s of people!
+
+---
+
+.pull-left[
+
+![](https://ec.europa.eu/easme/sites/easme-site/files/getreal_growinggap_e_year2017.jpg)&lt;!-- --&gt;
+
+]
+
+--
+
+.pull-right[
+
+## Real world emissions have diverged
+
+## EU tests show size of gap
+
+See the [Get Real report](https://www.get-real.org/wp-content/uploads/2019/03/Get-Real-CO2-report.pdf)
+
+]
+
+---
+
+## Road crash data
+
+### From open STATS19 data (stats19 R package)
+
+![](https://docs.ropensci.org/stats19/articles/stats19-vehicles_files/figure-html/unnamed-chunk-7-1.png)
+
+
+---
+
+### Next steps
+
+![](https://raw.githubusercontent.com/Robinlovelace/stats19-gisruk/master/README_files/figure-gfm/unnamed-chunk-25-1.png)
+.pull-left[
+
+Crash data vs size (engine + tax data)
+
+]
+
+--
+
+.pull-right[
+
+Estimate potential lives saved
+
+]
+
+---
+
+class: center, middle
+
+# Thanks!
+
+Contact me at r. lovelace at leeds ac dot uk (email), `@robinlovelace` (twitter + github)
+
+--
+
+Check-out my repos at https://github.com/robinlovelace/
+
+--
+
+For more information on stats19 data, see [*stats19 on GitHub*](https://docs.ropensci.org/stats19/)
+
+--
+
+Thanks to all the R developers who made this possible, including (for this presentation):
+
+[remark.js](https://remarkjs.com), [**knitr**](http://yihui.name/knitr), and [R Markdown](https://rmarkdown.rstudio.com).
+
+Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
+
+--
+
+Thanks to everyone for building a open and collaborative communities!
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="https://platform.twitter.com/widgets.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

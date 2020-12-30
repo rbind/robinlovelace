@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simulating cities</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Robin Lovelace, University of Leeds" />
+    <link href="foe-slides_files/remark-css/default.css" rel="stylesheet" />
+    <link href="foe-slides_files/remark-css/default-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Simulating cities
+## 🚗🚌🚲🚶<br/>from streets to the global level
+### Robin Lovelace, University of Leeds
+### University of Leeds, ITS 2019-01-07
+
+---
+
+class: middle, center
+background-image: url(https://raw.githubusercontent.com/npct/pct-team/master/figures/pct-panel-obesity-paper.png)
+background-size: contain
+
+--
+
+## New methods of transport modelling
+
+--
+
+
+
+
+- New paper in International Journal of Obesity (Monsivais et al. 2018)
+
+---
+
+## Ensuring impact
+
+&lt;!-- See https://twitter.com/robinlovelace/status/907261128354488320 --&gt;
+
+&lt;!-- &lt;blockquote class="twitter-tweet" data-lang="en"&gt;&lt;p lang="en" dir="ltr"&gt;Scenario of cycling infrastructure in Leeds: &lt;a href="https://t.co/FqehV7kAjc"&gt;https://t.co/FqehV7kAjc&lt;/a&gt; Prelim. cost: ~£120m (without junction remodelling) for 157 km. &lt;a href="https://twitter.com/hashtag/CyIPT?src=hash&amp;amp;ref_src=twsrc%5Etfw"&gt;#CyIPT&lt;/a&gt; &lt;a href="https://t.co/OHqC8axut5"&gt;pic.twitter.com/OHqC8axut5&lt;/a&gt;&lt;/p&gt;&amp;mdash; Robin Lovelace (robinlovelace) &lt;a href="https://twitter.com/robinlovelace/status/907261128354488320?ref_src=twsrc%5Etfw"&gt;September 11, 2017&lt;/a&gt;&lt;/blockquote&gt; --&gt;
+&lt;!-- &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt; --&gt;
+
+--
+
+&gt; The ‘Propensity to Cycle Tool’ shows that if residents of Greater Manchester were as likely to cycle as the Dutch we would increase commuter journeys ten-fold, leaving room on the road for people who had to drive. This level of cycling would lead to an estimated £1 billion per year saving to individuals and the local economy because of the resulting health benefits. (British Cycling’s chief executive, Julie Harrington, November 2017 see [britishcycling.org.uk](https://www.britishcycling.org.uk/campaigning/article/20171102-campaigning-news-British-Cycling-responds-to-Mayor-of-Greater-Manchester-Andy-Burham-s--congestion-conversation--0))
+
+--
+
+~ 3 months later...
+
+--
+
+&gt; City cycling czar Chris Boardman has unveiled plans for a thousand miles of interlinked bike and walking lanes across Greater Manchester. Dubbed ‘Beelines’, the game-changing 10-year, £1.5bn proposal includes 75 miles of segregated cycle lanes similar to those found in Holland and Denmark ([Manchester Evening News](https://www.manchestereveningnews.co.uk/news/greater-manchester-news/cycling-walking-lanes-greater-manchester-14832995))
+
+
+---
+
+## Deployment
+
+- Live demo at http://www.pct.bike/
+- Get policy makers interested (Lovelace et al. 2017)
+
+--
+
+![](https://raw.githubusercontent.com/npct/pct-team/master/figures/front-page-leeds-pct-demo.png)&lt;!-- --&gt;
+
+---
+
+## International work
+
+- Contracts with the World Health Organisation
+- Prototype [Active Transport Tool](http://35.233.61.182/)
+
+&lt;img src="https://raw.githubusercontent.com/ATFutures/who/master/fig/accra-flow1-interactive.png" width="100%" /&gt;
+
+
+
+---
+
+## Links + references
+
+&gt; - Contact: r.lovelace@leeds.ac.uk or [`@robinlovelace`](https://twitter.com/robinlovelace)
+
+- Free open source book on methods: https://geocompr.robinlovelace.net/spatial-class.html
+- The PCT in action: http://www.pct.bike/
+- A prototype of the CyIPT: http://cyipt.bike/
+
+Lovelace, R., Goodman, A., Aldred, R., Berkoff, N., Abbas, A., Woodcock, J., 2017. The Propensity to Cycle Tool: An open source online system for sustainable transport planning. Journal of Transport and Land Use 10. https://doi.org/10.5198/jtlu.2016.862
+
+Monsivais, P., Francis, O., Lovelace, R., Chang, M., Strachan, E., Burgoine, T., 2018. Data visualisation to support obesity policy: case studies of data tools for planning and transport policy in the UK. International Journal of Obesity 1. https://doi.org/10.1038/s41366-018-0243-6
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();</script>
+
+<script>
+(function() {
+  var i, text, code, codes = document.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+})();
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Open tools and data analytics for sustainable transport planning</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Robin Lovelace, University of Leeds" />
+    <link href="open-tools-lida_files/remark-css/default.css" rel="stylesheet" />
+    <link href="open-tools-lida_files/remark-css/default-fonts.css" rel="stylesheet" />
+    <script src="open-tools-lida_files/htmlwidgets/htmlwidgets.js"></script>
+    <script src="open-tools-lida_files/jquery/jquery.min.js"></script>
+    <link href="open-tools-lida_files/leaflet/leaflet.css" rel="stylesheet" />
+    <script src="open-tools-lida_files/leaflet/leaflet.js"></script>
+    <link href="open-tools-lida_files/leafletfix/leafletfix.css" rel="stylesheet" />
+    <script src="open-tools-lida_files/Proj4Leaflet/proj4-compressed.js"></script>
+    <script src="open-tools-lida_files/Proj4Leaflet/proj4leaflet.js"></script>
+    <link href="open-tools-lida_files/rstudio_leaflet/rstudio_leaflet.css" rel="stylesheet" />
+    <script src="open-tools-lida_files/leaflet-binding/leaflet.js"></script>
+    <link href="open-tools-lida_files/leaflet-minimap/Control.MiniMap.min.css" rel="stylesheet" />
+    <script src="open-tools-lida_files/leaflet-minimap/Control.MiniMap.min.js"></script>
+    <script src="open-tools-lida_files/leaflet-minimap/Minimap-binding.js"></script>
+    <script src="open-tools-lida_files/leaflet-providers/leaflet-providers.js"></script>
+    <script src="open-tools-lida_files/leaflet-providers-plugin/leaflet-providers-plugin.js"></script>
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Open tools and data analytics for sustainable transport planning
+## 🚗🚌🚲🚶<br/>A case study of the stplanr package
+### Robin Lovelace, University of Leeds
+### LIDA, University of Leeds 2018-09-13
+
+---
+
+
+## The scale of the challenge, from this...
+
+
+
+
+
+.pull-left[
+
+
+&lt;img src="https://pbs.twimg.com/media/DOH94nXUIAAgcll.jpg" width="100%" /&gt;
+
+]
+
+.pull-right[
+
+Source: [Brent Toderian](https://twitter.com/BrentToderian)
+
+Any ideas which city this is?
+
+]
+---
+
+## Towards cycling being the natural choice
+
+&lt;img src="https://pbs.twimg.com/media/DJaWCo0U8AAzQGW.jpg:large" width="80%" /&gt;
+
+Source: [Brent Toderian](https://twitter.com/BrentToderian)
+
+---
+
+## Problem: evidence overload
+
+&lt;img src="https://larrycuban.files.wordpress.com/2015/02/data-overload-2.jpg" width="70%" /&gt;
+
+--
+
+- Challenge: operationalising this data
+
+--
+
+- Needs to be provided in 'actionable' format
+
+--
+
+- Requires skills + infrastructure
+
+---
+
+## A case study of an actionable tool: [w](http://npct0.vs.mythic-beasts.com/shiny_interface/?r=west-yorkshire)[ww.pct.bike](www.pct.bike)
+
+&lt;div class="figure"&gt;
+&lt;img src="https://raw.githubusercontent.com/npct/pct-team/master/figures/pct-frontpage.png" alt="The front page of the open source, open access Propensity to Cycle Tool (PCT)." width="80%" /&gt;
+&lt;p class="caption"&gt;The front page of the open source, open access Propensity to Cycle Tool (PCT).&lt;/p&gt;
+&lt;/div&gt;
+
+---
+
+## Building the web application
+
+- Started by writing various messy scripts
+
+--
+
+![](https://media.giphy.com/media/OMeGDxdAsMPzW/giphy.gif)
+
+--
+
+But soon that became unsustainable
+
+---
+
+## Developing stplanr
+
+- With support from colleagues in LIDA I created **stplanr**, which works like this (after you have installed R):
+
+
+```r
+library(stplanr)
+r = route_cyclestreet(
+  from = "Chapeltown, Leeds",
+  to = "University of Leeds"
+  )
+r
+```
+
+```
+## class       : SpatialLinesDataFrame 
+## features    : 1 
+## extent      : -1.55247, -1.53145, 53.80275, 53.81671  (xmin, xmax, ymin, ymax)
+## coord. ref. : +init=epsg:4326 +proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0 
+## variables   : 15
+## names       :    plan,           start,        finish, length, time, waypoint, cum_hill, change_elev, dif_max_min, up_tot, down_tot, av_incline, co2_saving, calories, busyness 
+## value       : fastest, Chapeltown Road, Un-named link,   2663,  748,      113,       86,          -8,          34,     39,       47,  0.0322944,        496,       54,    14297
+```
+
+---
+
+## Visualising the results
+
+.pull-left[
+
+
+- Thanks to existing open source tools for visualisation, we can plot this, e.g. with:
+
+
+```r
+library(leaflet)
+m = leaflet() %&gt;% 
+  addTiles() %&gt;% 
+  addPolylines(data = r) %&gt;% 
+  addMiniMap() %&gt;% 
+  addScaleBar()
+```
+
+]
+
+.pull-right[
+
+
+```r
+m
+```
+
+<div id="htmlwidget-2ac01703c19f633a17a7" style="width:100%;height:400px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2ac01703c19f633a17a7">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addPolylines","args":[[[[{"lng":[-1.53145,-1.53154,-1.53156,-1.53164,-1.5318,-1.53188,-1.53191,-1.53201,-1.53213,-1.53228,-1.53246,-1.53254,-1.53281,-1.53297,-1.53337,-1.5337,-1.53394,-1.53418,-1.53427,-1.53442,-1.53447,-1.53454,-1.53456,-1.53461,-1.53468,-1.53471,-1.53479,-1.53482,-1.53495,-1.53498,-1.53499,-1.53503,-1.5351,-1.53513,-1.53513,-1.53519,-1.53527,-1.53541,-1.53549,-1.53565,-1.53578,-1.536,-1.53612,-1.53617,-1.5363,-1.53655,-1.53684,-1.53693,-1.53717,-1.53752,-1.53787,-1.53837,-1.53873,-1.53928,-1.5398,-1.54035,-1.54073,-1.54094,-1.54123,-1.54141,-1.54169,-1.54247,-1.54279,-1.54302,-1.54336,-1.54387,-1.54441,-1.54507,-1.54536,-1.54546,-1.5457,-1.54594,-1.546,-1.54616,-1.54628,-1.5464,-1.54653,-1.54668,-1.54692,-1.54723,-1.54752,-1.54783,-1.54799,-1.54816,-1.54817,-1.54826,-1.54832,-1.54856,-1.54861,-1.54866,-1.54881,-1.54892,-1.54901,-1.54909,-1.54919,-1.54938,-1.54941,-1.5495,-1.5496,-1.54976,-1.55002,-1.5504,-1.55082,-1.5513,-1.55158,-1.55173,-1.55191,-1.55203,-1.55216,-1.55215,-1.55211,-1.55236,-1.55247],"lat":[53.81671,53.81645,53.81641,53.81621,53.81588,53.81572,53.81565,53.8155,53.81531,53.81512,53.81492,53.81482,53.81454,53.81438,53.81391,53.81344,53.81302,53.81261,53.81244,53.81209,53.81197,53.81179,53.81152,53.81129,53.81083,53.81068,53.81024,53.81016,53.80987,53.80954,53.8095,53.80925,53.80893,53.80879,53.80878,53.80863,53.80851,53.80835,53.80827,53.8081,53.80793,53.80759,53.80737,53.80731,53.8071,53.80678,53.80647,53.80641,53.80623,53.80602,53.80589,53.80574,53.80567,53.80559,53.80552,53.80543,53.80535,53.80529,53.80521,53.80512,53.805,53.80451,53.80427,53.80411,53.80386,53.8036,53.80333,53.80303,53.80292,53.80289,53.80282,53.80275,53.80282,53.80287,53.80299,53.80313,53.80324,53.80337,53.80354,53.80376,53.80392,53.80412,53.80422,53.80437,53.80438,53.80445,53.80452,53.8048,53.80487,53.80493,53.80513,53.80532,53.80543,53.80554,53.80544,53.80523,53.8052,53.80511,53.80503,53.80499,53.80492,53.80483,53.80469,53.8045,53.80436,53.80438,53.8044,53.80437,53.80437,53.80394,53.80391,53.8038,53.8038]}]]],null,null,{"interactive":true,"className":"","stroke":true,"color":"#03F","weight":5,"opacity":0.5,"fill":false,"fillColor":"#03F","fillOpacity":0.2,"smoothFactor":1,"noClip":false},null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addMiniMap","args":[null,null,"bottomright",150,150,19,19,-5,false,false,false,false,false,false,{"color":"#ff7800","weight":1,"clickable":false},{"color":"#000000","weight":1,"clickable":false,"opacity":0,"fillOpacity":0},{"hideText":"Hide MiniMap","showText":"Show MiniMap"},[]]},{"method":"addScaleBar","args":[{"maxWidth":100,"metric":true,"imperial":true,"updateWhenIdle":true,"position":"topright"}]}],"limits":{"lat":[53.80275,53.81671],"lng":[-1.55247,-1.53145]}},"evals":[],"jsHooks":[]}</script>
+
+]
+---
+
+## Capabilities of stplanr
+
+.pull-left[
+
+- Convert origin-destination pairs into geographic lines
+
+Example datasets in **stplanr**
+
+Centroids (open access data):
+
+
+```r
+head(cents_sf[1], 3)
+```
+
+```
+## Simple feature collection with 3 features and 1 field
+## geometry type:  POINT
+## dimension:      XY
+## bbox:           xmin: -1.546463 ymin: 53.8041 xmax: -1.511861 ymax: 53.81161
+## epsg (SRID):    4326
+## proj4string:    +proj=longlat +datum=WGS84 +no_defs
+##       geo_code                   geometry
+## 1708 E02002384 POINT (-1.546463 53.80952)
+## 1712 E02002382 POINT (-1.511861 53.81161)
+## 1805 E02002393  POINT (-1.524205 53.8041)
+```
+
+]
+
+.pull-right[
+
+### Origin-destination (OD) pairs
+
+
+```r
+head(flow[c(1:3)], 2)
+```
+
+```
+##        Area.of.residence Area.of.workplace All
+## 920573         E02002361         E02002361 109
+## 920575         E02002361         E02002363  38
+```
+
+]
+
+---
+
+## Making tabular data spatial
+
+
+Conversion to a spatial object with **stplanr**
+
+
+
+```r
+l = od2line(flow, cents_sf)
+sf:::plot.sf(l[3:5], lwd = l$All / mean(l$All))
+```
+
+![](open-tools-lida_files/figure-html/unnamed-chunk-11-1.png)&lt;!-- --&gt;
+
+---
+
+## Interactive visualisation is key
+
+.pull-left[
+
+
+- Previous plot is not particularly revealing 
+
+- Another visualisation will help
+
+
+```r
+library(tmap)
+l$pwalk = l$On.foot / l$All
+m2 = tm_shape(l) +
+  tm_lines(
+    "pwalk",
+    lwd = "All",
+    scale = 10,
+    palette = "RdYlBu")
+```
+
+]
+
+.pull-right[
+
+- Make the data come alive
+
+
+```r
+tmap_leaflet(m2)
+```
+
+<div id="htmlwidget-ffbf086ac7a418c0c2c8" style="width:100%;height:400px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-ffbf086ac7a418c0c2c8">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldGrayCanvas",null,"Esri.WorldGrayCanvas",{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"pane":"tilePane"}]},{"method":"addProviderTiles","args":["OpenStreetMap",null,"OpenStreetMap",{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"pane":"tilePane"}]},{"method":"addProviderTiles","args":["Esri.WorldTopoMap",null,"Esri.WorldTopoMap",{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"pane":"tilePane"}]},{"method":"createMapPane","args":["overlayPane01",401]},{"method":"addPolylines","args":[[[[{"lng":[-1.51673370812915,-1.51673370812915],"lat":[53.8288740914504,53.8288740914504]}]],[[{"lng":[-1.51673370812915,-1.5356167992133],"lat":[53.8288740914504,53.8284728565164]}]],[[{"lng":[-1.51673370812915,-1.55080649003917],"lat":[53.8288740914504,53.8244201498831]}]],[[{"lng":[-1.51673370812915,-1.53071231469847],"lat":[53.8288740914504,53.8175561825366]}]],[[{"lng":[-1.51673370812915,-1.51931751323009],"lat":[53.8288740914504,53.8157960303081]}]],[[{"lng":[-1.51673370812915,-1.51186137386083],"lat":[53.8288740914504,53.8116109775162]}]],[[{"lng":[-1.51673370812915,-1.52420468703814],"lat":[53.8288740914504,53.8040984466889]}]],[[{"lng":[-1.5356167992133,-1.51673370812915],"lat":[53.8284728565164,53.8288740914504]}]],[[{"lng":[-1.5356167992133,-1.5356167992133],"lat":[53.8284728565164,53.8284728565164]}]],[[{"lng":[-1.5356167992133,-1.55080649003917],"lat":[53.8284728565164,53.8244201498831]}]],[[{"lng":[-1.5356167992133,-1.53071231469847],"lat":[53.8284728565164,53.8175561825366]}]],[[{"lng":[-1.5356167992133,-1.51931751323009],"lat":[53.8284728565164,53.8157960303081]}]],[[{"lng":[-1.5356167992133,-1.51186137386083],"lat":[53.8284728565164,53.8116109775162]}]],[[{"lng":[-1.5356167992133,-1.52420468703814],"lat":[53.8284728565164,53.8040984466889]}]],[[{"lng":[-1.55080649003917,-1.51673370812915],"lat":[53.8244201498831,53.8288740914504]}]],[[{"lng":[-1.55080649003917,-1.5356167992133],"lat":[53.8244201498831,53.8284728565164]}]],[[{"lng":[-1.55080649003917,-1.55080649003917],"lat":[53.8244201498831,53.8244201498831]}]],[[{"lng":[-1.55080649003917,-1.53071231469847],"lat":[53.8244201498831,53.8175561825366]}]],[[{"lng":[-1.55080649003917,-1.51931751323009],"lat":[53.8244201498831,53.8157960303081]}]],[[{"lng":[-1.55080649003917,-1.51186137386083],"lat":[53.8244201498831,53.8116109775162]}]],[[{"lng":[-1.55080649003917,-1.52420468703814],"lat":[53.8244201498831,53.8040984466889]}]],[[{"lng":[-1.53071231469847,-1.51673370812915],"lat":[53.8175561825366,53.8288740914504]}]],[[{"lng":[-1.53071231469847,-1.5356167992133],"lat":[53.8175561825366,53.8284728565164]}]],[[{"lng":[-1.53071231469847,-1.55080649003917],"lat":[53.8175561825366,53.8244201498831]}]],[[{"lng":[-1.53071231469847,-1.53071231469847],"lat":[53.8175561825366,53.8175561825366]}]],[[{"lng":[-1.53071231469847,-1.51931751323009],"lat":[53.8175561825366,53.8157960303081]}]],[[{"lng":[-1.53071231469847,-1.51186137386083],"lat":[53.8175561825366,53.8116109775162]}]],[[{"lng":[-1.53071231469847,-1.52420468703814],"lat":[53.8175561825366,53.8040984466889]}]],[[{"lng":[-1.51931751323009,-1.51673370812915],"lat":[53.8157960303081,53.8288740914504]}]],[[{"lng":[-1.51931751323009,-1.5356167992133],"lat":[53.8157960303081,53.8284728565164]}]],[[{"lng":[-1.51931751323009,-1.55080649003917],"lat":[53.8157960303081,53.8244201498831]}]],[[{"lng":[-1.51931751323009,-1.53071231469847],"lat":[53.8157960303081,53.8175561825366]}]],[[{"lng":[-1.51931751323009,-1.51931751323009],"lat":[53.8157960303081,53.8157960303081]}]],[[{"lng":[-1.51931751323009,-1.51186137386083],"lat":[53.8157960303081,53.8116109775162]}]],[[{"lng":[-1.51931751323009,-1.52420468703814],"lat":[53.8157960303081,53.8040984466889]}]],[[{"lng":[-1.51186137386083,-1.51673370812915],"lat":[53.8116109775162,53.8288740914504]}]],[[{"lng":[-1.51186137386083,-1.5356167992133],"lat":[53.8116109775162,53.8284728565164]}]],[[{"lng":[-1.51186137386083,-1.55080649003917],"lat":[53.8116109775162,53.8244201498831]}]],[[{"lng":[-1.51186137386083,-1.53071231469847],"lat":[53.8116109775162,53.8175561825366]}]],[[{"lng":[-1.51186137386083,-1.51931751323009],"lat":[53.8116109775162,53.8157960303081]}]],[[{"lng":[-1.51186137386083,-1.51186137386083],"lat":[53.8116109775162,53.8116109775162]}]],[[{"lng":[-1.51186137386083,-1.52420468703814],"lat":[53.8116109775162,53.8040984466889]}]],[[{"lng":[-1.52420468703814,-1.51673370812915],"lat":[53.8040984466889,53.8288740914504]}]],[[{"lng":[-1.52420468703814,-1.5356167992133],"lat":[53.8040984466889,53.8284728565164]}]],[[{"lng":[-1.52420468703814,-1.55080649003917],"lat":[53.8040984466889,53.8244201498831]}]],[[{"lng":[-1.52420468703814,-1.53071231469847],"lat":[53.8040984466889,53.8175561825366]}]],[[{"lng":[-1.52420468703814,-1.51931751323009],"lat":[53.8040984466889,53.8157960303081]}]],[[{"lng":[-1.52420468703814,-1.51186137386083],"lat":[53.8040984466889,53.8116109775162]}]],[[{"lng":[-1.52420468703814,-1.52420468703814],"lat":[53.8040984466889,53.8040984466889]}]]],null,"l",{"interactive":true,"className":"","pane":"overlayPane01","stroke":true,"color":["#DAF0F6","#E24832","#E24832","#E24832","#FDDB8B","#E24832","#E24832","#FDDB8B","#DAF0F6","#E24832","#FDDB8B","#FDDB8B","#E24832","#E24832","#FDDB8B","#DAF0F6","#DAF0F6","#FDDB8B","#E24832","#E24832","#E24832","#FDDB8B","#DAF0F6","#DAF0F6","#DAF0F6","#DAF0F6","#FDDB8B","#FDDB8B","#E24832","#FDDB8B","#FDDB8B","#DAF0F6","#578BBF","#DAF0F6","#FDDB8B","#E24832","#E24832","#578BBF","#FDDB8B","#578BBF","#DAF0F6","#DAF0F6","#E24832","#E24832","#DAF0F6","#FDDB8B","#FDDB8B","#DAF0F6","#578BBF"],"weight":[4.11320754716981,1.43396226415094,0.377358490566038,1.66037735849057,1.28301886792453,0.264150943396226,3.54716981132075,1.13207547169811,6.90566037735849,0.415094339622641,2.71698113207547,0.490566037735849,0.30188679245283,5.88679245283019,0.188679245283019,3.16981132075472,1.54716981132075,2.49056603773585,0.339622641509434,0.339622641509434,3.32075471698113,0.754716981132075,4.15094339622642,1.0188679245283,8.30188679245283,2.18867924528302,1.24528301886792,6.22641509433962,0.792452830188679,1.13207547169811,0.264150943396226,2.33962264150943,4.86792452830189,2,3.50943396226415,0.30188679245283,0.30188679245283,0.452830188679245,1.35849056603774,1.73584905660377,2.75471698113208,3.54716981132075,0.528301886792453,0.528301886792453,0.264150943396226,1.47169811320755,1.32075471698113,0.981132075471698,10],"opacity":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],"fill":false,"fillColor":["#DAF0F6","#E24832","#E24832","#E24832","#FDDB8B","#E24832","#E24832","#FDDB8B","#DAF0F6","#E24832","#FDDB8B","#FDDB8B","#E24832","#E24832","#FDDB8B","#DAF0F6","#DAF0F6","#FDDB8B","#E24832","#E24832","#E24832","#FDDB8B","#DAF0F6","#DAF0F6","#DAF0F6","#DAF0F6","#FDDB8B","#FDDB8B","#E24832","#FDDB8B","#FDDB8B","#DAF0F6","#578BBF","#DAF0F6","#FDDB8B","#E24832","#E24832","#578BBF","#FDDB8B","#578BBF","#DAF0F6","#DAF0F6","#E24832","#E24832","#DAF0F6","#FDDB8B","#FDDB8B","#DAF0F6","#578BBF"],"fillOpacity":0.2,"dashArray":"none","smoothFactor":1,"noClip":false},["<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>E02002361<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">pwalk<\/td><td>0.541<\/td><\/tr><tr><td style=\"color: #888888;\">All<\/td><td>109<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>E02002361<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">pwalk<\/td><td>0.105<\/td><\/tr><tr><td style=\"color: #888888;\">All<\/td><td>38<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>E02002361<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">pwalk<\/td><td>0.100<\/td><\/tr><tr><td style=\"color: #888888;\">All<\/td><td>10<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>E02002361<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">pwalk<\/td><td>0.136<\/td><\/tr><tr><td style=\"color: #888888;\">All<\/td><td>44<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>E02002361<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">pwalk<\/td><td>0.265<\/td><\/tr><tr><td style=\"color: #888888;\">All<\/td><td>34<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>E02002361<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">pwalk<\/td><td>0.000<\/td><\/tr><tr><td style=\"color: #888888;\">All<\/td><td>7<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>E02002361<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">pwalk<\/td><td>0.106<\/td><\/tr><tr><td style=\"color: #888888;\">All<\/td><td>94<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>E02002363<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">pwalk<\/td><td>0.200<\/td><\/tr><tr><td style=\"color: #888888;\">All<\/td><td>30<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>E02002363<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">pwalk<\/td><td>0.552<\/td><\/tr><tr><td style=\"color: #888888;\">All<\/td><td>183<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>E02002363<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">pwalk<\/td><td>0.182<\/td><\/tr><tr><td style=\"color: #888888;\">All<\/td><td>11<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>E02002363<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">pwalk<\/td><td>0.347<\/td><\/tr><tr><td style=\"color: #888888;\">All<\/td><td>72<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>E02002363<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">pwalk<\/td><td>0.231<\/td><\/tr><tr><td style=\"color: #888888;\">All<\/td><td>13<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>E02002363<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">pwalk<\/td><td>0.000<\/td><\/tr><tr><td style=\"color: #888888;\">All<\/td><td>8<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>E02002363<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">pwalk<\/td><td>0.096<\/td><\/tr><tr><td style=\"color: #888888;\">All<\/td><td>156<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>E02002367<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">pwalk<\/td><td>0.200<\/td><\/tr><tr><td style=\"color: #888888;\">All<\/td><td>5<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>E02002367<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">pwalk<\/td><td>0.560<\/td><\/tr><tr><td style=\"color: #888888;\">All<\/td><td>84<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>E02002367<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">pwalk<\/td><td>0.415<\/td><\/tr><tr><td style=\"color: #888888;\">All<\/td><td>41<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>E02002367<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">pwalk<\/td><td>0.303<\/td><\/tr><tr><td style=\"color: #888888;\">All<\/td><td>66<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>E02002367<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">pwalk<\/td><td>0.111<\/td><\/tr><tr><td style=\"color: #888888;\">All<\/td><td>9<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>E02002367<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">pwalk<\/td><td>0.111<\/td><\/tr><tr><td style=\"color: #888888;\">All<\/td><td>9<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>E02002367<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">pwalk<\/td><td>0.182<\/td><\/tr><tr><td style=\"color: #888888;\">All<\/td><td>88<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>E02002371<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">pwalk<\/td><td>0.200<\/td><\/tr><tr><td style=\"color: #888888;\">All<\/td><td>20<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>E02002371<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">pwalk<\/td><td>0.427<\/td><\/tr><tr><td style=\"color: #888888;\">All<\/td><td>110<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>E02002371<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">pwalk<\/td><td>0.593<\/td><\/tr><tr><td style=\"color: #888888;\">All<\/td><td>27<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>E02002371<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">pwalk<\/td><td>0.527<\/td><\/tr><tr><td style=\"color: #888888;\">All<\/td><td>220<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>E02002371<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">pwalk<\/td><td>0.414<\/td><\/tr><tr><td style=\"color: #888888;\">All<\/td><td>58<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>E02002371<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">pwalk<\/td><td>0.333<\/td><\/tr><tr><td style=\"color: #888888;\">All<\/td><td>33<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>E02002371<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">pwalk<\/td><td>0.297<\/td><\/tr><tr><td style=\"color: #888888;\">All<\/td><td>165<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>E02002377<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">pwalk<\/td><td>0.048<\/td><\/tr><tr><td style=\"color: #888888;\">All<\/td><td>21<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>E02002377<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">pwalk<\/td><td>0.300<\/td><\/tr><tr><td style=\"color: #888888;\">All<\/td><td>30<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>E02002377<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">pwalk<\/td><td>0.286<\/td><\/tr><tr><td style=\"color: #888888;\">All<\/td><td>7<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>E02002377<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">pwalk<\/td><td>0.532<\/td><\/tr><tr><td style=\"color: #888888;\">All<\/td><td>62<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>E02002377<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">pwalk<\/td><td>0.612<\/td><\/tr><tr><td style=\"color: #888888;\">All<\/td><td>129<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>E02002377<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">pwalk<\/td><td>0.509<\/td><\/tr><tr><td style=\"color: #888888;\">All<\/td><td>53<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>E02002377<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">pwalk<\/td><td>0.398<\/td><\/tr><tr><td style=\"color: #888888;\">All<\/td><td>93<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>E02002382<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">pwalk<\/td><td>0.000<\/td><\/tr><tr><td style=\"color: #888888;\">All<\/td><td>8<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>E02002382<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">pwalk<\/td><td>0.125<\/td><\/tr><tr><td style=\"color: #888888;\">All<\/td><td>8<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>E02002382<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">pwalk<\/td><td>0.750<\/td><\/tr><tr><td style=\"color: #888888;\">All<\/td><td>12<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>E02002382<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">pwalk<\/td><td>0.333<\/td><\/tr><tr><td style=\"color: #888888;\">All<\/td><td>36<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>E02002382<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">pwalk<\/td><td>0.674<\/td><\/tr><tr><td style=\"color: #888888;\">All<\/td><td>46<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>E02002382<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">pwalk<\/td><td>0.479<\/td><\/tr><tr><td style=\"color: #888888;\">All<\/td><td>73<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>E02002382<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">pwalk<\/td><td>0.468<\/td><\/tr><tr><td style=\"color: #888888;\">All<\/td><td>94<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>E02002393<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">pwalk<\/td><td>0.071<\/td><\/tr><tr><td style=\"color: #888888;\">All<\/td><td>14<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>E02002393<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">pwalk<\/td><td>0.071<\/td><\/tr><tr><td style=\"color: #888888;\">All<\/td><td>14<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>E02002393<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">pwalk<\/td><td>0.429<\/td><\/tr><tr><td style=\"color: #888888;\">All<\/td><td>7<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>E02002393<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">pwalk<\/td><td>0.385<\/td><\/tr><tr><td style=\"color: #888888;\">All<\/td><td>39<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>E02002393<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">pwalk<\/td><td>0.343<\/td><\/tr><tr><td style=\"color: #888888;\">All<\/td><td>35<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>E02002393<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">pwalk<\/td><td>0.500<\/td><\/tr><tr><td style=\"color: #888888;\">All<\/td><td>26<\/td><\/tr><\/table><\/div>","<div style=\"max-height:10em;overflow:auto;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>E02002393<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\">pwalk<\/td><td>0.698<\/td><\/tr><tr><td style=\"color: #888888;\">All<\/td><td>265<\/td><\/tr><\/table><\/div>"],{"maxWidth":500,"minWidth":100,"autoPan":true,"keepInView":false,"closeButton":true,"className":""},["E02002361","E02002361","E02002361","E02002361","E02002361","E02002361","E02002361","E02002363","E02002363","E02002363","E02002363","E02002363","E02002363","E02002363","E02002367","E02002367","E02002367","E02002367","E02002367","E02002367","E02002367","E02002371","E02002371","E02002371","E02002371","E02002371","E02002371","E02002371","E02002377","E02002377","E02002377","E02002377","E02002377","E02002377","E02002377","E02002382","E02002382","E02002382","E02002382","E02002382","E02002382","E02002382","E02002393","E02002393","E02002393","E02002393","E02002393","E02002393","E02002393"],{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addLegend","args":[{"colors":["#E24832","#FDDB8B","#DAF0F6","#578BBF"],"labels":["0.0 to 0.2","0.2 to 0.4","0.4 to 0.6","0.6 to 0.8"],"na_color":null,"na_label":null,"opacity":1,"position":"topright","type":"factor","title":"pwalk","extra":null,"layerId":null,"className":"info legend","group":"l"}]},{"method":"addLayersControl","args":[["Esri.WorldGrayCanvas","OpenStreetMap","Esri.WorldTopoMap"],"l",{"collapsed":true,"autoZIndex":true,"position":"topleft"}]}],"limits":{"lat":[53.8040984466889,53.8288740914504],"lng":[-1.55080649003917,-1.51186137386083]},"fitBounds":[53.8040984466889,-1.55080649003917,53.8288740914504,-1.51186137386083,[]]},"evals":[],"jsHooks":[]}</script>
+
+]
+
+---
+
+## Ensuring impact
+
+&lt;!-- See https://twitter.com/robinlovelace/status/907261128354488320 --&gt;
+
+&lt;!-- &lt;blockquote class="twitter-tweet" data-lang="en"&gt;&lt;p lang="en" dir="ltr"&gt;Scenario of cycling infrastructure in Leeds: &lt;a href="https://t.co/FqehV7kAjc"&gt;https://t.co/FqehV7kAjc&lt;/a&gt; Prelim. cost: ~£120m (without junction remodelling) for 157 km. &lt;a href="https://twitter.com/hashtag/CyIPT?src=hash&amp;amp;ref_src=twsrc%5Etfw"&gt;#CyIPT&lt;/a&gt; &lt;a href="https://t.co/OHqC8axut5"&gt;pic.twitter.com/OHqC8axut5&lt;/a&gt;&lt;/p&gt;&amp;mdash; Robin Lovelace (robinlovelace) &lt;a href="https://twitter.com/robinlovelace/status/907261128354488320?ref_src=twsrc%5Etfw"&gt;September 11, 2017&lt;/a&gt;&lt;/blockquote&gt; --&gt;
+&lt;!-- &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt; --&gt;
+
+--
+
+&gt; The ‘Propensity to Cycle Tool’ shows that if residents of Greater Manchester were as likely to cycle as the Dutch we would increase commuter journeys ten-fold, leaving room on the road for people who had to drive. This level of cycling would lead to an estimated £1 billion per year saving to individuals and the local economy because of the resulting health benefits. (British Cycling’s chief executive, Julie Harrington, November 2017 see [britishcycling.org.uk](https://www.britishcycling.org.uk/campaigning/article/20171102-campaigning-news-British-Cycling-responds-to-Mayor-of-Greater-Manchester-Andy-Burham-s--congestion-conversation--0))
+
+--
+
+~ 3 months later...
+
+--
+
+&gt; City cycling czar Chris Boardman has unveiled plans for a thousand miles of interlinked bike and walking lanes across Greater Manchester. Dubbed ‘Beelines’, the game-changing 10-year, £1.5bn proposal includes 75 miles of segregated cycle lanes similar to those found in Holland and Denmark ([Manchester Evening News](https://www.manchestereveningnews.co.uk/news/greater-manchester-news/cycling-walking-lanes-greater-manchester-14832995))
+
+
+---
+
+## Deployment
+
+- Live demo at http://www.pct.bike/
+- Get policy makers interested
+
+--
+
+![](https://raw.githubusercontent.com/npct/pct-team/master/figures/front-page-leeds-pct-demo.png)&lt;!-- --&gt;
+
+---
+
+## Links + references
+
+&gt; - Contact: r.lovelace@leeds.ac.uk or [`@robinlovelace`](https://twitter.com/robinlovelace)
+
+- If you want to code in R 4 transport, start here: https://geocompr.robinlovelace.net/spatial-class.html
+- The PCT in action: http://www.pct.bike/
+- A prototype of the CyIPT: http://cyipt.bike/
+- Resource on R for transport: http://geocompr.robinlovelace.net/transport.html
+
+Citation
+
+Lovelace, R., Goodman, A., Aldred, R., Berkoff, N., Abbas, A., Woodcock, J., 2017. The Propensity to Cycle Tool: An open source online system for sustainable transport planning. Journal of Transport and Land Use 10. https://doi.org/10.5198/jtlu.2016.862
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();</script>
+
+<script>
+(function() {
+  var i, text, code, codes = document.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+})();
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

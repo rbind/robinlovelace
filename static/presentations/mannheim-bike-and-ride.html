@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Analyzing the potential of bike &amp; ride to improve suburban access to the city center</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Robin Lovelace (University of Leeds)" />
+    <meta name="author" content="Ricardo Marqués (Universidad de Sevilla)" />
+    <meta name="author" content="Manuel Calvo-Salazar (Independent consultant)" />
+    <meta name="author" content="Javier Herrera-Sánchez (Independent consultant)" />
+    <link href="pres_files/remark-css-0.0.1/example.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Analyzing the potential of bike &amp; ride to improve suburban access to the city center
+## 🚲 🚌 <br/>a case study of Seville
+### Robin Lovelace (University of Leeds)
+### Ricardo Marqués (Universidad de Sevilla)
+### Manuel Calvo-Salazar (Independent consultant)
+### Javier Herrera-Sánchez (Independent consultant)
+### By <span class="citation">@robinlovelace</span>, University of Leeds 2017-09-20
+
+---
+
+
+# Context
+
+- Work presented part of forthcoming paper (Marqués et al Under Review)
+
+![](https://github.com/Robinlovelace/pctSeville/raw/master/figures/sev-cycle-paths.png)
+
+---
+
+# Current approach
+
+- Focus on cycle paths around central area has a number of **negative** consequences (see below)
+
+- Working hypothesis: these can be tackled by 'Bike `&amp;` Ride' systems
+
+&lt;iframe src="https://www.google.com/maps/embed?pb=!1m0!4v1504009755859!6m8!1m7!1sUyGwvOHX_f03DLL5_i-C3Q!2m2!1d37.34890121392362!2d-6.053344538654443!3f67.05360518924812!4f13.339695262853013!5f0.7820865974627469" width="600" height="450" frameborder="0" style="border:0" allowfullscreen&gt;&lt;/iframe&gt;
+
+---
+
+# These include:
+
+- Social inequalities: only (on average wealthy) parts of the population benefit
+- Spatial inequalilities: rural and suburban areas tend to be neglected by cycling advocacy and policy ([Cooper and Leahy, 2017](http://sci-hub.cc/10.1080/17450101.2016.1254898))
+- Cycling tends not to replace cars in the city centre, which has a number of knock-on impacts:
+    - Dangerous levels of traffic
+    - Air pollution
+    - Congestion
+    - Political support for driving
+
+- Emphasis on wealthy centres can lead to political 'bikelashes'
+
+---
+
+# PT/cycling integration in context
+
+- Public Transport and associated infrastructure have a range of impacts
+
+![](https://github.com/npct/pct/raw/master/infra-active/active-travel-options.png)
+
+---
+
+# What is 'bike &amp; ride'?
+
+![](https://github.com/Robinlovelace/pctSeville/raw/master/figures/schematic-cyclin-pt-options.png)
+
+---
+
+# Access to stations in Seville (foot)
+
+![](https://github.com/Robinlovelace/pctSeville/raw/master/figures/fig5.png)
+
+
+---
+
+# Access to stations in Seville (cycling)
+
+![](https://github.com/Robinlovelace/pctSeville/raw/master/figures/fig6.png)
+
+---
+
+# Bike &amp; Ride catchment areas
+
+![](https://github.com/Robinlovelace/pctSeville/raw/master/figures/fig7.png)
+
+# Data &amp; Methods
+
+---
+
+Data input
+==========
+
+Needs origin-destination (OD) data, available from many places (in roughly descending order of quality):
+
+-   Census of population (see the UK's [Wicid open data portal](http://wicid.ukdataservice.ac.uk/) for an example of this)
+-   Travel survey data
+-   Mobile telephone company data
+-   Modelled data using a spatial interaction model
+-   Stated preference surveys (used in this case)
+
+&gt; - Each of these has advantages and disadvantages.
+
+---
+
+# Local input data
+
+Two main data sources that can be used to model OD-level travel in Seville: official data on population counts.
+
+- Official data described in [a short article on rpubs.com/robinlovelace](http://rpubs.com/RobinLovelace/209274)
+- Sample of this data available in the github repo [robinlovelace/pctSeville](https://github.com/Robinlovelace/pctSeville)
+- OpenStreetMap (OSM) data used for station location and (potentially) for estimating travel, via:
+     - A spatial interaction including trip generators and 'attractors'
+     - Trip attractors: hospitals, schools, shops etc.
+     - Trip generators: residential buildings
+- But we use sample data to illustrate the methods
+- Randomly generated points
+- OSM data used because it is smaller and more generalisable
+
+Problem: where to build?
+
+Solution...
+
+---
+
+# Use the 'Propensity to Cycle' method (Lovelace et al. 2017)
+
+- See [www.pct.bike](http://www.pct.bike/)
+
+![](https://github.com/Robinlovelace/pctSeville/raw/master/figures/README-unnamed-chunk-14-1.png)
+
+
+---
+
+# Route allocation
+
+These can be allocated to the transport network as follows:
+
+``` r
+routes = stplanr::line2route(l = l, route_fun = route_graphhopper, vehicle = "bike")
+```
+
+![](https://github.com/Robinlovelace/pctSeville/raw/master/figures/README-unnamed-chunk-15-1.png)
+
+---
+
+# Route network generation
+
+The final stage is to aggregate the values of overlapping lines (Lovelace et al., 2017):
+
+``` r
+rnet = overline(routes, "potential")
+```
+
+![](https://github.com/Robinlovelace/pctSeville/raw/master/figures/README-unnamed-chunk-16-1.png)
+
+
+---
+
+# Estimates of Bike &amp; Ride potential
+
+- Across Seville there is high potential for Bike &amp; Ride
+- This would boost cycling in suburban areas
+- 13,000, 25,000 and 57,000 trips (short, medium and long term)
+- Results also tell us where the potential is highest:
+
+&lt;table&gt;
+&lt;caption&gt;Bike &amp; Ride potential for selected stations (trips/day): long, medium and short term.&lt;/caption&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Catchment areas &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Trips to center (all modes) &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Long &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Medium &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Short &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 1 (Utrera) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6828 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3859 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2020 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1271 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 2 (Dos Hermanas) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 14100 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7969 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4171 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2624 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 3 (La Rinconada) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6292 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3556 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1861 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1171 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 9 (Cudad Expo) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 14508 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8331 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3592 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2024 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+
+# Discussion
+
+- How to operationalise this research?
+- International scalability
+- Citizen health, congestion and air pollution estimates possible
+
+Next step: invest in cycling to stations (cycle paths, cycle parking, ...)
+
+Image: 3000 space cycle parking facility in Cambridge ([£2.5 million](http://www.itv.com/news/anglia/2016-02-15/on-the-rack-cycle-commuters-grapple-with-new-multi-storey/))
+
+![](http://news.images.itv.com/image/file/902125/stream_img.jpg)
+
+
+
+&lt;!-- --- --&gt;
+
+&lt;!-- # Could it help mitigate 'bikelash' --&gt;
+
+&lt;!-- - Often caused by perception that cycling investment is not for everyone --&gt;
+&lt;!-- - Wealth people tend to live in city centres --&gt;
+&lt;!-- - Baltimore: legal proceeding to protect cycle path (source: [citylab](https://www.citylab.com/transportation/2017/07/baltimore-battles-its-bike-lanes/533424/)) --&gt;
+&lt;!-- - Seattle: "war on cars" meme overcome by 'smart language' --&gt;
+&lt;!-- - Waltham Forest, London: bikelash against 'mini Holland' scheme tackled by broadening appeal of cycling advocacy groups --&gt;
+
+---
+
+# References and acknowledgements
+
+Thanks for listening
+
+- Consejería de Fomento, Junta de Andalucía, FEDER grant G-GI3001/IDID
+- Consorcio de Transportes de Sevilla (servey)
+- UK Department for Transport (PCT)
+
+## References
+
+- Lovelace, R., Goodman, A., Aldred, R., Berkoff, N., Abbas, A., Woodcock, J., 2017. The Propensity to Cycle Tool: An open source online system for sustainable transport planning. Journal of Transport and Land Use 10. doi:10.5198/jtlu.2016.862
+
+- Marques et al (under review). ANALYZING THE POTENTIAL OF ‘BIKE &amp; RIDE’ TO PRIORITISE INVESTMENT IN SUBURBAN CYCLING AND PUBLIC TRANSPORT INFRASTRUCTURE: A CASE STUDY OF SEVILLE
+
+&lt;!-- ![](http://s3.amazonaws.com/lcc_production_bucket/files/10016/in_content.PNG?1453218623) --&gt;
+
+&lt;!-- ![](https://cdn.theatlantic.com/assets/media/img/posts/2017/07/image/dcc5ab87f.png) --&gt;
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {window.dispatchEvent(new Event('resize'));});
+(function() {var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler"); if (!r) return; s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }"; d.head.appendChild(s);})();</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+  }
+});
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

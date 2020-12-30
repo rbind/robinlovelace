@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Mapping open land-use data with open source software</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Robin Lovelace" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Mapping open land-use data with open source software
+### Robin Lovelace
+### FarmHack, 2020-03-07<br>code: <a href="https://github.com/Robinlovelace/uklandusedata">github.com/Robinlovelace/uklandusedata</a>
+
+---
+
+
+background-image: url(https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1557130767l/43080056._SY475_.jpg)
+background-position: 50% 50%
+class: center, bottom, inverse
+
+
+
+---
+
+# Context
+
+- Knowledge is power and knowledge can derived from data
+
+- Historically land use data has been hard to get hold of in the UK
+
+- But the Land Use Registry and other government services have begun to open-up data (Shrubsole, 2019)  
+
+- There is a huge amount of data that is available, that could support community-led agriculture and farmworkers, e.g.
+
+--
+
+  - to identify potential new farms to rent/buy/occupy
+
+--
+
+  - to find out who owns particular pieces of land
+  
+--
+
+  - to lobby for more equal distribution of land and land subsidies
+
+--
+
+  - to estimate environmental conditions, e.g. flood susceptibility, biodiversity, land use (requires large satallite datasets, e.g. from open datasets via Google Earth Engine)
+  
+---
+
+## How to get and use land use data? 
+
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/xfjg_jpgiTE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+With QGIS! (QGIS Development Team, 2019)  
+  
+
+You can do LOTS with QGIS and it's getting more powerful every month
+
+---
+
+## Gettting data in OSM
+
+![](https://user-images.githubusercontent.com/1825120/75730875-06878680-5ce6-11ea-8744-65c4c3915888.gif)
+
+---
+
+## Advantages of QGIS
+
+--
+
+Interactive
+
+--
+
+Popular
+
+--
+
+Intuitive
+
+--
+
+Shallow learning curve
+
+--
+
+Works well with visual learning style
+
+--
+
+### What you need 
+
+- A working version of QGIS
+
+  - On your laptop (recommended if you have a decent laptop)
+  - Or on the where you work 
+  
+- Always...
+
+--
+
+  - Save your work
+
+---
+
+# Getting data from OSM
+
+--
+
+![](https://user-images.githubusercontent.com/1825120/75754674-06f34200-5d25-11ea-84a0-283409b54fc3.gif)
+
+Get the data!
+
+---
+
+# Next step: give it a try!
+
+... Live demo with QGIS
+
+
+---
+
+background-image: url()
+background-size: cover
+class: center, middle
+
+# Part II: technology
+
+---
+
+# First up: what are GUIs and CLIs?
+
+
+.pull-left[
+
+Gooeys:
+
+&lt;img src="https://du7ybees82p4m.cloudfront.net/57c6a159cf4a79.53834822.jpg?width=1820&amp;height=1023" width="100%" /&gt;
+
+Informally: pointy-clicky-programs
+
+Formally: a form of user interface that allows users to interact with electronic devices through graphical icons 
+
+]
+
+--
+
+.pull-right[
+
+![](https://user-images.githubusercontent.com/1825120/44630441-adeb6680-a955-11e8-978a-62ddf94eb5c7.gif)&lt;!-- --&gt;
+
+]
+
+---
+
+## A comparison of CLIs vs GUIs
+
+&lt;img src="https://cdn-images-1.medium.com/max/1600/1*oLc-KPfL-OUHqKiQsn7q4g.png" width="100%" /&gt;
+
+---
+
+## In the context of geographic data
+
+
+```r
+u = "https://github.com/Robinlovelace/geocompr/raw/master/extdata/gis-vs-gds-table.csv"
+d = readr::read_csv(u)
+knitr::kable(x = d, format = "html")
+```
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Attribute &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Desktop GIS (GUI) &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; R &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Home disciplines &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Geography &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Computing, Statistics &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Software focus &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Graphical User Interface &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Command line &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Reproducibility &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Minimal &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Maximal &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+Source: Geocomputation with R (Lovelace, Nowosad, and Muenchow, 2019a)
+
+---
+
+## Why is reproducibility important?
+
+--
+
+- Because it's more likely to get you published in scientific journals
+- Because reproducible research is more likely to be built-on and referenced
+
+--
+
+- A more in-depth reason:
+
+&gt; A process in which the same results can be generated by others using publicly accessible code.
+
+&gt; This may sound simple and easy to achieve (which it is if you carefully maintain your R code in script files), but has profound implications for teaching and the scientific process
+
+
+---
+
+## Scriptable vs methodological reproducibility
+
+.pull-left[
+
+Full reproducibility means providing a formal recipe, in the form a 'script' containing computer code.
+
+For many transport planners this is not feasible.
+
+But that does not mean you cannot make your work reproducible.
+
+Think of a cooking recipe
+
+]
+
+--
+
+.pull-right[
+
+![](https://imgs.xkcd.com/comics/learning_to_cook.png)
+
+]
+
+
+---
+
+## CLI vs GUI vs NUI
+
+- There are other ways of interactive with computers!
+
+&lt;img src="https://www.researchgate.net/profile/Martin_Molina4/publication/304816895/figure/fig5/AS:667910355816460@1536253646575/The-User-Interface-evolution-Command-line-interfaces-began-the-UI-revolution-followed-by.jpg" width="100%" /&gt;
+
+Source:  
+
+---
+
+## CLIs can be confusing
+
+For example: 
+
+&gt; The general syntax of a GRASS
+command which is called to run a module is similar to UNIX commands:
+
+```
+module [-flag1[flag2...]] parameter1=map1[,map2,...]\
+[parameter2=number...] [--o] [--q] [--v]
+```
+ 
+
+---
+
+## Learning to use a CLI
+
+- Takes time and practice
+
+- Benefits massively from touch typing 
+
+- See Efficient R Programming, Section [1.5](https://csgillespie.github.io/efficientR/introduction.html#cross-transferable-skills-for-efficiency) (Gillespie and Lovelace, 2016) 
+
+![](https://csgillespie.github.io/efficientR/figures/f1_1_800px-QWERTY-home-keys-position.png)
+
+---
+
+# Online communities
+
+- [gis.stackexchange.com](https://gis.stackexchange.com/questions) has 21,314 questions 
+
+- [r-sig-geo](http://r-sig-geo.2731867.n2.nabble.com/) has 1000s of posts
+
+- RStudio's Discourse community has 65,000+ posts already!
+
+---
+
+# References
+
+Gillespie, Colin and Robin Lovelace (2016). _Efficient R Programming: A
+Practical Guide to Smarter Programming_. O'Reilly Media. ISBN:
+978-1-4919-5078-4.
+
+Lovelace, Robin, Jakub Nowosad, and Jannes Muenchow (2019).
+_Geocomputation with R_. CRC Press. ISBN: 1-138-30451-4.
+
+QGIS Development Team (2019). _QGIS Geographic Information System_.
+Open Source Geospatial Foundation.
+
+Shrubsole, Guy (2019). _Who Owns England?: How We Lost Our Green and
+Pleasant Land, and How to Take It Back_. London: William Collins. ISBN:
+978-0-00-832167-3.
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  /* Replace <script> tags in slides area to make them executable
+   *
+   * Runs after post-processing of markdown source into slides and replaces only
+   * <script>s on the last slide of continued slides using the .has-continuation
+   * class added by xaringan. Finally, any <script>s in the slides area that
+   * aren't executed are commented out.
+   */
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container:not(.has-continuation) script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+  var scriptsNotExecuted = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container.has-continuation script'
+  );
+  if (!scriptsNotExecuted.length) return;
+  for (var i = 0; i < scriptsNotExecuted.length; i++) {
+    var comment = document.createComment(scriptsNotExecuted[i].outerHTML)
+    scriptsNotExecuted[i].parentElement.replaceChild(comment, scriptsNotExecuted[i])
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

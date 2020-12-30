@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Cycling potential hackathon</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Robin Lovelace and Rosa Felix" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
+    <script src="libs/htmlwidgets/htmlwidgets.js"></script>
+    <script src="libs/jquery/jquery.min.js"></script>
+    <link href="libs/leaflet/leaflet.css" rel="stylesheet" />
+    <script src="libs/leaflet/leaflet.js"></script>
+    <link href="libs/leafletfix/leafletfix.css" rel="stylesheet" />
+    <script src="libs/Proj4Leaflet/proj4-compressed.js"></script>
+    <script src="libs/Proj4Leaflet/proj4leaflet.js"></script>
+    <link href="libs/rstudio_leaflet/rstudio_leaflet.css" rel="stylesheet" />
+    <script src="libs/leaflet-binding/leaflet.js"></script>
+    <script src="libs/leaflet-providers/leaflet-providers_1.9.0.js"></script>
+    <script src="libs/leaflet-providers-plugin/leaflet-providers-plugin.js"></script>
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Cycling potential hackathon
+## 🚲<br/>The Propensity to Cycle Tool approach: reproducible methods with free and open source software
+### Robin Lovelace and Rosa Felix
+### <img class="img-footer" alt="" src="https://www.pct.bike/www/static/01_logos/pct-logo.png">
+
+---
+
+
+
+
+
+
+
+
+
+
+# Agenda and sign-up
+
+- Introduction to the hackathon: 10:00 - 10:40 (Rosa Felix and Robin Lovelace)
+&lt;!-- How we started the collaboration, why Lisbon, aims (importance of free, open and participatory solutions) --&gt;
+&lt;!-- Robin on the methods and software underlying the PCT. --&gt;
+- Participant introductions: 10:40 - 10:45 (participants)
+- Talks: methods for modelling cycling networks: 10:45 - 11:15 (Crispin Cooper and Lorena Abad)
+&lt;!-- Crispin to talk about approaches for modelling active transport --&gt;
+&lt;!-- Lorena to talk about cycle network analysis in R --&gt;
+- Live, interactive demo of data and hack rules: 11:15 - 11:45 (Rosa and Robin)
+- Topic pitches 11:45 - 12:00 (participants proposing topics)
+
+Lunch break and finalising teams 12:00 to 13:00
+
+- Hackathon 13:00 - 15:30
+- Presentation of results 15:30 - 16:00
+&lt;!-- ? someone to assess / 'most creative', best technicallay? --&gt;
+
+&lt;!-- 215.1371 --&gt;
+
+&lt;!-- - 09:30 - 10:00: Arrival and set-up --&gt;
+&lt;!-- - 10:00 - 11:00: Data and methods underlying the PCT --&gt;
+&lt;!-- - 11:00 - 12:30: Getting and analysing PCT data --&gt;
+&lt;!--     - Comparing PCT results with existing road infrastructure --&gt;
+&lt;!--         - Getting data from the CyIPT --&gt;
+&lt;!--         - Identfying 'weak links' --&gt;
+&lt;!--         - Identify gaps in the network --&gt;
+
+&lt;!-- Lunch break --&gt;
+
+&lt;!-- - 13:30 - 15:30: Extending the PCT: minihack --&gt;
+&lt;!--     - Alternative scenarios of cycling uptake --&gt;
+&lt;!--         - A 'replace short car trips' scenario --&gt;
+&lt;!--     - New input data --&gt;
+&lt;!--         - Travel to stations --&gt;
+&lt;!--     - Other extensions of the PCT --&gt;
+
+&lt;!-- Break and presentation of results --&gt;
+
+&lt;!-- - 16:00 - 16:30: Policy implementation --&gt;
+
+---
+
+## Learning outcomes
+
+
+- Understand the data and code underlying the PCT
+- Download data from the PCT at various geographic levels
+- Use R as a tool for data analysis to support evidence-based planning
+
+--
+
+It's about free and open source software for a sustainable future 🚀
+![](https://media.giphy.com/media/fnvxO81StvLdhd0Tlu/giphy.gif)
+
+---
+
+background-image: url(https://media.giphy.com/media/YlQQYUIEAZ76o/giphy.gif)
+background-size: cover
+class: center, middle
+
+# How the PCT works
+
+---
+
+## The first prototype of the PCT
+
+- 1st prototype: Hackathon at ODI Leeds in February 2015
+
+- We identifying key routes and mapped them
+
+- For early description of aims, see Lovelace et al. (2017)
+
+![](https://raw.githubusercontent.com/npct/pct-team/master/figures/early.png)&lt;!-- --&gt;
+
+---
+
+# The PCT in 2020
+
+- Now the go-to tool for strategic cycle network planning in England and Wales, used by most local authorities with cycling plans ([source](https://npct.github.io/pct-shiny/regions_www/www/static/03d_other_reports/2019-use-of-pct-report.pdf)).
+
+.pull-left[
+
+## Geographic levels in the PCT
+
+
+- Generate and analyse route networks for transport planning with reference to:
+    - Zones
+    - Origin-destination (OD) data
+    - Geographic desire lines
+    - Route allocation using different routing services
+    - Route network generation and analysis
+]
+
+.pull-right[
+
+![](https://user-images.githubusercontent.com/1825120/94201205-9758c600-feb3-11ea-8383-a01966457562.png)
+See these levels at [www.pct.bike](https://www.pct.bike)
+
+]
+
+---
+
+## Let's look at zones
+
+![](https://user-images.githubusercontent.com/1825120/94204655-89a63f00-feb9-11ea-8b6d-89910008e830.png)
+
+
+---
+
+## OD data
+
+
+Table: Origin-destination data. Open MSOA-MSOA commute data from the 2011 census, accessed using the R package pct.
+
+|geo_code1 |geo_code2 |  all| train| bus| taxi| car_driver| car_passenger| bicycle| foot| id| perc_cycle|
+|:---------|:---------|----:|-----:|---:|----:|----------:|-------------:|-------:|----:|--:|----------:|
+|E02002363 |E02006875 |  922|     5| 356|    7|        375|            76|      43|   53|  1|        4.7|
+|E02002373 |E02006875 | 1037|   111| 424|   20|        155|            30|      73|  214|  2|        7.0|
+|E02002385 |E02006875 |  958|   121| 334|   19|        118|            25|      52|  283|  3|        5.4|
+|E02006852 |E02002392 |  437|     1|  96|    3|        142|            26|      61|  108|  4|       14.0|
+|E02006852 |E02006875 | 1221|    14| 509|   13|        401|            50|      99|  118|  5|        8.1|
+|E02006861 |E02006875 | 1177|    43| 400|   30|        123|            28|      56|  492|  6|        4.8|
+
+---
+
+## Desire lines
+
+![](hack-slides_files/figure-html/unnamed-chunk-6-1.png)&lt;!-- --&gt;
+
+---
+
+## Routes
+
+
+
+
+
+
+![](https://user-images.githubusercontent.com/1825120/94204162-a8f09c80-feb8-11ea-9b88-cce88001ff01.png)
+---
+
+### Route networks
+
+
+```r
+rnet = stplanr::overline(r, "bicycle")
+plot(rnet, lwd = rnet$bicycle / 10)
+```
+
+![](hack-slides_files/figure-html/unnamed-chunk-9-1.png)&lt;!-- --&gt;
+
+---
+
+#### Cycling uptake
+
+![](https://itsleeds.github.io/pct/reference/uptake_pct_govtarget-1.png)
+
+--
+
+Dose/response modelling: about cycling in response to distance, hilliness and other factors. Source: [pct R package website](https://itsleeds.github.io/pct/reference/uptake_pct_govtarget.html)
+
+
+---
+
+background-image: url(https://media.giphy.com/media/YlQQYUIEAZ76o/giphy.gif)
+
+
+# Coding
+
+
+```r
+od_test$perc_cycle = round(od_test$bicycle / od_test$all) * 100
+l = od_to_sf(od_test, od_data_centroids)
+r = stplanr::route(l = l, route_fun = journey)
+rnet = overline(r, "bicycle")
+```
+
+--
+
+![](https://media.giphy.com/media/3oKIPnAiaMCws8nOsE/giphy.gif)
+
+---
+
+## Key stages of PCT approach
+
+- Reproducible, open, scripted, enabling modifications, e.g.:
+- Find short routes in which more people drive than cycle
+
+--
+
+- Stage 1: get data
+
+
+```r
+# Set-up, after installing pct and checking out www.pct.bike:
+library(dplyr)
+library(sf)
+od_data = readr::read_csv("https://github.com/U-Shift/cyclingpotential-hack/releases/download/2.0.0/od_data_final.csv")
+centroids = read_sf("https://github.com/U-Shift/cyclingpotential-hack/releases/download/2.0.0/centroids.geojson")
+desire_lines_all = od::od_to_sf(x = od_data, z = centroids)
+nrow(desire_lines_all)
+```
+
+```
+## [1] 336
+```
+
+---
+
+## Stage II: Subset data of interest
+
+- Interested only in major lines
+
+
+```r
+desire_lines = desire_lines_all %&gt;% 
+  filter(Total &gt; 500) 
+nrow(desire_lines)
+```
+
+```
+## [1] 75
+```
+
+```r
+plot(desire_lines)
+```
+
+```
+## Warning: plotting the first 9 out of 11 attributes; use max.plot = 11 to plot
+## all
+```
+
+![](hack-slides_files/figure-html/unnamed-chunk-12-1.png)&lt;!-- --&gt;
+
+---
+
+## Stage III: Visualisation
+
+&lt;!-- A fundamental part of data science is being able to understand your data. --&gt;
+
+&lt;!-- That requires visualisation, R is great for that: --&gt;
+
+
+
+&lt;!-- - Interactively: --&gt;
+
+
+```r
+library(tmap)
+tmap_mode("view")
+tm_shape(desire_lines) +
+  tm_lines("Total", scale = 9) +
+  tm_basemap(server = leaflet::providers$OpenStreetMap)
+```
+
+<div id="htmlwidget-e31fe6555f5b5b7b1a12" style="width:504px;height:504px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e31fe6555f5b5b7b1a12">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"createMapPane","args":["tmap401",401]},{"method":"addProviderTiles","args":["OpenStreetMap",null,"OpenStreetMap",{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"pane":"tilePane"}]},{"method":"addPolylines","args":[[[[{"lng":[-9.40824308432501,-9.41809213604778],"lat":[38.7315362453581,38.7084140103332]}]],[[{"lng":[-9.34276022199788,-9.34461543175533],"lat":[38.7151548231031,38.6949572946067]}]],[[{"lng":[-9.34276022199788,-9.41809213604778],"lat":[38.7151548231031,38.7084140103332]}]],[[{"lng":[-9.34276022199788,-9.29972020779337],"lat":[38.7151548231031,38.698336792834]}]],[[{"lng":[-9.34461543175533,-9.34276022199788],"lat":[38.6949572946067,38.7151548231031]}]],[[{"lng":[-9.34461543175533,-9.41809213604778],"lat":[38.6949572946067,38.7084140103332]}]],[[{"lng":[-9.34461543175533,-9.29972020779337],"lat":[38.6949572946067,38.698336792834]}]],[[{"lng":[-9.41809213604778,-9.40824308432501],"lat":[38.7084140103332,38.7315362453581]}]],[[{"lng":[-9.41809213604778,-9.34276022199788],"lat":[38.7084140103332,38.7151548231031]}]],[[{"lng":[-9.41809213604778,-9.34461543175533],"lat":[38.7084140103332,38.6949572946067]}]],[[{"lng":[-9.16295028895137,-9.14454409469433],"lat":[38.7683794554449,38.7522756578495]}]],[[{"lng":[-9.16295028895137,-9.15300895128253],"lat":[38.7683794554449,38.7402378923289]}]],[[{"lng":[-9.14454409469433,-9.16295028895137],"lat":[38.7522756578495,38.7683794554449]}]],[[{"lng":[-9.14454409469433,-9.15300895128253],"lat":[38.7522756578495,38.7402378923289]}]],[[{"lng":[-9.13656130758497,-9.15300895128253],"lat":[38.7272684558648,38.7402378923289]}]],[[{"lng":[-9.15300895128253,-9.16295028895137],"lat":[38.7402378923289,38.7683794554449]}]],[[{"lng":[-9.15300895128253,-9.13656130758497],"lat":[38.7402378923289,38.7272684558648]}]],[[{"lng":[-9.15300895128253,-9.21058948941398],"lat":[38.7402378923289,38.7045184443093]}]],[[{"lng":[-9.15300895128253,-9.18471477806535],"lat":[38.7402378923289,38.7925465917036]}]],[[{"lng":[-9.21058948941398,-9.15300895128253],"lat":[38.7045184443093,38.7402378923289]}]],[[{"lng":[-9.14980165907209,-9.16677213701715],"lat":[38.720819957071,38.7295403532617]}]],[[{"lng":[-9.17968037068428,-9.14293275910796],"lat":[38.8375470348378,38.8601764514867]}]],[[{"lng":[-9.17968037068428,-9.16365294119068],"lat":[38.8375470348378,38.8133441143969]}]],[[{"lng":[-9.14293275910796,-9.17968037068428],"lat":[38.8601764514867,38.8375470348378]}]],[[{"lng":[-9.16365294119068,-9.17968037068428],"lat":[38.8133441143969,38.8375470348378]}]],[[{"lng":[-9.30631546282233,-9.29972020779337],"lat":[38.7221385131907,38.698336792834]}]],[[{"lng":[-9.23524792273099,-9.24467007055705],"lat":[38.708603684195,38.7239939576642]}]],[[{"lng":[-9.24467007055705,-9.23524792273099],"lat":[38.7239939576642,38.708603684195]}]],[[{"lng":[-9.29972020779337,-9.34461543175533],"lat":[38.698336792834,38.6949572946067]}]],[[{"lng":[-9.29972020779337,-9.30631546282233],"lat":[38.698336792834,38.7221385131907]}]],[[{"lng":[-9.33858932643642,-9.32427375522797],"lat":[38.7984855959791,38.7798974926087]}]],[[{"lng":[-9.33858932643642,-9.385311234191],"lat":[38.7984855959791,38.7939342374232]}]],[[{"lng":[-9.32427375522797,-9.33858932643642],"lat":[38.7798974926087,38.7984855959791]}]],[[{"lng":[-9.27416339543635,-9.26380149326998],"lat":[38.7570091567012,38.7728035251961]}]],[[{"lng":[-9.26380149326998,-9.27416339543635],"lat":[38.7728035251961,38.7570091567012]}]],[[{"lng":[-9.385311234191,-9.33858932643642],"lat":[38.7939342374232,38.7984855959791]}]],[[{"lng":[-9.04080532695789,-9.06766585058759],"lat":[38.903193439016,38.8645470490968]}]],[[{"lng":[-9.06766585058759,-9.04080532695789],"lat":[38.8645470490968,38.903193439016]}]],[[{"lng":[-9.22128706968886,-9.234248217603],"lat":[38.7584757970405,38.7703806286002]}]],[[{"lng":[-9.22128706968886,-9.23896877923107],"lat":[38.7584757970405,38.7546268694629]}]],[[{"lng":[-9.234248217603,-9.22128706968886],"lat":[38.7703806286002,38.7584757970405]}]],[[{"lng":[-9.234248217603,-9.23896877923107],"lat":[38.7703806286002,38.7546268694629]}]],[[{"lng":[-9.23896877923107,-9.22128706968886],"lat":[38.7546268694629,38.7584757970405]}]],[[{"lng":[-9.23896877923107,-9.234248217603],"lat":[38.7546268694629,38.7703806286002]}]],[[{"lng":[-9.18471477806535,-9.15300895128253],"lat":[38.7925465917036,38.7402378923289]}]],[[{"lng":[-9.18471477806535,-9.20412994300762],"lat":[38.7925465917036,38.7791749778909]}]],[[{"lng":[-9.18471477806535,-9.16239141449292],"lat":[38.7925465917036,38.797521387497]}]],[[{"lng":[-9.18471477806535,-9.21048177216202],"lat":[38.7925465917036,38.8116981575182]}]],[[{"lng":[-9.20412994300762,-9.18471477806535],"lat":[38.7791749778909,38.7925465917036]}]],[[{"lng":[-9.16239141449292,-9.18471477806535],"lat":[38.797521387497,38.7925465917036]}]],[[{"lng":[-9.21048177216202,-9.18471477806535],"lat":[38.8116981575182,38.7925465917036]}]],[[{"lng":[-8.94452323748929,-8.96777654537483],"lat":[38.7414468211431,38.708540778089]}]],[[{"lng":[-9.16118494167427,-9.20958922843968],"lat":[38.6757639312462,38.6617866896445]}]],[[{"lng":[-9.16118494167427,-9.18687665372922],"lat":[38.6757639312462,38.6232751164521]}]],[[{"lng":[-9.16118494167427,-9.15916271643473],"lat":[38.6757639312462,38.6552832733947]}]],[[{"lng":[-9.16118494167427,-9.15451382091101],"lat":[38.6757639312462,38.6347815564041]}]],[[{"lng":[-9.20958922843968,-9.16118494167427],"lat":[38.6617866896445,38.6757639312462]}]],[[{"lng":[-9.20958922843968,-9.18687665372922],"lat":[38.6617866896445,38.6232751164521]}]],[[{"lng":[-9.18687665372922,-9.16118494167427],"lat":[38.6232751164521,38.6757639312462]}]],[[{"lng":[-9.18687665372922,-9.20958922843968],"lat":[38.6232751164521,38.6617866896445]}]],[[{"lng":[-9.18687665372922,-9.15451382091101],"lat":[38.6232751164521,38.6347815564041]}]],[[{"lng":[-9.15916271643473,-9.16118494167427],"lat":[38.6552832733947,38.6757639312462]}]],[[{"lng":[-9.15916271643473,-9.18687665372922],"lat":[38.6552832733947,38.6232751164521]}]],[[{"lng":[-9.15916271643473,-9.15451382091101],"lat":[38.6552832733947,38.6347815564041]}]],[[{"lng":[-9.06307547677463,-9.06435239698313],"lat":[38.6521025275267,38.6609669787281]}]],[[{"lng":[-9.06435239698313,-9.06307547677463],"lat":[38.6609669787281,38.6521025275267]}]],[[{"lng":[-8.89129862002174,-8.90127843793806],"lat":[38.5736958749383,38.5300772441183]}]],[[{"lng":[-9.12121143454573,-9.09424202447772],"lat":[38.6215820945316,38.6205507274876]}]],[[{"lng":[-9.15451382091101,-9.15916271643473],"lat":[38.6347815564041,38.6552832733947]}]],[[{"lng":[-9.15451382091101,-9.09424202447772],"lat":[38.6347815564041,38.6205507274876]}]],[[{"lng":[-9.09424202447772,-9.12121143454573],"lat":[38.6205507274876,38.6215820945316]}]],[[{"lng":[-9.09424202447772,-9.15451382091101],"lat":[38.6205507274876,38.6347815564041]}]],[[{"lng":[-8.87150087424175,-8.90127843793806],"lat":[38.5290545122728,38.5300772441183]}]],[[{"lng":[-8.90127843793806,-8.89129862002174],"lat":[38.5300772441183,38.5736958749383]}]],[[{"lng":[-8.90127843793806,-8.87150087424175],"lat":[38.5300772441183,38.5290545122728]}]]],["X110501","X110506","X110506.1","X110506.2","X110507","X110507.1","X110507.2","X110508","X110508.1","X110508.2","X110618","X110618.1","X110654","X110654.1","X110656","X110657","X110657.1","X110657.2","X110657.3","X110658","X110666","X110707","X110707.1","X110729","X110730","X111009","X111012","X111013","X111014","X111014.1","X111102","X111102.1","X111108","X111125","X111126","X111128","X111413","X111415","X111515","X111515.1","X111516","X111516.1","X111517","X111517.1","X111603","X111603.1","X111603.2","X111603.3","X111608","X111609","X111610","X150201","X150312","X150312.1","X150312.2","X150312.3","X150313","X150313.1","X150314","X150314.1","X150314.2","X150315","X150315.1","X150315.2","X150409","X150410","X150802","X151002","X151005","X151005.1","X151007","X151007.1","X151205","X151210","X151210.1"],"desire_lines",{"interactive":true,"className":"","pane":"tmap401","stroke":true,"color":["#CC4C02","#FECF66","#FEF6BA","#FEF6BA","#FECF66","#FEF6BA","#FECF66","#CC4C02","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FECF66","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FECF66","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FECF66","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FECF66","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FECF66","#FEF6BA","#FEF6BA","#FECF66","#FEF6BA","#F88B22","#FEF6BA","#F88B22"],"weight":[9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9],"opacity":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],"fill":false,"fillColor":["#CC4C02","#FECF66","#FEF6BA","#FEF6BA","#FECF66","#FEF6BA","#FECF66","#CC4C02","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FECF66","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FECF66","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FECF66","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FECF66","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FEF6BA","#FECF66","#FEF6BA","#FEF6BA","#FECF66","#FEF6BA","#F88B22","#FEF6BA","#F88B22"],"fillOpacity":0.2,"dashArray":"none","smoothFactor":1,"noClip":false},["<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>110501<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>2,125<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>110506<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>1,019<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>110506<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>556<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>110506<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>553<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>110507<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>1,112<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>110507<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>847<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>110507<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>1,088<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>110508<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>2,253<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>110508<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>538<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>110508<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>815<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>110618<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>669<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>110618<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>521<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>110654<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>661<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>110654<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>514<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>110656<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>608<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>110657<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>571<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>110657<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>576<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>110657<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>783<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>110657<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>866<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>110658<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>785<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>110666<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>507<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>110707<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>543<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>110707<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>788<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>110729<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>524<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>110730<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>768<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>111009<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>649<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>111012<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>928<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>111013<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>847<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>111014<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>1,089<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>111014<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>626<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>111102<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>951<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>111102<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>732<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>111108<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>919<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>111125<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>819<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>111126<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>811<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>111128<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>875<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>111413<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>728<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>111415<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>650<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>111515<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>633<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>111515<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>590<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>111516<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>686<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>111516<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>747<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>111517<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>550<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>111517<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>719<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>111603<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>805<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>111603<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>868<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>111603<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>1,048<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>111603<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>564<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>111608<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>802<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>111609<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>962<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>111610<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>517<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>150201<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>513<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>150312<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>843<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>150312<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>562<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>150312<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>1,207<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>150312<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>563<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>150313<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>774<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>150313<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>561<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>150314<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>585<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>150314<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>532<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>150314<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>508<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>150315<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>1,210<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>150315<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>538<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>150315<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>705<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>150409<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>887<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>150410<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>886<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>150802<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>666<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>151002<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>1,319<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>151005<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>751<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>151005<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>802<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>151007<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>1,223<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>151007<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>814<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>151205<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>1,823<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>151210<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>669<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>151210<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>Total<\/nobr><\/td><td align=\"right\"><nobr>1,813<\/nobr><\/td><\/tr><\/table><\/div>"],null,["110501","110506","110506","110506","110507","110507","110507","110508","110508","110508","110618","110618","110654","110654","110656","110657","110657","110657","110657","110658","110666","110707","110707","110729","110730","111009","111012","111013","111014","111014","111102","111102","111108","111125","111126","111128","111413","111415","111515","111515","111516","111516","111517","111517","111603","111603","111603","111603","111608","111609","111610","150201","150312","150312","150312","150312","150313","150313","150314","150314","150314","150315","150315","150315","150409","150410","150802","151002","151005","151005","151007","151007","151205","151210","151210"],{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addLegend","args":[{"colors":["#FEF6BA","#FECF66","#F88B22","#CC4C02"],"labels":["500 to 1,000","1,000 to 1,500","1,500 to 2,000","2,000 to 2,500"],"na_color":null,"na_label":"NA","opacity":1,"position":"topright","type":"unknown","title":"Total","extra":null,"layerId":"legend401","className":"info legend","group":"desire_lines"}]},{"method":"addLayersControl","args":[[],"desire_lines",{"collapsed":true,"autoZIndex":true,"position":"topleft"}]}],"limits":{"lat":[38.5290545122728,38.903193439016],"lng":[-9.41809213604778,-8.87150087424175]},"fitBounds":[38.5290545122728,-9.41809213604778,38.903193439016,-8.87150087424175,[]]},"evals":[],"jsHooks":[]}</script>
+
+---
+
+## Stage IV: Origin-destination data analysis
+
+- Now we have data in our computer, and verified it works, we can use it
+
+- Which places are most car dependent? 
+
+
+```r
+car_dependent_routes = desire_lines %&gt;% 
+  mutate(percent_drive = Car / Total * 100) %&gt;% 
+  filter(percent_drive &gt; 50) 
+nrow(car_dependent_routes)
+```
+
+```
+## [1] 42
+```
+
+- Get routes
+
+
+```r
+routes = stplanr::route(
+  l = car_dependent_routes,
+  route_fun = cyclestreets::journey,
+  plan = "balanced"
+  )
+saveRDS(routes, "routes_car_dependent.Rds")
+```
+
+&lt;!-- -- --&gt;
+
+&lt;!-- - Any questions? --&gt;
+
+&lt;!-- -- --&gt;
+
+&lt;!-- - Everyone happy with RStudio? --&gt;
+
+&lt;!-- --- --&gt;
+
+&lt;!-- # Supporting reference materials --&gt;
+
+&lt;!-- All interactive programming/analysis with command line interface involves frequent reference to documentation, and data science is no exception. Places to look for help (in roughly descending order): --&gt;
+
+&lt;!-- -- --&gt;
+
+&lt;!-- - Your colleague --&gt;
+&lt;!-- - R's internal help (e.g. with `?functonname` or `vignettes(package = "packagename)`) --&gt;
+&lt;!-- - Online documentation, e.g. for the pct package: https://itsleeds.github.io/pct/  --&gt;
+&lt;!-- - *Transport and Geographic Data Science with R*: An introduction to R aimed at transport planners: https://git.io/tds2dayex --&gt;
+
+&lt;!-- - The transport chapter ([12](https://geocompr.robinlovelace.net/transport.html)) in the open source book [*Geocomputation with R*](https://geocompr.robinlovelace.net/) --&gt;
+&lt;!-- - R for Data Science --&gt;
+
+&lt;!-- --- --&gt;
+
+&lt;!-- # Exercises --&gt;
+
+&lt;!-- - If you're happy with R, work through G1 to G8 in the [exercises](https://itsleeds.github.io/pct/articles/pct_training.html#exercises), starting: --&gt;
+&lt;!--     - G1: Using the PCT's online interface, hosted at [www.pct.bike/m/?r=isle-of-wight](https://www.pct.bike/m/?r=isle-of-wight), identify the MSOA **zone** that has the highest number of people who cycle to work. --&gt;
+
+&lt;!-- - If you're just getting started with RStudio: Work through Section 1 of https://git.io/tds2dayex --&gt;
+
+&lt;!-- - Getting up to speed with data manipulation in the tidyverse: Work through and reproduce the code in Section [5.2](https://r4ds.had.co.nz/transform.html#filter-rows-with-filter) of R for Data Science. --&gt;
+
+&lt;!-- --- --&gt;
+
+&lt;!-- # The PCT hackathon --&gt;
+
+&lt;!-- -- --&gt;
+
+&lt;!-- Overall aim: generate ideas related to and extending the PCT --&gt;
+
+&lt;!-- -- --&gt;
+
+&lt;!-- Ideas: --&gt;
+
+&lt;!-- - Create a route network reflecting where you would invest if the priority was reducing car trips of less than 5 km --&gt;
+
+&lt;!-- -- --&gt;
+
+&lt;!-- - Design interventions to replace short car trips across West Yorkshire (or another region of your choice) using the PCT methods/data to support your decisions --&gt;
+
+&lt;!-- -- --&gt;
+
+&lt;!-- - Identify quiet routes and design a quiet route network for city/region of your choice, e.g. Leeds --&gt;
+
+&lt;!-- -- --&gt;
+
+&lt;!-- - Import alternative origin-destination datasets and use those as the basis for propensity to cycle analysis for trip purposes other than single stage commutes, encapsulated in the commut layer in the PCT --&gt;
+&lt;!-- - Any other layers/scenarios/hacks: welcome! Comments in this repo's [issue tracker](https://github.com/ITSLeeds/pct/issues) also welcome. --&gt;
+
+&lt;!-- --- --&gt;
+
+&lt;!-- # References --&gt;
+
+
+
+---
+
+# Other topics
+
+---
+
+## Transport software - which do you use?
+
+&lt;table&gt;
+&lt;caption&gt;Sample of transport modelling software in use by practitioners. Note: citation counts based on searches for company/developer name, the product name and 'transport'. Data source: Google Scholar searches, October 2018.&lt;/caption&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Software &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Company/Developer &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Company HQ &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Licence &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Citations &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Visum &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; PTV &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Germany &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Proprietary &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1810 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; MATSim &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; TU Berlin &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Germany &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Open source (GPL) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1470 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; TransCAD &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Caliper &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; USA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Proprietary &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1360 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; SUMO &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; DLR &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Germany &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Open source (EPL) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1310 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Emme &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; INRO &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Canada &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Proprietary &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 780 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Cube &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Citilabs &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; USA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Proprietary &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 400 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; sDNA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Cardiff University &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; UK &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Open source (GPL) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 170 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+
+## Data science and the tidyverse
+
+- Inspired by Introduction to data science with R (available free [online](https://r4ds.had.co.nz/)) (Grolemund and Wickham, 2016)
+
+
+&lt;img src="https://d33wubrfki0l68.cloudfront.net/b88ef926a004b0fce72b2526b0b5c4413666a4cb/24a30/cover.png" width="30%" /&gt;
+
+---
+
+## A geographic perspective
+
+- See https://github.com/ITSLeeds/TDS/blob/master/catalogue.md
+
+- Paper on the **stplanr** paper for transport planning (available [online](https://cran.r-project.org/web/packages/stplanr/vignettes/stplanr-paper.html)) (Lovelace and Ellison, 2018)
+- Introductory and advanced content on geographic data in R, especially the [transport chapter](https://geocompr.robinlovelace.net/transport.html) (available free [online](https://geocompr.robinlovelace.net/)) (Lovelace, Nowosad, and Muenchow, 2019) 
+- Paper on analysing OSM data in Python  (available [online](https://arxiv.org/pdf/1611.01890)) 
+
+---
+
+# Getting support
+
+--
+
+With open source software, the world is your support network!
+
+--
+
+- Recent example: https://stackoverflow.com/questions/57235601/
+
+--
+
+- [gis.stackexchange.com](https://gis.stackexchange.com/questions) has 21,314 questions 
+
+- [r-sig-geo](https://r-sig-geo.2731867.n2.nabble.com/) has 1000s of posts
+
+- RStudio's Discourse community has 65,000+ posts already!
+
+--
+
+- No transport equivalent (e.g. earthscience.stackexchange.com is in beta)
+
+- Potential for a Discourse forum or similar: transport is not (just) GIS
+
+&lt;!-- --- --&gt;
+
+&lt;!-- ## Transport planning software --&gt;
+
+&lt;!-- Transport modelling software products are a vital component of modern transport planning *and* research. --&gt;
+
+&lt;!-- - They generate the evidence base on which strategic investments are made and, furthermore, --&gt;
+&lt;!-- - provide a powerful mechanism for researching alternative futures. --&gt;
+
+&lt;!-- -- --&gt;
+
+&lt;!-- It would not be an overstatement to say that software determines the range of futures that are visible to policymakers. This makes status of transport modelling software and how it may evolve in the future important questions. --&gt;
+
+&lt;!-- What will transport software look like? What will their capabilities be? And who will control? Answers to each of these questions will affect the future of transport systems.  --&gt;
+
+&lt;!-- -- --&gt;
+
+&lt;!-- - Premise: transport planning/modelling software used in practice ~~will become~~ is becoming increasingly data-driven, modular and open.  --&gt;
+
+
+
+&lt;!-- --- --&gt;
+
+&lt;!-- ```{r geocompr-cover, echo=FALSE, out.width="20%"} --&gt;
+&lt;!-- knitr::include_graphics("https://geocompr.robinlovelace.net/images/cover.png") --&gt;
+&lt;!-- ``` --&gt;
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

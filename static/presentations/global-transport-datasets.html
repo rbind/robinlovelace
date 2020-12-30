@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Global Transport Datasets 全球运输数据集</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Leeds Instititute for Data Analytics (LIDA) Institute for Transport Studies University of Leeds" />
+    <meta name="date" content="2017-11-09" />
+    <link href="libs/remark-css/example.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Global Transport Datasets<br/>全球运输数据集
+## 🚗🚌🚲🚶<br/>to save the world
+### Leeds Instititute for Data Analytics (LIDA)<br/>Institute for Transport Studies<br/>University of Leeds
+### 2017-11-09
+
+---
+
+
+# Globally scalable software for sustainable transport
+
+Open source software and increasingly open access datasets have made digital tools for transport planning available to more people than ever before.
+However, many of the available products are limited by the scale at which they can operate.
+Recent developments such as the UrbanSim data science toolkit (written primarily in Python) and the Propensity to Cycle Tool (PCT) online mapping tool for prioritising where to build new cycle paths (written in R) have demonstrated that open source software *can* scale to model transport systems, to city/regional and national levels respectively.
+This seminar will present an approach to modelling transitions away from fossil fuels which involves less driving but more walking and cycling that can scale globally.
+Much of the software needed for this approach to work in practice has already been published, in R packages **osmdata** and **dodgr**, which are availabe under the terms of the GPL-3 License.
+The talk will provide an overview of the approach, a demonstrations of the software and a discussion of an ambitious plan to scale it worldwide.
+
+---
+
+
+
+background-image: url(https://pbs.twimg.com/media/DOH94nXUIAAgcll.jpg)
+
+&lt;span style="background-color:black;color:white"&gt; # Test: where is this? &lt;/span&gt;
+
+---
+class: center, middle
+
+# Agenda
+
+15:30-15:40: Dockless Bike Sharing and Urban Dynamics (Yuanxuan Yang)
+
+15:40-16:10: Software and hardware for vehicular emissions monitoring (Dr James Tate)
+
+16:10-17:00: Globally scalable software for sustainable transport (Dr Mark Padgham)
+
+17:00-18:00: Networking, drinks and nibbles
+
+---
+class: inverse, center, middle
+
+# A few recent global transport datasets
+
+---
+
+# Roads
+
+&lt;img src="http://journals.plos.org/plosone/article/figure/image?id=10.1371/journal.pone.0180698.g009&amp;size=inline" width="49%" /&gt;&lt;img src="https://www.skobbler.com/images/osm_about.png" width="49%" /&gt;
+
+Barrington-Leigh, C., Millard-Ball, A., 2017. The world’s user-generated road map is more than 80% complete. PLOS ONE 12, e0180698. doi:10.1371/journal.pone.0180698
+
+---
+
+# OSM Rate of growth
+
+![](https://www.skobbler.com/images/osm_about.png)
+
+---
+
+# Air quality
+
+Imagine the potential! Source: Sentinel data via [gislounge.com](https://www.gislounge.com/monitoring-air-pollution-sentinel-5p/)
+
+![](https://36qxd1l7f7y2pa9s2h6gbwi1-wpengine.netdna-ssl.com/wp-content/uploads/2017/11/Nitrogen_dioxide_forecast.png)
+
+
+---
+
+background-image: url(http://3.bp.blogspot.com/-UIcCHqLXBy0/UsCxPy7dANI/AAAAAAAABHw/xKoxknFfXGA/s1600/Capture+2.PNG)
+
+# Bikeshare / 自行车野兔 / 🚲, 🚲, 🚲, 🚲, 🚲, 🚲, 🚲, 🚲, 🚲
+
+```r
+rep(emojifont::emoji("bike"), 9) # gratuitous reproducible example
+```
+
+
+---
+
+# Plug: R for Transport Applications Course
+
+## Spread the word: 26^th^ 27^th^ April 2018
+
+More info: see http://lida.leeds.ac.uk/event/rtransport2018/
+
+![](https://pbs.twimg.com/media/C4olIabWIAAhvBT.jpg)
+
+---
+
+background-image: url(https://pbs.twimg.com/media/DOH94nXUIAAgcll.jpg)
+
+&lt;span style="background-color:black;color:white"&gt; # Answer: Amsterdam! (see &lt;a href="https://www.citylab.com/transportation/2012/04/why-streets-copenhagen-and-amsterdam-look-so-different-ours/1849/"&gt; CityLab.com&lt;/a&gt;) &lt;/span&gt;
+
+---
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {window.dispatchEvent(new Event('resize'));});
+(function() {var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler"); if (!r) return; s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }"; d.head.appendChild(s);})();</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+  }
+});
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

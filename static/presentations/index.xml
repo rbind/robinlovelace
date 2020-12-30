@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Seminars, invited talks and workshops on Robin Lovelace&#39;s website. Energy. Transport. Technology. Change the World.</title>
+    <link>/presentations/</link>
+    <description>Recent content in Seminars, invited talks and workshops on Robin Lovelace&#39;s website. Energy. Transport. Technology. Change the World.</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 23 Apr 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/presentations/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Seminar for the online Why R conference</title>
+      <link>/presentations/why-r-2020/</link>
+      <pubDate>Thu, 23 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/presentations/why-r-2020/</guid>
+      <description>I was invited to co-present on the topic of Recent changes in R spatial at the Why R conference which, like many other events, has moved on-line.
+ Event link: meetup.com Video link: YouTube Source code: github.com/Nowosad/whyr_webinar004  And on social media
+New @Docker images for reproducible geographic data analysis seem to be working 🎉 Just ran all #geocompr code with #RStats 4.0.0, and you can to (feedback on this welcome) 🚀 Details: https://t.</description>
+    </item>
+    
+    <item>
+      <title>Invited seminar at the University of Pennsylvania</title>
+      <link>/presentations/pennsylvania-2020/</link>
+      <pubDate>Mon, 06 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/presentations/pennsylvania-2020/</guid>
+      <description>In place of a planned MUSA Masterclass talk in person, a remote lecture was scheduled via the wonders of new digital technologies, on transport data science.
+Although not as in-depth as the MUSA Masterclass talk, which has been postponed until April 2021 due to the Covid-19 Pandemic, this talk will give a high-level overview of some of the topics that I will talk about, based on a case study from Leeds, UK, the home of the Institute for Transport Studies.</description>
+    </item>
+    
+    <item>
+      <title>Transport Data Science: from regional to street levels</title>
+      <link>/presentations/tds-regional-workshop/</link>
+      <pubDate>Fri, 07 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/presentations/tds-regional-workshop/</guid>
+      <description>Invited seminar and workshop, Université catholique de Louvain Hosted by Christan Ritter, this invited talk will take place at the Institute of Statistics, Biostatistics and Actuarial Sciences.
+ Abstract Data Science has emerged as an area of high and consistent growth in many sectors. High tech industries such as search engine optimisation, marketing and retail analytics have been quick to adopt new workflows. Transport has arguably been slow to adapt to the transformations towards open source software (as opposed to proprietary products that still dominate), command line and scriptable interfaces (unlike the graphical user interfaces of tools such as Excel) and code sharing and version development via platforms such as GitHub.</description>
+    </item>
+    
+    <item>
+      <title>Geocomputation with R: from inception to physical book</title>
+      <link>/presentations/geocompr-launch/</link>
+      <pubDate>Tue, 30 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/presentations/geocompr-launch/</guid>
+      <description>Lecture and book launch, part of Leeds Digital Festival This talk will introduce Geocomputation with R, a new book on R for geographic data that has just been published. Aimed at people new to the subject, I’ll provide some examples to show the power of programming with open source software for high-performance, reproducible mapping and geographic analyis. I will cover a bit of the history but focus on visualisation, which is key to using data to understand the world.</description>
+    </item>
+    
+    <item>
+      <title>Keynote talk on geocomputation, SatRdays Newcastle</title>
+      <link>/presentations/satrday-keynote/</link>
+      <pubDate>Sat, 06 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/presentations/satrday-keynote/</guid>
+      <description>Keynote talk at SatRdays Newcastle Geocomputation with R: Reproducible Geo* workflows, from getting data to making maps This talk will introduce Geocomputation with R, a new book on R for geographic data. It will demonstrate how far R has evolved as an environment for geographic data analysis and visualisation, and provide a taster of what is in the book and, more importantly, what is possible when &amp;lsquo;data science&amp;rsquo; and &amp;lsquo;GIS&amp;rsquo; meet.</description>
+    </item>
+    
+    <item>
+      <title>Geocomputation with R: Empower yourself with geo data</title>
+      <link>/presentations/nurd-keynote/</link>
+      <pubDate>Wed, 31 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/presentations/nurd-keynote/</guid>
+      <description>  Keynote lecture for the Northwest Universities R Day, Manchester In this, titled Geocomputation with R: Empower yourself with free software and geo* data, I provide an overview of the evolving landscape for working with geographic data using open source, command-line driven software.
+ Slides Audio   </description>
+    </item>
+    
+    <item>
+      <title>Invited lecture: ICTs para la (ciclo)inclusión</title>
+      <link>/presentations/icts-inclusion/</link>
+      <pubDate>Fri, 05 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/presentations/icts-inclusion/</guid>
+      <description> Invited lecture in Chile at the Seminario del Transporte a la Movilidad y Accesibilidad (in Spanish)  Title: ICTs para la (ciclo)inclusión Slides (in Spanish)  </description>
+    </item>
+    
+    <item>
+      <title>Severance, parallels and integration</title>
+      <link>/presentations/cycling-and-society-plenary/</link>
+      <pubDate>Thu, 06 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/presentations/cycling-and-society-plenary/</guid>
+      <description>  Plenary lecture at the Cycling &amp;amp; Society conference, Bristol Talk on methods for estimating severance in active transport networks.
+ Slides: Severance, parallels and integration Audio from the talk is available here   </description>
+    </item>
+    
+    <item>
+      <title>Invited seminar: can geographic data save the world?</title>
+      <link>/presentations/geocompr-jena/</link>
+      <pubDate>Wed, 11 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/presentations/geocompr-jena/</guid>
+      <description>  This was the finale of a week of research collaboration and teaching at the Friedrich-Schiller-Universität Jena Institut für Geographie. During the study visit I also worked on Geocomputation with R with fellow co-author Jannes Muenchow and wrote a tutorial on route network analysis in R that can be found at https://github.com/Robinlovelace/geocomp-tranport-workshop
+ Slides: Can Geographic Data Save the World?  </description>
+    </item>
+    
+    <item>
+      <title>Seminar: invited talk at Geographic Data Science lab</title>
+      <link>/presentations/gds-seminar/</link>
+      <pubDate>Tue, 02 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/presentations/gds-seminar/</guid>
+      <description>  Talk at the Geographic Data Science (GDS) Lab in Liverpool.
+ Slides  </description>
+    </item>
+    
+    <item>
+      <title>Keynote: Cycling and transport policy</title>
+      <link>/presentations/hackney-keynote/</link>
+      <pubDate>Fri, 10 Jun 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/presentations/hackney-keynote/</guid>
+      <description>Invited keynote lecture titled Cycling and transport policy: embedding active travel in every stage of the planning process, at the Hackney Cycling Conference - Slides</description>
+    </item>
+    
+  </channel>
+</rss>

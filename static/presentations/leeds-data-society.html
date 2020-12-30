@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>An introduction to</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Robin Lovelace, Jannes Menchow and Jakub Nowosad" />
+    <link href="leeds-data-society_files/remark-css/default.css" rel="stylesheet" />
+    <link href="leeds-data-society_files/remark-css/default-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# An introduction to
+## 🌐<br/> Geocomputation with R
+### Robin Lovelace, Jannes Menchow and Jakub Nowosad
+### For Leeds Data Society, University of Leeds, 2018. Source code: <a href="https://github.com/geocompr/geocompkg/">github.com/geocompr/geocompkg</a>
+
+---
+
+
+&lt;!-- msg: Looks like I'll have a second change to demonstrate this code: 55% of people in the poll wanted sea level rise (SLR) to be the example dataset for the dplyr/sf integration workshop tomorrow. Watch this space --&gt;
+&lt;!-- 14:15 - 15:00 - 45 minute talk  --&gt;
+&lt;!-- Aims: show-off the book, provide overview, some useful things in it --&gt;
+
+
+
+
+layout: true
+background-image: url(xaringan_stuff/img/r_geocomp_background.png)
+background-size: cover
+
+---
+
+# Aim
+
+- What is R and what is it good for?
+- An introduction to the tidyverse
+- An introduction to the sf package
+- Spatial data and the tidyverse
+- Making maps with R
+
+
+
+```r
+install.packages("tidyverse")
+```
+
+**sf** (first release in 2016) implements the open standard data model *simple features*. Get **sf** with:
+
+
+```r
+install.packages("sf")
+```
+
+The workshop also uses a dataset from the **spData** package, which can be installed with:
+
+
+```r
+install.packages("spData")
+```
+
+For more on this see: [github.com/Robinlovelace/geocompr](https://github.com/Robinlovelace/geocompr). 
+
+---
+
+# Why R? (source: [stackoverflow.blog](https://stackoverflow.blog/2017/10/10/impressive-growth-r/))
+
+&lt;img src="https://stackoverflow.blog/wp-content/uploads/2017/10/tag_growth_scatter-1-771x675.png" width="70%" /&gt;
+
+---
+
+## Introduction to the tidyverse
+
+- Software for 'data science' is evolving
+- In R, packages **ggplot2** and **dplyr** are popular
+- Now integrated into a 'metapackage': the [**tidyverse**](https://www.tidyverse.org/)
+- Which works with 'tidy data' (from `vignette("tidy-data")`):
+
+
+&gt;    - Each variable forms a column.
+&gt;    - Each observation forms a row.
+&gt;    - Each type of observational unit forms a table
+
+- Historically spatial R packages have not been compatible with the **tidyverse**
+
+---
+background-image: url("https://pbs.twimg.com/media/CvzEQcfWIAAIs-N.jpg")
+background-size: cover
+
+---
+
+## Enter sf
+
+- **sf** is a recently developed package for spatial (vector) data
+- Combines the functionality of three previous packages: **sp**, **rgeos** and **rgdal**
+- Has many advantages, including:
+    - Faster data I/O
+    - More geometry types supported
+    - Compatibility with the *tidyverse*
+    
+That's the topic of this workshop
+
+---
+
+background-image: url("https://media1.giphy.com/media/Hw5LkPYy9yfVS/giphy.gif")
+
+---
+
+
+# Geocomputation with R
+
+&lt;figure&gt;
+&lt;img align="right" src="https://geocompr.github.io/workshops/erum2018/img/globe.png" width = "60%", height = "60%"/&gt;
+&lt;/figure&gt;
+
+- [Jakub Nowosad](https://nowosad.github.io/): developer of GeoPAT + more.
+
+- [Jannes Muenchow](http://www.geographie.uni-jena.de/en/Muenchow.html), creator of **RQGIS**. 
+
+--
+
+- [Robin Lovelace](https://www.robinlovelace.net/), creator of **stplanr**, co-author of Efficent R Programming. 
+
+--
+
+- Open source book available online from [geocompr.robinlovelace.net/](https://geocompr.robinlovelace.net/)
+
+--
+
+- Book now on sale! See [Amazon](https://www.amazon.co.uk/Geocomputation-Chapman-Hall-Robin-Lovelace/dp/1138304514/ref=sr_1_1?ie=UTF8&amp;qid=1543422522&amp;sr=8-1&amp;keywords=geocomputation+with+r) or (cheaper) [Wordery](https://wordery.com/geocomputation-with-r-robin-lovelace-9781138304512)
+
+---
+
+## Attaching the packages
+
+- You can use packages with `packagename::functionname()`
+- But by usually they are loaded at the beginning of an R session:
+
+
+
+```r
+library(sf)
+library(raster)
+library(spData)
+```
+
+---
+
+## The structure of spatial data in sf
+
+- Let's look at a dataset representing the United States:
+
+
+```r
+us_states[1:3, 1:2]
+```
+
+```
+## Simple feature collection with 3 features and 2 fields
+## geometry type:  MULTIPOLYGON
+## dimension:      XY
+## bbox:           xmin: -114.8136 ymin: 30.24971 xmax: -84.89184 ymax: 41.00238
+## epsg (SRID):    4269
+## proj4string:    +proj=longlat +datum=NAD83 +no_defs
+##   GEOID     NAME                       geometry
+## 1    01  Alabama MULTIPOLYGON (((-88.20006 3...
+## 2    04  Arizona MULTIPOLYGON (((-114.7196 3...
+## 3    08 Colorado MULTIPOLYGON (((-109.0501 4...
+```
+
+## Spatial data and the tidyverse
+
+- Works just like normal data in the tidyverse
+
+- Beware of name conflicts though:
+
+
+```r
+library(tidyverse)
+```
+
+```
+## ── Attaching packages ───────────────────── tidyverse 1.2.1 ──
+```
+
+```
+## ✔ ggplot2 3.1.0     ✔ purrr   0.2.5
+## ✔ tibble  1.4.2     ✔ dplyr   0.7.8
+## ✔ tidyr   0.8.2     ✔ stringr 1.3.1
+## ✔ readr   1.2.1     ✔ forcats 0.3.0
+```
+
+```
+## ── Conflicts ──────────────────────── tidyverse_conflicts() ──
+## ✖ tidyr::extract() masks raster::extract()
+## ✖ dplyr::filter()  masks stats::filter()
+## ✖ dplyr::lag()     masks stats::lag()
+## ✖ dplyr::select()  masks raster::select()
+```
+
+---
+
+# Data manipulation in the tidyverse (dplyr)
+
+- **dplyr** provides a 'A grammar for data manipulation'
+- It allows arguments to be 'piped', e.g.:
+
+
+```r
+states1 = us_states %&gt;%
+  slice(1)
+states2 = us_states %&gt;% 
+  filter(grepl(pattern = "^A", x = NAME)) %&gt;% 
+  top_n(n = 2, wt = total_pop_15)
+```
+
+
+---
+
+# Tidyverse pitfall example: binding rows
+
+
+
+```r
+rbind(states1, states2)     # works
+bind_rows(states1, states2) # fails
+```
+
+```
+Error in .subset2(x, i, exact = exact) : 
+  attempt to select less than one element in get1index
+```
+
+Work-around (see article in [geocompr.github.io/geocompkg](https://geocompr.github.io/geocompkg/articles/tidyverse-pitfalls.html) for more pitfalls):
+
+
+```r
+us_data = st_set_geometry(us_states, NULL)
+d = bind_rows(us_data, us_data)
+d_sf = st_sf(d, geometry = c(us_states$geom, us_states$geom))
+```
+
+---
+
+
+## Making maps with R
+
+- See Chapter 8 on Making maps with R, at: [geocompr.robinlovelace.net/adv-map.html](https://geocompr.robinlovelace.net/adv-map.html)
+
+
+---
+
+## Now over to you
+
+- Get into groups of 2-5 and say hello
+  - What is each person's name?
+  - How much R experience do you have?
+  - What do you hope to get out of today?
+
+- Take a look around RStudio
+  - Create a new project
+  - Try in install a new package
+  - Load the packages we'll use in this practical
+
+- The practical
+  - Navigate to [geocompr.robinlovelace.net](https://geocompr.robinlovelace.net/adv-map.html)
+  - Answer the first 3 questions of Chapter 3
+  - Take a look at chapter 2
+  - Answer questions 4:6 in Chapter 3
+  - Take a look at Chapter 8 and make some maps!
+  - Challenge: answer all questions in Chapter 3
+  - Bonus (advanced): make a pull request that improves the book
+  
+---
+  
+## Final thing
+
+A group of us are thinking about starting-up the Leeds R Users group.
+
+- For academic and non-academic researchers
+- Interested in getting involved?
+
+Email: r.users.leeds@gmail.com
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();</script>
+
+<script>
+(function() {
+  var i, text, code, codes = document.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+})();
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

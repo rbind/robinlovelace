@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <title>Enhancements to the propensity to cycle tool to estimate cycle-to-station potential</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Robin Lovelace and Joey Talbot" />
+    <meta name="date" content="2019-11-20" />
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Enhancements to the propensity to cycle tool to estimate cycle-to-station potential
+## 🚲 🚋 <br/>The mission to double the world’s cycling potential
+### Robin Lovelace and Joey Talbot
+### Institute for Transport Studies, University of Leeds
+### 2019-11-20
+
+---
+
+
+
+
+# Introduction
+
+.pull-left[
+
+Talk structure:
+
+- Why travel to stations
+
+- Updating the Propensity to Cycle Tool (PCT) methods: case study of Luton
+
+- The Cycling Infrastructure Prioritisation Toolkit (CyIPT)
+
+]
+
+--
+
+.pull-right[
+
+Project aims: 
+
+- Establish the potential for cycling to stations in the STARS study area
+
+- Inform investment decisions regarding cycle infrastructure and cycle parking at stations
+
+- Feed into monitoring and evaluation of cycling levels
+
+]
+
+???
+
+Robin to do this bit
+
+Around 2/3rd of trips are within 5 miles.
+Many of these are cyclable, especially when considering Ebikes.
+But how to get people cycling who commute longer distances, e.g. those living in the commuter belts outside London?
+
+Modal shift to cycling under future scenarios
+Identify roads which may benefit from improved cycle infrastructure
+Estimate the number of cycle parking spaces required at stations
+Can identify potential monitoring sites and provide a baseline against which to assess cycling uptake 
+
+---
+
+# Prior work: national tool for strategic cycle planning
+
+![](https://raw.githubusercontent.com/npct/pct-team/master/figures/front-page-leeds-pct-demo.png)
+
+---
+
+background-image: url(https://user-images.githubusercontent.com/1825120/69228575-b55ee700-0b7b-11ea-922c-77601c30fff8.png)
+
+# Updates to the PCT
+
+- Source: Lovelace et al. ([2017](https://www.jtlu.org/index.php/jtlu/article/view/862))
+
+
+## New travel to school layer
+
+--
+
+## Updated TAG calculations
+
+--
+## Extensions via the Cycling Infrastructure Prioritisation Toolkit (CyIPT)
+
+---
+
+# Case study area - zone analysis
+
+.pull-left[
+
+![](https://raw.githubusercontent.com/cyipt/stars/master/figures/beford-overview-with mainline.png)&lt;!-- --&gt;
+
+]
+
+--
+
+.pull-right[
+
+664,000 people in 1,200 km2
+
+Moderate population density (~500 ppl/km2 vs ~400 in England)
+
+Relatively even distribution of stations
+
+For interactive map see [here](http://rpubs.com/RobinLovelace/536607)
+
+Cyclable distances (~3.5 km population-weighted mean to stations)
+
+"train is the only practical method for getting to work for many people" (Phase I report)
+
+]
+
+---
+
+# Headline results
+
+Source: Goodman et al. ([2019](https://www.sciencedirect.com/science/article/pii/S2214140518301257#f0020))
+
+![](https://ars.els-cdn.com/content/image/1-s2.0-S2214140518301257-gr4_lrg.jpg)
+
+---
+
+# An open source approach
+
+![](https://user-images.githubusercontent.com/1825120/69235655-cd3d6780-0b89-11ea-9531-b4fec935024c.png)
+
+- Transport planning is a **democratic process**
+
+--
+
+- For democracies to work **participation is vital**
+
+--
+
+- So important that the public can participate, with different levels making participation accessible for all, including:
+    - Lowest barrier to entry: interactive web tool
+    - Mid level: Place to interact with the planning process (e.g. comment on map)
+    - High level: Access to data
+    - Advanced users: Open source software
+
+--
+
+Reproducibility
+
+---
+
+# Cycle-public transport interaction
+
+![](https://raw.githubusercontent.com/npct/pct-team/master/infra-active/active-travel-options.png)
+
+---
+
+# Mode split for commuting - LA
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; lad_name &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Commuters &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; % drive &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; % rail &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; % cycle &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; % active &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; % Go Dutch &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Central Bedfordshire &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 117753 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 74 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 14 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Luton &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 83350 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 59 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 15 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bedford &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 68205 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 67 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 15 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 25 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+
+# Mode split by station catchment
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; nearest_station &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Commuters &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; % drive &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; % rail &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; % cycle &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; % active &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; % Go Dutch &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bedford Midland &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 66203 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 67 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 15 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 25 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Leagrave &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 64661 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 68 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 12 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Luton &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 37973 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 55 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 17 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 18 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Leighton Buzzard &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 21511 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 71 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 12 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 14 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Flitwick &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 21109 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 76 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 11 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Arlesey &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 17960 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 76 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 13 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Biggleswade &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 11770 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 73 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 11 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 16 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Sandy &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 11202 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 76 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 14 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Luton Airport &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10279 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 63 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 15 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 15 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Harlington &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6640 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 79 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+
+# Intra-region travel - OD data analysis
+
+.pull-left[
+
+![](https://raw.githubusercontent.com/cyipt/stars/master/figures/bedford-intra-region-commutes.png)&lt;!-- --&gt;
+
+
+]
+
+--
+
+.pull-right[
+
+See [here](http://rpubs.com/RobinLovelace/536634) for interactive map
+
+Around half of all commutes are within Bedfordshire
+
+The majority of these are to the nearest town centre, but there is some inter-town travel
+
+]
+
+---
+
+# Existing infrasture
+
+![](https://raw.githubusercontent.com/cyipt/stars/master/figures/existing-cyipt.png)&lt;!-- --&gt;
+
+See https://www.cyipt.bike/ for full map
+
+
+???
+
+Worth chatting to Keith/Caroline about
+
+---
+
+# Data sources
+
+- 2011 census data
+
+- 2017-18 ORR Estimates of Station Usage 
+
+- 2018 travel survey of Bedfordshire Midland Main Line stations
+
+- Cyclestreets routing API
+
+- PCT travel to work scenarios
+
+- CyIPT street level cycle infrastructure data
+
+---
+
+.pull-left[
+
+# Methodology
+
+
+- Identify trips that could be made by cycle/PT combination
+
+- Estimate travel to stations, currently (and potential?)
+
+- Estimate the potential for those trips to be cycled
+
+- Combine with cycling potential for other trip purposes
+
+- Visualise results to inform decision-making process
+
+- Assess specific interventions
+
+]
+
+--
+
+.pull-right[
+
+![](https://raw.githubusercontent.com/cyipt/stars/master/figures/multi-stage-rail-schematic.png)&lt;!-- --&gt;
+
+
+![](https://raw.githubusercontent.com/cyipt/stars/master/figures/rail_desire_lines.png)&lt;!-- --&gt;
+
+]
+
+???
+
+These desire lines show MSOA commute data for all journeys starting in Bedfordshire where at least 20 people travel by rail
+
+
+---
+
+# Identification of public transport trips
+
+.pull-left[
+
+## Phase I
+
+- Start with Census OD data
+- Transport API used to find if trip could arrive by 9:00 AM
+- Fastest train journey used (see [here](http://rpubs.com/RobinLovelace/536826))
+- Not simply routing cyclists to the nearest station, but takes account of their final destination 
+
+![](https://raw.githubusercontent.com/cyipt/stars/master/figures/bedford-rnet-rail-geom-phase1.png)&lt;!-- --&gt;
+
+
+]
+
+.pull-right[
+
+## Phase II 
+
+- Start with commutes that are already made by rail
+- Use OpenTripPlanner to identify shortest overall journey time for cycle/rail combination
+- Based on home-rail trip, estimate potential for trip to be cycled
+
+
+Next steps
+
+- Estimate travel-to-station levels for non commute trips based on local survey data
+- Use knowledge of capacity to estimate growth
+
+]
+
+---
+
+# Current trips to stations
+
+.pull-left[
+
+### Phase I estimates
+
+![](https://raw.githubusercontent.com/cyipt/stars/master/figures/bedford-rnet-all-phase1.png)&lt;!-- --&gt;
+
+
+]
+
+
+.pull-right[
+
+### Phase II estimates
+
+![](https://raw.githubusercontent.com/cyipt/stars/master/figures/bedford-rnet-nearest.png)&lt;!-- --&gt;
+
+]
+
+
+???
+
+Add figure showing modal share and distance travelled of Bedfordshire commuters.
+
+---
+
+## Cycling potential estimates - Go Dutch
+
+.pull-left[
+
+### Phase I estimates
+
+![](https://raw.githubusercontent.com/cyipt/stars/master/figures/bedford-rnet-go-dutch-phase1.png)&lt;!-- --&gt;
+
+]
+
+
+.pull-right[
+
+### Phase II estimates
+
+![](https://raw.githubusercontent.com/cyipt/stars/master/figures/bedford-rnet-go-dutch-phase2.png)&lt;!-- --&gt;
+
+]
+
+
+---
+
+# Other considerations
+
+Busyness. Interactive map [here](http://rpubs.com/RobinLovelace/536820)
+
+![](https://raw.githubusercontent.com/cyipt/stars/master/figures/bedford-busyness.png)&lt;!-- --&gt;
+
+
+
+---
+
+# Survey data
+
+To add: summary stats: 
+- modal share at each station in bedfordshire. Do we include the Luton stations?
+- station usage over time
+
+![](https://raw.githubusercontent.com/cyipt/stars/master/figures/survey_and_orr.png)&lt;!-- --&gt;
+
+---
+
+# Survey data analysis
+
+Luton Airport Parkway is less dominated by commuter journeys than other stations
+
+.pull-left[
+
+![](https://raw.githubusercontent.com/cyipt/stars/master/figures/bedford-entries.png)&lt;!-- --&gt;![](https://raw.githubusercontent.com/cyipt/stars/master/figures/luton-airpt-pkwy-entries.png)&lt;!-- --&gt;
+
+]
+
+.pull-right[
+
+![](https://raw.githubusercontent.com/cyipt/stars/master/figures/bedford-exits.png)&lt;!-- --&gt;![](https://raw.githubusercontent.com/cyipt/stars/master/figures/luton-airpt-pkwy-exits.png)&lt;!-- --&gt;
+
+]
+
+
+???
+
+The ORR data is from the Estimates of Station Usage for 2017-18 (the most recent year available)
+The survey data is from 27-29th Nov 2018, collected on a single day between the hours of 05:30-10:30am at each station. 
+Luton Airport Parkway is not used much for commuting, so we can expect the survey data (collected during the morning peak) to show lower usage than ORR data (representing total annual usage)
+
+---
+
+# Route network analysis
+
+Compare potential with plans - interactive map [online](http://rpubs.com/RobinLovelace/536827)
+
+&lt;img src="https://raw.githubusercontent.com/cyipt/stars/master/figures/bedford-rnet-go-dutch-phase2-luton.png" width="75%" /&gt;
+
+???
+
+This routes commutes to the major Bedfordshire stations only (as shown in previous slide) using the Cyclestreets routing API and the PCT 'Go Dutch' scenario
+Journeys are to the nearest station 'as the crow flies'
+
+---
+
+# Infrastructure options
+
+![](https://raw.githubusercontent.com/cyipt/stars/master/figures/recommended-cyipt.png)&lt;!-- --&gt;
+
+---
+
+
+# Next steps
+
+![](https://user-images.githubusercontent.com/1825120/66382281-de079480-e9b2-11e9-89b4-159a7022306f.png)&lt;!-- --&gt;
+
+--
+
+- Feasibility assessment of route options + other interventions
+- [Overlay](http://rpubs.com/RobinLovelace/536834) with commuter and educational trip potential
+- Create integrated layer of cycling potential
+- Extend Phase I cycle parking analysis
+- Training / workshop
+- National deployment of cycling-transport layer
+
+
+---
+
+class: center, middle
+
+# Thanks + further info
+
+Robin Lovelace: r.lovelace@leeds.ac.uk
+
+Joey Talbot: J.D.Talbot@leeds.ac.uk
+
+For more on the PCT, see www.pct.bike
+
+www.cyipt.bike for the Cycling Infrastructure Prioritisation Toolkit (CyIPT)
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
