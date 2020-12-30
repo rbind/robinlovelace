@@ -44,10 +44,10 @@ social:
   link: '#contact'  # For a direct email link, use "mailto:_r.lovelace@leeds.ac.uk".
 - icon: twitter
   icon_pack: fab
-  link: https://twitter.com/USERNAME
+  link: https://twitter.com/robinlovelace
 - icon: google-scholar
   icon_pack: ai
-  link: https://scholar.google.com/citations?user=PERSON-ID
+  link: https://scholar.google.com/citations?sIwtMXoAAAAJ
 - icon: github
   icon_pack: fab
   link: https://github.com/robinlovelace
