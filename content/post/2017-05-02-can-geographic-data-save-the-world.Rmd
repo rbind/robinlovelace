@@ -9,6 +9,8 @@ bibliography: /home/robin/allrefs.bib
 output: 
   html_document: 
     toc: yes
+aliases:
+  - /2017/05/02/can-geographic-data-save-the-world/
 ---
 
 ```{r, include=FALSE}
@@ -17,10 +19,6 @@ library(dplyr)
 
 
 I presented yesterday on the use of geographic data in policy in a flamboyantly named talk: Can geographic data save the world (slides available from [rpubs.com/Robinlovelace](https://rpubs.com/RobinLovelace/272796)). The purpose of this post is to share the slides, [audio](https://www.dropbox.com/s/5x3baro4hrpj57g/gdsl.wav?dl=0) and some of the ideas resulting from the talk, for the benefit of people interested in the topic but unable to attend.
-
-If you just want to sit back and enjoy the slides with audio, rather than read this article, [click here for the audio](https://www.dropbox.com/s/5x3baro4hrpj57g/gdsl.wav?dl=0) and enjoy the slides below. Otherwise please keep reading!
-
-<iframe src="https://rpubs.com/RobinLovelace/272796" height="800" width="1000"></iframe>
 
 The venue influenced the title. The University of Liverpool's Geographic Data Science Laboratory ([GDSL](https://geographicdatascience.com/)) is a research powerhouse churning out papers close in the field.^[
 The name of the discipline, broadly be defined geographic data analysis, modelling and visualisation, is an interesting topic in its own right. The preferred term to describe this body of work shifts over time, and depending on who you ask.
@@ -133,7 +131,7 @@ l_drive_short = l_sf %>%
   filter(car_driver > foot)
 ```
 
-```{r}
+```{r, eval=FALSE}
 library(tmap)
 tmap_mode("view")
 qtm(l_drive_short)

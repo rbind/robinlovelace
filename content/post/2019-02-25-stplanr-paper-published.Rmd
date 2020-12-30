@@ -5,8 +5,9 @@ date: '2019-02-25'
 slug: sustainable-transport-planning-with-r-stplanr-paper-published
 categories: [r]
 tags: [planning, paper]
-bibliography: stplanr.bib
+bibliography: ../../static/bibs/allrefs.bib
 ---
+
 
 ```{r, echo=FALSE, include=FALSE, eval=FALSE}
 citr::tidy_bib_file(rmd_file = "~/blog/content/post/2019-02-25-stplanr-paper-published.Rmd", messy_bibliography = "~/uaf/allrefs.bib", file = "~/blog/content/post/stplanr.bib")
@@ -23,7 +24,7 @@ I asked for it to be put on hold while I completed the mammoth task of re-writin
 ]
 Confusingly, the paper has an official publication date of 2018, despite the second volume of The R Journal in 2018 actually being finished in 2019!
 See the [current issue](https://journal.r-project.org/archive/2018-1/) of The R Journal for all papers in this second 2018 volume.
-There are some interesting papers in there, not least an explanation of methods for visualising point density by @evangelista_geospatial_2018, and an explanation of *another* pipe [@mount_dot-pipe_2018].
+There are some interesting papers in there, not least an explanation of methods for visualising point density by @evangelista_geospatial_2018, and an explanation of *another* pipe [@mount_dotpipe_2018].
 
 Instead of going into the details of what the paper says (see the nicely formatted [pdf](https://journal.r-project.org/archive/2018/RJ-2018-053/RJ-2018-053.pdf) for that), I'd like to finish this post by saying a big THANK YOU to the editorial team behind The R Journal for such a high standard (better than many expensive journals I might add, The R Journal is volunteer-run to the best of my knowledge), especially Roger Bivand and John Verzani.
 

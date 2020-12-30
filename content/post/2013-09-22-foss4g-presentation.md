@@ -7,6 +7,8 @@ categories:
 - Open Source
 - Conferences
 - Presentation
+aliases:
+    - /2013/09/22/presentation-at-foss4g-2013/
 ---
 
 I presented last Thursday at [FOSS4G](http://2013.foss4g.org/), THE conference to go to for Free Open Source Software for Geo applications (get it?). It was an interesting event, with hundreds of delegates dressing up in one form or another as Robin Hood, fantastic food and a very wide range of talks. Just take a look at the [second day](http://2013.foss4g.org/conf/programme/daily/2/) of talks: packed to the rafters with sessions, including [mine](http://2013.foss4g.org/conf/programme/sessions/36/), on visualisation. 
