@@ -20,9 +20,9 @@ organizations:
 bio: My research interests include geocomputation, data science for transport applications, active travel uptake and decarbonising transport systems
 interests:
 - Geocomputation
-- Reproducible geographic data analysis
 - Transport modelling
-- Cycling uptake
+- Reproducible geographic data analysis
+- Mode shift, especially uptake of active modes
 
 education:
   courses:
@@ -52,9 +52,9 @@ social:
 - icon: github
   icon_pack: fab
   link: https://github.com/robinlovelace
-- icon: linkedin
-  icon_pack: fab
-  link: https://www.linkedin.com/
+# - icon: linkedin
+#   icon_pack: fab
+#   link: https://www.linkedin.com/
 superuser: true
 title: Robin Lovelace
 ---
