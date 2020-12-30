@@ -20,7 +20,7 @@ tags:
 categories: []
 date: '2020-10-01'
 lastmod: 2020-12-30T16:27:35Z
-featured: false
+featured: true
 draft: false
 
 # Featured image
@@ -30,6 +30,7 @@ image:
   caption: ''
   focal_point: ''
   preview_only: false
+  
 
 # Projects (optional).
 #   Associate this post with one or more of your projects.
