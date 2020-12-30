@@ -3,6 +3,7 @@ title: New year, new site, reflections on 2021
 author: ~
 date: '2020-12-30'
 slug: new-year-new-site-new-world
+draft: true
 categories: []
 tags: []
 subtitle: ''

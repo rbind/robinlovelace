@@ -19,7 +19,7 @@ feature:
 - description: 80%
   icon: r-project
   icon_pack: fab
-  name: R
+  name: Data science
 - description: 90%
   icon: ":world_map:"
   icon_pack: emoji
@@ -28,6 +28,7 @@ feature:
   icon: ":rocket:"
   icon_pack: emoji
   name: Transport modelling
+  
 
 # Uncomment to use emoji icons.
 #- icon = ":smile:"
