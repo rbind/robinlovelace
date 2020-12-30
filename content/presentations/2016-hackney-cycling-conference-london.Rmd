@@ -1,8 +1,0 @@
----
-date: 2016-06-10
-title: "Keynote: Cycling and transport policy"
-slug: hackney-keynote
----
-
-Invited keynote lecture titled *Cycling and transport policy: embedding active travel in every stage of the planning process*, at the [Hackney Cycling Conference](https://hackney.gov.uk/cycling-conference)
-- [Slides](http://rpubs.com/RobinLovelace/188175)
