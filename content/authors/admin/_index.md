@@ -1,37 +1,54 @@
 ---
-bio: My research interests include distributed robotics, mobile computing and programmable
-  matter.
+# Display name
+name: Robin Lovelace
+
+# Username (this should match the folder name)
+authors:
+- admin
+
+# Is this the primary user of the site?
+superuser: true
+
+# Role/position
+role: Associate Professor of Transport Data Science
+
+# Organizations/Affiliations
+organizations:
+- name: University of Leeds
+  url: "https://www.leeds.ac.uk/"
+
+bio: My research interests include geocomputation, data science for transport applications, active travel uptake and decarbonising transport systems
+interests:
+- Geocomputation
+- Reproducible geographic data analysis
+- Transport modelling
+- Cycling uptake
+
 education:
   courses:
-  - course: PhD in Artificial Intelligence
-    institution: Stanford University
-    year: 2012
-  - course: MEng in Artificial Intelligence
-    institution: Massachusetts Institute of Technology
+  - course: PhD in Transport and Energy
+    institution: University of Sheffield
+    year: 2013
+  - course: MSc in Environmental Science and Management
+    institution: University of York
     year: 2009
-  - course: BSc in Artificial Intelligence
-    institution: Massachusetts Institute of Technology
+  - course: BSc in Environmental Geography
+    institution: University of Bristol
     year: 2008
-email: ""
+email: "rdotlovelace-at-leeds.ac.uk"
 highlight_name: false
-interests:
-- Artificial Intelligence
-- Computational Linguistics
-- Information Retrieval
-organizations:
-- name: Stanford University
-  url: https://www.stanford.edu/
-role: Professor of Artificial Intelligence
+
+role: Associate Professor of Transport Data Science
 social:
 - icon: envelope
   icon_pack: fas
   link: /#contact
 - icon: twitter
   icon_pack: fab
-  link: https://twitter.com/GeorgeCushen
+  link: https://twitter.com/gcushen
 - icon: graduation-cap
   icon_pack: fas
-  link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
+  link: https://scholar.google.co.uk/citations?user=xDJHVCAAAAAJ&hl=en
 - icon: github
   icon_pack: fab
   link: https://github.com/gcushen
@@ -39,11 +56,9 @@ social:
   icon_pack: fab
   link: https://www.linkedin.com/
 superuser: true
-title: Nelson Bighetti
+title: Robin Lovelace
 ---
 
-Nelson Bighetti is a professor of artificial intelligence at the Stanford AI Lab. His research interests include distributed robotics, mobile computing and programmable matter. He leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate.
+Robin is associate professor of transport data science at the Institute for Transport Studies, University of Leeds.
 
 {{< icon name="download" pack="fas" >}} Download my {{< staticref "media/demo_resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
