@@ -6,8 +6,9 @@ date: '2019-07-13'
 slug: user2019
 categories: [r, conferences]
 tags: [toulouse, conference]
-bibliography: allrefs.bib
+bibliography: ../../static/bibs/allrefs.bib
 ---
+
 
 UseR! is the highest profile and, I believe, most popular annual meeting for R enthusiasts, known affectionately as 'UseRs' for the purposes of the event.
 For those who have been living under a stone for the past decade ;) R is an open source statistical programming language that has seen explosive growth since 'data science' became a buzzword.
@@ -66,11 +67,11 @@ blogdown::shortcode("tweet", "1150115187430760448")
 
 Not everyone has the time, energy or money to go to UseR!.
 Some '[no fly pioneers](https://www.theguardian.com/travel/2019/may/22/could-you-give-up-flying-meet-the-no-plane-pioneers)' have given up flying to support global efforts to tackle the climate crisis.
-I was very impressed to see acknowledgement of the conference's climate impacts, with a [form](https://enquetes.inra.fr/index.php/136679?lang=en) used to help calculate its carbon impact:
+I was very impressed to see acknowledgement of the conference's climate impacts, with a form used to help calculate its carbon impact.
 
 ```{r, echo=FALSE}
 # webshot::webshot(url = "https://enquetes.inra.fr/index.php/136679?lang=en", "co2-calculator.png", vheight = "300")
-knitr::include_graphics("https://www.robinlovelace.net/post/2019-07-13-great-things-user2019_files/figure-html/unnamed-chunk-2-1.png")
+# knitr::include_graphics("https://www.robinlovelace.net/post/2019-07-13-great-things-user2019_files/figure-html/unnamed-chunk-2-1.png")
 ```
 
 Whatever the reason, it is certain that the contents of UseR! will be of great interest to many more people than the ~2000 people who attended in person.
@@ -129,9 +130,9 @@ The car dominated nature of the city is shown in the images below, which show my
 
 Despite the car traffic, the cycleways in Toulouse were great.
 I recommend anyone visiting a city for a few days to get a bike, a great way to see the city close up, and get from A to B efficiently, avoiding traffic congestion and with the freedom to get off the beaten (road) track.
-For fun, I recorded some of my routes in Toulouse and uploaded them to OSM, the free and open access community made global mapping database (which I fully endorse over Google Maps ;), allowing reproducible code to show my everyday trip to the conference and back:
+For fun, I recorded some of my routes in Toulouse and uploaded them to OSM, the free and open access community made global mapping database (which I fully endorse over Google Maps ;), allowing reproducible code to show my everyday trip to the conference and back (not evaluated).
 
-```{r}
+```{r, eval=FALSE}
 download.file("https://www.openstreetmap.org/trace/3046619/data", "track1.gpx")
 sf::st_layers("track1.gpx")
 track = sf::read_sf("track1.gpx", layer = "tracks")
@@ -139,6 +140,7 @@ mapview::mapview(track)
 ```
 
 Doing this route each day was a great way to clear my head and prepare for my talk on Wednesday morning.
+
 
 # 5. UseR! 2019 socials
 
@@ -195,7 +197,7 @@ user_talks_movement$link = c(
   "http://www.user2019.fr/static/pres/t256726.pdf",
   "https://www.robinlovelace.net/presentations/user2019-r-for-transport-planning.html"
   )
-DT::datatable(user_talks_movement)
+knitr::kable(user_talks_movement)
 ```
 
 I won't go into the details of my talk because you can see the [slides for yourself at the URL](https://www.robinlovelace.net/presentations/user2019-r-for-transport-planning.html#1).
