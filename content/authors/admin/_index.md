@@ -35,7 +35,7 @@ education:
   - course: BSc in Environmental Geography
     institution: University of Bristol
     year: 2008
-email: "rdotlovelace-at-leeds.ac.uk"
+email: "_r.lovelace@leeds.ac.uk"
 highlight_name: false
 
 role: Associate Professor of Transport Data Science

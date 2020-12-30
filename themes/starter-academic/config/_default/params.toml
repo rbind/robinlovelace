@@ -88,7 +88,7 @@ show_related = {book = true, page = false, post = true, project = true, publicat
 ############################
 
 # Enter contact details (optional). To hide a field, clear it to "".
-email = "test@example.org"
+email = "_r.lovelace@leeds.ac.uk"
 phone = "888 888 88 88"
 
 # Address
