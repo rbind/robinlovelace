@@ -1,6 +1,6 @@
 theme: starter-academic
-title: Academic
-baseurl: ''
+title: Robin Lovelace
+baseurl: 'https://www.robinlovelace.net/'
 copyright: ''
 enableGitInfo: no
 defaultContentLanguage: en

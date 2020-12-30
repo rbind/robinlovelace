@@ -100,14 +100,15 @@ address = {street = "Room 2.04, Institute for Transport Studies (34-40 Universit
 coordinates = {latitude = "53.807", longitude = "-1.556"}
 
 # Directions for visitors to locate you.
-directions = "Enter Building 1 and take the stairs to Office 200 on Floor 2"
+# directions = "Enter Building 1 and take the stairs to Office 200 on Floor 2"
 
 # Office hours
 # A list of your office hours. To remove, set to an empty list `[]`.
-office_hours = ["Monday 10:00 to 13:00", "Wednesday 09:00 to 10:00"]
+# office_hours = ["Tuesday 10:00 to 13:00"
+# office_hours = ["Tuesday 10:00 to 13:00", "Wednesday 09:00 to 10:00"]
 
 # Enter an optional link for booking appointments (e.g. calendly.com).
-appointment_url = "https://calendly.com"
+# appointment_url = "https://calendly.com"
 
 # Contact links
 #   Set to `[]` to disable, or comment out unwanted lines with a hash `#`.
@@ -140,7 +141,7 @@ date_format = "Jan 2, 2006"
 time_format = "3:04 PM"
 
 # Address format (en-us, en-gb, de, fr-fr, zh).
-address_format = "en-us"
+address_format = "en-gb"
 
 ############################
 ## Advanced
