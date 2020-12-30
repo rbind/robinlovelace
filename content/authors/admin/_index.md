@@ -59,7 +59,7 @@ superuser: true
 title: Robin Lovelace
 ---
 
-Robin is associate professor of transport data science at the Institute for Transport Studies, University of Leeds.
+Robin is [Associate Professor of Transport Data Science](https://environment.leeds.ac.uk/transport/staff/953/dr-robin-lovelace) at the [Institute for Transport Studies](https://environment.leeds.ac.uk/transport), University of Leeds.
 
 <!--
 # todo: add resume
