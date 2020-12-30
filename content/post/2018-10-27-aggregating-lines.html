@@ -1,0 +1,145 @@
+---
+title: Aggregating lines, Part I
+author: ~
+date: '2018-10-27'
+slug: aggregating-lines
+categories: [r]
+tags: [stplanr]
+bibliography: /home/robin/allrefs.bib
+---
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<div id="introduction" class="section level2">
+<h2>Introduction</h2>
+<p>It’s been a busy 12 months but with the <a href="https://geocompr.robinlovelace.net/">Geocomputation with R</a> book nearing completion<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>
+I’ve finally found some time to update my blog and do a bit of thinking, about the tangled topic of line aggregation.</p>
+</div>
+<div id="why-aggregate-lines" class="section level2">
+<h2>Why aggregate lines?</h2>
+<p>The transport ‘flow’ on any particular segment of the transport networks is the aggregate (sum) of trips that pass through it <span class="citation">(<a href="#ref-hollander_transport_2016" role="doc-biblioref">Hollander 2016</a>)</span>.
+Finding the flow across a transport network based on input data composed of individual routes, is therefore an aggregation problem.
+It requires a more complex solution than that provided by the <code>aggregate()</code> function in the base R <span class="citation">(<a href="#ref-rcoreteam_language_2018" role="doc-biblioref">R Core Team 2018</a>)</span> package <strong>stats</strong>, however, because the geometry of the output <code>LINESTRING</code>s will be fundamentally different than the input <code>LINESTRINGS</code> of the routes: a route network is composed of many small way segments, but a route is a single long <code>LINESTRING</code>.</p>
+</div>
+<div id="aggregating-lines-with-overline-mki" class="section level2">
+<h2>Aggregating lines with overline() MKI</h2>
+<p>Creating such a route network, with aggregated values per segment, is the problem that the <a href="https://ropensci.github.io/stplanr/reference/overline.html"><code>overline()</code></a> function in the R package <a href="https://github.com/ropensci/stplanr"><strong>stplanr</strong></a> was designed to solve (see a 3.5 yr-old question on <a href="https://gis.stackexchange.com/questions/139681/overlaying-lines-and-aggregating-their-values-for-overlapping-segments">gis.stackexchange.com</a> for more context).</p>
+<p>The function works well and is the basis of the Route Network layer (MSOA) in the Propensity to Cycle Tool (<a href="http://www.pct.bike/">PCT</a>).
+In fact it was developed precisely for this purpose, as illustrated in the image below, which shows a common visualization/analysis problem encountered by transport researchers when working with multiple routes: overlapping routes are not easy to identify from non-overlapping routes:
+notice the red lines in the centre of Leeds in the image look the same as the red lines on the outskirts, despite representing much more movement.</p>
+<p>To overcome the problem <code>overline()</code> was born (credit to Barry Rowlingson who wrote the foundations of the function), and it works (on a tiny dataset of 2 lines) as follows:</p>
+<pre class="r"><code>library(stplanr)
+sl_sp = routes_fast[2:3, ]
+sl_sp@data = data.frame(value = c(2, 5))
+plot(sl_sp, lwd = 9, col = &quot;yellow&quot;)
+rnet_sp = overline(sl_sp, attr = &quot;value&quot;)
+plot(rnet_sp, add = TRUE, lwd = rnet_sp$value)</code></pre>
+<p>The utility of such a function is illustrated in the figure below, which shows the original route network layer of the PCT in action over a similar area of Leeds:</p>
+<p>This works great and the resulting network is used for strategic network planning: you can download route network data in the ‘Region data’ tab of the PCT <span class="citation">(<a href="#ref-lovelace_propensity_2017" role="doc-biblioref">Lovelace et al. 2017</a>)</span>. The route network data for Leeds can, for example, be downloaded as a <code>.geojson</code> file from <a href="https://github.com/npct/pct-outputs-regional-notR/raw/master/commute/msoa/west-yorkshire/rnet.geojson">here</a>.</p>
+<p>But there are some issues: the function works on the older <code>SpatialLinesDataFrame</code> class defined in the <strong>sp</strong> package <span class="citation">(<a href="#ref-pebesma_simple_2018" role="doc-biblioref"><strong>pebesma_simple_2018?</strong></a>)</span>.
+This data class has been superseded by the simpler <code>sf</code> class in the <a href="https://github.com/r-spatial/sf"><strong>sf</strong></a> package, which is faster than <strong>sp</strong> for <a href="https://github.com/ATFutures/geobench">some</a> (if not many) operations.
+Another issue with <code>overline()</code> is that in some cases when 2 lines meet, the resulting aggregated line can be longer than it should be.
+So there are performance and functionality issues to address.
+Rather than solve them all here, this post sets-out the issue using reproducible code and suggests next steps for a new <code>overline()</code> function (or perhaps just an updated <code>overline.sf()</code> function which currently just wraps <code>overline.sp()</code>).</p>
+</div>
+<div id="aggregating-lines-with-sf" class="section level2">
+<h2>Aggregating lines with sf</h2>
+<p>Rather that starting from scratch and writing a geographic algorithm from the ground-up, we will start by exploring solutions provided by existing packages, notably <strong>sf</strong>, which provides an interface to the <code>GEOS</code> library.</p>
+<p>Let’s start simple, with just 2 lines, which have an associated amount of flow (with illustrative values of 2 and 5 in this case):</p>
+<pre class="r"><code>library(stplanr)
+sl = routes_fast_sf[2:3, ]
+sl$value = c(2, 5)</code></pre>
+<p>These lines clearly have a decent amount of overlap, which can be extracted using the function <code>st_intersection()</code>:</p>
+<pre class="r"><code>sl_intersection = sf::st_intersection(sl[1, ], sl[2, ])
+plot(sl$geometry, lwd = 9, col = sf::sf.colors(2, alpha = 0.5))
+plot(sl_intersection, add = TRUE)</code></pre>
+<p>Furthermore, we can find the aggregated value associated with this new segment as follows:</p>
+<pre class="r"><code>sl_intersection$value = sum(sl_intersection$value, sl_intersection$value.1)</code></pre>
+<p>We still do not have a full route network composed of 3 non-overlapping lines, however:
+the original lines need to be ‘clipped’ so that they do not overlap with <code>sl_intersection</code>.
+This can be done as follows:</p>
+<pre class="r"><code>sl_seg1 = sf::st_difference(sl[1, ], sl_intersection)
+sl_seg2 = sf::st_difference(sl[2, ], sl_intersection)
+plot(sl$geometry, lwd = 9, col = sf::sf.colors(2, alpha = 0.5))
+plot(sl_seg1, add = TRUE)
+plot(sl_seg2, add = TRUE)</code></pre>
+<p>We now have all the geographic components needed for a route network.
+The only remaining task is to combine them, using <code>rbind</code>, right?
+Not quite: the following command fails:</p>
+<pre class="r"><code>rnet = rbind(sl_seg1, sl_seg2, sl_intersection)</code></pre>
+<p>Lesson: we need to be more careful in isolating the value to aggregate.
+We will therefore run the previous stages again, but with <code>attrib</code> set to the attribute we would like to aggregate over (<code>value</code> in this case):</p>
+<pre class="r"><code>attrib = &quot;value&quot;
+attrib1 = paste0(attrib, &quot;.1&quot;)
+sl_intersection = sf::st_intersection(sl[1, attrib], sl[2, attrib])
+sl_intersection[[attrib]] = sl_intersection[[attrib]] + sl_intersection[[attrib1]]
+sl_intersection[[attrib1]] = NULL</code></pre>
+<p>That leaves us with a ‘clean’ object that only has a value (7) for the attribute column name we want (<code>value</code>).</p>
+<p>On this basis we can proceed to create the other segments, keeping only the column we’re interested in. To save time and typing, we’ll create both segments in a single command:</p>
+<pre class="r"><code>sl_seg = sf::st_difference(sl[attrib], sf::st_geometry(sl_intersection))
+rnet = rbind(sl_intersection, sl_seg)</code></pre>
+<p>It worked! Now we’re in a position to plot the resulting route network, with ‘width’ proportional to the flow along each segment:</p>
+<pre class="r"><code>plot(rnet, lwd = rnet$value)</code></pre>
+</div>
+<div id="a-benchmark" class="section level2">
+<h2>A benchmark</h2>
+<p>To test that the method is fast, or is at least not slower than the original <code>overline()</code> function, at least for this task, we’ll package-up the method in a new function:</p>
+<pre class="r"><code>overline_sf2 = function(sl, attrib) {
+  attrib = &quot;value&quot;
+  attrib1 = paste0(attrib, &quot;.1&quot;)
+  sl_intersection = sf::st_intersection(sl[1, attrib], sl[2, attrib])
+  sl_intersection[[attrib]] = sl_intersection[[attrib]] + sl_intersection[[attrib1]]
+  sl_intersection[[attrib1]] = NULL
+  sl_seg = sf::st_difference(sl[attrib], sf::st_geometry(sl_intersection))
+  rnet = rbind(sl_intersection, sl_seg)
+  return(rnet)
+}</code></pre>
+<p>If you are new to scripts/algorithms/functions, it may be worth taking a look at the new <a href="https://geocompr.robinlovelace.net/algorithms.html">Algorithms</a> chapter in our near-complete book that teaches a range of geographic methods that use R <span class="citation">(<a href="#ref-lovelace_geocomputation_2019" role="doc-biblioref">Lovelace, Nowosad, and Muenchow 2019</a>)</span>.
+Now the method has been put in a function, we can compare its performance with the per-existing <code>overline()</code> function for comparison:</p>
+<pre class="r"><code>bench::mark(check = F,
+            overline.sp = overline(sl_sp, attrib = &quot;value&quot;),
+            overline.sf = overline(sl, attrib = &quot;value&quot;),
+            overline_sf2 = overline_sf2(sl, attrib = &quot;value&quot;)
+            )</code></pre>
+<p>The results are not Earth-shattering: the new function seems to be around the same speed as the original, if a little faster.
+This is great news, but remember: the new function only works on 2 lines so is much simpler.
+More work needed!</p>
+</div>
+<div id="next-steps" class="section level2">
+<h2>Next steps</h2>
+<p>The next step is to generalist this method so it works for many (potentially thousands) of lines in a way that scales, something that should help on the visualization side, a topic that attracts much interest (see for example this <a href="https://gis.stackexchange.com/questions/778/representation-of-network-flows">gis.stackexchange post</a> on the subject and, more broadly, a recent <a href="https://nowosad.github.io/post/maps-distortion/">article</a> showing how to make animated maps by Jakub Nowosad).
+There is also work to do on performance but, as Donald Knuth said <span class="citation">(<a href="#ref-knuth_computer_1974" role="doc-biblioref">Knuth 1974</a>)</span>:</p>
+<blockquote>
+<p>premature optimization is the root of all evil (or at least most of it) in programming</p>
+</blockquote>
+<p>So a more complete <code>overline.sf()</code> function is needed.
+That will (hopefully) be the topic of the next blog post.</p>
+</div>
+<div id="references" class="section level2 unnumbered">
+<h2>References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-hollander_transport_2016" class="csl-entry">
+Hollander, Yaron. 2016. <em>Transport <span>Modelling</span> for a <span>Complete Beginner</span></em>. <span>CTthink!</span>
+</div>
+<div id="ref-knuth_computer_1974" class="csl-entry">
+Knuth, Donald E. 1974. <span>“Computer <span>Programming As</span> an <span>Art</span>.”</span> <em>Commun. ACM</em> 17 (12): 667–73. <a href="https://doi.org/10.1145/361604.361612">https://doi.org/10.1145/361604.361612</a>.
+</div>
+<div id="ref-lovelace_propensity_2017" class="csl-entry">
+Lovelace, Robin, Anna Goodman, Rachel Aldred, Nikolai Berkoff, Ali Abbas, and James Woodcock. 2017. <span>“The <span>Propensity</span> to <span>Cycle Tool</span>: <span>An</span> Open Source Online System for Sustainable Transport Planning.”</span> <em>Journal of Transport and Land Use</em> 10 (1). <a href="https://doi.org/10.5198/jtlu.2016.862">https://doi.org/10.5198/jtlu.2016.862</a>.
+</div>
+<div id="ref-lovelace_geocomputation_2019" class="csl-entry">
+Lovelace, Robin, Jakub Nowosad, and Jannes Muenchow. 2019. <em>Geocomputation with <span>R</span></em>. <span>CRC Press</span>.
+</div>
+<div id="ref-rcoreteam_language_2018" class="csl-entry">
+R Core Team. 2018. <em>R: <span>A Language</span> and <span>Environment</span> for <span>Statistical Computing</span></em>. Vienna, Austria: <span>R Foundation for Statistical Computing</span>.
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>
+Any input on that still welcome - see the <a href="https://geocompr.robinlovelace.net/index.html#how-to-contribute">contributing</a> section for more.<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
