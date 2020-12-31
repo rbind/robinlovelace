@@ -78,7 +78,7 @@ Figure 1: The Route Network layer illustrating the shifting spatial distribution
 <blockquote>
 <p>Talk is cheap. Show me the code.</p>
 </blockquote>
-<p>On that basis, to show what I meant by reproducibility and ‘data carpentry’ <span class="citation">(<a href="#ref-gillespie_efficient_2016" role="doc-biblioref"><strong>gillespie_efficient_2016?</strong></a>)</span> (a concept mentioned in the slides not discussed in audio for lack of time) I provided some some example code that illustrated the kinds of techniques underlying the PCT.</p>
+<p>On that basis, to show what I meant by reproducibility and ‘data carpentry’ <span class="citation">(<a href="#ref-gillespie_efficient_2016" role="doc-biblioref">Gillespie and Lovelace 2016</a>)</span> (a concept mentioned in the slides not discussed in audio for lack of time) I provided some some example code that illustrated the kinds of techniques underlying the PCT.</p>
 <p>First download and visualise some transport data (from the Isle of Wight as, the smallest region in the PCT):</p>
 <pre class="r"><code>u_pct = &quot;https://github.com/npct/pct-data/raw/master/isle-of-wight/l.Rds&quot;
 if(!file.exists(&quot;l.Rds&quot;))
@@ -86,24 +86,24 @@ if(!file.exists(&quot;l.Rds&quot;))
 l = readRDS(&quot;l.Rds&quot;)
 library(sp)
 plot(l)</code></pre>
-<pre><code>## Warning in wkt(obj): CRS object has no comment</code></pre>
 <p><img src="/post/2017-05-02-can-geographic-data-save-the-world_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <p>Now that we have an idea of the commute patterns in the area, and the nature of ‘OD’ data (converted to geographical desire lines with the <strong><a href="https://github.com/ropensci/stplanr">stplanr</a></strong> package), we can do some analysis.</p>
 <pre class="r"><code>sel_walk = l$foot &gt; 9
 l_walk = l[sel_walk,]
-plot(l)</code></pre>
-<pre><code>## Warning in wkt(obj): CRS object has no comment</code></pre>
-<pre class="r"><code>plot(l_walk, add = T, col = &quot;red&quot;, lwd = 3)</code></pre>
+plot(l)
+plot(l_walk, add = T, col = &quot;red&quot;, lwd = 3)</code></pre>
 <p><img src="/post/2017-05-02-can-geographic-data-save-the-world_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <pre class="r"><code>library(dplyr) # for next slide...</code></pre>
-<p>The above code subsets all the lines that have 10 or more people walking to work in the 2011 census and plots the results (as you’d expect the shorter trips are more commonly walked). It works, but could be interpretted as a little clunky. Enter <a href="https://github.com/tidyverse/dplyr"><strong>dplyr</strong></a>, a package for data science <span class="citation">(<a href="#ref-grolemund_r_2016" role="doc-biblioref"><strong>grolemund_r_2016?</strong></a>)</span>:</p>
+<p>The above code subsets all the lines that have 10 or more people walking to work in the 2011 census and plots the results (as you’d expect the shorter trips are more commonly walked). It works, but could be interpretted as a little clunky. Enter <a href="https://github.com/tidyverse/dplyr"><strong>dplyr</strong></a>, a package for data science <span class="citation">(<a href="#ref-grolemund_r_2016" role="doc-biblioref">Grolemund and Wickham 2016</a>)</span>:</p>
 <pre class="r"><code>l_walk1 = l %&gt;% filter(All &gt; 10) # fails</code></pre>
 <p>Doh! That code nice ‘clean’ (well certainly consistent) code does not work because <code>Spatial</code> objects are not compatible with the pipe operator <code>%&gt;%</code> syntax.</p>
 <p>Enter the <a href="https://github.com/edzer/sfr"><strong>sf</strong></a> package, which represents a step change in how R handles spatial data. First let’s convert that <code>l</code> object into a ‘simple feature’ object:</p>
 <pre class="r"><code>library(sf)</code></pre>
-<pre><code>## Linking to GEOS 3.8.0, GDAL 3.0.4, PROJ 7.0.0</code></pre>
-<pre class="r"><code>l_sf = st_as_sf(l)
-class(l_sf)</code></pre>
+<pre><code>## Linking to GEOS 3.8.0, GDAL 3.0.4, PROJ 6.3.1</code></pre>
+<pre class="r"><code>l_sf = st_as_sf(l)</code></pre>
+<pre><code>## Warning in CPL_crs_from_input(x): GDAL Message 1: +init=epsg:XXXX syntax is
+## deprecated. It might return a CRS with a non-EPSG compliant axis order.</code></pre>
+<pre class="r"><code>class(l_sf)</code></pre>
 <pre><code>## [1] &quot;sf&quot;         &quot;data.frame&quot;</code></pre>
 <pre class="r"><code>plot(l_sf[6:15])</code></pre>
 <pre><code>## Warning: plotting the first 9 out of 10 attributes; use max.plot = 10 to plot
@@ -143,6 +143,12 @@ qtm(l_drive_short)</code></pre>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-arribas-bel_accidental_2014" class="csl-entry">
 Arribas-Bel, Daniel. 2014. <span>“Accidental, Open and Everywhere: <span>Emerging</span> Data Sources for the Understanding of Cities.”</span> <em>Applied Geography</em> 49: 45–53.
+</div>
+<div id="ref-gillespie_efficient_2016" class="csl-entry">
+Gillespie, Colin, and Robin Lovelace. 2016. <em>Efficient <span>R Programming</span>: <span>A Practical Guide</span> to <span>Smarter Programming</span></em>. <span>O’Reilly Media</span>. <a href="https://csgillespie.github.io/efficientR/">https://csgillespie.github.io/efficientR/</a>.
+</div>
+<div id="ref-grolemund_r_2016" class="csl-entry">
+Grolemund, Garrett, and Hadley Wickham. 2016. <em>R for <span>Data Science</span></em>. 1 edition. <span>O’Reilly Media</span>.
 </div>
 <div id="ref-lovelace_big_2016" class="csl-entry">
 Lovelace, Robin, Mark Birkin, Philip Cross, and Martin Clarke. 2016. <span>“From <span>Big Noise</span> to <span>Big Data</span>: <span>Toward</span> the <span>Verification</span> of <span>Large Data</span> Sets for <span>Understanding Regional Retail Flows</span>.”</span> <em>Geographical Analysis</em> 48 (1): 59–81. <a href="https://doi.org/10.1111/gean.12081">https://doi.org/10.1111/gean.12081</a>.
