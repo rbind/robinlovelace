@@ -165,12 +165,14 @@ g = ggplot(droll_long) +
   geom_line(aes(date, value, colour = name), alpha = 0.3, data = d_long) +
   scale_y_continuous(labels = scales::percent) +
   theme_bw()
-gp = plotly::ggplotly(g)
-gp
+g
+# gp = plotly::ggplotly(g)
+# gp
 # w = plotly::as_widget(gp)
 # w
 removed = file.remove("COVID-19-transport-use-statistics.ods")
 ```
+
 
 For now the only thing left to say is thans for reading and happy New Year 🎇🎇🎇
 
