@@ -210,7 +210,8 @@ plugins_js  = []
   #   0: Disabled
   #   1: Disqus (https://disqus.com)
   #   2: Commento (https://commento.io)
-  engine = 0
+  #   3: Utterances (https://utteranc.es/)
+  engine = 3
 
   # Which page types are commentable?
   commentable = {page = true, post = true, docs = true, project = true, publication = true, talk = true}
@@ -224,6 +225,12 @@ plugins_js  = []
   [comments.commento]
     # If self-hosting Commento, enter its URL here (e.g. "https://commento.?.com"), otherwise leave empty.
     url = ""
+    
+#   [comments.utterances]
+#     repo = "rbind/robinlovelace" # repo where comments will live
+#     issueterm = "pathname" # how to match comments to post
+#     label = "comment" #label the issues will have
+#     theme = "github-dark" #github theme they will follow
 
 ############################
 ## Search
