@@ -27,7 +27,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 2020 has been a crazy year all-round with US elections, Brexit negotiations reaching their conclusions and of course the global pandemic that has swept across countries and disrupted lives worldwide.
 
-Looking back over the year a huge amount has changed and I wanted to take the opportunity of the new year to share some thoughts and update, providing an opportunity to post on my updated website ✨.
+Looking back over the year a huge amount has changed and I wanted to take the opportunity of the new year to share some thoughts, providing an opportunity to post on my updated website ✨.
 
 ## ACTON
 
