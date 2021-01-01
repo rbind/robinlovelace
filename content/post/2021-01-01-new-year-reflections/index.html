@@ -16,6 +16,7 @@ image:
   focal_point: ''
   preview_only: no
 projects: []
+bibliography: ../../../static/bibs/allrefs.bib
 ---
 
 <script src="{{< blogdown/postref >}}index_files/header-attrs/header-attrs.js"></script>
@@ -23,11 +24,99 @@ projects: []
 
 <p>2020 has been a crazy year all-round with US elections, Brexit negotiations reaching their conclusions and of course the global pandemic that has swept across countries and disrupted lives worldwide.</p>
 <p>Looking back over the year a huge amount has changed and I wanted to take the opportunity of the new year to share some thoughts and update, providing an opportunity to post on my updated website ✨.</p>
+<div id="acton" class="section level2">
+<h2>ACTON</h2>
+<p>A project that I’ve not talked about much online, because it’s still a work in process, is <a href="https://cyipt.github.io/acton/">ACTON</a>.
+The idea is to make data and actionable evidence available to the public, developers and other stakeholders about the level of active travel provision in and around new and planned development sites.
+The four main kinds of data used in the project are shown below.</p>
+<p><img src="https://cyipt.github.io/acton/reference/figures/README-workflow-1.png" /></p>
+<p>Although it started before the pandemic, with the end-of-project meeting happening on Friday 13 March, it is highly relevant in 2021.
+The increased emphasis on health and active travel that has been seen during the pandemic, and the publication of the government’s Planning for the Future White Paper in August 2020 has led to a follow-on project (see final section of this post).</p>
+</div>
 <div id="online-teaching" class="section level2">
 <h2>Online teaching</h2>
 <p>I was lucky enough to work from home meaning that I could plough on with my research and teaching in ITS.
 In fact, my first fully online-only taught lecture, part of the Transport Data Science module, was delivered on the 17<sup>th</sup> March, as communicated in the Tweet below.</p>
 {{% tweet "1239930988416897033" %}}
-<p>That was on 17th March, just one day after the Prime Minister advised against “non-essential” travel and in-person social interaction on <a href="https://en.wikipedia.org/wiki/Timeline_of_the_COVID-19_pandemic_in_the_United_Kingdom_(January%E2%80%93June_2020)#March_2020">March 16th</a>.
-It was not until three days later that cafes, pubs and restaurants were closed.</p>
+<p>That was on 17 March, just one day after the Prime Minister advised against “non-essential” travel and in-person social interaction on <a href="https://en.wikipedia.org/wiki/Timeline_of_the_COVID-19_pandemic_in_the_United_Kingdom_(January%E2%80%93June_2020)#March_2020">March 16th</a>.
+It was not until three days later, on 20 March, that cafes, pubs and restaurants were closed.
+Despite comments to the contrary, it was not until 23 March that the UK entered full lockdown, according to the fact checking site <a href="https://fullfact.org/health/coronavirus-lockdown-hancock-claim/">fullfact.org</a>.</p>
+</div>
+<div id="software-development" class="section level2">
+<h2>Software development</h2>
+<p>I continued to write lots of code to support my research, ‘citizen science’ and evidence-based decision-making in general.
+The <a href=""><code>osmextract</code></a> package developed in collaboration with <a href="https://en.unimib.it/andrea-gilardi">Andrea Gilardi</a> was submitted for peer review to rOpenSci; the <a href="https://itsleeds.github.io/slopes/"><code>slopes</code></a> package was developed in collaboration <a href="http://rosafelix.bike/">Rosa Félix</a>; and I contributed to the development of <a href="https://luukvdmeer.github.io/sfnetworks/"><code>sfnetworks</code></a>.
+Aim of 2021: help get each of these packages onto the Comprehensive R Archive Network (<a href="https://cran.rstudio.com/">CRAN</a>) and out there to support evidence-based decision-making.</p>
+<p>Finally, I submitted the <a href="https://itsleeds.github.io/od/"><code>od</code> package</a> which provides fast functions for working with origin-destination data, key to evidence-based transport planning decisions and prioritisation at the regional level in many cities, was published on <a href="https://cran.rstudio.com/web/packages/od/index.html">CRAN</a>.
+Working on that, perhaps in collaboration with Martijn Tennekes’s work on OD data visualisation, is an enticing programming task for the new year.</p>
+<div class="figure"><span id="fig:slopes"></span>
+<img src="https://itsleeds.github.io/slopes/reference/figures/README-plot_slope-1.png" alt="Output from the in-development slopes pacakge, showing the gradient across a route in Lisbon, Portugal."  />
+<p class="caption">
+Figure 1: Output from the in-development slopes pacakge, showing the gradient across a route in Lisbon, Portugal.
+</p>
+</div>
+<p>Beyond developing software, I also wrote about software, finishing-up a paper with John Parkin and Tom Cohen that had long-gestation period <span class="citation">(<a href="#ref-lovelace_open_2020" role="doc-biblioref">Lovelace, Parkin, and Cohen 2020</a>)</span>.</p>
+</div>
+<div id="international-collaborations" class="section level2">
+<h2>International collaborations</h2>
+<p>A surprising discovery for me was that the pandemic seemed to make international collaborations easier.
+With airports at a standstill, contributing to a welcome drop in <a href="https://www.carbonbrief.org/guest-post-calculating-the-true-climate-impact-of-aviation-emissions">high-altitude greenhouse gas emissions</a>, flying was out of the question.
+However, with lectures being conducted remotely in most countries anyway, the ‘barrier to entry’ for remote lectures and even collaborative research dropped.
+I found myself in the amazing situation of ‘visiting’ multiple countries via Zoom, Skype and Teams conversations from the confort of my bedroom some days and, despite the limitations of video calls compared with in-person links, found it enlightening.
+As shown below, I even dusted down my rusty Spanish and delivered a lecture for <a href="https://www.cedeus.cl/en/about-us/researchers/i-lake-sagaris/">Lake Sagaris</a> in Santiago, Chile.</p>
+{{% tweet "1260295157217480704" %}}
+</div>
+<div id="low-traffic-neighbourhoods" class="section level2">
+<h2>Low traffic neighbourhoods</h2>
+<p>From a sustainable transport perspective 2020 was the year of the Low Traffic Neighbourhood (LTN) and ‘popup’ infrastructure.
+In summer 2020 I was commissioned by the UK Department for Transport and the charity Sustrans to develop the Rapid Cycleway Prioritisation Tool.
+The results can be found on the cyipt.bike website, with discussion of context in an article published in The Conversation and an academic paper on the subject <span class="citation">(<a href="#ref-lovelace_methods_2020" role="doc-biblioref">Lovelace et al. 2020</a>)</span>.</p>
+<p>The methods described in that generated evidence that has helped to inform bids to the Active Travel Fund, supporting the prioritisation of numerous interventions nationwide.
+Notably, LTNs have proliferated and academic researchers have been quick to explore the associated changes to travel behaviour: it seems they can lead to cost effective reductions in car dependency and increased walking and cycling <span class="citation">(<a href="#ref-aldred_low_2020a" role="doc-biblioref">Aldred and Goodman 2020</a>)</span>.
+In my city of Leeds, Active Travel Neighbourhoods (as the council calls them based on the fact that it’s about increasing healthy kinds of traffic) are being trialled in a handful of locations including, coincidentally, on the street outside my house.</p>
+{{% tweet "1333352487064104961" %}}
+</div>
+<div id="thoughts-on-2021" class="section level2">
+<h2>Thoughts on 2021</h2>
+<p>The aim of this blog post, apart from restarting my intermittent free-form writing (finally the Christmas holidays have provided time to think!), was to provide a space to look back on 2020, put it in context, and hopefully make sense of the substantial shifts that are taking place during and in-the-wake-of the coronavirus pandemic.
+It has in many ways been a terrible year, with millions of people unable to see loved ones, vital health care systems and the heroic people working in them pushed to limit, and untold suffering inflicted by the virus itself.</p>
+<p>As many people have said, crises often create new opportunities.
+That is not to belittle the staggering costs of the pandemic.
+As participants at a <a href="https://www.weforum.org/agenda/2020/11/whats-the-biggest-opportunity-for-change-after-the-pandemic/">World Economic Forum virtual summit</a> testified, opportunities for “positive change in the post-pandemic world” include:</p>
+<ul>
+<li><p>localisation of economic activity (and potentially, associated environmental costs)</p></li>
+<li><p>stronger political prioritisation of, and funding for, public health care</p></li>
+<li><p>a chance for people to rediscover natural places and communities on their doorstep, and</p></li>
+<li><p>better regulation of criminal and life-threatening activities, from human trafficking to regressive <a href="https://oecd-development-matters.org/2020/06/09/how-covid-19-could-help-eliminate-fossil-fuel-subsidies/">fossil fuel subsidies</a></p></li>
+</ul>
+<p>Considering these trends, in parallel with the rollout of new vaccines, makes me optimistic for the new year and leads me to consider my priorities for 2021.
+There are many important decisions that need to be made, not least in the field of transport, where my work could come in handy to support evidence-based (rather than knee-jerk or wishful-thinking based) policies.
+Specifically I aim to:</p>
+<ul>
+<li>Collaborate on the recently funded <a href="https://github.com/cyipt/actdev">ActDev</a> project, the successor to ACTON (watch this space for a national evidence base to support consideration of active travel earlier in the planning process)</li>
+<li>Support the publication of free and open source software for reproducible analysis of geographic, and particularly geographic transport, datasets to support effective decision-making around active travel and planning for <a href="https://www.theccc.org.uk/2020/12/09/building-back-better-raising-the-uks-climate-ambitions-for-2035-will-put-net-zero-within-reach-and-change-the-uk-for-the-better/">zero-carbon transport systems</a></li>
+<li>Consolidate, communicate and support existing projects such as the PCT to help them have maximum positive impact</li>
+<li>Stay open to new ideas and collaborative opportunities</li>
+</ul>
+<p>On that final note, I think there are many opportunities for new research projects around the transport changes in response to COVID-19.</p>
+<!-- It seems clear that return to pre-pandemic levels and that people have adapted to working from home long-term according to the figure below, supporting the conclusions of a recent paper on the topic [@barrero_why_2020]. -->
+<!-- ```{r wfh, fig.cap="Proportion of adults, Great Britain, 14 May to 6 December 2020, who worked from home exclusively has hovered around 30%, a huge increase compared with the 5% who worked from home in 2019. Source: [ONS](https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/conditionsanddiseases/bulletins/coronavirustheukeconomyandsocietyfasterindicators/10december2020)."} -->
+<!-- knitr::include_graphics("https://saferactive.github.io/trafficalmr/articles/wfh-trends-2020-12.png") -->
+<!-- ``` -->
+<!-- Just looking at the graph below (the first time DfT data has been visualised in this way, to the best of my knowledge) suggests that transport systems could go in many directions in 2021. -->
+<!-- Whether that's a return to the 'cycling boom' of spring/summer 2020 or gridlock, or something different, remains to be seen. -->
+<!-- The research opportunities and potential implications are huge but I will save that for another day. -->
+<!-- For now, happy New Year 🎇🎇🎇 -->
+<!-- ## References -->
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-aldred_low_2020a" class="csl-entry">
+Aldred, Rachel, and Anna Goodman. 2020. <span>“Low <span>Traffic Neighbourhoods</span>, <span>Car Use</span>, and <span>Active Travel</span>: <span>Evidence</span> from the <span>People</span> and <span>Places Survey</span> of <span>Outer London Active Travel Interventions</span>.”</span> <em>Findings</em>, September, 17128. <a href="https://doi.org/10.32866/001c.17128">https://doi.org/10.32866/001c.17128</a>.
+</div>
+<div id="ref-lovelace_open_2020" class="csl-entry">
+Lovelace, Robin, John Parkin, and Tom Cohen. 2020. <span>“Open Access Transport Models: <span>A</span> Leverage Point in Sustainable Transport Planning.”</span> <em>Transport Policy</em> 97 (October): 47–54. <a href="https://doi.org/10.1016/j.tranpol.2020.06.015">https://doi.org/10.1016/j.tranpol.2020.06.015</a>.
+</div>
+<div id="ref-lovelace_methods_2020" class="csl-entry">
+Lovelace, Robin, Joseph Talbot, Malcolm Morgan, and Martin Lucas-Smith. 2020. <span>“Methods to <span>Prioritise Pop</span>-up <span>Active Transport Infrastructure</span>.”</span> <em>Transport Findings</em>, July, 13421. <a href="https://doi.org/10.32866/001c.13421">https://doi.org/10.32866/001c.13421</a>.
+</div>
+</div>
 </div>
