@@ -1,0 +1,40 @@
+---
+title: Reflections on 2020 and ideas for 2021
+author: ~
+date: '2020-12-30'
+slug: new-year-new-site-new-world
+draft: false
+categories: []
+tags: []
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2021-01-01T16:01:42Z'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+2020 has been a crazy year all-round with US elections, Brexit negotiations reaching their conclusions and of course the global pandemic that has swept across countries and disrupted lives worldwide.
+
+Looking back over the year a huge amount has changed and I wanted to take the opportunity of the new year to share some thoughts and update, providing an opportunity to post on my updated website ✨.
+
+## Online teaching
+
+I was lucky enough to work from home meaning that I could plough on with my research and teaching in ITS.
+In fact, my first fully online-only taught lecture, part of the Transport Data Science module, was delivered on the 17^th^ March, as communicated in the Tweet below. 
+
+```{r}
+blogdown::shortcode("tweet", "1239930988416897033")
+```
+
+That was on 17th March, just one day after the Prime Minister advised against "non-essential" travel and in-person social interaction on [March 16th](https://en.wikipedia.org/wiki/Timeline_of_the_COVID-19_pandemic_in_the_United_Kingdom_(January%E2%80%93June_2020)#March_2020).
+It was not until three days later that cafes, pubs and restaurants were closed.
