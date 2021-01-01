@@ -122,20 +122,56 @@ Specifically I aim to:
 - Stay open to new ideas and collaborative opportunities
 
 On that final note, I think there are many opportunities for new research projects around the transport changes in response to COVID-19.
+It seems clear that return to pre-pandemic levels and that people have adapted to working from home long-term according to the figure below, supporting the conclusions of a recent paper on the topic [@barrero_why_2020].
 
-<!-- It seems clear that return to pre-pandemic levels and that people have adapted to working from home long-term according to the figure below, supporting the conclusions of a recent paper on the topic [@barrero_why_2020]. -->
-
-<!-- ```{r wfh, fig.cap="Proportion of adults, Great Britain, 14 May to 6 December 2020, who worked from home exclusively has hovered around 30%, a huge increase compared with the 5% who worked from home in 2019. Source: [ONS](https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/conditionsanddiseases/bulletins/coronavirustheukeconomyandsocietyfasterindicators/10december2020)."} -->
-<!-- knitr::include_graphics("https://saferactive.github.io/trafficalmr/articles/wfh-trends-2020-12.png") -->
-<!-- ``` -->
+```{r wfh, fig.cap="Proportion of adults, Great Britain, 14 May to 6 December 2020, who worked from home exclusively has hovered around 30%, a huge increase compared with the 5% who worked from home in 2019. Source: [ONS](https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/conditionsanddiseases/bulletins/coronavirustheukeconomyandsocietyfasterindicators/10december2020)."}
+knitr::include_graphics("https://saferactive.github.io/trafficalmr/articles/wfh-trends-2020-12.png")
+```
 
 
-<!-- Just looking at the graph below (the first time DfT data has been visualised in this way, to the best of my knowledge) suggests that transport systems could go in many directions in 2021. -->
-<!-- Whether that's a return to the 'cycling boom' of spring/summer 2020 or gridlock, or something different, remains to be seen. -->
+Just looking at the graph below from the [SaferActive project](https://saferactive.github.io/trafficalmr/articles/report3.html) (the first time DfT data has been visualised in this way, to the best of my knowledge) suggests that transport systems could go in many directions in 2021.
+Whether that's a return to the 'cycling boom' of spring/summer 2020 or gridlock, or something different, remains to be seen.
+The research opportunities and potential implications are huge but I will save that for another day.
 
-<!-- The research opportunities and potential implications are huge but I will save that for another day. -->
+```{r covid, fig.cap="Travel by different modes of transport relative to pre-pandemic (early March) levels. Dark lines represent 30 day rolling averages. Source: [DfT](https://www.gov.uk/government/statistics/transport-use-during-the-coronavirus-covid-19-pandemic)", warning=FALSE, out.width="100%", message=FALSE}
+# Aim: get daily summary tables from UK's DfT
+library(dplyr)
+library(ggplot2)
+u = "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/942559/COVID-19-transport-use-statistics.ods"
+f = basename(u)
+download.file(u, f)
+d_original = tibble::tibble(readODS::read_ods(f, skip = 6))
+names(d_original) = gsub(pattern = "\\d", replacement = "", x = names(d_original))
+d = janitor::clean_names(d_original)
+d = d[nchar(d[[1]]) == 10, ]
+d$date = lubridate::dmy(d$date_weekends_and_bank_holidays_in_grey)
+d = d %>% select(-(cars:heavy_goods_vehicles))
+d = d %>%
+  mutate(across(all_motor_vehicles:cycling, as.numeric))
+  # mutate(across(cars:cycling, as.numeric))
+# summary(d)
+droll = d %>%
+  mutate(across(all_motor_vehicles:cycling, zoo::rollmean, k = 30, align = "right", fill = NA))
+  # mutate(across(cars:cycling, zoo::rollmean, k = 30, align = "right", fill = NA))
+# d
+# nrow(d)
+d_long = tidyr::pivot_longer(d, cols = all_motor_vehicles:cycling)
+droll_long = tidyr::pivot_longer(droll, cols = all_motor_vehicles:cycling)
+d_long$date = as.Date(d_long$date)
+droll_long$date = as.Date(droll_long$date)
+g = ggplot(droll_long) +
+  geom_line(aes(date, value, colour = name), size = 1.3) +
+  geom_line(aes(date, value, colour = name), alpha = 0.3, data = d_long) +
+  scale_y_continuous(labels = scales::percent) +
+  theme_bw()
+gp = plotly::ggplotly(g)
+w = plotly::as_widget(gp)
+w
+removed = file.remove("COVID-19-transport-use-statistics.ods")
+```
 
-<!-- For now, happy New Year 🎇🎇🎇 -->
 
-<!-- ## References -->
+For now, happy New Year 🎇🎇🎇
+
+## References
 
