@@ -10,7 +10,9 @@ tags:
 - GIS
 - map
 - software
-aliases: r/2014/07/29/clipping-with-r.html
+aliases: 
+  - r/2014/07/29/clipping-with-r.html
+  - r/2014/07/29/clipping-with-r
 ---
 
 This miniature vignette shows how to clip spatial data based on different spatial objects in R and a 'bounding box'. Spatial overlays are common in GIS applications and R users are fortunate that the clipping and spatial subsetting functions are mature and fairly fast. We'll also write a new function called `gClip()`, that will make clipping by bounding boxes easier.
