@@ -33,9 +33,10 @@ featured: true
 # To use, add an image named `featured.jpg/png` to your page's folder. 
 # Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
 image:
-  caption: "A/B Street, an agent based, open access and programmable transport model. Image credit: [Dustin Carlino, hosted at github.com/dabreegster/abstreet](https://github.com/dabreegster/abstreet/issues/170)"
+  caption: "Example of an open access model, the Propensity to Cycle Tool ([PCT](https://www.pct.bike/))."
   focal_point: ""
   preview_only: false
+  
 
 # Custom links (optional).
 #   Uncomment and edit lines below to show custom links.
@@ -49,7 +50,7 @@ image:
 url_slides: https://www.robinlovelace.net/presentations/2021-01-21-open-source-transport-tools.html
 url_code: https://github.com/Robinlovelace/presentations/blob/master/2021-01-21-open-source-transport-tools.Rmd
 url_pdf:
-url_video:
+url_video: https://youtu.be/mpqNW9ePVtw
 
 # Markdown Slides (optional).
 #   Associate this event with Markdown slides.

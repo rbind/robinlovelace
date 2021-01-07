@@ -23,6 +23,9 @@ lastmod: 2020-12-30T16:27:35Z
 featured: true
 draft: false
 
+url_video: "https://youtu.be/mpqNW9ePVtw"
+
+
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder.
 # Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
@@ -30,6 +33,7 @@ image:
   caption: ''
   focal_point: ''
   preview_only: false
+  
   
 
 # Projects (optional).
