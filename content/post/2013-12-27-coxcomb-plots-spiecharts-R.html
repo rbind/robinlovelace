@@ -1,0 +1,322 @@
+---
+layout: post
+title: Coxcomb plots and 'spiecharts' in R
+date: '2013-12-27'
+categories:
+- R
+tags:
+- visualisation
+- R
+- open source
+- computing
+lastmod: '2021-01-01T16:01:42Z'
+featured: yes
+---
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<p>This post documents my work creating coxcomb plots.</p>
+<div class="figure">
+<img src="https://user-images.githubusercontent.com/1825120/104119532-cf332e80-5327-11eb-9ddd-a24a53440a30.png" alt="" />
+<p class="caption">plot of chunk unnamed-chunk-5</p>
+</div>
+<!--more-->
+<p>After switching to a new site I decided to revive some old posts.
+I found this one that was written back 7 years ago (in January 2021 when this update was written), back in December 2013.
+I was amazed to find that, with some tweaks, the <code>ggplot2</code> code still ran.</p>
+<p>I was contacted recently by a housing organisation who wanted
+an attractive visualisation of their finances, arranged in a circular
+form. Because there were two 4 continuous variables to include, all
+of which were proportions of each other, the client suggested a plot
+similar to a pie chart, but with each segment extending out a different
+radius from the segment. I realised later that what I had been asked to
+make was a modified <a href="http://en.wikipedia.org/wiki/Coxcomb_diagram#Polar_area_diagram">coxcomb</a>
+plot, invented by
+<a href="http://en.wikipedia.org/wiki/Florence_Nightingale">Florence Nightingale</a>
+to represent statistics on cause of death during the Crimean War.
+In fact, I had been asked to make a “<a href="http://www.cs.huji.ac.il/~feit/papers/Spie03TR.pdf">spie chart</a>.”
+This post demonstrates, for the first time to my knowledge, how it can be done
+using ggplot2. A reproducible example of this, including sample data input, can be
+found on the project’s github repository: <a href="https://github.com/Robinlovelace/lilacPlot" class="uri">https://github.com/Robinlovelace/lilacPlot</a> . Please fork and attribute as appropriate!</p>
+<div id="reading-and-looking-at-the-data" class="section level2">
+<h2>Reading and looking at the data</h2>
+<p>This is the original dataset I was given:</p>
+<pre class="r"><code>u &lt;- &quot;https://github.com/Robinlovelace/lilacPlot/raw/master/F2.csv&quot;
+f &lt;- read.csv(u)
+knitr::kable(f[1:3, ])</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left">H</th>
+<th align="right">Value</th>
+<th align="right">Value.P</th>
+<th align="right">Allocation</th>
+<th align="right">Deposit</th>
+<th align="right">Captial</th>
+<th align="right">Debt</th>
+<th align="right">Cap</th>
+<th align="right">Contribution</th>
+<th align="right">Repayments</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">q</td>
+<td align="right">163827</td>
+<td align="right">0.065</td>
+<td align="right">0.979</td>
+<td align="right">16382</td>
+<td align="right">147445</td>
+<td align="right">0</td>
+<td align="right">2457.405</td>
+<td align="right">1287.24</td>
+<td align="right">0.00</td>
+</tr>
+<tr class="even">
+<td align="left">a</td>
+<td align="right">165994</td>
+<td align="right">0.066</td>
+<td align="right">1.022</td>
+<td align="right">16599</td>
+<td align="right">5488</td>
+<td align="right">138847</td>
+<td align="right">2489.910</td>
+<td align="right">208.02</td>
+<td align="right">208.02</td>
+</tr>
+<tr class="odd">
+<td align="left">z</td>
+<td align="right">159425</td>
+<td align="right">0.063</td>
+<td align="right">0.933</td>
+<td align="right">15943</td>
+<td align="right">76632</td>
+<td align="right">63601</td>
+<td align="right">2391.375</td>
+<td align="right">995.46</td>
+<td align="right">995.46</td>
+</tr>
+</tbody>
+</table>
+<p>Without worrying too much about the details, the basics of the dataset are
+as follows:</p>
+<ul>
+<li>One observation per row, these will later be bars on the box plot</li>
+<li>Two components of data - captital and revenue</li>
+<li>Different orders of magnitude: some data is in absolute monetary terms, some in percentages</li>
+</ul>
+<p>Base on the above points, a prerequisite was to create preliminary plots and manipulate the
+data so it would better fit in a coxcomb plot.</p>
+<p>The first stage, however, is to demonstrate how the addition of
+<code>coord_polar</code> to a barchart can conver it into a pie chart:</p>
+<pre class="r"><code>library(ggplot2)
+(p &lt;- ggplot(f, aes(x = H, y = Allocation)) + geom_bar(color = &quot;black&quot;, stat = &quot;identity&quot;, 
+    width = 1))</code></pre>
+<p><img src="/post/2013-12-27-coxcomb-plots-spiecharts-R_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<div class="figure">
+<img src="" alt="" />
+<p class="caption">plot of chunk unnamed-chunk-2</p>
+</div>
+<pre class="r"><code>p + coord_polar()</code></pre>
+<p><img src="/post/2013-12-27-coxcomb-plots-spiecharts-R_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<!-- ![plot of chunk unnamed-chunk-2](https://raw.github.com/Robinlovelace/robinlovelace.github.io/master/figure/unnamed-chunk-22.png)  -->
+<p>The above example works well, but notice that all the bars are of equal widths.
+What we want is to be proportional to a value (variable “Value”) of each observation.
+To do this we use the age-old function <code>cumsum</code>, as described in an
+answer to a <a href="http://stackoverflow.com/questions/20688376/how-to-make-variable-bar-widths-in-ggplot2-not-overlap-or-gap">stackexchange question</a>.</p>
+<pre class="r"><code>w &lt;- f$Value
+pos &lt;- 0.5 * (cumsum(w) + cumsum(c(0, w[-length(w)])))
+
+(p &lt;- ggplot(f, aes(x = pos)) + geom_bar(aes(y = Allocation), width = w, color = &quot;black&quot;, 
+    stat = &quot;identity&quot;))</code></pre>
+<p><img src="/post/2013-12-27-coxcomb-plots-spiecharts-R_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<!-- ![plot of chunk unnamed-chunk-3](https://raw.github.com/Robinlovelace/robinlovelace.github.io/master/figure/unnamed-chunk-31.png)  -->
+<pre class="r"><code>p + coord_polar(theta = &quot;x&quot;) + scale_x_continuous(labels = f$H, breaks = pos)</code></pre>
+<p><img src="/post/2013-12-27-coxcomb-plots-spiecharts-R_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<!-- ![plot of chunk unnamed-chunk-3](https://raw.github.com/Robinlovelace/robinlovelace.github.io/master/figure/unnamed-chunk-32.png)  -->
+<p>Finally a spie chart has been created. After that revelation, it was essentially about adding the ‘bells and
+whistles’, including a 10% line to represent how much more or less than their share each observation was
+paying.</p>
+</div>
+<div id="adding-the-10" class="section level2">
+<h2>Adding the 10 %</h2>
+<pre class="r"><code>f$Deposit/f$Value</code></pre>
+<pre><code>##  [1] 0.09999573 0.09999759 0.10000314 0.09999837 0.10000120 0.10000000
+##  [7] 0.10000311 0.10000085 0.10000511 0.10000356 0.09999676 0.09999700
+## [13] 0.09999812 0.10000511 0.10000085 0.10000240 0.10000000 0.10000694
+## [19] 0.09999901 0.09999883</code></pre>
+<pre class="r"><code># add 10% in there
+p &lt;- ggplot(f)
+p + geom_bar(aes(x = pos, y = Allocation), width = w, color = &quot;black&quot;, stat = &quot;identity&quot;) + 
+    geom_bar(aes(x = pos, y = 0.1), width = w, color = &quot;black&quot;, stat = &quot;identity&quot;, 
+        fill = &quot;green&quot;) + coord_polar()</code></pre>
+<p><img src="/post/2013-12-27-coxcomb-plots-spiecharts-R_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<!-- ![plot of chunk unnamed-chunk-4](https://raw.github.com/Robinlovelace/robinlovelace.github.io/master/figure/unnamed-chunk-41.png)  -->
+<pre class="r"><code># make proportional to area
+f$Allo &lt;- sqrt(f$Allocation)
+
+p &lt;- ggplot(f)
+p + geom_bar(aes(x = pos, y = Allo, width = w), color = &quot;black&quot;, stat = &quot;identity&quot;) + 
+    geom_bar(aes(x = pos, y = sqrt(0.1), width = w), color = &quot;black&quot;, stat = &quot;identity&quot;, 
+        fill = &quot;green&quot;) + coord_polar()</code></pre>
+<pre><code>## Warning: Ignoring unknown aesthetics: width
+
+## Warning: Ignoring unknown aesthetics: width</code></pre>
+<p><img src="/post/2013-12-27-coxcomb-plots-spiecharts-R_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<!-- ![plot of chunk unnamed-chunk-4](https://raw.github.com/Robinlovelace/robinlovelace.github.io/master/figure/unnamed-chunk-42.png)  -->
+<pre class="r"><code># add capital
+capital &lt;- (f$Captial + f$Deposit)/(f$Value) * f$Allocation
+capital &lt;- sqrt(capital)
+
+p + geom_bar(aes(x = pos, y = Allo, width = w), color = &quot;black&quot;, stat = &quot;identity&quot;) + 
+    geom_bar(aes(x = pos, y = capital, width = w), color = &quot;black&quot;, stat = &quot;identity&quot;, 
+        fill = &quot;red&quot;) + geom_bar(aes(x = pos, y = sqrt(0.1), width = w), color = &quot;black&quot;, 
+    stat = &quot;identity&quot;, fill = &quot;green&quot;) + coord_polar() + scale_x_continuous(labels = f$H, 
+    breaks = pos)</code></pre>
+<pre><code>## Warning: Ignoring unknown aesthetics: width
+
+## Warning: Ignoring unknown aesthetics: width
+
+## Warning: Ignoring unknown aesthetics: width</code></pre>
+<p><img src="/post/2013-12-27-coxcomb-plots-spiecharts-R_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<!-- ![plot of chunk unnamed-chunk-4](https://raw.github.com/Robinlovelace/robinlovelace.github.io/master/figure/unnamed-chunk-43.png)  -->
+<pre class="r"><code># add ablines
+p + geom_bar(aes(x = pos, y = Allo, width = w), color = &quot;grey40&quot;, stat = &quot;identity&quot;, 
+    fill = &quot;lightgrey&quot;) + geom_bar(aes(x = pos, y = capital, width = w), color = &quot;grey40&quot;, 
+    stat = &quot;identity&quot;, fill = &quot;red&quot;) + geom_bar(aes(x = pos, y = sqrt(0.1), 
+    width = w), color = &quot;grey40&quot;, stat = &quot;identity&quot;, fill = &quot;green&quot;) + geom_abline(intercept = 1, 
+    slope = 0, linetype = 2) + geom_abline(intercept = sqrt(1.1), slope = 0, 
+    linetype = 3) + geom_abline(intercept = sqrt(0.9), slope = 0, linetype = 3)</code></pre>
+<pre><code>## Warning: Ignoring unknown aesthetics: width
+
+## Warning: Ignoring unknown aesthetics: width
+
+## Warning: Ignoring unknown aesthetics: width</code></pre>
+<p><img src="/post/2013-12-27-coxcomb-plots-spiecharts-R_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<div class="figure">
+<img src="https://raw.github.com/Robinlovelace/robinlovelace.github.io/master/figure/unnamed-chunk-44.png" alt="" />
+<p class="caption">plot of chunk unnamed-chunk-4</p>
+</div>
+<pre class="r"><code># calculate vertical ablines of divisions
+v1 &lt;- 0.51 * f$Value[1]
+v2 &lt;- cumsum(f$Value)[17] + f$Value[18] * 0.31
+v3 &lt;- cumsum(f$Value)[17] + f$Value[18] * 0.64
+
+p + geom_bar(aes(x = pos, y = Allo, width = w), color = &quot;grey40&quot;, stat = &quot;identity&quot;, 
+    fill = &quot;lightgrey&quot;) +
+  geom_vline(x = v1, linetype = 5, xintercept = 0) +
+  geom_vline(x = v2, linetype = 5, xintercept = 0) +
+  geom_vline(x = v3, linetype = 5, xintercept = 0) +
+  coord_polar()</code></pre>
+<pre><code>## Warning: Ignoring unknown aesthetics: width</code></pre>
+<pre><code>## Warning: Ignoring unknown parameters: x
+
+## Warning: Ignoring unknown parameters: x
+
+## Warning: Ignoring unknown parameters: x</code></pre>
+<p><img src="/post/2013-12-27-coxcomb-plots-spiecharts-R_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<pre class="r"><code># putting it all together
+p &lt;- ggplot(f)
+p + geom_bar(aes(x = pos, y = Allo, width = w), color = &quot;grey40&quot;, stat = &quot;identity&quot;, 
+    fill = &quot;lightgrey&quot;) + geom_bar(aes(x = pos, y = capital, width = w), color = &quot;grey40&quot;, 
+    stat = &quot;identity&quot;, fill = &quot;red&quot;) + geom_bar(aes(x = pos, y = sqrt(0.1), 
+    width = w), color = &quot;grey40&quot;, stat = &quot;identity&quot;, fill = &quot;green&quot;) + geom_abline(intercept = 1, 
+    slope = 0, linetype = 2) + geom_abline(intercept = sqrt(1.1), slope = 0, 
+    linetype = 3) + geom_abline(intercept = sqrt(0.9), slope = 0, linetype = 3) + 
+    geom_vline(x = v1, linetype = 5, xintercept = 0) +
+    geom_vline(x = v2, linetype = 5, xintercept = 0) +
+    geom_vline(x = v3, linetype = 5, xintercept = 0) +
+    coord_polar() + scale_x_continuous(labels = f$H, breaks = pos) + 
+    theme_classic()</code></pre>
+<pre><code>## Warning: Ignoring unknown aesthetics: width
+
+## Warning: Ignoring unknown aesthetics: width
+
+## Warning: Ignoring unknown aesthetics: width</code></pre>
+<pre><code>## Warning: Ignoring unknown parameters: x
+
+## Warning: Ignoring unknown parameters: x
+
+## Warning: Ignoring unknown parameters: x</code></pre>
+<p><img src="/post/2013-12-27-coxcomb-plots-spiecharts-R_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p>The above looks great, but ideally, for an ‘infographic’ feel, it would
+have no annoying axes clogging up the visuals. This was done by creating an
+entirely new ggpot theme.</p>
+</div>
+<div id="create-theme-with-no-axes" class="section level2">
+<h2>Create theme with no axes</h2>
+<pre class="r"><code>theme_infog &lt;- theme_classic() + theme(axis.line = element_blank(), axis.title = element_blank(), 
+    axis.ticks = element_blank(), axis.text.y = element_blank())
+last_plot() + theme_infog</code></pre>
+<p><img src="/post/2013-12-27-coxcomb-plots-spiecharts-R_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+</div>
+<div id="creating-a-ring" class="section level2">
+<h2>Creating a ring</h2>
+<p>To add the revenue element to the graph is not a task to be taken likely.
+This was how I tackled the problem, by creating a tall, variable-width
+bar chart first, and later adding the original spie chart after:</p>
+<pre class="r"><code>f$Cap.r &lt;- f$Cap/mean(f$Cap) * 0.1 + 1.2
+f$Cont.r &lt;- f$Contribution/mean(f$Cap) * 0.1 + 1.2
+f$Rep.r &lt;- f$Cont.r + f$Repayments/mean(f$Cap) * 0.1
+f$H &lt;- c(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;, &quot;f&quot;, &quot;g&quot;, &quot;h&quot;, &quot;i&quot;, &quot;j&quot;, &quot;k&quot;, &quot;l&quot;, &quot;m&quot;, &quot;n&quot;, 
+    &quot;o&quot;, &quot;p&quot;, &quot;q&quot;, &quot;r&quot;, &quot;s&quot;, &quot;t&quot;)
+
+p &lt;- ggplot(f)
+p + geom_bar(aes(x = pos, y = Allo, width = w), color = &quot;grey40&quot;, stat = &quot;identity&quot;, 
+    fill = &quot;lightgrey&quot;)</code></pre>
+<pre><code>## Warning: Ignoring unknown aesthetics: width</code></pre>
+<p><img src="/post/2013-12-27-coxcomb-plots-spiecharts-R_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<!-- ![plot of chunk unnamed-chunk-6](https://raw.github.com/Robinlovelace/robinlovelace.github.io/master/figure/unnamed-chunk-61.png)  -->
+<pre class="r"><code># we need the axes to be bigger for starters - try 1.3 to 1.5
+
+p + geom_bar(aes(x = pos, y = Cap.r, width = w), color = &quot;grey40&quot;, stat = &quot;identity&quot;, 
+    fill = &quot;white&quot;) + geom_bar(aes(x = pos, y = Rep.r, width = w), color = &quot;grey40&quot;, 
+    stat = &quot;identity&quot;, fill = &quot;grey80&quot;) + geom_bar(aes(x = pos, y = Cont.r, 
+    width = w), color = &quot;grey40&quot;, stat = &quot;identity&quot;, fill = &quot;grey30&quot;) + geom_bar(aes(x = pos, 
+    y = 1.196, width = w), color = &quot;white&quot;, stat = &quot;identity&quot;, fill = &quot;white&quot;)</code></pre>
+<pre><code>## Warning: Ignoring unknown aesthetics: width
+
+## Warning: Ignoring unknown aesthetics: width
+
+## Warning: Ignoring unknown aesthetics: width
+
+## Warning: Ignoring unknown aesthetics: width</code></pre>
+<p><img src="/post/2013-12-27-coxcomb-plots-spiecharts-R_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<pre class="r"><code>last_plot() + geom_bar(aes(x = pos, y = Allo, width = w), color = &quot;grey40&quot;, 
+    stat = &quot;identity&quot;, fill = &quot;grey80&quot;) + geom_bar(aes(x = pos, y = capital, 
+    width = w), color = &quot;grey40&quot;, stat = &quot;identity&quot;, fill = &quot;grey30&quot;) + geom_bar(aes(x = pos, 
+    y = sqrt(0.1), width = w), color = &quot;grey40&quot;, stat = &quot;identity&quot;, fill = &quot;black&quot;) + 
+    geom_abline(intercept = 1, slope = 0, linetype = 5) + geom_abline(intercept = sqrt(1.1), 
+    slope = 0, linetype = 3) + geom_abline(intercept = sqrt(0.9), slope = 0, 
+    linetype = 3) + coord_polar() + scale_x_continuous(labels = f$H, breaks = pos) + 
+    theme_infog</code></pre>
+<pre><code>## Warning: Ignoring unknown aesthetics: width
+
+## Warning: Ignoring unknown aesthetics: width
+
+## Warning: Ignoring unknown aesthetics: width</code></pre>
+<p><img src="/post/2013-12-27-coxcomb-plots-spiecharts-R_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<!-- ![plot of chunk unnamed-chunk-6](https://raw.github.com/Robinlovelace/robinlovelace.github.io/master/figure/unnamed-chunk-63.png)  -->
+</div>
+<div id="just-inner" class="section level2">
+<h2>Just inner</h2>
+<p>After all that it was decided it looked nicer with only the inner ring anyway.
+Here is the finished product:</p>
+<pre class="r"><code>p &lt;- ggplot(f)
+p + geom_bar(aes(x = pos, y = Allo, width = w), color = &quot;grey40&quot;, stat = &quot;identity&quot;, 
+    fill = &quot;grey80&quot;) + geom_bar(aes(x = pos, y = capital, width = w), color = &quot;grey40&quot;, 
+    stat = &quot;identity&quot;, fill = &quot;grey30&quot;) + geom_bar(aes(x = pos, y = sqrt(0.1), 
+    width = w), color = &quot;grey40&quot;, stat = &quot;identity&quot;, fill = &quot;black&quot;) + geom_abline(intercept = 1, 
+    slope = 0, linetype = 5) + geom_abline(intercept = sqrt(1.1), slope = 0, 
+    linetype = 3) + geom_abline(intercept = sqrt(0.9), slope = 0, linetype = 3) + 
+    coord_polar() + scale_x_continuous(labels = f$H, breaks = pos) + theme_infog</code></pre>
+<pre><code>## Warning: Ignoring unknown aesthetics: width
+
+## Warning: Ignoring unknown aesthetics: width
+
+## Warning: Ignoring unknown aesthetics: width</code></pre>
+<p><img src="/post/2013-12-27-coxcomb-plots-spiecharts-R_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<!-- ![plot of chunk unnamed-chunk-7](https://raw.github.com/Robinlovelace/robinlovelace.github.io/master/figure/unnamed-chunk-7.png)  -->
+<pre class="r"><code>ggsave(&quot;just-inner.png&quot;, width = 7, height = 7, dpi = 800)</code></pre>
+</div>
