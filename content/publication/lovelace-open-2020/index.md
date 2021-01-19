@@ -20,7 +20,7 @@ tags:
 categories: []
 date: '2020-10-01'
 lastmod: 2020-12-30T16:27:35Z
-featured: true
+featured: false
 draft: false
 
 url_video: "https://youtu.be/mpqNW9ePVtw"
