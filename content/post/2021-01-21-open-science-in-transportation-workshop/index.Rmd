@@ -1,0 +1,29 @@
+---
+title: Open Science In Transportation Workshop
+author: Robin Lovelace
+date: '2021-01-21'
+slug: open-science-in-transportation-workshop
+categories: [talk]
+tags: [open source]
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2021-01-21T20:36:29Z'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+bibliography: ../../static/bibs/allrefs.bib
+---
+
+Today I am presenting at the [Transport Research Board's 2021 Annual](http://www.trb.org/AnnualMeeting/AnnualMeeting.aspx) meeting, aka [#TRB2021](https://twitter.com/search?q=%23TRB2021).
+I say 'presenting' but in fact, the talk was a pre-record - see the video below!
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/mpqNW9ePVtw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+Information on the talk can be found [here](https://www.robinlovelace.net/talk/open-access-transport-models-from-collaborative-code-to-citizen-science/).
+
+It's based on a recently published paper on 'open access models' which are both based on open source code and, vitally, are available for use by the public without needing specialist training [@lovelace_open_2020].
