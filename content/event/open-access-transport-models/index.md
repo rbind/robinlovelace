@@ -18,7 +18,8 @@ abstract: This talk will outline to key concepts and products that will
   investment of public funds in the 21st Century, open source tools and
   open access models.
   Building on two recently published papers on the concepts, in the journal
-  Transport Policy in 2020 and in the Journal of Geographical Systems in 2021,
+  [Transport Policy in 2020](https://www.robinlovelace.net/publication/lovelace-open-2020/) and in the
+  [Journal of Geographical Systems in 2021](https://www.robinlovelace.net/publication/lovelace-open-2021/),
   the talk will explore the concepts, demonstrate some evolving new tools
   and discuss future avenues of research and development.
   Open tools/models ranged in size from single-purpose
@@ -27,12 +28,9 @@ abstract: This talk will outline to key concepts and products that will
   re-use the most effective components from other open source projects, developers
   of open source transport planning tools can avoid `reinventing the wheel' and focus
   on innovation, the 'gamified' [A/B Street](https://github.com/dabreegster/abstreet/#abstreetsimulation) 
-  software, based on OpenStreetMap, a case in point. The paper, the source code of
-  which can be found at [github.com/robinlovelace/open-gat](https://github.com/robinlovelace/open-gat), concludes that,
-  although many of the tools reviewed are still evolving and further research is needed
-  to understand their relative strengths and barriers to uptake, open source tools
-  for geographic analysis in transport planning already hold great potential to help
-  generate the strategic visions of change and evidence that is needed by transport
+  software, based on OpenStreetMap, a case in point. 
+  The talk discusses how to realise the great potential of new approaches to
+  generate the strategic visions of change and evidence that are needed by transport
   planners in the twenty-first century.
 
 # Talk start and end times.
@@ -67,8 +65,8 @@ image:
 #   icon: twitter
 
 # Optional filename of your slides within your event's folder or a URL.
-url_slides:
-url_code:
+url_slides: https://www.robinlovelace.net/presentations/2021-02-16-open-access-transport-models.html#1
+url_code: https://github.com/Robinlovelace/presentations/blob/master/2021-02-16-open-access-transport-models.Rmd
 url_pdf:
 url_video:
 
