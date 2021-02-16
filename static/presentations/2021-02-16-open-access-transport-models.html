@@ -17,9 +17,12 @@ class: center, middle, inverse, title-slide
 ## 📉🚂🚅🚎🛴🚲🚶📈<br/>Enabling reproducibility and participation in Transport Planning
 ### Robin Lovelace
 ### University of Leeds, <a href="https://environment.leeds.ac.uk/transport">Institute for Transport Studies</a>
-### UBDC, 2021-02-16 (updated: 2021-02-01) Reproducible source code: <a href="https://github.com/Robinlovelace/presentations/">github.com/Robinlovelace/presentations</a>
+### UBDC, 2021-02-16 (updated: 2021-02-16) Reproducible source code: <a href="https://github.com/Robinlovelace/presentations/">github.com/Robinlovelace/presentations</a>
 
 ---
+
+
+
 
 
 
@@ -51,14 +54,16 @@ Source: ['Inside the black box' report](https://www.co.pierce.wa.us/DocumentCent
 
 **New technologies mean that open access transport models are possible**
 
-![](https://raw.githubusercontent.com/dabreegster/abstreet/master/book/editing_map.gif)
+![](https://raw.githubusercontent.com/a-b-street/abstreet/master/videos/exploring_traffic.gif)
 Source: A/B Street, free, open source, gamified transport planning software [github.com/dabreegster/abstreet](https://github.com/dabreegster/abstreet/#ab-street)
 
 ---
 
 ## Open Source Transport Tools
 
-![](https://www.robinlovelace.net/publication/lovelace-open-2020/tools-table.png)
+Source: Lovelace (2021), see [github.com/Robinlovelace/open-gat](https://github.com/Robinlovelace/open-gat#open-source-tools-for-geographic-analysis-in-transport-planning)
+
+![](https://www.robinlovelace.net/talk/open-access-transport-models/featured_hubc4301c81545b69b038b632d4e46b4cc_72911_720x0_resize_lanczos_2.png)
 
 ---
 
@@ -67,6 +72,303 @@ Source: A/B Street, free, open source, gamified transport planning software [git
 ![](https://www.robinlovelace.net/publication/lovelace-open-2020/featured.png)
 - Transport models represent a leverage point in transport systems
 - New paper, Lovelace et al (2020) describes the emergence and possibilities for 'open access models'
+
+---
+
+## What is science?
+
+.pull-left[
+- Scientific knowledge is hypotheses that can be falsified
+- Science is the process of *generating falsifiable hypotheses* and *testing them*
+- In a reproducible way
+- Systematically
+
+![](https://media3.giphy.com/media/3ohhworAhxSEHT3zDa/200w.webp?cid=3640f6095c57e8d15767723367d0c596)
+]
+
+--
+
+.pull-right[
+
+- Falsifiability is central to the scientific process (Popper, 1959)
+- All of which requires software conducive to reproducibility
+
+![](https://duckduckgo.com/i/f2692e7b.jpg)
+]
+
+---
+
+## Transport planning software
+
+Transport modelling software products are a vital component of modern transport planning *and* research.
+
+- They generate the evidence base on which strategic investments are made and, furthermore,
+- provide a powerful mechanism for researching alternative futures.
+
+--
+
+It would not be an overstatement to say that software determines the range of futures that are visible to policymakers. This makes status of transport modelling software and how it may evolve in the future important questions.
+
+What will transport software look like? What will their capabilities be? And who will control? Answers to each of these questions will affect the future of transport systems. 
+
+--
+
+- Premise: transport planning/modelling software used in practice ~~will become~~ is becoming increasingly data-driven, modular and open. 
+
+---
+
+background-image: url(https://raw.githubusercontent.com/npct/pct-team/master/figures/sdna-san-fran.png)
+background-size: cover
+class: center, middle
+
+# Current transport software
+
+--
+
+(Source: Crispin Cooper, author of sDNA)
+
+---
+
+.pull-left[
+
+
+&lt;img src="https://www.robinlovelace.net/presentations/fourstage.png" height="500px" /&gt;
+
+Still dominates transport planning models (Boyce and Williams 2015)
+]
+
+
+--
+
+### The four stage model (left)
+
+- Impacts the current software landscape
+
+- Dominated by a few proprietary products
+
+- Limited support community online 
+
+- High degree of lock-in
+
+- Limited cross-department collaboration
+
+---
+
+# Existing products
+
+&lt;table&gt;
+&lt;caption&gt;Sample of transport modelling software in use by practitioners. Note: citation counts based on searches for company/developer name, the product name and 'transport'. Data source: Google Scholar searches, October 2018.&lt;/caption&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Software &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Company/Developer &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Company HQ &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Licence &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Citations &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Visum &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; PTV &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Germany &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Proprietary &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1810 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; MATSim &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; TU Berlin &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Germany &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Open source (GPL) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1470 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; TransCAD &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Caliper &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; USA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Proprietary &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1360 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; SUMO &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; DLR &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Germany &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Open source (EPL) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1310 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Emme &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; INRO &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Canada &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Proprietary &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 780 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Cube &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Citilabs &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; USA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Proprietary &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 400 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; sDNA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Cardiff University &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; UK &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Open source (GPL) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 170 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+
+# User support
+
+Getting help is vital for leaning/improving software
+
+--
+
+![](https://media.giphy.com/media/6HtgBlXu1TIac/giphy.gif)
+
+--
+
+"10-Hour Service Pack $2,000" (source: [caliper.com/tcprice.htm](https://www.caliper.com/tcprice.htm))
+
+---
+
+# Online communities
+
+- [gis.stackexchange.com](https://gis.stackexchange.com/questions) has 21,314 questions 
+
+- [r-sig-geo](http://r-sig-geo.2731867.n2.nabble.com/) has 1000s of posts
+
+- RStudio's Discourse community has 65,000+ posts already!
+
+--
+
+- No transport equivalent (e.g. earthscience.stackexchange.com is in beta)
+
+- Potential for a Discourse forum or similar: transport is not (just) GIS
+
+---
+
+# Best way to get support is peer-to-peer:
+
+![](https://www.robinlovelace.net/presentations/rstudio-community.png)
+
+Source: https://community.rstudio.com/about
+
+---
+
+# A few prices
+
+![](https://www.robinlovelace.net/presentations/price-transcad.png)&lt;!-- --&gt;
+
+Source: [google.com/search?q=transcad+price](https://www.google.com/search?q=transcad+price)
+
+---
+
+background-image: url(https://media.giphy.com/media/YlQQYUIEAZ76o/giphy.gif)
+background-size: cover
+class: center, middle
+
+
+# Future transport software
+
+---
+
+# Is already here I
+
+- Example: the Propensity to Cycle Tool ([PCT.bike](http://www.pct.bike/)) (Lovelace et al. 2017)
+
+![](https://raw.githubusercontent.com/npct/pct-team/master/figures/early.png)&lt;!-- --&gt;
+
+---
+
+## How is data science used in the PCT?
+
+- It's all reproducible, e.g.:
+- Find commuting desire lines in West Yorkshire between 1 and 3 km long in which more people drive than cycle:
+
+
+
+
+
+```r
+# Set-up, after installing R and checking out www.pct.bike:
+u = "https://github.com/ITSLeeds/TDS/releases/download/0.1/desire_lines.geojson"
+library(dplyr)
+library(sf)
+desire_lines = read_sf(u)
+```
+
+---
+
+## Visualising data
+
+A fundamental part of data science is being able to understand your data.
+
+That requires visualisation, R is great for that:
+
+.pull-left[
+
+```r
+plot(desire_lines)
+```
+
+![](2021-02-16-open-access-transport-models_files/figure-html/unnamed-chunk-8-1.png)&lt;!-- --&gt;
+
+]
+
+.pull-right[
+- Interactively:
+
+
+```r
+library(tmap)
+tm_shape(desire_lines) + tm_lines("all")
+```
+
+]
+
+---
+
+## Processing data with code
+
+- Now we have data in our computer, and verified it works, we can use it
+
+- Which places are most car dependent? 
+
+
+```r
+car_dependent_routes = desire_lines %&gt;% 
+  mutate(percent_drive = car_driver / all * 100) %&gt;% 
+  filter(rf_dist_km &lt; 3 &amp; rf_dist_km &gt; 1) 
+```
+
+---
+
+## Checking the results:
+
+
+```r
+b = c(0, 25, 50, 75)
+tm_shape(car_dependent_routes) +
+  tm_lines(col = "percent_drive", lwd = "all", scale = 5, breaks = b, palette = "-inferno")
+```
+
+![](2021-02-16-open-access-transport-models_files/figure-html/unnamed-chunk-11-1.png)&lt;!-- --&gt;
+
+
+---
+
+# Is already here II
+
+The ActDev project: 
+
+![](https://user-images.githubusercontent.com/361423/107999638-cb0dc700-6fdf-11eb-9105-cf851e5cc02b.png)
+
+- A/B Street - R integration, see https://github.com/a-b-street/abstr
 
 ---
 
