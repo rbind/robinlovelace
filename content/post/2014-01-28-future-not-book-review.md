@@ -2,7 +2,7 @@
 title: The Future Is Not What It Used To Be - Book review
 date: "2014-01-28"
 categories:
- - Books
+ - reviews
 tags:
  - reviews
  - collapse 

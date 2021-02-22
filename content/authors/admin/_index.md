@@ -59,10 +59,10 @@ superuser: true
 title: Robin Lovelace
 ---
 
-I am a geographer, bike mechanic, programmer and academic at the University of Leeds.
-In my role as [Associate Professor of Transport Data Science](https://environment.leeds.ac.uk/transport/staff/953/dr-robin-lovelace) at the [Institute for Transport Studies](https://environment.leeds.ac.uk/transport), I teach free, open, reproducible and internationally scalable techniques for working with data to support evidence-based policies.
+I am [Associate Professor of Transport Data Science](https://environment.leeds.ac.uk/transport/staff/953/dr-robin-lovelace) at the Leeds [Institute for Transport Studies](https://environment.leeds.ac.uk/transport) where I research, develop and teach free, open, reproducible and internationally scalable techniques for working with data to support evidence-based policies.
 
-I am author of free and open source [books](https://www.robinlovelace.net/publication/#5) and lead the Transport Data Science [module](https://github.com/ITSLeeds/TDS) as part of the [Data Science and Data Analytics](https://courses.leeds.ac.uk/i071/data-science-and-analytics-msc) and [Data Science and Urban Analytics](https://courses.leeds.ac.uk/j135/urban-data-science-and-analytics-msc) courses.
+I am author of papers and [books](https://www.robinlovelace.net/publication/#5) on transport planning, energy, geographic data analysis and modelling.
+I lead the Transport Data Science [module](https://github.com/ITSLeeds/TDS), which is available to students taking [Data Science and Data Analytics](https://courses.leeds.ac.uk/i071/data-science-and-analytics-msc) and [Data Science and Urban Analytics](https://courses.leeds.ac.uk/j135/urban-data-science-and-analytics-msc) courses at the University of Leeds.
 
 <!--
 I am a big advocate of education and lifelong learning, but also of the power of technology and science to improve the world.
