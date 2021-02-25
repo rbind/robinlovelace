@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Open Access Source Tools</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Robin Lovelace" />
+    <script src="libs/header-attrs-2.7/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/robot.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/robot-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Open Access Source Tools
+## <br/>Enabling reproducibility and participation in Geographic Research
+### Robin Lovelace
+### University of Leeds, <a href="https://environment.leeds.ac.uk/transport">Institute for Transport Studies</a>
+### <a href="https://reproducibilitea.org/">Reproducibilitea</a> Leeds, 2021-02-25 (updated: 2021-02-25) Reproducible source code: <a href="https://github.com/Robinlovelace/presentations/">github.com/Robinlovelace/presentations</a>
+
+---
+
+
+
+
+---
+
+## The problem: Proprietary GIS software
+
+![](https://user-images.githubusercontent.com/1825120/109154486-3dac3e80-7766-11eb-809f-ac9f1c9c24b9.png)
+
+---
+
+
+.pull-left[
+### Solution: Open Source Software for Geocomputation
+
+![](https://pbs.twimg.com/profile_images/858603658564513794/KgoQRQa6_400x400.jpg)
+]
+
+.pull-right[
+
+[![](https://www.osgeo.org/wp-content/themes/roots/assets/img/logo-osgeo.svg)](https://www.osgeo.org/)
+[![](https://user-images.githubusercontent.com/520851/34887433-ce1d130e-f7c6-11e7-83fc-d60ad4fae6bd.gif)](https://r-spatial.github.io/sf/)
+![](https://camo.githubusercontent.com/71a95600db0bffe2f28b234ebd2b845c312e51e6a0ad6dd79f25e15fd01aa692/68747470733a2f2f616e6974616772617365722e6769746875622e696f2f6d6f76696e6770616e6461732f706963732f6d6f76696e6770616e6461732e706e67)
+]
+
+---
+
+## Geocomputation with R
+
+.pull-left[
+
+- Open source + open access book:  https://geocompr.robinlovelace.net/
+
+- Chapter 1: History 
+
+Foundations
+
+- Starting from nothing
+- Class definitions
+- Spatial/attribute operations
+- Projections 
+- Data IO
+
+Extensions
+
+- Advanced methods
+- How to build your own functions
+
+Applications
+
+- A taster of what you can do
+
+]
+
+.pull-right[
+&lt;img src="https://geocompr.robinlovelace.net/images/cover.png" height="500" /&gt;
+]
+
+---
+
+### Future directions of travel in FOSS4G
+
+![](https://pbs.twimg.com/media/Eul65WQWQAAHaTt?format=jpg&amp;name=medium)
+
+--
+
+- Integration (e.g. R package qgisprocess, R/Python crossover)
+- New approaches, e.g. GeoRust
+
+---
+
+## The problem - Transport
+
+![](https://user-images.githubusercontent.com/1825120/103755051-1b6b2f80-5005-11eb-988b-f7c8d3108e53.png)
+
+Source: ['Inside the black box' report](https://www.co.pierce.wa.us/DocumentCenter/View/755/A-GuideToModeling?bidId=)
+
+--
+
+- Transport models were designed to support growth in car ownership and reduce journey times (Boyce and Williams, 2015)
+
+--
+
+- 21^st^ Century priorities are very different
+
+--
+
+  - Climate science, air pollution and health force a shift in focus
+  - The concepts of 'participatory democracy' and 'citizen science' mean there is a need for collaborative solutions
+
+--
+
+---
+
+## The solution - Transport
+
+**New technologies mean that open access transport models are possible**
+
+![](https://raw.githubusercontent.com/a-b-street/abstreet/master/videos/exploring_traffic.gif)
+Source: A/B Street, free, open source, gamified transport planning software [github.com/dabreegster/abstreet](https://github.com/dabreegster/abstreet/#ab-street)
+
+---
+
+## Open Source Transport Tools
+
+Source: Lovelace (2021), see [github.com/Robinlovelace/open-gat](https://github.com/Robinlovelace/open-gat#open-source-tools-for-geographic-analysis-in-transport-planning)
+
+![](https://www.robinlovelace.net/talk/open-access-transport-models/featured_hubc4301c81545b69b038b632d4e46b4cc_72911_720x0_resize_lanczos_2.png)
+
+---
+
+## From open source to open access
+
+![](https://www.robinlovelace.net/publication/lovelace-open-2020/featured.png)
+- Transport models represent a leverage point in transport systems
+- New paper, Lovelace et al (2020) describes the emergence and possibilities for 'open access models'
+
+---
+
+## What is science?
+
+.pull-left[
+- Scientific knowledge is hypotheses that can be falsified
+- Science is the process of *generating falsifiable hypotheses* and *testing them*
+- In a reproducible way
+- Systematically
+
+![](https://media3.giphy.com/media/3ohhworAhxSEHT3zDa/200w.webp?cid=3640f6095c57e8d15767723367d0c596)
+]
+
+--
+
+.pull-right[
+
+- Falsifiability is central to the scientific process (Popper, 1959)
+- All of which requires software conducive to reproducibility
+
+![](https://duckduckgo.com/i/f2692e7b.jpg)
+]
+
+---
+
+# Existing products
+
+&lt;table&gt;
+&lt;caption&gt;Sample of transport modelling software in use by practitioners. Note: citation counts based on searches for company/developer name, the product name and 'transport'. Data source: Google Scholar searches, October 2018.&lt;/caption&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Software &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Company/Developer &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Company HQ &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Licence &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Citations &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Visum &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; PTV &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Germany &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Proprietary &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1810 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; MATSim &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; TU Berlin &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Germany &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Open source (GPL) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1470 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; TransCAD &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Caliper &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; USA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Proprietary &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1360 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; SUMO &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; DLR &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Germany &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Open source (EPL) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1310 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Emme &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; INRO &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Canada &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Proprietary &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 780 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Cube &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Citilabs &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; USA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Proprietary &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 400 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; sDNA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Cardiff University &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; UK &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Open source (GPL) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 170 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+
+# User support
+
+Getting help is vital for leaning/improving software
+
+--
+
+![](https://media.giphy.com/media/6HtgBlXu1TIac/giphy.gif)
+
+--
+
+"10-Hour Service Pack $2,000" (source: [caliper.com/tcprice.htm](https://www.caliper.com/tcprice.htm))
+
+---
+
+# Online communities
+
+- [gis.stackexchange.com](https://gis.stackexchange.com/questions) has 21,314 questions 
+
+- [r-sig-geo](http://r-sig-geo.2731867.n2.nabble.com/) has 1000s of posts
+
+- RStudio's Discourse community has 65,000+ posts already!
+
+--
+
+- No transport equivalent (e.g. earthscience.stackexchange.com is in beta)
+
+- Potential for a Discourse forum or similar: transport is not (just) GIS
+
+---
+
+# Building open source software
+
+--
+
+background-image: url(https://media2.giphy.com/media/3o6Mb5IwAsi9p8yk0w/giphy.gif?cid=ecf05e47nn850udm14umb3d3zitb88g0nt1spheu290zjlmv&amp;rid=giphy.gif)
+background-size: cover
+
+
+---
+
+# From prototype to deployment
+
+- Example: the Propensity to Cycle Tool ([PCT.bike](http://www.pct.bike/)) (Lovelace et al. 2017)
+
+![](https://raw.githubusercontent.com/npct/pct-team/master/figures/early.png)&lt;!-- --&gt;
+
+---
+
+## Geocomputation in the PCT
+
+- It's all reproducible, e.g.:
+- Find commuting desire lines in West Yorkshire between 1 and 3 km long in which more people drive than cycle:
+
+
+
+
+
+```r
+# Set-up, after installing R and checking out www.pct.bike:
+u = "https://github.com/ITSLeeds/TDS/releases/download/0.1/desire_lines.geojson"
+library(dplyr)
+library(sf)
+desire_lines = read_sf(u)
+```
+
+---
+
+## Visualising data
+
+A fundamental part of data science is being able to understand your data.
+
+That requires visualisation, R is great for that:
+
+.pull-left[
+
+```r
+plot(desire_lines)
+```
+
+![](reproducibilitea_files/figure-html/unnamed-chunk-7-1.png)&lt;!-- --&gt;
+
+]
+
+.pull-right[
+- Interactively:
+
+
+```r
+library(tmap)
+tm_shape(desire_lines) + tm_lines("all")
+```
+
+]
+
+---
+
+## Processing data with code
+
+- Now we have data in our computer, and verified it works, we can use it
+
+- Which places are most car dependent? 
+
+
+```r
+car_dependent_routes = desire_lines %&gt;% 
+  mutate(percent_drive = car_driver / all * 100) %&gt;% 
+  filter(rf_dist_km &lt; 3 &amp; rf_dist_km &gt; 1) 
+```
+
+---
+
+## Checking the results:
+
+
+```r
+b = c(0, 25, 50, 75)
+tm_shape(car_dependent_routes) +
+  tm_lines(col = "percent_drive", lwd = "all", scale = 5, breaks = b, palette = "-inferno")
+```
+
+![](reproducibilitea_files/figure-html/unnamed-chunk-10-1.png)&lt;!-- --&gt;
+
+
+---
+
+# Example II
+
+The ActDev project: 
+
+![](https://user-images.githubusercontent.com/361423/107999638-cb0dc700-6fdf-11eb-9105-cf851e5cc02b.png)
+
+- A/B Street - R integration, see https://github.com/a-b-street/abstr
+
+---
+
+# Get involved
+
+- Support open source solutions indirectly
+  - Sign-up to platforms for sharing and collaborating on open source projects, such as https://github.com/
+  - Preferentially use, cite and endorse open access and open source solutions
+  - Find the open source tool best suited to your needs and communicate constructively with the developers
+  - Communicate ways to improve open source solutions, e.g. by commenting on 'issue trackers' on forums such as [GitHub](https://github.com/)
+
+- Download, install and play with open source software
+  - R/RStudio, great for data analysis but also interactive visualisation and, increasingly, [transport planning workflows](https://docs.ropensci.org/stplanr/)
+  - Have a play with open access transport tools such as [A/B Street](https://github.com/dabreegster/abstreet/#ab-street) and the [PCT](https://www.pct.bike/), which can run on your computer or in the browser
+
+
+---
+
+# References
+
+Boyce, D.E., Williams, H.C.W.L., 2015. Forecasting Urban Travel: Past, Present and Future. Edward Elgar Publishing.
+
+Beimborn, E., Kennedy, R., 1996. Inside the Blackbox: Making Transportation Models Work for Livable Communities. Citizens for a Better Environment.
+
+Lovelace, R., Parkin, J., Cohen, T., 2020. Open access transport models: A leverage point in sustainable transport planning. Transport Policy 97, 47–54. https://doi.org/10.1016/j.tranpol.2020.06.015
+
+---
+
+# Thanks
+
+Contact me at r. lovelace at leeds ac dot uk (email), [`@robinlovelace`](https://twitter.com/robinlovelace)
+
+--
+
+Check-out links to my work at [robinlovelace.net](https://www.robinlovelace.net/)
+
+--
+
+Especially: [Geocomputation with R](https://geocompr.robinlovelace.net/)
+
+--
+
+Thanks to everyone building a open and collaborative communities
+
+Thanks to the University of Leeds and the Institute for Transport Studies
+
+[![](https://avatars3.githubusercontent.com/u/22447619?s=400&amp;u=2d566bedf62374d5066a50d2dd7c87c84470f69b&amp;v=4)](https://environment.leeds.ac.uk/transport)
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="https://platform.twitter.com/widgets.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
