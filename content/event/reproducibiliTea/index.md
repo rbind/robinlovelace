@@ -1,7 +1,7 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
 
-title: "ReproducibiliTea"
+title: "Open Source Tools for Geographic and Transport Research"
 event:
 event_url:
 location:
