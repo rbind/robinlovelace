@@ -19,5 +19,5 @@ I plan to store notes on how to use it here.
 New talk:
 
 ```
-hugo new  --kind event event/my-talk-name
+hugo new  --kind event event/reproducibiliTea
 ```
