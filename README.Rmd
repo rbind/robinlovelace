@@ -20,4 +20,10 @@ New talk:
 
 ```
 hugo new  --kind event event/reproducibiliTea
+hugo new  --kind event event/sicss
 ```
+
+```{r, eval=FALSE}
+file.edit("content/event/sicss/index.md")
+```
+
