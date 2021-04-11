@@ -101,3 +101,41 @@ The ramp onto the bridge from the East side of the river has a shallow incline, 
 
 <a data-flickr-embed="true" href="https://www.flickr.com/photos/97888609@N02/51109354607/in/photostream/" title="IMG_20210411_120828"><img src="https://live.staticflickr.com/65535/51109354607_8778ee28be_h.jpg" width="1600" height="1200" alt="IMG_20210411_120828"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
 
+
+## The waterside cycle path in East Leeds
+
+From the LCID we proceeded southeast along waterside cycleway that follows the River Aire all the way out to [Allerton Bywater, which is another new housing development that is part of the ActDev project](https://actdev.cyipt.bike/allerton-bywater/).
+The route has recently been resurfaced, as described in an [article by Sustrans](https://www.sustrans.org.uk/our-blog/news/2020/may/upgraded-leeds-waterside-cycle-path-now-open-for-locals).
+Having used this cycleway for more almost a decade it is hard to put into words how much better it is after the upgrade, but I will try.
+It is waaaaaaaaaaaay better.
+
+Before the upgrade the path was thin, bumpy and often muddy
+Now it is wide, smooth and attractive.
+The difference can be seen in the before/after photos below (credit: Sustrans).
+
+```{r ba, fig.show='hold', out.width="49%"}
+knitr::include_graphics(c(
+  "https://www.sustrans.org.uk/media/6275/leeds-waterside-cycle-path-before-les-webb-on-the-cycle-route-before-please-credit-steve-tipton-2020-steve-tipton-all-rights-reserved.jpg?anchor=center&mode=crop&width=730&height=410",
+  "https://www.sustrans.org.uk/media/6290/leeds-waterside-cycle-path-eastside-after-shot-tpt-leeds-east-4-2020-steve-best.jpg?anchor=center&mode=crop&width=730&height=410"
+))
+```
+
+The surface is as smooth as tarmac on a road (smoother than most roads in Leeds, which have many potholes due to constant erosion by motor traffic) but has a rustic feel.
+
+One issue with the route (that is already well [documented](https://www.yorkshireeveningpost.co.uk/news/transport/alistair-brownlee-backs-campaign-new-crossing-skelton-grange-road-bridge-trans-pennine-trail-3134542) and is the subject of a [campaign by Leeds Cycling Campaign](http://www.leedscyclingcampaign.co.uk/skelton-grange-bridge)) is that you are forced onto steps to go from Skelton Grange Road bridge onto a cycleway located between the River Aire on the East and the Aire and Calder Navigation canal to West, as shown below.
+
+```{r}
+knitr::include_graphics("https://i.imgur.com/lzLCIT1.png")
+```
+
+Aside from the steps, this section is also great to ride on and is part of the [Trans Pennine Trail from Leeds to Sheffield](https://www.openstreetmap.org/relation/10508149) 40 miles to the South.
+
+<a data-flickr-embed="true" href="https://www.flickr.com/photos/97888609@N02/51109354637/in/photostream/" title="IMG_20210411_122039"><img src="https://live.staticflickr.com/65535/51109354637_c95adf613c_h.jpg" width="1600" height="1200" alt="IMG_20210411_122039"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+
+## Temple Newsam
+
+
+```{r}
+knitr::include_graphics("https://i.imgur.com/Co5gyWH.png")
+```
+
