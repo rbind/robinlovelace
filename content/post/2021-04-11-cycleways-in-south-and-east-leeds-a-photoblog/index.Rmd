@@ -18,10 +18,51 @@ image:
 projects: []
 ---
 
-Taking advantage of a sunny Sunday me and a friend decided to check-out the latest active travel infrastructure developments in South and East Leeds.
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+library(tmap)
+tmap_mode("view")
+if(!file.exists("2021_04_11_11_31_Sun.gpx")) {
+  download.file("https://www.openstreetmap.org/trace/3633523/data", "2021_04_11_11_31_Sun.gpx")
+}
+# sf::st_layers("2021_04_11_11_31_Sun.gpx")
+route = sf::read_sf("2021_04_11_11_31_Sun.gpx", layer = "tracks")
+ctown = tmaptools::geocode_OSM(q = "chapeltown leeds", as.sf = TRUE)
+ctown_buffer = stplanr::geo_buffer(ctown, dist = 500)
+route = sf::st_difference(route, ctown_buffer)
+```
+
+
+Taking advantage of a sunny Sunday, a friend and I decided to check-out the latest active travel infrastructure developments in South and East Leeds.
 We planned the route around two destinations and one well-established route: 
 
-- The [Leeds Climate Innovation District](https://citu.co.uk/citu-places), a new sustainability-focussed housing development with 500+ new dwellings being built near central Leeds
-- test
+- The [Leeds Climate Innovation District](https://citu.co.uk/citu-places), a new sustainability-focussed housing development being built near central Leeds
+- [Temple Newsam](https://en.wikipedia.org/wiki/Temple_Newsam), a publicly accessible stately home and leisure grounds part-designed by prolific landscaper [Capability Brown](https://en.wikipedia.org/wiki/Capability_Brown) in the 1760s and now owned by [Leeds City Council](https://www.leeds.gov.uk/)
+- The well-known [Wyke Beck Way](https://www.leeds.gov.uk/docs/Wyke%20Beck%20Way%20Cycle%20Route.pdf), which runs North from Temple Newsam to Roundhay Park
 
-the well-known [Wyke Beck Way](https://www.leeds.gov.uk/docs/Wyke%20Beck%20Way%20Cycle%20Route.pdf).
+An overview of the route is shown below:
+
+```{r}
+s = c(
+    # `Grey basemap` = "CartoDB.Positron",
+    # `Coloured basemap` = "Esri.WorldTopoMap",
+    `OSM existing cycle provision (CyclOSM)` = "https://tile.thunderforest.com/cycle/{z}/{x}/{y}.png?apikey=feae177da543411c9efa64160305212d",
+    # `PCT commuting, Government Target` = "https://npttile.vs.mythic-beasts.com/commute/v2/govtarget/{z}/{x}/{y}.png",
+    # `PCT schools, Government Target` = "https://npttile.vs.mythic-beasts.com/school/v2/govtarget/{z}/{x}/{y}.png",
+    `Satellite image` = "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'"
+)
+tm_shape(route) + tm_lines(lwd = 3) + tm_basemap(server = s) +
+  tm_scale_bar() +
+  tm_minimap(server = "Esri.WorldTopoMap")
+```
+
+
+## Leeds Climate Innovation District
+
+Leeds Climate Innovation District (LCID) is a major development in Leeds, with 500+ dwellings either in the process of being built or already being lived in (at the time of writing in April 2021).
+I cannot comment on the energy efficiency ratings of the buildings (although I have little doubt that they are well insulated) but in terms of its appearance and accessibility by walking and cycling it is ground-breaking.
+
+I had heard of LCID and passed by it during early stages of construction but only appreciated its scale and level and ambition today after seeing the site.
+In the spring sunshine it was stunning:
+
+
