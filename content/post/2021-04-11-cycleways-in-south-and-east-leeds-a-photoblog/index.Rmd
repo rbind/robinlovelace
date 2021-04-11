@@ -1,5 +1,5 @@
 ---
-title: 'Cycleways in South and East Leeds: a Photoblog'
+title: 'Cycleways in East Leeds: a Photoblog'
 author: Robin Lovelace
 date: '2021-04-11'
 slug: cycleways-se-leeds
@@ -33,7 +33,7 @@ route = sf::st_difference(route, ctown_buffer)
 ```
 
 
-Taking advantage of a sunny Sunday, a friend and I decided to check-out the latest active travel infrastructure developments in South and East Leeds.
+Taking advantage of a sunny Sunday, a friend and I decided to check-out some recent active travel infrastructure developments in East Leeds.
 We planned the route around two destinations and one well-established route: 
 
 - The [Leeds Climate Innovation District](https://citu.co.uk/citu-places), a new sustainability-focussed housing development being built near central Leeds
