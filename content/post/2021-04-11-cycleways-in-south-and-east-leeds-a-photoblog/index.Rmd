@@ -132,10 +132,51 @@ Aside from the steps, this section is also great to ride on and is part of the [
 
 <a data-flickr-embed="true" href="https://www.flickr.com/photos/97888609@N02/51109354637/in/photostream/" title="IMG_20210411_122039"><img src="https://live.staticflickr.com/65535/51109354637_c95adf613c_h.jpg" width="1600" height="1200" alt="IMG_20210411_122039"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
 
-## Temple Newsam
+## The Extra service station and Temple Newsam
 
+Perhaps the most surprising aspect of the ride was the new walking and cycling infrastructure provided in and around a new service station serving the M1 motorway of all things.
+Despite its proximity to this huge highway, the site surrounding the [Leeds Skelton Lake – M1 J45](https://extraservices.co.uk/locations/leeds-skelton-lake/) services is outstandingly good for cycling and walking, with dedicated space inside the premises and a decent shared cycleway/pavement leading up to the M1, as shown below (note the petrol station, part of the Extra service station to the left).
+
+<a data-flickr-embed="true" href="https://www.flickr.com/photos/97888609@N02/51109826033/in/photostream/" title="IMG_20210411_123340"><img src="https://live.staticflickr.com/65535/51109826033_7b52e1b93a_h.jpg" width="1600" height="1200" alt="IMG_20210411_123340"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+
+Crossing the huge roads to cross the M1 was possible but not ideal: the cycle infrastructure directly next to the motorway decreased substantially in quality compared with the rest of the route.
+
+<a data-flickr-embed="true" href="https://www.flickr.com/photos/97888609@N02/51110697010/in/photostream/" title="IMG_20210411_123642"><img src="https://live.staticflickr.com/65535/51110697010_b785f276ed_h.jpg" width="1600" height="1200" alt="IMG_20210411_123642"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+
+In addition to work to improve links with the Skelton Grange Road Bridge I imagine that investment in the quality of infrastructure leading to Temple Newsam, shown in the map below, would be well spent.
 
 ```{r}
 knitr::include_graphics("https://i.imgur.com/Co5gyWH.png")
 ```
+
+## The Wyke Beck Way and Leeds Cycle Superhighway 2
+
+The Wyke Beck Way is an off road route that goes from Temple Newsam all the way to Roundhay Park, the biggest park in Leeds.
+We were briefly on this route leaving Temple Newsam and it was our plan to take this route from the Wykebeck Arms (shown below) back to North Leeds.
+
+<a data-flickr-embed="true" href="https://www.flickr.com/photos/97888609@N02/51109354732/in/photostream/" title="IMG_20210411_130312"><img src="https://live.staticflickr.com/65535/51109354732_8887f2a5b8_h.jpg" width="1600" height="1200" alt="IMG_20210411_130312"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+
+However, we decided to head East along the [Leeds Cycle Superhighway 2](https://www.openstreetmap.org/relation/9238338#map=13/53.8089/-1.4956).
+Less famous than the Leeds-Bradford 'Superhighway 1' this cycleway follows the A64 dual carriageway from Seacroft and Crossgates in the East to the city centre.
+Despite being (I guess) the most expensive piece of cycle infrastructure per km (with dedicated cycleways in urban areas costing ~£1k/m which is still much cheaper than motorways that cost around 50 times more m), this was also the most disappointing.
+The superhighway had very few people walking and cycling on it compared with the busy yet not crowded river route.
+It was not a particularly pleasant experience, as shown in the figure below, but was much better than cycling on the road would have been.
+
+<a data-flickr-embed="true" href="https://www.flickr.com/photos/97888609@N02/51109826148/in/photostream/" title="IMG_20210411_130751"><img src="https://live.staticflickr.com/65535/51109826148_b0655039cd_h.jpg" width="1600" height="1200" alt="IMG_20210411_130751"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+
+## Where next?
+
+After following the superhighway for a mile or so we took right onto Harehills lane.
+This was the longest on road section and I would not recommend it to inexperienced cyclists, certainly not the '8 and 80 year-olds' and less able bodied people who we should be designing for.
+Still, if you are confident on a bike, it is a great route: going down onto Roundhay you have a great view of this part of the city.
+
+In terms of where to next, I plan to try routes in different parts of the city to see how they have changed.
+Overall I am really impressed at the changes I've seen in urban infrastructure described in this blog post.
+I hope other changes have been equally good and that the momentum in a positive direction continues.
+
+## Links
+
+- For more routes and information on provision for cycling in Leeds see here: https://www.leeds.gov.uk/parking-roads-and-travel/connecting-leeds-and-transforming-travel/cycling/cycle-routes
+- To see a simulation of LCID in your web browser for the fun of it (motivating the visit) see here: https://actdev.cyipt.bike/lcid/routenetwork,buildings/#
+- To contribute to OpenStreetMap see https://www.openstreetmap.org/fixthemap
 
