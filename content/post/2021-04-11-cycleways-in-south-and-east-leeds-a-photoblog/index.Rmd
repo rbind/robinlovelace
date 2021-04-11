@@ -176,6 +176,7 @@ I hope other changes have been equally good and that the momentum in a positive 
 
 ## Links
 
+- The GPS trace associated with the route that you can download and follow with apps such as the free and open source [OsmAnd](https://osmand.net/) Android app: https://www.openstreetmap.org/trace/3633523/
 - For more routes and information on provision for cycling in Leeds see here: https://www.leeds.gov.uk/parking-roads-and-travel/connecting-leeds-and-transforming-travel/cycling/cycle-routes
 - To see a simulation of LCID in your web browser for the fun of it (motivating the visit) see here: https://actdev.cyipt.bike/lcid/routenetwork,buildings/#
 - To contribute to OpenStreetMap see https://www.openstreetmap.org/fixthemap
