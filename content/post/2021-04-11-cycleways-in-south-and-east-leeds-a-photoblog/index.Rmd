@@ -66,8 +66,29 @@ knitr::include_url("map-leeds-routes.html")
 
 Leeds Climate Innovation District (LCID) is a major development in Leeds, with 500+ dwellings either in the process of being built or already being lived in (at the time of writing in April 2021).
 I cannot comment on the energy efficiency ratings of the buildings (although I have little doubt that they are well insulated) but in terms of its appearance and accessibility by walking and cycling it is ground-breaking.
+It is located on the East of the River Aire and to the West of the A61, a major road that wouldn't seem to provide a basis for sustainable and healthy living, as shown below.
+
+```{r}
+knitr::include_graphics("https://i.imgur.com/gj6gv79.png")
+```
+
 
 I had heard of LCID and passed by it during early stages of construction but only appreciated its scale and level and ambition today after seeing the site.
-In the spring sunshine it was stunning:
+In the spring sunshine it was stunning, as shown in the photo below.
 
+<a data-flickr-embed="true" href="https://www.flickr.com/photos/97888609@N02/51109825653/in/photostream/" title="IMG_20210411_115742"><img src="https://live.staticflickr.com/65535/51109825653_2c6c205f2a_h.jpg" width="1600" height="1200" alt="IMG_20210411_115742"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
 
+My more immediate interest in the project was due to work.
+The LCID is one of the case study sites we used to highlight the potential for the planning system to support active travel in the [ActDev project](https://actdev.cyipt.bike/).
+As can be seen at [actdev.cyipt.bike/lcid/](https://actdev.cyipt.bike/lcid/routenetwork,buildings/#12/53.78895/-1.52639), the site performs well from a sustainable transport perspective, as shown below.
+
+```{r}
+knitr::include_url("https://actdev.cyipt.bike/lcid/routenetwork,buildings/#12/53.78895/-1.52639")
+```
+
+The reasons why the site scores so high from a sustainable perspective perspective are simple:
+
+- A high proportion of trips in the surrounding area are made by public transport
+- Many key destinations are within walking and cycling distance
+
+The data driven approach can hide important details on the ground that can help or hinder active travel.
