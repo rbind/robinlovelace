@@ -42,7 +42,7 @@ We planned the route around two destinations and one well-established route:
 
 An overview of the route is shown below:
 
-```{r}
+```{r, eval=FALSE}
 s = c(
     # `Grey basemap` = "CartoDB.Positron",
     # `Coloured basemap` = "Esri.WorldTopoMap",
@@ -51,9 +51,14 @@ s = c(
     # `PCT schools, Government Target` = "https://npttile.vs.mythic-beasts.com/school/v2/govtarget/{z}/{x}/{y}.png",
     `Satellite image` = "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'"
 )
-tm_shape(route) + tm_lines(lwd = 3) + tm_basemap(server = s) +
+m = tm_shape(route) + tm_lines(lwd = 3) + tm_basemap(server = s) +
   tm_scale_bar() +
   tm_minimap(server = "Esri.WorldTopoMap")
+tmap_save(m, "map-leeds-routes.html")
+```
+
+```{r}
+knitr::include_url("map-leeds-routes.html")
 ```
 
 
