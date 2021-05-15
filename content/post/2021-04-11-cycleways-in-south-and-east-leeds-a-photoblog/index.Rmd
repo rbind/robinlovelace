@@ -27,6 +27,7 @@ if(!file.exists("2021_04_11_11_31_Sun.gpx")) {
 }
 # sf::st_layers("2021_04_11_11_31_Sun.gpx")
 route = sf::read_sf("2021_04_11_11_31_Sun.gpx", layer = "tracks")
+# sf::st_length(route)
 ctown = tmaptools::geocode_OSM(q = "chapeltown leeds", as.sf = TRUE)
 ctown_buffer = stplanr::geo_buffer(ctown, dist = 600)
 route = sf::st_difference(route, ctown_buffer)
