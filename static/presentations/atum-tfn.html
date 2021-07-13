@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Active travel uptake models</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Robin Lovelace" />
+    <script src="libs/header-attrs-2.9/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/robot.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/robot-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Active travel uptake models
+## 📉🚂🚅🚎🛴🚲🚶📈<br/>For Data Driven and Sustainable Transport Planning
+### Robin Lovelace
+### University of Leeds, <a href="https://environment.leeds.ac.uk/transport">Institute for Transport Studies</a>
+### Transport for the North 2021-07-13 Reproducible source code: <a href="https://github.com/Robinlovelace/presentations/">github.com/Robinlovelace/presentations</a>
+
+---
+
+
+
+
+### The problem
+
+Source: [leeds-live.co.uk](https://www.leeds-live.co.uk/news/leeds-news/leeds-worst-rush-hour-traffic-19898858)
+
+![](https://i2-prod.leeds-live.co.uk/news/leeds-news/article14638260.ece/ALTERNATES/s810/WhatsApp-Image-2018-05-10-at-080651jpeg.jpg)
+
+--
+
+Or is that a symptom of a deeper problem?
+
+---
+
+## The problem: root causes
+
+![](https://user-images.githubusercontent.com/1825120/103755051-1b6b2f80-5005-11eb-988b-f7c8d3108e53.png)
+
+Source: ['Inside the black box' report](https://www.co.pierce.wa.us/DocumentCenter/View/755/A-GuideToModeling?bidId=)
+
+--
+
+- Transport models were designed to support growth in car ownership and reduce journey times (Boyce and Williams, 2015)
+
+--
+
+- 21^st^ Century priorities are very different
+
+--
+
+  - Climate science, air pollution and health force a shift in focus
+  - The concepts of 'participatory democracy' and 'citizen science' mean there is a need for collaborative solutions
+
+--
+
+
+---
+
+## The solution
+
+**New technologies mean that open access transport models are possible**
+
+![](https://raw.githubusercontent.com/a-b-street/abstreet/master/videos/exploring_traffic.gif)
+Source: A/B Street, free, open source, gamified transport planning software [github.com/dabreegster/abstreet](https://github.com/dabreegster/abstreet/#ab-street)
+
+---
+
+## Open Source Transport Tools
+
+Source: Lovelace (2021), see [github.com/Robinlovelace/open-gat](https://github.com/Robinlovelace/open-gat#open-source-tools-for-geographic-analysis-in-transport-planning)
+
+![](https://www.robinlovelace.net/talk/open-access-transport-models/featured_hubc4301c81545b69b038b632d4e46b4cc_72911_720x0_resize_lanczos_2.png)
+
+---
+
+## From open source to open access
+
+![](https://www.robinlovelace.net/publication/lovelace-open-2020/featured.png)
+- Transport models represent a leverage point in transport systems
+- New paper, Lovelace et al (2020) describes the emergence and possibilities for 'open access models'
+
+---
+
+# The Propensity to Cycle Tools
+
+- Early prototype of the tool developed at Open Data Institute Leeds hackathon, 2015
+- National deployment of the Propensity to Cycle Tool 2 years later ([PCT.bike](http://www.pct.bike/)) (Lovelace et al. 2017)
+
+![](https://raw.githubusercontent.com/npct/pct-team/master/figures/early.png)&lt;!-- --&gt;
+
+---
+
+## Demo of the PCT
+
+Source: https://www.pct.bike/
+
+
+![](https://user-images.githubusercontent.com/1825120/123867504-5a2fd180-d926-11eb-9b7a-1988d4b6c830.png)
+
+
+---
+
+## Key aspects of the PCT
+
+- Based on open source code
+- Based on open data
+- Results published as open data
+- Publicly available web application encourages participation and evidence-based debate
+
+Open data and accessible results lead to participation. See https://twitter.com/search?q=cyipt.bike%2Frapid 
+
+![](https://user-images.githubusercontent.com/1825120/124230675-3d062900-db07-11eb-831e-f7f42e19aefc.png)
+
+---
+
+# Reproducibility and extending the tool
+
+- Find commuting desire lines in West Yorkshire between 1 and 3 km long in which more people drive than cycle:
+
+
+
+
+
+```r
+# Set-up, after installing R and checking out www.pct.bike:
+u = "https://github.com/ITSLeeds/TDS/releases/download/0.1/desire_lines.geojson"
+library(dplyr)
+library(sf)
+desire_lines = read_sf(u)
+```
+
+
+```r
+plot(desire_lines["bicycle"])
+```
+
+![](atum-tfn_files/figure-html/unnamed-chunk-5-1.png)&lt;!-- --&gt;
+
+---
+
+# Enabling reproducibility
+
+.pull-left[
+
+#### Key R packaged developed by ITS Leeds
+
+
+```r
+pkgs = c(
+# for routing, geo analysis
+  "stplanr", # 2.2k dls/month
+# to get and reproduce pct data
+  "pct", 
+# get road casualty data
+  "stats19",
+# multi modal routing
+  "opentripplanner",
+# get big osm datasets
+  "osmextract"
+)
+install.packages("remotes")
+remotes::install_cran(pkgs)
+```
+
+
+]
+
+.pull-right[
+
+
+![](https://docs.ropensci.org/stplanr/reference/figures/stplanr.png)
+
+]
+
+---
+
+## How it works
+
+![](https://user-images.githubusercontent.com/1825120/123762809-0e940e00-d8bb-11eb-8dab-0e881299bbef.png)
+
+---
+
+# Active travel uptake modes
+
+The ActDev project: https://actdev.cyipt.bike/
+
+![](https://user-images.githubusercontent.com/361423/107999638-cb0dc700-6fdf-11eb-9105-cf851e5cc02b.png)
+
+- A/B Street - R integration, see https://github.com/a-b-street/abstr
+
+---
+
+# Get involved
+
+  - Have a play with open access transport tools such as [A/B Street](https://github.com/dabreegster/abstreet/#ab-street) and the [PCT](https://www.pct.bike/), which can run on your computer or in the browser
+  - Check out ActDev for Leeds: https://actdev.cyipt.bike/lcid
+  - Sign-up to https://github.com/ and get involved, e.g. publish code, offer to help
+  - Try out R/RStudio, great for data analysis but also interactive visualisation and, increasingly geographic data analysis
+
+--
+
+Collaboration opportunities
+
+---
+
+# References
+
+Boyce, D.E., Williams, H.C.W.L., 2015. Forecasting Urban Travel: Past, Present and Future. Edward Elgar Publishing.
+
+Beimborn, E., Kennedy, R., 1996. Inside the Blackbox: Making Transportation Models Work for Livable Communities. Citizens for a Better Environment.
+
+Lovelace, R., Parkin, J., Cohen, T., 2020. Open access transport models: A leverage point in sustainable transport planning. Transport Policy 97, 47–54. https://doi.org/10.1016/j.tranpol.2020.06.015
+
+---
+
+# Thanks
+
+Contact me at r. lovelace at leeds ac dot uk (email), [`@robinlovelace`](https://twitter.com/robinlovelace)
+
+--
+
+Check-out links to my work at [robinlovelace.net](https://www.robinlovelace.net/)
+
+--
+
+Thanks to everyone building a open and collaborative communities
+
+Thanks to the University of Leeds and the Institute for Transport Studies
+
+[![](https://avatars3.githubusercontent.com/u/22447619?s=400&amp;u=2d566bedf62374d5066a50d2dd7c87c84470f69b&amp;v=4)](https://environment.leeds.ac.uk/transport)
+
+
+&lt;!-- This talk will outline to key concepts and products that will increasingly support evidence based transport planning and cost effective investment of public funds in the 21st Century, open source tools and open access models. Building on two recently published papers on the concepts, in the journal Transport Policy in 2020 and in the Journal of Geographical Systems in 2021, the talk will explore the concepts, demonstrate some evolving new tools and discuss future avenues of research and development. Open tools/models ranged in size from single-purpose tools such as the QGIS plugin AwaP to sophisticated stand-alone multi-modal traffic simulation software such as MATSim, SUMO and Veins. Building on their ability to re-use the most effective components from other open source projects, developers of open source transport planning tools can avoid `reinventing the wheel' and focus on innovation, the ‘gamified’ A/B Street software, based on OpenStreetMap, a case in point. The talk discusses how to realise the great potential of new approaches to generate the strategic visions of change and evidence that are needed by transport planners in the twenty-first century. --&gt;
+
+&lt;!-- Bio: --&gt;
+
+&lt;!-- Robin Lovelace is Associate Professor of Transport Data Science at the Leeds Institute for Transport Studies (ITS) specialising in the analysis of regional transport systems and modelling scenarios of change. Robin has experience not only researching but deploying transport models in inform sustainable policies and more effective use of transport investment, notably as Lead Developer of the Propensity to Cycle Tool (see www.pct.bike). Robin is also the Principal Investigator of the Department for Transport funded SaferActive project and author of popular open source software packages (such as stplanr) and books including Geocomputation with R. --&gt;
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="https://platform.twitter.com/widgets.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
