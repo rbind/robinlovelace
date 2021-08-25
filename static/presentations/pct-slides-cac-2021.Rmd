@@ -119,9 +119,9 @@ See these levels at [www.pct.bike](https://www.pct.bike)
 
 ---
 
-# City simulation layer
+### City simulation layer
 
-<iframe width="900" height="600" src="https://www.youtube.com/embed/nNYroA16JEQ?start=132" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="900" height="550" src="https://www.youtube.com/embed/nNYroA16JEQ?start=132" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ---
 
