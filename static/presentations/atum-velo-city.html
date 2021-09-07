@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Open source and participatory planning tools</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Robin Lovelace, Rosa Félix, Lake Sagaris" />
+    <script src="libs/header-attrs-2.10/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/robot.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/robot-fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="extra.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Open source and participatory planning tools
+## 📉🚲🚲🚲📈<br/>For prioritising cycling interventions
+### Robin Lovelace, Rosa Félix, Lake Sagaris
+### Velo-City 2021-09-07 Reproducible source code: <a href="https://github.com/atumworld/">github.com/atumworld</a>
+
+---
+
+
+
+
+
+.small[
+
+Abstract: **Free, open source and participatory planning tools for prioritising
+cycling interventions: a call for conversation and an international
+community of practice:  Robin Lovelace, Rosa Félix, Lake Sagaris**
+
+Transport planning tools of the 20&lt;sup&gt;th&lt;/sup&gt; Century were designed
+primarily to support motorized transport (Boyce and Williams 2015). This
+observation suggests that new approaches to transport planning maybe
+needed support sustainable transport planning in general, and designing
+for cycling, a mode with very different (and diverse) characteristics
+compared with driving (Parkin 2018). Increasingly, issues of social
+justice and gender have come to the fore, leading to tools that are
+better able to cater for the needs of both cycle network planners and
+society at large (e.g. Larsen, Patterson, and El-Geneidy 2013; Lovelace
+et al. 2017; Raffler, Brezina, and Emberger 2019). Recent advances in
+hardware, software and data sources have helped, but many new tools
+still contain features that are proprietary, opaque and impenetrable to
+the public. ‘Black box’ models curtail community involvement in
+decision-making and evidence gathering; increase costs of transferring
+lessons learned, leading many newcomers to ‘reinvent the wheel’; and
+limit adaptation to new data sources and ideas, reducing opportunities
+for innovation and participation of a wide range of stakeholders,
+reducing the diversity of voices involved (Lovelace, Parkin, and Cohen
+2020).
+
+
+Based on these observations, and lack of strong quantitative data being
+reported as a barrier preventing effective investment in cycling (Aldred
+et al. 2017), this paper makes the case for free and explores the
+concept of, open and participatory tools for cycle planning. Instead of
+providing ready made solutions or advocating a particular methodology or
+tool, we aim to generate conversations about how considerations such as
+gender equality and social justice, which are often invisible to
+professional transport planners, can be ‘mainstreamed’ through open
+source and publicly available models. We find that although no globally
+scalable free, open source and participatory planning tools for
+prioritising cycling interventions down to the street level currently
+exist (at the time of writing to the best of our knowledge), several
+promising conceptual and software platforms on which such tools could
+build already exist.
+
+This paper discusses the desirable and technologically feasible features of such
+‘open access tools’: multimodal, scenario-based, interactive, accessible
+and participatory. 
+The discussion shifts to practicalities and the
+identification of barriers that need to be overcome before a thriving
+open community of practice develops around modeling for cycling. There
+are many considerations when designing transport models to evidence
+effective cycling investments, including: support for user participation
+in the planning process; user friendly/accessible interface designs;
+levels of interactivity (including the possibility to edit maps
+representing hypothetical transport futures); levels of
+commercial/government involvement; and control over code and data.
+Beyond technical skill, the analysis suggests that actively navigating
+these flash-points and building a community may be vital for developing
+successful tools for cycle planning. We conclude that there is a need
+for a global, open source transport modelling community, with associated
+open datasets, deeply connected to those working on participatory
+governance and planning models. This paper aims to start a conversation
+around this need and provides pointers based on insights from previous
+projects in that direction.
+
+]
+
+---
+
+## 100 word summary
+
+Free, open and participatory planning tools are now feasible and in use
+(albeit with limited geographic scope and/or functionality). This talk
+will explore how such tools could help support effective vision-building
+and interventions to enable cycling uptake. Building on insights from
+prior projects, it will outline key features of effective open tools for
+cycle planning and attempt to identify the barriers than need to be
+overcome for an international community of practice in this area to
+become a reality. The aim is not to present solutions but start
+conversations that could lead to movement towards such a community of
+practice.
+
+.pull-left[
+
+
+## Quote
+
+For also knowledge itself is power.
+
+— Sir Francis Bacon
+
+‘Meditationes Sacrae’ (1597)
+
+]
+
+.pull-right[
+
+
+]
+
+---
+
+### The problem
+
+Source: [leeds-live.co.uk](https://www.leeds-live.co.uk/news/leeds-news/leeds-worst-rush-hour-traffic-19898858)
+
+![](https://i2-prod.leeds-live.co.uk/news/leeds-news/article14638260.ece/ALTERNATES/s810/WhatsApp-Image-2018-05-10-at-080651jpeg.jpg)
+
+--
+
+Or is that a symptom of a deeper problem?
+
+---
+
+### The problem II
+
+Source: [wantedinafrica.com](https://www.wantedinafrica.com/news/cape-town-has-worst-traffic-in-south-africa.html)
+
+![](https://www.wantedinafrica.com/i/featured/storage/uploads/2015/04/nb2kip0r1.jpg.webp)
+
+---
+
+### The problem III
+
+Source: [lisbon-portugal-traffic (pixabay)](https://pixabay.com/photos/lisbon-portugal-traffic-highway-3929050/)
+
+![](https://user-images.githubusercontent.com/1825120/132410118-18022d17-be98-4eea-a07e-c277e5e14413.png)
+
+
+---
+
+## The problem: root causes
+
+![](https://user-images.githubusercontent.com/1825120/103755051-1b6b2f80-5005-11eb-988b-f7c8d3108e53.png)
+
+Source: ['Inside the black box' report](https://www.co.pierce.wa.us/DocumentCenter/View/755/A-GuideToModeling?bidId=)
+
+--
+
+- Transport models were designed to support growth in car ownership and reduce journey times (Boyce and Williams, 2015)
+
+--
+
+- 21^st^ Century priorities are very different
+
+--
+
+  - Climate science, air pollution and health force a shift in focus
+  - The concepts of 'participatory democracy' and 'citizen science' mean there is a need for collaborative solutions
+
+--
+
+
+---
+
+## The solution
+
+**New technologies mean that open access transport models are possible**
+
+![](https://raw.githubusercontent.com/a-b-street/abstreet/master/videos/exploring_traffic.gif)
+Source: A/B Street, free, open source, gamified transport planning software [github.com/dabreegster/abstreet](https://github.com/dabreegster/abstreet/#ab-street)
+
+---
+
+## Open Source Transport Tools
+
+Source: Lovelace (2021), see [github.com/Robinlovelace/open-gat](https://github.com/Robinlovelace/open-gat#open-source-tools-for-geographic-analysis-in-transport-planning)
+
+![](https://www.robinlovelace.net/talk/open-access-transport-models/featured_hubc4301c81545b69b038b632d4e46b4cc_72911_720x0_resize_lanczos_2.png)
+
+---
+
+## From open source to open access
+
+![](https://www.robinlovelace.net/publication/lovelace-open-2020/featured.png)
+- Transport models represent a leverage point in transport systems
+- New paper, Lovelace et al (2020) describes the emergence and possibilities for 'open access models'
+
+---
+
+# Propensity to Cycle Tool
+
+- Early prototype of the tool developed at Open Data Institute Leeds hackathon, 2015
+- National deployment of the Propensity to Cycle Tool 2 years later ([PCT.bike](http://www.pct.bike/)) (Lovelace et al. 2017)
+
+![](https://raw.githubusercontent.com/npct/pct-team/master/figures/early.png)&lt;!-- --&gt;
+
+---
+
+## Demo of the PCT
+
+Source: https://www.pct.bike/
+
+
+![](https://user-images.githubusercontent.com/1825120/123867504-5a2fd180-d926-11eb-9b7a-1988d4b6c830.png)
+--
+
+Can do in questions...
+
+---
+
+## Key aspects of the PCT
+
+- Based on open source code
+- Based on open data
+- Results published as open data
+- Publicly available web application encourages participation and evidence-based debate
+
+Open data and accessible results lead to participation. See https://twitter.com/search?q=cyipt.bike%2Frapid 
+
+![](https://user-images.githubusercontent.com/1825120/124230675-3d062900-db07-11eb-831e-f7f42e19aefc.png)
+
+--
+
+We can internationalise the tools, but what about extending the tools?
+
+---
+
+# Beyond the commute
+
+![](https://user-images.githubusercontent.com/1825120/130692688-65a958a9-8586-4196-982d-872d236becdb.png)
+
+---
+
+# Beyond cycling
+
+The ActDev project: https://actdev.cyipt.bike/
+
+![](https://user-images.githubusercontent.com/1825120/132411587-c912a924-8c88-48ef-be7c-d42d9f3a3593.png)
+
+- Source: Prototype multi-modal mode shift scenarios from the [getting data](https://itsleeds.github.io/pct/articles/getting.html) in the `pct` R package
+
+---
+
+# Scenarios of infrastructure change
+
+![](https://a-b-street.github.io/docs/project/retrospective/edit_roads.gif)
+Source: [A/B Street documentation at a-b-street.org](https://a-b-street.github.io/docs/project/retrospective/index.html#road-editor)
+
+---
+
+# Destination shifting
+
+![](https://a-b-street.github.io/abstr/articles/od-sketch.png)
+
+---
+
+# Get involved
+
+  - Have a play with open access transport tools such as [A/B Street](https://github.com/dabreegster/abstreet/#ab-street) and the [PCT](https://www.pct.bike/), which can run on your computer or in the browser
+  - Check out ActDev for Leeds: https://actdev.cyipt.bike/lcid
+  - Sign-up to https://github.com/ and get involved, e.g. publish code, offer to help
+  - Try out R/RStudio, great for data analysis but also interactive visualisation and, increasingly geographic data analysis
+
+--
+
+Collaboration opportunities
+
+---
+
+# Thanks
+
+Contact me at r. lovelace at leeds ac dot uk (email), [`@robinlovelace`](https://twitter.com/robinlovelace)
+
+--
+
+Check-out links to my work at [robinlovelace.net](https://www.robinlovelace.net/)
+
+--
+
+Thanks to everyone building a open and collaborative communities
+
+Thanks to the University of Leeds and the Institute for Transport Studies
+
+[![](https://avatars3.githubusercontent.com/u/22447619?s=400&amp;u=2d566bedf62374d5066a50d2dd7c87c84470f69b&amp;v=4)](https://environment.leeds.ac.uk/transport)
+
+---
+
+### References
+
+.small[
+
+- Aldred, Rachel, Tom Watson, Robin Lovelace, and James Woodcock. 2017.
+“Barriers to Investing in Cycling: Stakeholder Views from England.”
+*Transportation Research Part A: Policy and Practice*, November.
+&lt;https://doi.org/10.1016/j.tra.2017.11.003&gt;.
+
+- Boyce, David E., and Huw C. W. L. Williams. 2015. *Forecasting Urban
+Travel: Past, Present and Future*. Edward Elgar Publishing.
+
+- Larsen, Jacob, Zachary Patterson, and Ahmed El-Geneidy. 2013. “Build It.
+But Where? The Use of Geographic Information Systems in Identifying
+Locations for New Cycling Infrastructure.” *International Journal of
+Sustainable Transportation* 7 (4): 299–317.
+
+- Lovelace, Robin, Anna Goodman, Rachel Aldred, Nikolai Berkoff, Ali
+Abbas, and James Woodcock. 2017. “The Propensity to Cycle Tool: An Open
+Source Online System for Sustainable Transport Planning.” *Journal of
+Transport and Land Use* 10 (1). &lt;https://doi.org/10.5198/jtlu.2016.862&gt;.
+
+- Lovelace, Robin, John Parkin, and Tom Cohen. 2020. “Open Access
+Transport Models: A Leverage Point in Sustainable Transport Planning.”
+*Transport Policy* 97 (October): 47–54.
+&lt;https://doi.org/10.1016/j.tranpol.2020.06.015&gt;.
+
+- Parkin, John. 2018. *Designing for Cycle Traffic: International
+Principles and Practice*. ICE Publishing.
+
+- Raffler, Clemens, Tadej Brezina, and Günter Emberger. 2019. “Cycling
+Investment Expedience: Energy Expenditure Based Cost-Path Analysis of
+National Census Bicycle Commuting Data.” *Transportation Research Part
+A: Policy and Practice* 121 (March): 360–73.
+&lt;https://doi.org/10.1016/j.tra.2019.01.019&gt;.
+
+]
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="https://platform.twitter.com/widgets.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
