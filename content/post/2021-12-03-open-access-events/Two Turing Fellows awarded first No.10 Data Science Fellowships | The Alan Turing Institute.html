@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html class=" js js flexbox canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8"><script src="Two%20Turing%20Fellows%20awarded%20first%20No.10%20Data%20Science%20Fellowships%20|%20The%20Alan%20Turing%20Institute_files/nr-1212.js"></script><script async="" src="Two%20Turing%20Fellows%20awarded%20first%20No.10%20Data%20Science%20Fellowships%20|%20The%20Alan%20Turing%20Institute_files/gtm.js"></script><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam-cell.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"2b171193f1",applicationID:"176174689"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(10),c=t(11),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(12);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],7:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?p("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&p("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(f&&f<r.startTime)return;p("lcp",[r])}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||p("cls",[t])})}function a(t){if(t instanceof g&&!y){var e=Math.round(t.timeStamp),n={type:t.type};e<=l.now()?n.fid=l.now()-e:e>l.offset&&e<=Date.now()?(e-=l.offset,n.fid=l.now()-e):e=l.now(),y=!0,p("timing",["fi",e,n])}}function c(t){"hidden"===t&&(f=l.now(),p("pageHide",[f]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d,p=t("handle"),l=t("loader"),v=t(9),m=t(3),g=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){u=new PerformanceObserver(r);try{u.observe({entryTypes:["paint"]})}catch(h){}s=new PerformanceObserver(i);try{s.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}d=new PerformanceObserver(o);try{d.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var y=!1,w=["click","keydown","mousedown","pointerdown","touchstart"];w.forEach(function(t){document.addEventListener(t,a,m(!1))})}v(c)}},{}],8:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],9:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],10:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],11:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],12:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){y[t]=m(t).concat(e)}function v(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:h,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(10),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!T++){var t=P.info=NREUM.info,e=g.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(O,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+P.offset],null,"api"),c("timing",["load",n]);var r=g.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=v+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===g.readyState&&o()}function o(){c("mark",["domContent",a()+P.offset],null,"api")}var a=t(5),c=t("handle"),f=t(10),u=t("ee"),s=t(8),d=t(6),p=t(2),l=t(3),v=p.getConfiguration("ssl")===!1?"http":"https",m=window,g=m.document,h="addEventListener",y="attachEvent",w=m.XMLHttpRequest,b=w&&w.prototype,E=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:w,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,O={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1212.min.js"},M=w&&b&&b[h]&&!/CriOS/.test(navigator.userAgent),P=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:M,userAgent:s,disabled:E};if(!E){t(1),t(7),g[h]?(g[h]("DOMContentLoaded",o,l(!1)),m[h]("load",r,l(!1))):(g[y]("onreadystatechange",i),m[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var T=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(11),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<link rel="canonical" href="https://www.turing.ac.uk/news/two-turing-fellows-awarded-first-no10-data-science-fellowships">
+<meta name="description" content="Today, Thursday 18 November, The Economic and Social Research Council (ESRC) and Administrative Data Research (ADR UK)">
+<meta property="og:site_name" content="The Alan Turing Institute">
+<meta property="og:type" content="Article">
+<meta property="og:url" content="https://www.turing.ac.uk/news/two-turing-fellows-awarded-first-no10-data-science-fellowships">
+<meta property="og:title" content="Two Turing Fellows awarded first No.10 Data Science Fellowships">
+<meta property="og:description" content="Today, Thursday 18 November, The Economic and Social Research Council (ESRC) and Administrative Data Research (ADR UK)">
+<meta name="twitter:description" content="Today, Thursday 18 November, The Economic and Social Research Council (ESRC) and Administrative Data Research (ADR UK)">
+<meta name="twitter:title" content="Two Turing Fellows awarded first No.10 Data Science Fellowships">
+<meta name="twitter:url" content="https://www.turing.ac.uk/news/two-turing-fellows-awarded-first-no10-data-science-fellowships">
+<meta name="Generator" content="Drupal 8 (https://www.drupal.org)">
+<meta name="MobileOptimized" content="width">
+<meta name="HandheldFriendly" content="true">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="https://www.turing.ac.uk/themes/custom/alanturing/favicon.ico" type="image/vnd.microsoft.icon">
+<link rel="revision" href="https://www.turing.ac.uk/news/two-turing-fellows-awarded-first-no10-data-science-fellowships">
+<title>Two Turing Fellows awarded first No.10 Data Science Fellowships | The Alan Turing Institute</title>
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-M5Z7KBN');</script>
+
+<script>
+        var html = document.getElementsByTagName("html")[0];
+        html.classList.remove("no-js");
+    </script>
+
+<script type="text/javascript" src="Two%20Turing%20Fellows%20awarded%20first%20No.10%20Data%20Science%20Fellowships%20|%20The%20Alan%20Turing%20Institute_files/atc.js" async="" defer="defer"></script>
+<link rel="stylesheet" media="all" href="Two%20Turing%20Fellows%20awarded%20first%20No.10%20Data%20Science%20Fellowships%20|%20The%20Alan%20Turing%20Institute_files/css_pN_aNY_1eLt0WlUbmimNvK8eF4lkcIrV3SSIjBt5NlA.css">
+<link rel="stylesheet" media="all" href="Two%20Turing%20Fellows%20awarded%20first%20No.10%20Data%20Science%20Fellowships%20|%20The%20Alan%20Turing%20Institute_files/css_B6x-dzq3tIlc-LS26mUB08MutUv2-ofaVso7n804ICE.css">
+<link rel="stylesheet" media="print" href="Two%20Turing%20Fellows%20awarded%20first%20No.10%20Data%20Science%20Fellowships%20|%20The%20Alan%20Turing%20Institute_files/css_AG8w3MH1poQac47lHRE3sCnQt_11R_8ZBsaWSFtl1lc.css">
+<link rel="stylesheet" media="all" href="Two%20Turing%20Fellows%20awarded%20first%20No.10%20Data%20Science%20Fellowships%20|%20The%20Alan%20Turing%20Institute_files/css_rXdvjlJucm5g2fQhlfhj3v0W9J0sCbF9LCgwDzTbRnk.css">
+<!--[if lte IE 8]>
+<script src="/sites/default/files/js/js_VtafjXmRvoUgAzqzYTA3Wrjkx9wcWhjP0G4ZnnqRamA.js"></script>
+<![endif]-->
+<style type="text/css" id="ate_css">@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600");.addeventatc 							{display:inline-block;position:relative;z-index:99998;font-family:"Open Sans",Roboto,"Helvetica Neue",Helvetica,Optima,Segoe,"Segoe UI",Candara,Calibri,Arial,sans-serif;color:#000!important;font-weight:600;line-height:100%;background:#fff;font-size:15px;text-decoration:none;border:1px solid transparent;padding:13px 12px 12px 43px;-webkit-border-radius:3px;border-radius:3px;cursor:pointer;-webkit-font-smoothing:antialiased!important;outline-color:rgba(0,78,255,0.5);text-shadow:1px 1px 1px rgba(0,0,0,0.004);-webkit-user-select:none;-webkit-tap-highlight-color:rgba(0,0,0,0);box-shadow:0 0 0 0.5px rgba(50,50,93,.17), 0 2px 5px 0 rgba(50,50,93,.1), 0 1px 1.5px 0 rgba(0,0,0,.07), 0 1px 2px 0 rgba(0,0,0,.08), 0 0 0 0 transparent!important;background-image:url(https://www.addevent.com/gfx/icon-calendar-t5.png), url(https://www.addevent.com/gfx/icon-calendar-t1.svg), url(https://www.addevent.com/gfx/icon-apple-t5.svg), url(https://www.addevent.com/gfx/icon-facebook-t5.svg), url(https://www.addevent.com/gfx/icon-google-t5.svg), url(https://www.addevent.com/gfx/icon-office365-t5.svg), url(https://www.addevent.com/gfx/icon-outlook-t5.svg), url(https://www.addevent.com/gfx/icon-outlookcom-t5.svg), url(https://www.addevent.com/gfx/icon-yahoo-t5.svg);background-position:-9999px -9999px;background-repeat:no-repeat;}.addeventatc:hover 						{background-color:#fafafa;color:#000;font-size:15px;text-decoration:none;}.addeventatc:active 					{border-width:2px 1px 0px 1px;}.addeventatc-selected 					{background-color:#f9f9f9;}.addeventatc .addeventatc_icon 			{width:18px;height:18px;position:absolute;z-index:1;left:12px;top:10px;background:url(https://www.addevent.com/gfx/icon-calendar-t1.svg) no-repeat;background-size:18px 18px;}.addeventatc .start, .addeventatc .end, .addeventatc .timezone, .addeventatc .title, .addeventatc .description, .addeventatc .location, .addeventatc .organizer, .addeventatc .organizer_email, .addeventatc .facebook_event, .addeventatc .all_day_event, .addeventatc .date_format, .addeventatc .alarm_reminder, .addeventatc .recurring, .addeventatc .attendees, .addeventatc .calname, .addeventatc .uid, .addeventatc .sequence, .addeventatc .status, .addeventatc .method, .addeventatc .client, .addeventatc .transp {display:none!important;}.addeventatc br 						{display:none;}.addeventatc_dropdown 				{width:230px;position:absolute;padding:6px 0px 0px 0px;font-family:"Open Sans",Roboto,"Helvetica Neue",Helvetica,Optima,Segoe,"Segoe UI",Candara,Calibri,Arial,sans-serif;color:#000!important;font-weight:600;line-height:100%;background:#fff;font-size:15px;text-decoration:none;text-align:left;margin-left:-1px;display:none;-moz-border-radius:3px;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0,0,0,0.4) 0px 10px 26px;-moz-box-shadow:rgba(0,0,0,0.4) 0px 10px 26px;box-shadow:rgba(0,0,0,0.4) 0px 10px 26px;transform:scale(.98,.98) translateY(5px);opacity:0.5;z-index:-1;transition:transform .15s ease;-webkit-user-select:none;-webkit-tap-highlight-color:rgba(0,0,0,0);}.addeventatc_dropdown.topdown 			{transform:scale(.98,.98) translateY(-5px)!important;}.addeventatc_dropdown span 				{display:block;line-height:100%;background:#fff;text-decoration:none;cursor:pointer;font-size:15px;color:#333;font-weight:600;padding:14px 10px 14px 55px;margin:-2px 0px;}.addeventatc_dropdown span:hover 		{background-color:#f4f4f4;color:#000;text-decoration:none;font-size:15px;}.addeventatc_dropdown em 				{color:#999!important;font-size:12px!important;font-weight:400;}.addeventatc_dropdown .frs a 			{background:#fff;color:#cacaca!important;cursor:pointer;font-size:9px!important;font-style:normal!important;font-weight:400!important;line-height:110%!important;padding-left:10px;position:absolute;right:10px;text-align:right;text-decoration:none;top:5px;z-index:101;}.addeventatc_dropdown .frs a:hover 		{color:#999!important;}.addeventatc_dropdown .ateappleical 	{background:url(https://www.addevent.com/gfx/icon-apple-t5.svg) 18px 40% no-repeat;background-size:22px 100%;}.addeventatc_dropdown .ategoogle 		{background:url(https://www.addevent.com/gfx/icon-google-t5.svg) 18px 50% no-repeat;background-size:22px 100%;}.addeventatc_dropdown .ateoffice365 	{background:url(https://www.addevent.com/gfx/icon-office365-t5.svg) 19px 50% no-repeat;background-size:18px 100%;}.addeventatc_dropdown .ateoutlook 		{background:url(https://www.addevent.com/gfx/icon-outlook-t5.svg) 18px 50% no-repeat;background-size:22px 100%;}.addeventatc_dropdown .ateoutlookcom 	{background:url(https://www.addevent.com/gfx/icon-outlookcom-t5.svg) 18px 50% no-repeat;background-size:22px 100%;}.addeventatc_dropdown .ateyahoo 		{background:url(https://www.addevent.com/gfx/icon-yahoo-t5.svg) 18px 50% no-repeat;background-size:22px 100%;}.addeventatc_dropdown .atefacebook 		{background:url(https://www.addevent.com/gfx/icon-facebook-t5.svg) 18px 50% no-repeat;background-size:22px 100%;}.addeventatc_dropdown .copyx 			{height:21px;display:block;position:relative;cursor:default;}.addeventatc_dropdown .brx 				{height:1px;overflow:hidden;background:#e8e8e8;position:absolute;z-index:100;left:10px;right:10px;top:9px;}.addeventatc_dropdown.addeventatc-selected {opacity:1;transform:scale(1,1) translateY(0px);z-index:99999999;}.addeventatc_dropdown.topdown.addeventatc-selected {transform:scale(1,1) translateY(0px)!important;}.addeventatc_dropdown .drop_markup {background-color:#f4f4f4;}</style></head>
+<body class="toolbar-themes toolbar-no-tabs toolbar-no-icons toolbar-themes-admin-theme--adminimal-contra path-node page-node-type-article" data-aos-easing="ease-out" data-aos-duration="800" data-aos-delay="0">
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M5Z7KBN"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<div class="loader"></div>
+<div class="page">
+<a href="#main-content" class="visually-hidden focusable skip-link">
+Skip to main content
+</a>
+<div data-drupal-messages-fallback="" class="hidden"></div>
+<header class="header--regular header--white header--small header--article" style="visibility: inherit; opacity: 1;">
+
+<div class="header__basic bg--aqua" style="background-image: url();">
+<div class="search-block-form block block-search container-inline" data-drupal-selector="search-block-form" id="block-alanturing-search">
+<button class="close-search"><i class="icon icon--close-white"></i></button>
+<h2>Search</h2>
+<form action="/search/node" method="get" id="search-block-form" accept-charset="UTF-8">
+<div class="js-form-item form-item js-form-type-search form-type-search js-form-item-keys form-item-keys form-no-label">
+<label for="edit-keys" class="visually-hidden">Search</label>
+<input title="Enter the terms you wish to search for." data-drupal-selector="edit-keys" type="search" id="edit-keys" name="keys" size="15" maxlength="128" class="form-search">
+</div>
+<div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions"><input data-drupal-selector="edit-submit" type="submit" id="edit-submit" value="Search" class="button js-form-submit form-submit">
+</div>
+</form>
+</div>
+<nav aria-labelledby="block-alanturing-main-menu-menu" id="block-alanturing-main-menu" class="block block-menu navigation menu--main main-nav">
+<h2 class="visually-hidden" id="block-alanturing-main-menu-menu">Main navigation</h2>
+<ul class="main-nav__list">
+<li class="menu-item" style="visibility: hidden; opacity: 0; transform: matrix(0.99939, 0.03489, -0.03489, 0.99939, 0, 50);">
+<a href="https://www.turing.ac.uk/" data-drupal-link-system-path="&lt;front&gt;">Home</a>
+</li>
+<li class="menu-item" style="visibility: hidden; opacity: 0; transform: matrix(0.99939, 0.03489, -0.03489, 0.99939, 0, 50);">
+<a href="https://www.turing.ac.uk/events" data-drupal-link-system-path="node/41">Events</a>
+</li>
+<li class="menu-item menu-item--expanded" style="visibility: hidden; opacity: 0; transform: matrix(0.99939, 0.03489, -0.03489, 0.99939, 0, 50);">
+<a href="https://www.turing.ac.uk/news" data-drupal-link-system-path="node/73">News</a>
+<ul class="main-nav__list">
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/news/turing-podcast" data-drupal-link-system-path="node/4760">The Turing Podcast</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/research/impact-stories" data-drupal-link-system-path="node/94">Impact stories</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/news/data-science-and-ai-glossary" data-drupal-link-system-path="node/6114">Data science and AI glossary</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/blog" data-drupal-link-system-path="node/1371">Blog</a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--expanded" style="visibility: hidden; opacity: 0; transform: matrix(0.99939, 0.03489, -0.03489, 0.99939, 0, 50);">
+<a href="https://www.turing.ac.uk/about-us" data-drupal-link-system-path="node/122">About us</a>
+<ul class="main-nav__list">
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/about-us/coronavirus-advice" data-drupal-link-system-path="node/4791">Coronavirus advice</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/about-us/frequently-asked-questions" data-drupal-link-system-path="node/16">Frequently asked questions</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/about-us/governance" data-drupal-link-system-path="node/40">Governance</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/about-us/training-new-generation" data-drupal-link-system-path="node/71">Training a new generation</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/about-us/equality-diversity-and-inclusion" data-drupal-link-system-path="node/4020">Equality, diversity and inclusion</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/blog/what-alan-turing-means-us" data-drupal-link-system-path="node/4007">What Alan Turing means to us</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/about-us/how-get-alan-turing-institute" data-drupal-link-system-path="node/2186">How to get to the Turing</a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--expanded" style="visibility: hidden; opacity: 0; transform: matrix(0.99939, 0.03489, -0.03489, 0.99939, 0, 50);">
+<a href="https://www.turing.ac.uk/research" data-drupal-link-system-path="node/85">Research</a>
+<ul class="main-nav__list">
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/research/research-areas" data-drupal-link-system-path="node/3986">Research areas</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/research/challenges" data-drupal-link-system-path="node/34">Challenges</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/research/research-programmes" data-drupal-link-system-path="node/771">Programmes</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/research/research-projects" data-drupal-link-system-path="node/772">Projects</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/research/asg" data-drupal-link-system-path="node/3108">AI for science and government (ASG)</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/research-engineering" data-drupal-link-system-path="node/86">Research Engineering</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/research/climate-action-turing" data-drupal-link-system-path="node/4888">Climate action at the Turing</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/research/interest-groups" data-drupal-link-system-path="node/773">Interest groups</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/research/publications" data-drupal-link-system-path="node/1363">Publications &amp; policy submissions</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/research/data-ethics" data-drupal-link-system-path="node/1368">Data ethics</a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--expanded" style="visibility: hidden; opacity: 0; transform: matrix(0.99939, 0.03489, -0.03489, 0.99939, 0, 50);">
+<a href="https://www.turing.ac.uk/people" data-drupal-link-system-path="node/115">People</a>
+<ul class="main-nav__list">
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/people/spotlights" data-drupal-link-system-path="node/4858">Spotlights</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/people/researchers" data-drupal-link-system-path="node/1930">Researchers</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/people/doctoral-students" data-drupal-link-system-path="node/1364">Doctoral Students</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/people/former-researchers" data-drupal-link-system-path="node/5007">Former Researchers</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/people/business-team" data-drupal-link-system-path="node/11">Business Team</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/people/governance" data-drupal-link-system-path="node/1936">Governance</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/people/university-liaison" data-drupal-link-system-path="node/3018">University Liaison</a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--expanded" style="visibility: hidden; opacity: 0; transform: matrix(0.99939, 0.03489, -0.03489, 0.99939, 0, 50);">
+<a href="https://www.turing.ac.uk/opportunities-turing" data-drupal-link-system-path="node/108">Opportunities at the Turing</a>
+<ul class="main-nav__list">
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/work-turing/why-work-turing" data-drupal-link-system-path="node/82">Why work at the Turing?</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/work-turing/jobs">Jobs</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/work-turing/studentships" data-drupal-link-system-path="node/51">Studentships</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/collaborate-turing/internships" data-drupal-link-system-path="node/2070">Internships</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/work-turing/research-and-funding-calls" data-drupal-link-system-path="node/52">Research and funding calls</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/opportunities-turing/engage-turing-researcher" data-drupal-link-system-path="node/5899">Engage with the Turing as a researcher</a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--expanded" style="visibility: hidden; opacity: 0; transform: matrix(0.99939, 0.03489, -0.03489, 0.99939, 0, 50);">
+<a href="https://www.turing.ac.uk/collaborate-turing" data-drupal-link-system-path="node/96">Collaborate with the Turing</a>
+<ul class="main-nav__list">
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/collaborate-turing/industry" data-drupal-link-system-path="node/1422">Industry</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/collaborate-turing/government-bodies" data-drupal-link-system-path="node/1424">Government bodies</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/collaborate-turing/research-institutions" data-drupal-link-system-path="node/1423">Research institutions</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/collaborate-turing/current-partnerships-and-collaborations" data-drupal-link-system-path="node/59">Current partnerships and collaborations</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/collaborate-turing/data-study-groups" data-drupal-link-system-path="node/2266">Data Study Groups</a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--expanded" style="visibility: hidden; opacity: 0; transform: matrix(0.99939, 0.03489, -0.03489, 0.99939, 0, 50);">
+<a href="https://www.turing.ac.uk/contact-us" data-drupal-link-system-path="node/131">Contact us</a>
+<ul class="main-nav__list">
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/contact-us/join-our-mailing-lists" data-drupal-link-system-path="node/3715">Join our mailing lists</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/contact-us/contact-form" data-drupal-link-system-path="contact">Contact form</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/contact-us/press-office" data-drupal-link-system-path="node/20">Press office</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/contact-us/our-brand" data-drupal-link-system-path="node/2079">Our brand</a>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+<div class="search-n-burger">
+<a href="#block-footer" class="search" title="Open search"><i class="icon icon--search"></i><i class="icon icon--close-white" style="opacity: 0; visibility: hidden;"></i></a>
+<a href="#block-footer" class="burger" title="Open Navigation">
+<div class="burger__bars">
+<span class="burger__bar burger__bar--top"></span>
+<span class="burger__bar burger__bar--middle"></span>
+<span class="burger__bar burger__bar--bottom"></span>
+</div>
+<span>Menu</span>
+</a>
+</div>
+
+
+<a href="https://www.turing.ac.uk/" class="home-link">
+<span>The Alan Turing Institute</span>
+<svg class="logo logo--white" viewBox="0 0 1025 428" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+<g id="ATI_logo_black_ATI_logo_black_W1024px" fill="#000000">
+<g id="logo-line-1">
+<path d="M273.346,71.521 L233.737,71.521 C235.771,58.945 242.738,52.485 253.966,52.485 C265.183,52.485 272.837,60.128 273.346,71.521 M299.694,83.932 C299.694,52.816 282.185,33.27 254.131,33.27 C226.425,33.27 207.72,52.816 207.72,81.718 C207.72,111.985 226.08,131.363 254.983,131.363 C277.938,131.363 293.744,120.479 299.529,100.424 L272.495,100.424 C269.775,107.735 263.987,111.475 255.493,111.475 C242.573,111.475 234.588,103.654 233.902,90.05 L299.529,90.05 C299.694,87.327 299.694,84.948 299.694,83.932" id="Fill-13"></path>
+<path d="M117.531,128.642 L143.027,128.642 L143.027,83.08 C143.027,63.192 148.647,53.667 160.371,53.667 C171.081,53.667 175.162,59.62 175.162,74.751 L175.162,128.642 L200.658,128.642 L200.658,72.031 C200.658,57.749 198.622,50.437 193.181,44.156 C187.738,37.861 178.392,33.78 169.209,33.78 C159.354,33.78 149.664,38.713 143.027,47.042 L143.027,0.793 L117.531,0.793 L117.531,128.642" id="Fill-12"></path>
+<polyline id="Fill-11" points="55.645 0.796 0.819 0.796 0.819 23.242 42.3 23.242 42.3 128.632 69.158 128.632 69.158 23.242 110.474 23.242 110.474 0.796 55.645 0.796"></polyline>
+</g>
+<g id="logo-line-2" transform="translate(169.000000, 149.000000)">
+<path d="M831.16,79.656 C831.16,94.445 823.69,104.3 812.635,104.3 C801.586,104.3 794.45,94.279 794.45,78.804 C794.45,63.671 801.928,53.308 812.814,53.308 C824.03,53.308 831.16,63.506 831.16,79.656 M855.82,108.724 L855.82,35.289 L832.87,35.289 L832.87,46.848 C825.9,37.158 818.078,33.076 807.029,33.076 C784.253,33.076 768.268,52.112 768.268,78.97 C768.268,106.169 783.222,124.202 805.668,124.202 C817.571,124.202 825.05,120.451 831.85,111.281 L831.85,120.972 C831.85,137.794 826.24,145.106 813.486,145.106 C804.306,145.106 798.025,140.515 797.504,133.382 L772.173,133.382 C773.877,152.076 789.175,163.125 813.145,163.125 C835.42,163.125 849.19,154.121 853.95,136.268 C855.65,129.631 855.82,127.087 855.82,108.724" id="Fill-22"></path>
+<path d="M701.193,35.283 L676.88,35.283 L676.88,127.932 L702.389,127.932 L702.389,79.994 C702.389,61.465 707.819,52.792 719.557,52.792 C724.997,52.792 729.589,55.349 732.133,59.417 C733.836,62.482 734.346,65.547 734.346,73.534 L734.346,127.932 L759.842,127.932 L759.842,75.402 C759.842,58.91 758.825,52.957 755.085,47.007 C749.476,38.168 739.951,33.249 728.227,33.249 C716.834,33.249 707.144,38.168 701.193,46.841 L701.193,35.283" id="Fill-21"></path>
+<path d="M637.104,24.567 L662.601,24.567 L662.601,0.088 L637.104,0.088 L637.104,24.567 Z M637.104,127.938 L662.601,127.938 L662.601,35.285 L637.104,35.285 L637.104,127.938 Z" id="Fill-20"></path>
+<path d="M569.69,127.936 L595.186,127.936 L595.186,86.965 C595.186,64.189 601.991,55.339 619.334,55.339 C622.055,55.339 623.747,55.515 626.467,56.191 L626.467,34.09 C624.089,33.238 622.564,33.073 619.676,33.073 C608.106,33.073 598.926,38.172 594.004,47.352 L594.004,35.286 L569.69,35.286 L569.69,127.936" id="Fill-19"></path>
+<path d="M532.476,127.936 L556.789,127.936 L556.789,35.286 L531.28,35.286 L531.28,83.225 C531.28,93.259 530.442,98.358 527.884,102.44 C524.822,107.538 519.721,110.424 514.112,110.424 C508.672,110.424 504.08,108.048 501.536,103.798 C499.833,100.737 499.323,97.672 499.323,89.685 L499.323,35.286 L473.827,35.286 L473.827,87.816 C473.827,104.308 474.847,110.259 478.584,116.212 C484.193,125.05 493.883,129.97 505.442,129.97 C516.67,129.97 526.36,125.05 532.476,116.377 L532.476,127.936" id="Fill-18"></path>
+<polyline id="Fill-17" points="425.87 127.936 452.728 127.936 452.728 22.531 494.041 22.531 494.041 0.086 384.389 0.086 384.389 22.531 425.87 22.531 425.87 127.936"></polyline>
+<path d="M287.694,35.283 L263.38,35.283 L263.38,127.932 L288.89,127.932 L288.89,79.994 C288.89,61.465 294.319,52.792 306.057,52.792 C311.498,52.792 316.089,55.349 318.633,59.417 C320.336,62.482 320.846,65.547 320.846,73.534 L320.846,127.932 L346.342,127.932 L346.342,75.402 C346.342,58.91 345.325,52.957 341.585,47.007 C335.977,38.168 326.452,33.249 314.728,33.249 C303.334,33.249 293.644,38.168 287.694,46.841 L287.694,35.283" id="Fill-16"></path>
+<path d="M226.718,85.77 C226.718,102.428 219.24,111.952 206.144,111.952 C197.991,111.952 192.206,107.364 192.206,101.08 C192.206,93.934 198.501,90.362 214.472,87.818 L223.322,86.456 C223.653,86.28 224.849,86.115 226.718,85.77 M250.687,87.473 C250.852,80.671 250.852,76.59 250.852,74.553 C250.852,57.388 248.818,50.077 241.851,43.272 C235.046,36.305 224.339,32.565 210.912,32.565 C186.088,32.565 170.448,44.468 169.254,64.356 L195.436,64.356 C195.944,55.175 201.221,50.584 211.419,50.584 C221.961,50.584 226.552,56.192 226.718,69.278 C215.5,69.964 200.37,72.177 192.041,74.388 C174.353,78.635 165.68,87.818 165.68,101.92 C165.68,118.413 179.451,129.971 199.353,129.971 C214.307,129.971 223.653,125.049 230.457,113.656 L230.457,117.396 C230.457,120.967 230.623,122.839 231.309,127.937 L253.244,127.937 C251.373,120.116 250.687,110.935 250.687,96.147 L250.687,87.473" id="Fill-15"></path>
+<polygon id="Fill-14" points="130.939 127.937 156.435 127.937 156.435 0.087 130.939 0.087"></polygon>
+<path d="M79.347,73.37 L45.508,73.37 L62.51,20.319 L79.347,73.37 Z M125.075,127.937 L80.529,0.087 L45.343,0.087 L0.976,127.937 L28.341,127.937 L38.541,96.311 L86.659,96.311 L97.024,127.937 L125.075,127.937 Z" id="Fill-1"></path>
+</g>
+<g id="logo-line-3" transform="translate(24.000000, 297.000000)">
+<path d="M592.476,71.073 L552.866,71.073 C554.9,58.497 561.868,52.037 573.096,52.037 C584.313,52.037 591.966,59.68 592.476,71.073 M618.824,83.484 C618.824,52.368 601.315,32.822 573.261,32.822 C545.552,32.822 526.849,52.368 526.849,81.273 C526.849,111.537 545.21,130.915 574.113,130.915 C597.068,130.915 612.874,120.031 618.659,99.976 L591.625,99.976 C588.902,107.29 583.117,111.028 574.623,111.028 C561.702,111.028 553.718,103.206 553.032,89.602 L618.659,89.602 C618.824,86.879 618.824,84.501 618.824,83.484" id="Fill-10"></path>
+<path d="M521.303,35.543 L506.348,35.543 L506.348,13.1 L480.839,13.1 L480.839,35.543 L467.246,35.543 L467.246,54.758 L480.839,54.758 L480.839,97.256 C480.839,109.501 481.858,114.765 485.43,120.029 C490.187,127.175 497.168,130.24 508.548,130.24 C513.826,130.24 516.546,129.898 521.303,128.702 L521.303,109.666 C518.238,110.008 517.221,110.173 516.039,110.173 C509.058,110.173 506.348,106.271 506.348,96.236 L506.348,54.758 L521.303,54.758 L521.303,35.543" id="Fill-9"></path>
+<path d="M434.281,128.196 L458.595,128.196 L458.595,35.546 L433.085,35.546 L433.085,83.485 C433.085,93.52 432.247,98.618 429.69,102.7 C426.625,107.799 421.527,110.684 415.918,110.684 C410.478,110.684 405.886,108.308 403.342,104.061 C401.639,100.997 401.129,97.932 401.129,89.945 L401.129,35.546 L375.633,35.546 L375.633,88.076 C375.633,104.568 376.65,110.519 380.39,116.472 C385.998,125.31 395.689,130.23 407.247,130.23 C418.476,130.23 428.163,125.31 434.281,116.637 L434.281,128.196" id="Fill-8"></path>
+<path d="M364.433,35.543 L349.479,35.543 L349.479,13.1 L323.969,13.1 L323.969,35.543 L310.376,35.543 L310.376,54.758 L323.969,54.758 L323.969,97.256 C323.969,109.501 324.989,114.765 328.56,120.029 C333.317,127.175 340.298,130.24 351.678,130.24 C356.956,130.24 359.676,129.898 364.433,128.702 L364.433,109.666 C361.368,110.008 360.351,110.173 359.169,110.173 C352.188,110.173 349.479,106.271 349.479,96.236 L349.479,54.758 L364.433,54.758 L364.433,35.543" id="Fill-7"></path>
+<path d="M288.764,0.347 L276.009,0.347 L276.009,24.823 L301.519,24.823 L301.519,0.347 L288.764,0.347 Z M288.764,35.533 L276.009,35.533 L276.009,128.197 L301.519,128.197 L301.519,35.533 L288.764,35.533 Z" id="Fill-6"></path>
+<path d="M265.918,35.543 L250.964,35.543 L250.964,13.1 L225.454,13.1 L225.454,35.543 L211.862,35.543 L211.862,54.758 L225.454,54.758 L225.454,97.256 C225.454,109.501 226.474,114.765 230.046,120.029 C234.803,127.175 241.784,130.24 253.164,130.24 C258.441,130.24 261.162,129.898 265.918,128.702 L265.918,109.666 C262.854,110.008 261.837,110.173 260.654,110.173 C253.673,110.173 250.964,106.271 250.964,96.236 L250.964,54.758 L265.918,54.758 L265.918,35.543" id="Fill-5"></path>
+<path d="M207.476,65.123 C207.641,44.891 193.194,32.825 168.373,32.825 C144.404,32.825 129.105,44.384 129.105,62.238 C129.105,69.029 131.991,75.83 137.092,80.422 C142.877,85.697 148.993,88.076 165.995,91.65 C178.57,94.359 183.162,97.421 183.162,103.209 C183.162,108.638 177.553,112.213 169.059,112.213 C158.341,112.213 152.732,107.111 152.909,97.256 L126.892,97.256 C127.236,118.849 142.367,130.918 168.883,130.918 C194.048,130.918 209.689,119.357 209.689,100.83 C209.689,86.714 201.36,78.209 182.997,73.452 L164.633,68.698 C157.666,66.826 154.601,64.272 154.601,60.19 C154.601,54.581 159.369,51.186 167.356,51.186 C177.719,51.186 181.98,55.091 182.487,65.123 L207.476,65.123" id="Fill-4"></path>
+<path d="M61.442,35.543 L37.128,35.543 L37.128,128.192 L62.638,128.192 L62.638,80.254 C62.638,61.725 68.068,53.055 79.806,53.055 C85.246,53.055 89.838,55.609 92.381,59.68 C94.085,62.742 94.594,65.807 94.594,73.794 L94.594,128.192 L120.091,128.192 L120.091,75.662 C120.091,59.17 119.074,53.22 115.334,47.267 C109.725,38.428 100.2,33.509 88.476,33.509 C77.083,33.509 67.392,38.428 61.442,47.102 L61.442,35.543" id="Fill-3"></path>
+<polyline id="Fill-2" points="13.508 0.347 0.767 0.347 0.767 128.197 26.249 128.197 26.249 0.347 13.508 0.347"></polyline>
+</g>
+</g>
+</g>
+</svg> </a>
+<div class="container">
+<div class="hero-content hero-content--white">
+<div>
+<div class="row">
+<div class="col-md-7 col-lg-9 hero__main">
+<nav class="breadcrumb">
+<h2 class="visually-hidden">Breadcrumb</h2>
+<ol>
+<li>
+<a href="https://www.turing.ac.uk/">Home</a>
+</li>
+<li>
+<a href="https://www.turing.ac.uk/news">News</a>
+</li>
+</ol>
+</nav>
+<h1>
+<span class="title-top-border"></span>
+ <span class="title-text"><span property="schema:name" class="field field--title field--string field--label-hidden">Two Turing Fellows awarded first No.10 Data Science Fellowships</span>
+</span>
+</h1>
+<span property="schema:name" content="Two Turing Fellows awarded first No.10 Data Science Fellowships" class="rdf-meta hidden"></span>
+<span property="schema:interactionCount" content="UserComments:0" class="rdf-meta hidden"></span>
+<div class="hero__call-to-actions">
+<a class="btn btn-white" href="#main-content">Learn more <i class="icon icon--arrow-down"></i></a>
+</div>
+</div>
+<div class="col-md-5 col-lg-3 hero__side-bar" style="z-index: 1;">
+<div>
+<div class="field field-published-date field--datetime field--label-hidden">Thursday 18 Nov 2021</div>
+</div> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sticky--header" style="opacity: 0; top: -50px; visibility: hidden;">
+<div class="container">
+<nav class="breadcrumb">
+<h2 class="visually-hidden">Breadcrumb</h2>
+<ol>
+<li>
+<a href="https://www.turing.ac.uk/">Home</a>
+</li>
+<li>
+<a href="https://www.turing.ac.uk/news">News</a>
+</li>
+</ol>
+</nav>
+<div class="search-n-burger">
+<a href="#block-footer" class="search" title="Open search"><i class="icon icon--search"></i></a>
+<a href="#block-footer" class="burger" title="Open Navigation">
+<div class="burger__bars">
+<span class="burger__bar burger__bar--top"></span>
+<span class="burger__bar burger__bar--middle"></span>
+<span class="burger__bar burger__bar--bottom"></span>
+</div>
+<span>Menu</span>
+</a>
+</div>
+</div>
+</div>
+<div class="header__menu_overlay" style="opacity: 0; visibility: hidden;"></div>
+</header>
+<div data-history-node-id="6306" about="/news/two-turing-fellows-awarded-first-no10-data-science-fellowships" typeof="schema:Article" class="node node--type-article node--view-mode-full">
+<a id="main-content" tabindex="-1"></a> <section class="section section--authors">
+<div class="container">
+<div class="field field-people field--entity-reference field--label-above">
+<h2 class="t-border t-border--4 block-title field__label aos-init" id="authors" data-aos-delay="0" data-aos="fade-up">Authors</h2>
+<div class="field field-people field--entity-reference field--label-above items row">
+<div class="col-6 col-sm-4 col-md-3">
+<article data-history-node-id="3782" about="/people/business-team/joanna-dungate" class="node people-teaser node--type-business-team-profile teaser-people--business-team-profile">
+<div class="field field-image field--image field--label-hidden"> <a href="https://www.turing.ac.uk/people/business-team/joanna-dungate" class="contains-image"><img src="Two%20Turing%20Fellows%20awarded%20first%20No.10%20Data%20Science%20Fellowships%20|%20The%20Alan%20Turing%20Institute_files/jo_dungate.jpg" alt="Joanna Dungate" typeof="foaf:Image" class="b-lazy image-style-thumbnail b-loaded" width="400" height="400">
+</a>
+</div>
+<h3>
+<a href="https://www.turing.ac.uk/people/business-team/joanna-dungate" rel="bookmark">
+<span class="field field-first-name field--string field--label-hidden">Joanna</span>
+<span class="field field-last-name field--string field--label-hidden">Dungate</span>
+</a>
+</h3>
+<span class="field field-position field--string field--label-hidden">External Relations Officer</span>
+</article>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="container">
+<div class="row" data-sticky-container="">
+<main class="col-md-9">
+<div property="schema:text" class="clearfix field field--body field--text-with-summary field--label-hidden field__item"><p style="margin-bottom:11px">Today, Thursday 18 November, The Economic and Social Research Council (ESRC) and Administrative Data Research (ADR UK) <a href="https://www.adruk.org/news-publications/news-blogs/esrc-and-adr-uk-funded-research-fellows-to-work-with-no-10-downing-street-487/">announced the first No.10 Data Science Fellowships</a>.</p>
+<p>We are delighted that these prestigious new fellowships have been awarded to two Turing Fellows, <a href="https://environment.leeds.ac.uk/transport/staff/953/dr-robin-lovelace">Dr. Robin Lovelace</a>, University of Leeds, and <a href="https://emps.exeter.ac.uk/computer-science/staff/fb394">Dr Federico Botta</a>,
+ University of Exeter. Dr Lovelace and Dr Botta will spend a year 
+collaborating with 10 Downing Street’s data science team (10DS) and the 
+Office for National Statistics (ONS). They will co-design research and 
+produce analysis using new and existing linked administrative datasets 
+to inform policy.</p>
+<p>The Fellows will also champion data science across central government
+ and help strengthen important engagement between government and 
+academia in the UK. Their work will use cutting edge methods to help 
+inform decision making on the most pressing policy problems of our time 
+and support wider knowledge exchange with researchers on effective 
+policy collaboration and data analysis. They will work closely with 10DS
+ and ONS’ Data Science Campus to formulate research projects before 
+starting their secondment on 1 January 2022.</p>
+<p><img alt="Dr Robin Lovelace" data-entity-type="file" data-entity-uuid="26ee7fae-fc86-414a-8b2d-233a1b372078" src="Two%20Turing%20Fellows%20awarded%20first%20No.10%20Data%20Science%20Fellowships%20|%20The%20Alan%20Turing%20Institute_files/Robin%2520Lovelace.jpg" class="align-left" width="320" height="157"></p>
+<p>Dr Lovelace said of the fellowship “This is a unique opportunity to 
+support more evidence-based, data-driven&nbsp; and participatory 
+decision making processes at the highest&nbsp; levels.&nbsp;The 
+Fellowship will allow me to make the best use of my expertise to support
+ the needs of central government.”</p>
+<p>“My skills are well-suited to support the government in harnessing 
+the power of data science to tackle pressing policy objectives, 
+including decarbonisation and the government's levelling-up agenda.”</p>
+<p><img alt="Dr Federico Botta" data-entity-type="file" data-entity-uuid="e9a77bcd-2f8b-49e8-a8bd-bcbb88afa5cf" src="Two%20Turing%20Fellows%20awarded%20first%20No.10%20Data%20Science%20Fellowships%20|%20The%20Alan%20Turing%20Institute_files/web_Dr_Federico_Botta__rh_218xfree.jpg" class="align-right" width="182" height="182"></p>
+<p>Dr Botta said “I am really excited to collaborate with the 10 Downing
+ Street’s Data Science Team and the ONS Data Science Campus on this 
+fellowship.</p>
+<p>“This will be a outstanding opportunity to use cutting edge data 
+science to support the design and evidence base of government policies. 
+I’m really looking forward to working on key policy challenges and using
+ data science for the public good.”</p>
+</div>
+</main>
+<aside class="col-md-3  sticky"></aside>
+</div>
+</div>
+</div>
+<section class="views-element-container section block block-views block-views-blockrelated-content-block-4" id="block-views-block-related-content-block-4">
+<div class="container">
+<div class="t-border t-border--4 block-title aos-init" data-aos-delay="0" data-aos="fade-up">
+<h2 id="join-our-mailing-lists">Join our mailing lists</h2>
+</div>
+</div>
+<div>
+<div class="views--grid view view-related-content view-id-related_content view-display-id-block_4 js-view-dom-id-5732861db2961fc22b12423af2992d74d32c98f61b400a4efb4c04c46a12ac7d">
+<div class="view-content">
+<div class="views-row">
+<article data-history-node-id="3715" about="/contact-us/join-our-mailing-lists" typeof="schema:WebPage" class="node node--type-page teaser">
+<div class="item__img">
+<div class="field field-hero-image field--image field--label-hidden"> <a href="https://www.turing.ac.uk/contact-us/join-our-mailing-lists" class="contains-image"><img src="Two%20Turing%20Fellows%20awarded%20first%20No.10%20Data%20Science%20Fellowships%20|%20The%20Alan%20Turing%20Institute_files/icon-angular.webp" alt="A collage of Turing newsletters" typeof="foaf:Image" data-src="/sites/default/files/styles/teaser/public/2021-02/website_header_2.png?itok=54TSSiMS" class="b-lazy image-style-teaser" width="640" height="360">
+</a>
+</div>
+</div>
+<h3 class="t-border t-border--3">
+<a href="https://www.turing.ac.uk/contact-us/join-our-mailing-lists" rel="bookmark"><span property="schema:name" class="field field--title field--string field--label-hidden">Join our mailing lists</span>
+<i class="icon icon--arrow-right"></i></a>
+</h3>
+<span property="schema:name" content="Join our mailing lists" class="rdf-meta hidden"></span>
+<h4><a href="https://www.turing.ac.uk/contact-us/join-our-mailing-lists" rel="bookmark">Sign
+ up to our monthly newsletter, receive our exclusive Turing events 
+guide, get updates from our dynamic Data Study Groups and keep in touch 
+with new research opportunities</a></h4>
+</article>
+</div>
+</div>
+</div>
+</div>
+</section>
+<footer class="section section--black">
+<div class="container">
+<nav id="block-footer" class="block block-menu navigation menu--footer">
+<div class="t-border t-border--4">
+<h2 class="remove-h1" id="block-footer-menu">Explore the Institute</h2>
+<a href="https://www.turing.ac.uk/user/login" class="widget--cta">Sign in <i class="icon icon--user-white"></i></a>
+</div>
+<ul class="main-nav__footer">
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/news/responding-covid-19-pandemic" data-drupal-link-system-path="node/4861">Responding to the COVID-19 pandemic</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/events" data-drupal-link-system-path="node/41">Events</a>
+</li>
+<li class="menu-item menu-item--expanded">
+<a href="https://www.turing.ac.uk/news" data-drupal-link-system-path="node/73">News</a>
+<ul class="main-nav__footer">
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/news/turing-podcast" data-drupal-link-system-path="node/4760">The Turing Podcast</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/research/impact-stories" data-drupal-link-system-path="node/94">Impact stories</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/news/data-science-and-ai-glossary" data-drupal-link-system-path="node/6114">Data science and AI glossary</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/blog" data-drupal-link-system-path="node/1371">Blog</a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--expanded">
+<a href="https://www.turing.ac.uk/about-us" data-drupal-link-system-path="node/122">About us</a>
+<ul class="main-nav__footer">
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/about-us/annual-report-2020-21" data-drupal-link-system-path="node/5867">Annual report</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/about-us/frequently-asked-questions" data-drupal-link-system-path="node/16">Frequently asked questions</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/about-us/governance" data-drupal-link-system-path="node/40">Governance</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/about-us/training-new-generation" data-drupal-link-system-path="node/71">Training a new generation</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/about-us/equality-diversity-and-inclusion" data-drupal-link-system-path="node/4020">Equality, diversity and inclusion</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/blog/what-alan-turing-means-us" data-drupal-link-system-path="node/4007">What Alan Turing means to us</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/about-us/how-get-alan-turing-institute" data-drupal-link-system-path="node/2186">How to get to the Turing </a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--expanded">
+<a href="https://www.turing.ac.uk/research" data-drupal-link-system-path="node/85">Research</a>
+<ul class="main-nav__footer">
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/research/research-areas" data-drupal-link-system-path="node/3986">Research areas</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/research/challenges" data-drupal-link-system-path="node/34">Challenges</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/research/research-programmes" data-drupal-link-system-path="node/771">Programmes</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/research/research-projects" data-drupal-link-system-path="node/772">Projects</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/research/asg" data-drupal-link-system-path="node/3108">AI for science and government (ASG)</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/research-engineering" data-drupal-link-system-path="node/86">Research Engineering</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/research/climate-action-turing" data-drupal-link-system-path="node/4888">Climate action at the Turing</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/research/interest-groups" data-drupal-link-system-path="node/773">Interest groups</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/research/publications" data-drupal-link-system-path="node/1363">Publications &amp; policy submissions</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/research/data-ethics" data-drupal-link-system-path="node/1368">Data ethics</a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--expanded">
+<a href="https://www.turing.ac.uk/people" data-drupal-link-system-path="node/115">People</a>
+<ul class="main-nav__footer">
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/people/spotlights" data-drupal-link-system-path="node/4858">Spotlights</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/people/researchers" data-drupal-link-system-path="node/1930">Researchers</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/people/doctoral-students" data-drupal-link-system-path="node/1364">Doctoral Students</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/people/former-researchers" data-drupal-link-system-path="node/5007">Former Researchers</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/people/business-team" data-drupal-link-system-path="node/11">Business team</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/people/governance" data-drupal-link-system-path="node/1936">Governance</a>
+</li>
+ <li class="menu-item">
+<a href="https://www.turing.ac.uk/people/university-liaison" data-drupal-link-system-path="node/3018">University Liaison</a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--expanded">
+<a href="https://www.turing.ac.uk/opportunities-turing" data-drupal-link-system-path="node/108">Opportunities at the Turing</a>
+<ul class="main-nav__footer">
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/work-turing/why-work-turing" data-drupal-link-system-path="node/82">Why work at the Turing?</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/opportunities-turing/jobs" data-drupal-link-system-path="node/3299">Jobs</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/work-turing/studentships" data-drupal-link-system-path="node/51">Studentships</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/collaborate-turing/internships" data-drupal-link-system-path="node/2070">Internships</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/work-turing/research-and-funding-calls" data-drupal-link-system-path="node/52">Research and funding calls</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/opportunities-turing/engage-turing-researcher" data-drupal-link-system-path="node/5899">Engage with the Turing as a researcher</a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--expanded">
+<a href="https://www.turing.ac.uk/collaborate-turing" data-drupal-link-system-path="node/96">Collaborate with the Turing</a>
+<ul class="main-nav__footer">
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/collaborate-turing/industry" data-drupal-link-system-path="node/1422">Industry</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/collaborate-turing/government-bodies" data-drupal-link-system-path="node/1424">Government bodies</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/collaborate-turing/research-institutions" data-drupal-link-system-path="node/1423">Research institutions</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/collaborate-turing/current-partnerships-and-collaborations" data-drupal-link-system-path="node/59">Current partnerships and collaborations</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/collaborate-turing/data-study-groups" data-drupal-link-system-path="node/2266">Data Study Groups</a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--expanded">
+<a href="https://www.turing.ac.uk/contact-us" data-drupal-link-system-path="node/131">Contact us</a>
+<ul class="main-nav__footer">
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/contact-us/press-office" data-drupal-link-system-path="node/20">Press office</a>
+</li>
+<li class="menu-item">
+<a href="https://www.youtube.com/channel/UCcr5vuAH5TPlYox-QLj4ySw">YouTube</a>
+</li>
+<li class="menu-item">
+<a href="https://twitter.com/turinginst">Twitter</a>
+</li>
+<li class="menu-item">
+<a href="https://www.facebook.com/thealanturinginstitute/">Facebook</a>
+</li>
+<li class="menu-item">
+<a href="https://www.linkedin.com/company/the-alan-turing-institute/">LinkedIn</a>
+</li>
+<li class="menu-item">
+<a href="https://www.instagram.com/theturinginst/">Instagram</a>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+<div class="footer__bottom">
+<div class="t-border t-border--1"></div>
+<div class="row">
+<div class="col-md-7">
+<p class="copy-right">© The Alan Turing Institute 2021. All rights reserved.</p>
+<p>The Alan Turing Institute, a charity incorporated and registered in 
+England and Wales with company number 09512457 and charity number 
+1162533 whose registered office is at British Library, 96 Euston Road, 
+London, England, NW1 2DB, United Kingdom.</p>
+<p>For website-related enquiries email <a href="mailto:website@turing.ac.uk">website@turing.ac.uk</a></p>
+</div>
+<div class="col-md-5">
+<nav aria-labelledby="block-legalmenu-menu" id="block-legalmenu" class="block block-menu navigation menu--legal-menu">
+<h2 class="visually-hidden" id="block-legalmenu-menu">Legal menu</h2>
+<ul class="main-nav__legal-menu">
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/sitemap.xml" data-drupal-link-system-path="sitemap.xml">Sitemap</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/privacy-policy" data-drupal-link-system-path="node/21">Privacy notice</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/cookie-notice">Cookie notice</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/terms-and-conditions">Terms and conditions</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/terms-acceptable-use">Terms of acceptable use</a>
+</li>
+<li class="menu-item">
+<a href="https://www.turing.ac.uk/eduroam-turing" data-drupal-link-system-path="node/2011">eduroam at the Turing</a>
+</li>
+<li class="menu-item">
+<a href="https://turingcomplete.topdesk.net/">Intranet</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="col-md-12 d-flex flex-row-reverse">
+<div class="awards">
+<img src="Two%20Turing%20Fellows%20awarded%20first%20No.10%20Data%20Science%20Fellowships%20|%20The%20Alan%20Turing%20Institute_files/special-kudos2x.webp" alt="CSS Design Awards - Special Design Kudos">
+<img src="Two%20Turing%20Fellows%20awarded%20first%20No.10%20Data%20Science%20Fellowships%20|%20The%20Alan%20Turing%20Institute_files/best-inovation2x.webp" alt="CSS Design Awards - Best Inovation">
+<img src="Two%20Turing%20Fellows%20awarded%20first%20No.10%20Data%20Science%20Fellowships%20|%20The%20Alan%20Turing%20Institute_files/best-ui2x.webp" alt="CSS Design Awards - Best UI">
+<img src="Two%20Turing%20Fellows%20awarded%20first%20No.10%20Data%20Science%20Fellowships%20|%20The%20Alan%20Turing%20Institute_files/best-ux2x.webp" alt="CSS Design Awards - Best UX">
+<img src="Two%20Turing%20Fellows%20awarded%20first%20No.10%20Data%20Science%20Fellowships%20|%20The%20Alan%20Turing%20Institute_files/dotcomm_site_platinum2x.webp" alt="DOT COM Awards - Platinum">
+</div>
+</div>
+</div>
+</div>
+<div class="search-block-form block block-search container-inline" data-drupal-selector="search-block-form" id="block-searchform">
+<button class="close-search"><i class="icon icon--close-white"></i></button>
+<form action="/search/node" method="get" id="search-block-form" accept-charset="UTF-8">
+<div class="js-form-item form-item js-form-type-search form-type-search js-form-item-keys form-item-keys form-no-label">
+<label for="edit-keys" class="visually-hidden">Search</label>
+<input title="Enter the terms you wish to search for." data-drupal-selector="edit-keys" type="search" id="edit-keys" name="keys" size="15" maxlength="128" class="form-search">
+</div>
+<div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions"><input data-drupal-selector="edit-submit" type="submit" id="edit-submit" value="Search" class="button js-form-submit form-submit">
+</div>
+</form>
+</div>
+</div>
+</footer>
+</div>
+<script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/6306","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"alanturing\/global-scripts,alanturing\/global-styling,classy\/base,classy\/messages,classy\/node,core\/html5shiv,core\/normalize,system\/base,views\/views.ajax,views\/views.module","theme":"alanturing","theme_token":null},"ajaxTrustedUrl":{"\/search\/node":true},"views":{"ajax_path":"\/views\/ajax","ajaxViews":{"views_dom_id:5732861db2961fc22b12423af2992d74d32c98f61b400a4efb4c04c46a12ac7d":{"view_name":"related_content","view_display_id":"block_4","view_args":"","view_path":"\/node\/6306","view_base_path":null,"view_dom_id":"5732861db2961fc22b12423af2992d74d32c98f61b400a4efb4c04c46a12ac7d","pager_element":0}}},"user":{"uid":0,"permissionsHash":"b8a52a09e7ba45627c6dec9b78f93b075b55d64cda0f87e20aceaf5b9ce5ec55"}}</script>
+<script src="Two%20Turing%20Fellows%20awarded%20first%20No.10%20Data%20Science%20Fellowships%20|%20The%20Alan%20Turing%20Institute_files/js_B2TJA0db2Yqcyfed2pRcpelZDMbqeRbEkKaedA5iRgM.js"></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"2b171193f1","applicationID":"176174689","transactionName":"YwcEZEZQWEVZUEYPDlpNJ1NAWFlYF3dAExFVDjpeW1VTantcXBITWw4KVUZteFlcVmQPBEMhCV5AQ1laVFZAS19CCwNH","queueTime":0,"applicationTime":356,"atts":"T0AHEg5KS0s=","errorBeacon":"bam-cell.nr-data.net","agent":""}</script>
+
+</body></html>
