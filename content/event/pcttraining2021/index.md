@@ -17,7 +17,7 @@ abstract: The Propensity to Cycle Tool (PCT) is widely used to provide an eviden
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
 date: 2021-12-09T14:00:00Z
-date_end: 2021-12-09T14:00:00Z
+date_end: 2021-12-09T16:00:00Z
 all_day: false
 
 # Schedule page publish date (NOT event date).
