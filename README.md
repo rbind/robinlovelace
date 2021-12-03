@@ -8,9 +8,8 @@ use it here.
 
 New talk:
 
-    hugo new  --kind event event/reproducibiliTea
-    hugo new  --kind event event/sicss
+    hugo new  --kind event event/pcttraining2021
 
 ``` r
-file.edit("content/event/sicss/index.md")
+file.edit("content/event/pcttraining2021/index.md")
 ```
