@@ -15,4 +15,7 @@ file.edit("content/event/pcttraining2021/index.md")
 
 # new blog post:
 blogdown::new_post(title = "open-access-events", ext = ".Rmd")
+
+# serve site
+blogdown::serve_site()
 ```
