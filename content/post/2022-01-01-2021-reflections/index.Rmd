@@ -47,6 +47,25 @@ Watch this space for projects that I end up working on as part of this fellowshi
 The placement phase of the fellowship starts in January and it looks like there will be many exciting opportunities for high impact research.
 I hope to document lessons learned from the experience in articles for the organisations supporting the fellowship: the ESRC, ADR UK, the Alan Turing Institute (where I was also awarded a fellowship in 2021) and the ONS's Data Science Campus.
 
+## Software development
+
+
+In addition to research published in academic papers, I have also worked hard on software development and teaching materials.
+I was amazed and slightly humbled to hear that `stplanr`, an R package I developed to support strategical cycle network planning in the UK, had been used in research into access to potentially life-saving TB clinics in Malawi.
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">When a tool first built for one purpose (cycle network planning in Europe) gets used for something totally different (calculating distance to tuberculosis clinics in Africa) 🚀<br><br>Paper: <a href="https://t.co/8gaRigYXVK">https://t.co/8gaRigYXVK</a><br>Package: <a href="https://t.co/t8UC0JGjNg">https://t.co/t8UC0JGjNg</a><a href="https://twitter.com/hashtag/RStats?src=hash&amp;ref_src=twsrc%5Etfw">#RStats</a> package {stplanr} in action! <a href="https://t.co/JqBgv7CE9r">pic.twitter.com/JqBgv7CE9r</a></p>&mdash; Robin Lovelace (@robinlovelace) <a href="https://twitter.com/robinlovelace/status/1436253002525028362?ref_src=twsrc%5Etfw">September 10, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+
+What better motivation could there be for developing open source software for reproducible data analysis and policy interventions?
+
+## Geocomputation with R Second Edition
+
+Perhaps less exciting than starting new projects is 'finishing' existing ones.
+In this case the project is the popular book Geocomputation with R which, alongside other open source teaching materials of the type published on [bookdown.org](https://bookdown.org/), helps reduce financial barriers to accessing textbooks by providing teaching content that anyone can read.
+
+Jakub, Jannes and I have signed a contract to work on a second edition and we've made good progress, as shown below (one new year's resolution: publish the 2nd edition!).
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">🏗️ Geocomputation with R update 🏗️ we&#39;ve recently updated key parts of Chapter 7 on the key topic of coordinate reference systems (CRSs). Updated figure below, plus lots more in the chapter, shows importance of understanding them! <a href="https://t.co/pffHqeF8YT">https://t.co/pffHqeF8YT</a> <a href="https://twitter.com/hashtag/Rstats?src=hash&amp;ref_src=twsrc%5Etfw">#Rstats</a> <a href="https://twitter.com/hashtag/rspatial?src=hash&amp;ref_src=twsrc%5Etfw">#rspatial</a> <a href="https://t.co/DVgHU5lvn1">pic.twitter.com/DVgHU5lvn1</a></p>&mdash; Robin Lovelace (@robinlovelace) <a href="https://twitter.com/robinlovelace/status/1476620093601812482?ref_src=twsrc%5Etfw">December 30, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+
 ## Becoming a father
 
 The most important event in the year for me was becoming a dad.
