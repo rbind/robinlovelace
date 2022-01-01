@@ -30,7 +30,7 @@ Collaborating with others is one of the most rewarding parts of academic researc
 I have published over two dozen papers with many people over the years, and 5 fully peer reviewed papers in 2021, which can be seen on [my website](https://www.robinlovelace.net/publication/) and [here](https://scholar.google.com/citations?hl=en&user=xDJHVCAAAAAJ&view_op=list_works&alert_preview_top_rm=2&sortby=pubdate).
 
 One of the most rewarding papers, however, was on that I authored solo.
-In it I review 25 open source tools for geographic analysis in transport planning and discuss the future potential of open source software for guiding effective policy interventions.
+In it, I review 25 open source tools for geographic analysis in transport planning and discuss the future potential of open source software for guiding effective policy interventions.
 The paper has received some attention online, as can be seen in the Tweet below, and not just from the academic research community: experienced transport modeller Tom Van Vuren, for example, picked-up on the paper and we hope to take the conversation about uptake of open and transparent software for transport modelling forward in 2022.
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Stoked to announce that the new <a href="https://twitter.com/hashtag/openaccess?src=hash&amp;ref_src=twsrc%5Etfw">#openaccess</a> paper &quot;Open source tools for geographic analysis in transport planning&quot; has just been published 🎉<br><br>Paper: <a href="https://t.co/kZy2kkyjDy">https://t.co/kZy2kkyjDy</a><br>Code: <a href="https://t.co/yOFtKbBbYc">https://t.co/yOFtKbBbYc</a><br>My first ever solo-authored paper! <a href="https://t.co/3fHSbP0UTG">pic.twitter.com/3fHSbP0UTG</a></p>&mdash; Robin Lovelace (@robinlovelace) <a href="https://twitter.com/robinlovelace/status/1351477455203299328?ref_src=twsrc%5Etfw">January 19, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
@@ -39,15 +39,16 @@ I also hope to do more research that is policy relevant, leading to the next top
 
 ## New fellowship: placement in the No. 10 Data Science team (10DS)
 
-An exciting new project started for me in 2021, as I was awarded an 18 month '10DS Fellowship' to help central government make better use data science to support evidence-based decision making.
+An exciting new project started for me in 2021, as I was awarded an 18 month '10DS Fellowship' to help central government make better use data science to support evidence-based decision-making.
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Really excited about this: for the next ~18 months I will be working with the <a href="https://twitter.com/10DowningStreet?ref_src=twsrc%5Etfw">@10DowningStreet</a> Data Science team, <a href="https://twitter.com/DataSciCampus?ref_src=twsrc%5Etfw">@DataSciCampus</a>, <a href="https://twitter.com/ESRC?ref_src=twsrc%5Etfw">@ESRC</a> and others on the new 10DS Fellowship. Looking forward to working with Federico, Alex and everyone on data science in government 🚀 <a href="https://t.co/h7skJ0rbwA">https://t.co/h7skJ0rbwA</a></p>&mdash; Robin Lovelace (@robinlovelace) <a href="https://twitter.com/robinlovelace/status/1461294156626726914?ref_src=twsrc%5Etfw">November 18, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
 
-The responses replying to that Tweet from acquaintances working in related fields, plus emails from colleagues at the University of Leeds, provide a strong motivation to work hard to move things forward.
-New methods and datasets have great potential to be harnessed to help tackle entrenched challenges in the 21^st^ century and my background and skills make me confident that I will be able to make a positive difference.
+The responses replying to that tweet from acquaintances working in related fields, plus emails from colleagues at the University of Leeds, provide a strong motivation to work hard to move things forward.
+New methods and datasets have great potential to be harnessed to help tackle entrenched challenges in the 21^st^ century.
+I hope my background and skills will enable me to make a positive difference.
 
 Watch this space for projects that I end up working on as part of this fellowship (that can be published after clearance from No. 10).
-The placement phase of the fellowship starts in January and it looks like there will be many exciting opportunities for high impact research.
+The placement phase of the fellowship starts in January, and it looks like there will be many exciting opportunities for high impact research.
 I hope to document lessons learned from the experience in articles for the organisations supporting the fellowship: the ESRC, ADR UK, the Alan Turing Institute (where I was also awarded a fellowship in 2021) and the ONS's Data Science Campus.
 
 ## Software development
@@ -77,12 +78,12 @@ The most important event in the year for me was becoming a dad.
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Big personal news: <a href="https://twitter.com/katylvlace?ref_src=twsrc%5Etfw">@katylvlace</a> and I have had a baby, welcome to the world Kit 🎉 Focussed on nappies and supporting the family for the next while 💚💚💚 Parenthood is amazing, makes me more committed to research for a sustainable future 🌱 Looking forward to it all! <a href="https://t.co/sJJZNZZV04">pic.twitter.com/sJJZNZZV04</a></p>&mdash; Robin Lovelace (@robinlovelace) <a href="https://twitter.com/robinlovelace/status/1448594909376696322?ref_src=twsrc%5Etfw">October 14, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
 
-It has been a life changing experience: being responsible for another (little and very cute) person has certainly shifted my perspective on the world, made me prioritise my time more carefully, and made it harder to plan.
+It has been a life-changing experience: being responsible for another (little and very cute) person has certainly shifted my perspective on the world, made me prioritise my time more carefully, and made it harder to plan.
 
 My wife Katy and I have worked closely as a team and, despite talk of the '[baby bomb](https://www.goodreads.com/en/book/show/54670274-baby-bomb)' impacting our relationship, little Kit has brought us closer together ♥
 
-Despite inevitable challenges, it's been the most rewarding thing we've done so far and we're only 3 months in.
-Having a little one around encourages long-term thinking and Kit has strengthened my commitment to research supporting a more sustainable world.
+Despite inevitable challenges, it's been the most rewarding thing we've done so far, and we're only 3 months in!
+Having a little one around encourages long-term thinking, and Kit has strengthened my commitment to research supporting a more sustainable world.
 
 ## Just look up ☄
 
