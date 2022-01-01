@@ -1,6 +1,9 @@
 ---
 title: Reflections on 2021 🎇
 author: Robin Lovelace
+output:
+  blogdown::html_page:
+    toc: true
 date: '2022-01-01'
 slug: 2021-reflections
 categories: [life]
@@ -15,21 +18,40 @@ image:
   focal_point: ''
   preview_only: no
 projects: []
+bibliography: ../../../static/bibs/allrefs.bib
+csl: [/home/robin/robinlovelace/static/bibs/nature.csl]
 ---
 
-It's been another crazy year for many people with lifestyles still disrupted by COVID, huge advances, setbacks and challenges faced collectively by people worldwide.
+It's been anothercrazy year for many people with lifestyles still disrupted by COVID, huge advances, setbacks and challenges faced collectively by people worldwide.
 
 It has been an amazing year for me and my family.
 Before the hectic rush (and sometimes grind) of daily working life returns, I wanted to put together a few thoughts on things that happened in 2021 and hopes for 2022 and beyond.
 
 Long story short, it involved various academic and practical accomplishments plus the most rewarding event of my life so far, becoming a dad (skip to the end for more on that)!
 
+## ActDev
+
+In the first few months of 2021 I led a project called ActDev, which involved research into the levels of transport sustainability associated with new housing developments.
+The 4 month project resulted in a web application that is publicly available at [cyipt.actdev.bike](https://actdev.cyipt.bike/).
+Currently this is just a prototype of a larger tool that we hope to develop in 2022.
+The research and thinking underlying the tool is outlined in a pre-print led by my colleague Joey Talbot @talbot_active_2021 and showcased in a promotional video showcased below.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/nNYroA16JEQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+The project also involved working with Dustin Carlino and using [A/B Street](https://github.com/a-b-street/abstreet#ab-street) a traffic simulation tool that allows you to redesign streets and transport patterns to inform policies.
+Building on the 'zonebuilder paper' co-authored by Dustin @lovelace_clockboard_2021, which inspired the tweet below, I hope do more work with A/B Street in 2022.
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Choices of zones + boundaries affect research findings + maps. Choose wisely! <a href="https://t.co/ga8NZesPoX">pic.twitter.com/ga8NZesPoX</a></p>&mdash; Robin Lovelace (@robinlovelace) <a href="https://twitter.com/robinlovelace/status/1423555975110397953?ref_src=twsrc%5Etfw">August 6, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+
 ## First solo authored paper
 
 Collaborating with others is one of the most rewarding parts of academic research.
-I have published over two dozen papers with many people over the years, and 5 fully peer reviewed papers in 2021, which can be seen on [my website](https://www.robinlovelace.net/publication/) and [here](https://scholar.google.com/citations?hl=en&user=xDJHVCAAAAAJ&view_op=list_works&alert_preview_top_rm=2&sortby=pubdate).
+I have published over two dozen papers with many people over the years, and 5 fully peer reviewed papers in 2021.
+These include a paper on modelling the health impacts of active travel led by James Woodcock at the University of Cambridge, @woodcock_health_2021a, and three papers led by Eugeni Vidal-Tortosa @vidaltortosa_infrastructure_2021; @vidaltortosa_cycling_2021; @vidaltortosa_socioeconomic_2021.
+As lead supervisor I was very happy to see Eugeni pass his viva in November (another 2021 milestone for me).
+Additional papers from 2021, including pre-prints, can be seen on [my website](https://www.robinlovelace.net/publication/) and [here](https://scholar.google.com/citations?hl=en&user=xDJHVCAAAAAJ&view_op=list_works&alert_preview_top_rm=2&sortby=pubdate).
 
-One of the most rewarding papers, however, was on that I authored solo.
+One of the most rewarding papers, however, was on that I authored solo @lovelace_open_2021.
 In it, I review 25 open source tools for geographic analysis in transport planning and discuss the future potential of open source software for guiding effective policy interventions.
 The paper has received some attention online, as can be seen in the Tweet below, and not just from the academic research community: experienced transport modeller Tom Van Vuren, for example, picked-up on the paper and we hope to take the conversation about uptake of open and transparent software for transport modelling forward in 2022.
 
@@ -102,3 +124,5 @@ Never thought I would hear these lyrics in a catchy pop song in 2021:
 So I'm prepared for anything in the coming year.
 Optimistic that with hard work, our collective intelligence, empathy, and desire to collaborate on solving tricky problems will prevail.
 Bring on 2022!
+
+## References

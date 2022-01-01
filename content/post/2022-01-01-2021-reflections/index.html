@@ -1,6 +1,9 @@
 ---
 title: Reflections on 2021 🎇
 author: Robin Lovelace
+output:
+  blogdown::html_page:
+    toc: true
 date: '2022-01-01'
 slug: 2021-reflections
 categories: [life]
@@ -15,27 +18,62 @@ image:
   focal_point: ''
   preview_only: no
 projects: []
+bibliography: ../../../static/bibs/allrefs.bib
+csl: [/home/robin/robinlovelace/static/bibs/nature.csl]
 ---
 
 <script src="{{< blogdown/postref >}}index_files/header-attrs/header-attrs.js"></script>
 
+<div id="TOC">
+<ul>
+<li><a href="#actdev">ActDev</a></li>
+<li><a href="#first-solo-authored-paper">First solo authored paper</a></li>
+<li><a href="#new-fellowship-placement-in-the-no.-10-data-science-team-10ds">New fellowship: placement in the No. 10 Data Science team (10DS)</a></li>
+<li><a href="#software-development">Software development</a></li>
+<li><a href="#geocomputation-with-r-second-edition">Geocomputation with R Second Edition</a></li>
+<li><a href="#becoming-a-father">Becoming a father</a></li>
+<li><a href="#just-look-up">Just look up ☄</a></li>
+<li><a href="#references">References</a></li>
+</ul>
+</div>
 
-<p>It’s been another crazy year for many people with lifestyles still disrupted by COVID, huge advances, setbacks and challenges faced collectively by people worldwide.</p>
+<p>It’s been anothercrazy year for many people with lifestyles still disrupted by COVID, huge advances, setbacks and challenges faced collectively by people worldwide.</p>
 <p>It has been an amazing year for me and my family.
 Before the hectic rush (and sometimes grind) of daily working life returns, I wanted to put together a few thoughts on things that happened in 2021 and hopes for 2022 and beyond.</p>
 <p>Long story short, it involved various academic and practical accomplishments plus the most rewarding event of my life so far, becoming a dad (skip to the end for more on that)!</p>
+<div id="actdev" class="section level2">
+<h2>ActDev</h2>
+<p>In the first few months of 2021 I led a project called ActDev, which involved research into the levels of transport sustainability associated with new housing developments.
+The 4 month project resulted in a web application that is publicly available at <a href="https://actdev.cyipt.bike/">cyipt.actdev.bike</a>.
+Currently this is just a prototype of a larger tool that we hope to develop in 2022.
+The research and thinking underlying the tool is outlined in a pre-print led by my colleague Joey Talbot<span class="citation"><sup><a href="#ref-talbot_active_2021" role="doc-biblioref">1</a></sup></span> and showcased in a promotional video showcased below.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/nNYroA16JEQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+<p>The project also involved working with Dustin Carlino and using <a href="https://github.com/a-b-street/abstreet#ab-street">A/B Street</a> a traffic simulation tool that allows you to redesign streets and transport patterns to inform policies.
+Building on the ‘zonebuilder paper’ co-authored by Dustin,<span class="citation"><sup><a href="#ref-lovelace_clockboard_2021" role="doc-biblioref">2</a></sup></span> which inspired the tweet below, I hope do more work with A/B Street in 2022.</p>
+<blockquote class="twitter-tweet">
+<p lang="en" dir="ltr">
+Choices of zones + boundaries affect research findings + maps. Choose wisely! <a href="https://t.co/ga8NZesPoX">pic.twitter.com/ga8NZesPoX</a>
+</p>
+— Robin Lovelace (<span class="citation"><sup><a href="#ref-robinlovelace" role="doc-biblioref"><strong>robinlovelace?</strong></a></sup></span>) <a href="https://twitter.com/robinlovelace/status/1423555975110397953?ref_src=twsrc%5Etfw">August 6, 2021</a>
+</blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
 <div id="first-solo-authored-paper" class="section level2">
 <h2>First solo authored paper</h2>
 <p>Collaborating with others is one of the most rewarding parts of academic research.
-I have published over two dozen papers with many people over the years, and 5 fully peer reviewed papers in 2021, which can be seen on <a href="https://www.robinlovelace.net/publication/">my website</a> and <a href="https://scholar.google.com/citations?hl=en&amp;user=xDJHVCAAAAAJ&amp;view_op=list_works&amp;alert_preview_top_rm=2&amp;sortby=pubdate">here</a>.</p>
-<p>One of the most rewarding papers, however, was on that I authored solo.
+I have published over two dozen papers with many people over the years, and 5 fully peer reviewed papers in 2021.
+These include a paper on modelling the health impacts of active travel led by James Woodcock at the University of Cambridge,,<span class="citation"><sup><a href="#ref-woodcock_health_2021a" role="doc-biblioref">3</a></sup></span> and three papers led by Eugeni Vidal-Tortosa;<span class="citation"><sup><a href="#ref-vidaltortosa_infrastructure_2021" role="doc-biblioref">4</a></sup></span>;<span class="citation"><sup><a href="#ref-vidaltortosa_cycling_2021" role="doc-biblioref">5</a></sup></span>.<span class="citation"><sup><a href="#ref-vidaltortosa_socioeconomic_2021" role="doc-biblioref">6</a></sup></span>
+As lead supervisor I was very happy to see Eugeni pass his viva in November (another 2021 milestone for me).
+Additional papers from 2021, including pre-prints, can be seen on <a href="https://www.robinlovelace.net/publication/">my website</a> and <a href="https://scholar.google.com/citations?hl=en&amp;user=xDJHVCAAAAAJ&amp;view_op=list_works&amp;alert_preview_top_rm=2&amp;sortby=pubdate">here</a>.</p>
+<p>One of the most rewarding papers, however, was on that I authored solo.<span class="citation"><sup><a href="#ref-lovelace_open_2021" role="doc-biblioref">7</a></sup></span>
 In it, I review 25 open source tools for geographic analysis in transport planning and discuss the future potential of open source software for guiding effective policy interventions.
 The paper has received some attention online, as can be seen in the Tweet below, and not just from the academic research community: experienced transport modeller Tom Van Vuren, for example, picked-up on the paper and we hope to take the conversation about uptake of open and transparent software for transport modelling forward in 2022.</p>
 <blockquote class="twitter-tweet">
 <p lang="en" dir="ltr">
 Stoked to announce that the new <a href="https://twitter.com/hashtag/openaccess?src=hash&amp;ref_src=twsrc%5Etfw">#openaccess</a> paper “Open source tools for geographic analysis in transport planning” has just been published 🎉<br><br>Paper: <a href="https://t.co/kZy2kkyjDy">https://t.co/kZy2kkyjDy</a><br>Code: <a href="https://t.co/yOFtKbBbYc">https://t.co/yOFtKbBbYc</a><br>My first ever solo-authored paper! <a href="https://t.co/3fHSbP0UTG">pic.twitter.com/3fHSbP0UTG</a>
 </p>
-— Robin Lovelace (<span class="citation">@robinlovelace</span>) <a href="https://twitter.com/robinlovelace/status/1351477455203299328?ref_src=twsrc%5Etfw">January 19, 2021</a>
+— Robin Lovelace (<span class="citation"><sup><a href="#ref-robinlovelace" role="doc-biblioref"><strong>robinlovelace?</strong></a></sup></span>) <a href="https://twitter.com/robinlovelace/status/1351477455203299328?ref_src=twsrc%5Etfw">January 19, 2021</a>
 </blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 <p>I also hope to do more research that is policy relevant, leading to the next topic in my reflections on the year just gone by.</p>
@@ -45,9 +83,9 @@ Stoked to announce that the new <a href="https://twitter.com/hashtag/openaccess?
 <p>An exciting new project started for me in 2021, as I was awarded an 18 month ‘10DS Fellowship’ to help central government make better use data science to support evidence-based decision-making.</p>
 <blockquote class="twitter-tweet">
 <p lang="en" dir="ltr">
-Really excited about this: for the next ~18 months I will be working with the <a href="https://twitter.com/10DowningStreet?ref_src=twsrc%5Etfw"><span class="citation">@10DowningStreet</span></a> Data Science team, <a href="https://twitter.com/DataSciCampus?ref_src=twsrc%5Etfw"><span class="citation">@DataSciCampus</span></a>, <a href="https://twitter.com/ESRC?ref_src=twsrc%5Etfw"><span class="citation">@ESRC</span></a> and others on the new 10DS Fellowship. Looking forward to working with Federico, Alex and everyone on data science in government 🚀 <a href="https://t.co/h7skJ0rbwA">https://t.co/h7skJ0rbwA</a>
+Really excited about this: for the next ~18 months I will be working with the <a href="https://twitter.com/10DowningStreet?ref_src=twsrc%5Etfw"><span class="citation"><sup><a href="#ref-10DowningStreet" role="doc-biblioref"><strong>10DowningStreet?</strong></a></sup></span></a> Data Science team, <a href="https://twitter.com/DataSciCampus?ref_src=twsrc%5Etfw"><span class="citation"><sup><a href="#ref-DataSciCampus" role="doc-biblioref"><strong>DataSciCampus?</strong></a></sup></span></a>, <a href="https://twitter.com/ESRC?ref_src=twsrc%5Etfw"><span class="citation"><sup><a href="#ref-ESRC" role="doc-biblioref"><strong>ESRC?</strong></a></sup></span></a> and others on the new 10DS Fellowship. Looking forward to working with Federico, Alex and everyone on data science in government 🚀 <a href="https://t.co/h7skJ0rbwA">https://t.co/h7skJ0rbwA</a>
 </p>
-— Robin Lovelace (<span class="citation">@robinlovelace</span>) <a href="https://twitter.com/robinlovelace/status/1461294156626726914?ref_src=twsrc%5Etfw">November 18, 2021</a>
+— Robin Lovelace (<span class="citation"><sup><a href="#ref-robinlovelace" role="doc-biblioref"><strong>robinlovelace?</strong></a></sup></span>) <a href="https://twitter.com/robinlovelace/status/1461294156626726914?ref_src=twsrc%5Etfw">November 18, 2021</a>
 </blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 <p>The responses replying to that tweet from acquaintances working in related fields, plus emails from colleagues at the University of Leeds, provide a strong motivation to work hard to move things forward.
@@ -65,7 +103,7 @@ I was amazed and slightly humbled to hear that <code>stplanr</code>, an R packag
 <p lang="en" dir="ltr">
 When a tool first built for one purpose (cycle network planning in Europe) gets used for something totally different (calculating distance to tuberculosis clinics in Africa) 🚀<br><br>Paper: <a href="https://t.co/8gaRigYXVK">https://t.co/8gaRigYXVK</a><br>Package: <a href="https://t.co/t8UC0JGjNg">https://t.co/t8UC0JGjNg</a><a href="https://twitter.com/hashtag/RStats?src=hash&amp;ref_src=twsrc%5Etfw">#RStats</a> package {stplanr} in action! <a href="https://t.co/JqBgv7CE9r">pic.twitter.com/JqBgv7CE9r</a>
 </p>
-— Robin Lovelace (<span class="citation">@robinlovelace</span>) <a href="https://twitter.com/robinlovelace/status/1436253002525028362?ref_src=twsrc%5Etfw">September 10, 2021</a>
+— Robin Lovelace (<span class="citation"><sup><a href="#ref-robinlovelace" role="doc-biblioref"><strong>robinlovelace?</strong></a></sup></span>) <a href="https://twitter.com/robinlovelace/status/1436253002525028362?ref_src=twsrc%5Etfw">September 10, 2021</a>
 </blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 <p>What better motivation could there be for developing open source software for reproducible data analysis and policy interventions?</p>
@@ -79,7 +117,7 @@ In this case the project is the popular book Geocomputation with R which, alongs
 <p lang="en" dir="ltr">
 🏗️ Geocomputation with R update 🏗️ we've recently updated key parts of Chapter 7 on the key topic of coordinate reference systems (CRSs). Updated figure below, plus lots more in the chapter, shows importance of understanding them! <a href="https://t.co/pffHqeF8YT">https://t.co/pffHqeF8YT</a> <a href="https://twitter.com/hashtag/Rstats?src=hash&amp;ref_src=twsrc%5Etfw">#Rstats</a> <a href="https://twitter.com/hashtag/rspatial?src=hash&amp;ref_src=twsrc%5Etfw">#rspatial</a> <a href="https://t.co/DVgHU5lvn1">pic.twitter.com/DVgHU5lvn1</a>
 </p>
-— Robin Lovelace (<span class="citation">@robinlovelace</span>) <a href="https://twitter.com/robinlovelace/status/1476620093601812482?ref_src=twsrc%5Etfw">December 30, 2021</a>
+— Robin Lovelace (<span class="citation"><sup><a href="#ref-robinlovelace" role="doc-biblioref"><strong>robinlovelace?</strong></a></sup></span>) <a href="https://twitter.com/robinlovelace/status/1476620093601812482?ref_src=twsrc%5Etfw">December 30, 2021</a>
 </blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
@@ -88,9 +126,9 @@ In this case the project is the popular book Geocomputation with R which, alongs
 <p>The most important event in the year for me was becoming a dad.</p>
 <blockquote class="twitter-tweet">
 <p lang="en" dir="ltr">
-Big personal news: <a href="https://twitter.com/katylvlace?ref_src=twsrc%5Etfw"><span class="citation">@katylvlace</span></a> and I have had a baby, welcome to the world Kit 🎉 Focussed on nappies and supporting the family for the next while 💚💚💚 Parenthood is amazing, makes me more committed to research for a sustainable future 🌱 Looking forward to it all! <a href="https://t.co/sJJZNZZV04">pic.twitter.com/sJJZNZZV04</a>
+Big personal news: <a href="https://twitter.com/katylvlace?ref_src=twsrc%5Etfw"><span class="citation"><sup><a href="#ref-katylvlace" role="doc-biblioref"><strong>katylvlace?</strong></a></sup></span></a> and I have had a baby, welcome to the world Kit 🎉 Focussed on nappies and supporting the family for the next while 💚💚💚 Parenthood is amazing, makes me more committed to research for a sustainable future 🌱 Looking forward to it all! <a href="https://t.co/sJJZNZZV04">pic.twitter.com/sJJZNZZV04</a>
 </p>
-— Robin Lovelace (<span class="citation">@robinlovelace</span>) <a href="https://twitter.com/robinlovelace/status/1448594909376696322?ref_src=twsrc%5Etfw">October 14, 2021</a>
+— Robin Lovelace (<span class="citation"><sup><a href="#ref-robinlovelace" role="doc-biblioref"><strong>robinlovelace?</strong></a></sup></span>) <a href="https://twitter.com/robinlovelace/status/1448594909376696322?ref_src=twsrc%5Etfw">October 14, 2021</a>
 </blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 <p>It has been a life-changing experience: being responsible for another (little and very cute) person has certainly shifted my perspective on the world, made me prioritise my time more carefully, and made it harder to plan.</p>
@@ -113,4 +151,30 @@ The film contains the humorous yet inspiring song below by Ariana Grande.</p>
 <p>So I’m prepared for anything in the coming year.
 Optimistic that with hard work, our collective intelligence, empathy, and desire to collaborate on solving tricky problems will prevail.
 Bring on 2022!</p>
+</div>
+<div id="references" class="section level2 unnumbered">
+<h2>References</h2>
+<div id="refs" class="references csl-bib-body" line-spacing="2">
+<div id="ref-talbot_active_2021" class="csl-entry">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Talbot, J. <em>et al.</em> Active <span>Travel Oriented Development</span>: <span>Assessing</span> the suitability of sites for new homes. (2021) doi:<a href="https://doi.org/10.31219/osf.io/7fuq5">10.31219/osf.io/7fuq5</a>.</div>
+</div>
+<div id="ref-lovelace_clockboard_2021" class="csl-entry">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Lovelace, R., Tennekes, M. &amp; Carlino, D. <span>ClockBoard</span>: A zoning system for urban analysis. (2021) doi:<a href="https://doi.org/10.31219/osf.io/vncgw">10.31219/osf.io/vncgw</a>.</div>
+</div>
+<div id="ref-woodcock_health_2021a" class="csl-entry">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">Woodcock, J., Aldred, R., Lovelace, R., Strain, T. &amp; Goodman, A. Health, environmental and distributional impacts of cycling uptake: <span>The</span> model underlying the <span>Propensity</span> to <span>Cycle</span> tool for <span>England</span> and <span>Wales</span>. <em>Journal of Transport &amp; Health</em> <strong>22</strong>, 101066 (2021).</div>
+</div>
+<div id="ref-vidaltortosa_infrastructure_2021" class="csl-entry">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">Vidal Tortosa, E., Lovelace, R., Heinen, E. &amp; Mann, R. P. Infrastructure is not enough: Interactions between the environment, socioeconomic disadvantage and cycling participation in <span>England</span>. <em>Journal of Transport and Land Use</em> (2021) doi:<a href="https://doi.org/10.5198/jtlu.2021.1781">10.5198/jtlu.2021.1781</a>.</div>
+</div>
+<div id="ref-vidaltortosa_cycling_2021" class="csl-entry">
+<div class="csl-left-margin">5. </div><div class="csl-right-inline">Vidal Tortosa, E., Lovelace, R., Heinen, E. &amp; Mann, R. P. Cycling behaviour and socioeconomic disadvantage: <span>An</span> investigation based on the <span>English National Travel Survey</span>. <em>Transportation Research Part A: Policy and Practice</em> <strong>152</strong>, 173–185 (2021).</div>
+</div>
+<div id="ref-vidaltortosa_socioeconomic_2021" class="csl-entry">
+<div class="csl-left-margin">6. </div><div class="csl-right-inline">Vidal Tortosa, E., Lovelace, R., Heinen, E. &amp; Mann, R. P. Socioeconomic inequalities in cycling safety: <span>An</span> analysis of cycling injury risk by residential deprivation level in <span>England</span>. <em>Journal of Transport &amp; Health</em> <strong>23</strong>, 101291 (2021).</div>
+</div>
+<div id="ref-lovelace_open_2021" class="csl-entry">
+<div class="csl-left-margin">7. </div><div class="csl-right-inline">Lovelace, R. Open source tools for geographic analysis in transport planning. <em>Journal of Geographical Systems</em> (2021) doi:<a href="https://doi.org/10.1007/s10109-020-00342-2">10.1007/s10109-020-00342-2</a>.</div>
+</div>
+</div>
 </div>
