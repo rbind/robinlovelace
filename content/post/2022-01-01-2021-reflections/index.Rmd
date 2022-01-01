@@ -8,7 +8,7 @@ date: '2022-01-01'
 slug: 2021-reflections
 categories: [life]
 tags: [fatherhood, optimism]
-subtitle: 'Thoughts the year gone by and the years ahead'
+subtitle: 'Thoughts on the year gone by and the years ahead'
 summary: ''
 authors: []
 lastmod: '2022-01-01T05:29:16Z'
