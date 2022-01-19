@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Creating and Sharing Code for Reproducible Research and Scalable Impact</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Robin Lovelace, 10DS Fellow, Turing Fellow" />
+    <script src="code-sharing_files/header-attrs-2.11/header-attrs.js"></script>
+    <link href="code-sharing_files/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="code-sharing_files/remark-css-0.0.1/robot.css" rel="stylesheet" />
+    <link href="code-sharing_files/remark-css-0.0.1/robot-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Creating and Sharing Code for Reproducible Research and Scalable Impact
+## Making your code <strong>and research</strong> make a difference
+### Robin Lovelace, 10DS Fellow, Turing Fellow
+### Leeds’ <a href="https://environment.leeds.ac.uk/transport">Institute for Transport Studies</a>
+### ADR Fellows Code sharing Workshop, 2021-01-21 (updated: 2022-01-19) Reproducible source code: <a href="https://github.com/Robinlovelace/presentations/">github.com/Robinlovelace/presentations</a>
+
+---
+
+
+&lt;!-- Talk in context: --&gt;
+
+&lt;!-- From 11:05 to 11:10 --&gt;
+
+
+## The problem
+
+![](https://user-images.githubusercontent.com/1825120/103755051-1b6b2f80-5005-11eb-988b-f7c8d3108e53.png)
+
+Source: ['Inside the black box' report](https://www.co.pierce.wa.us/DocumentCenter/View/755/A-GuideToModeling?bidId=)
+
+--
+
+- Black boxes obfuscate methods, reduce trust in research, stifle innovation and reduce the ability of future work to build on (and cite) your research
+
+--
+
+- Academic research was developed at a time when computers, let alone open source software and reproducible code, were available: black boxes are the norm
+
+---
+
+### The solution: get your code out there
+
+![](https://user-images.githubusercontent.com/1825120/150163421-45f446c7-2f8d-407d-a24b-8ab8911c2870.png)
+Source: 
+Lovelace, Robin 2021: Open Source Tools for Geographic Analysis in Transport Planning. Journal of Geographical Systems. https://doi.org/10.1007/s10109-020-00342-2, accessed January 17, 2021.
+
+---
+
+## Preparing code for publication
+
+.pull-left[
+
+#### At a minum
+
+- Code hosting website (e.g. GitHub)
+- Good README with instructions to run code (+optional badges)
+- Minimum example (synthetic?) input dataset
+- Clear directory structure
+- Select and follow a style guide
+&lt;!-- - Identify a style guide you like and stick to it --&gt;
+- Small readable 'chunks' (functions/scripts)
+
+#### Advanced
+
+- Active issue tracker
+- Packaging + documentation
+- Code review
+- Continuous integration
+- Community chat (e.g. discord)
+
+]
+
+.pull-right[
+
+### Example: stplanr
+
+&lt;!-- ![](https://user-images.githubusercontent.com/1825120/150215724-e57e9969-dad8-4af7-8a6d-98edf99e5819.png) --&gt;
+
+[![rstudio mirror
+downloads](https://cranlogs.r-pkg.org/badges/stplanr)](https://github.com/r-hub/cranlogs.app)
+[![](https://cranlogs.r-pkg.org/badges/grand-total/stplanr)](https://cran.r-project.org/package=stplanr)
+[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/stplanr)](https://cran.r-project.org/package=stplanr)
+[![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://lifecycle.r-lib.org/articles/stages.html)
+[![](https://badges.ropensci.org/10_status.svg)](https://github.com/ropensci/software-review/issues/10)
+[![R-CMD-check](https://github.com/ropensci/stplanr/workflows/R-CMD-check/badge.svg)](https://github.com/ropensci/stplanr/actions)
+&lt;a href='https://docs.ropensci.org/stplanr/'&gt;&lt;img src='https://docs.ropensci.org/stplanr/reference/figures/stplanr.png' align="right" height=215/&gt;&lt;/a&gt;
+
+Demo of packaged code **stplanr** (Lovelace and Ellison 2018) https://docs.ropensci.org/stplanr/
+
+Example of code for a paper:  https://github.com/Robinlovelace/odjitter
+
+]
+
+---
+
+## Beyond code 1: dissemination
+
+![](https://user-images.githubusercontent.com/1825120/150164001-5992ea14-efa5-4287-9983-b8ced943ab98.png)
+
+Source: https://twitter.com/robinlovelace/status/1351477455203299328
+
+---
+
+## Beyond code 2: open access tools
+
+![](https://www.robinlovelace.net/publication/lovelace-open-2020/featured.png)
+
+- Outlines 'network effects' of open research and putting things 'out there'
+- Conclusion: open access is particularly important for policy relevant research
+
+---
+
+## Case study of publishing code
+
+![](https://user-images.githubusercontent.com/1825120/150165206-d7f4e45b-eebb-4f10-a458-2fe8b146ba36.png)
+
+Code processing confidential data hosted online: https://github.com/npct/pct-scripts/blob/master/03.2_school_prepare_OD_file.R
+
+Source: Goodman, et al. 2019. Scenarios of Cycling to School in England, and Associated Health and Carbon Impacts: Application of the ‘Propensity to Cycle Tool.’ Journal of Transport &amp; Health 12: 263–278.
+
+---
+
+## Aggregate outputs published
+
+- We commissioned a dataset from DfE, sensitive data, processed securely
+- Open code and (more importantly) aggregated derived data increased impact
+
+![](https://user-images.githubusercontent.com/1825120/150166166-511aba5b-1ac6-4aa1-a623-d98953d34d7a.png)
+
+---
+
+### Skills and lessons learned along the way
+
+.pull-left[
+
+### Skills
+
+General 
+
+- Communication (beyond usual ppl)
+- Forward planning
+- Agile workflow
+
+Technical
+
+- Version control (Git/GitHub)
+- Kanban boards
+- Receiving feedback on code
+- Integrating manuscript prose + code, with RMarkdown and Quarto
+
+]
+
+.pull-right[
+
+
+### Lessons
+
+- Get collaborators onboard
+
+&lt;!-- Talk about working with many people --&gt;
+
+- Don't be afraid to publish 'unfinished' code
+
+- Publishing code and contributing online can lead to surprising benefits
+  - E.g. link with Italian PhD student and paper
+- Ask questions of the *community*
+
+]
+
+---
+
+.left-column[
+
+#### Beyond code 3: Community engagement
+
+Sharing code happens in context of open source communities
+
+They are usually friendly communities
+
+Getting involved can lead to collaborations
+
+Source: https://github.com/r-spatial/sf/issues/966
+
+]
+
+
+.right-column[
+
+![](https://user-images.githubusercontent.com/1825120/150217296-39c4d45c-943f-40d4-9b8e-8dce1fd252e9.png)
+
+```r
+# Reproducible example:
+milan_car_crashes &lt;- data.frame(
+  ID = 1:5,
+  X = c(1513037, 1513008, 1515473, 1514039, 1515748),
+  Y = c(5034945, 5034750, 5036177, 5036820, 5037396)
+)
+```
+![](https://user-images.githubusercontent.com/1825120/150217702-075354b0-82bf-42da-8321-60002dff795f.png)
+]
+
+
+---
+
+# Thanks for listening!
+
+## Further information: 
+
+robinlovelace.net + @robinlovelace on Twitter
+
+see slides infoRming policy talk for R-focussed take.
+
+[![](https://user-images.githubusercontent.com/1825120/150219247-7e0ea4d8-7d03-4e7d-8c3d-e7d070e33955.png)](https://www.robinlovelace.net/presentations/c4p-slides.html#1)
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="https://platform.twitter.com/widgets.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
