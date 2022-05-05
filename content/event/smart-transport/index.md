@@ -16,8 +16,8 @@ abstract: Robin Lovelace is Associate Professor of Transport Data Science at the
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
-date: 2021-01-21T20:30:00Z
-date_end: 2021-01-21T21:00:00Z
+date: 2022-05-10T10:20:00Z
+date_end: 2022-05-10T11:05:00Z
 all_day: false
 
 # Schedule page publish date (NOT event date).
@@ -47,10 +47,10 @@ image:
 #   icon: twitter
 
 # Optional filename of your slides within your event's folder or a URL.
-url_slides: https://www.robinlovelace.net/presentations/smart-transport
+url_slides: https://www.robinlovelace.net/presentations/smart-transport.html
 url_code: https://github.com/Robinlovelace/presentations/
 url_pdf:
-url_video: https://youtu.be/mpqNW9ePVtw
+url_video: 
 
 # Markdown Slides (optional).
 #   Associate this event with Markdown slides.
