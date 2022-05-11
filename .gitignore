@@ -9,3 +9,5 @@ themes
 static/2*
 static/talks/*.Rds
 *.gpx
+*.zip*
+*.m4a
