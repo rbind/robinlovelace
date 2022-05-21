@@ -11,6 +11,7 @@ knitr::opts_chunk$set(
 )
 ```
 
+
 # robinlovelace
 
 This is the source code of my website.
@@ -18,8 +19,9 @@ I plan to store notes on how to use it here.
 
 New talk:
 
+
 ```
-hugo new  --kind event event/ons-expert-panel2
+hugo new  --kind event event/qmul-2022
 ```
 
 ```{r, eval=FALSE}

@@ -8,7 +8,7 @@ use it here.
 
 New talk:
 
-    hugo new  --kind event event/ons-expert-panel2
+    hugo new  --kind event event/qmul-2022
 
 ``` r
 file.edit("content/event/pcttraining2021/index.md")
