@@ -1,8 +1,18 @@
 ---
-output: github_document
+output: html_document
 ---
 
-```{r, results='asis'}
+```{r, echo=FALSE, eval=FALSE}
+rmarkdown::render("content/event/ons-expert-panel2/index.Rmd", "content/event/ons-expert-panel2/index.md")
+```
+
+Test.
+
+2
+
+3
+
+```{asis, test, echo=TRUE}
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
 
@@ -35,7 +45,7 @@ tags: []
 featured: false
 
 # Featured image
-# To use, add an image named `featured.jpg/png` to your page's folder. 
+# To use, add an image named `featured.jpg/png` to your page folder. 
 # Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
 image:
   caption: ""
@@ -50,7 +60,7 @@ image:
 #   icon_pack: fab
 #   icon: twitter
 
-# Optional filename of your slides within your event's folder or a URL.
+# Optional filename of your slides within your events folder or a URL.
 url_slides:
 
 url_code:
@@ -59,18 +69,17 @@ url_video:
 
 # Markdown Slides (optional).
 #   Associate this event with Markdown slides.
-#   Simply enter your slide deck's filename without extension.
+#   Simply enter your slide decks filename without extension.
 #   E.g. `slides = "example-slides"` references `content/slides/example-slides.md`.
 #   Otherwise, set `slides = ""`.
 slides: ""
 
 # Projects (optional).
 #   Associate this post with one or more of your projects.
-#   Simply enter your project's folder or file name without extension.
+#   Simply enter your projects folder or file name without extension.
 #   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
 #   Otherwise, set `projects = []`.
 projects: []
 ---
-
 ```
 

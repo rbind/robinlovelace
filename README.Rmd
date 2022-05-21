@@ -19,7 +19,7 @@ I plan to store notes on how to use it here.
 New talk:
 
 ```
-hugo new  --kind event event/smart-transport
+hugo new  --kind event event/ons-expert-panel2
 ```
 
 ```{r, eval=FALSE}

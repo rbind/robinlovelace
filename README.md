@@ -8,7 +8,7 @@ use it here.
 
 New talk:
 
-    hugo new  --kind event event/pcttraining2021
+    hugo new  --kind event event/ons-expert-panel2
 
 ``` r
 file.edit("content/event/pcttraining2021/index.md")
@@ -19,3 +19,8 @@ blogdown::new_post(title = "open-access-events", ext = ".Rmd")
 # serve site
 blogdown::serve_site()
 ```
+
+To update publications run:
+
+    pip3 install -U git+https://github.com/wowchemy/hugo-academic-cli.git
+    academic import --bibtex static/bibs/robin-lovelaces-publications.bib
