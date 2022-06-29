@@ -20,12 +20,14 @@ I plan to store notes on how to use it here.
 New talk:
 
 
-```
+```bash
 hugo new  --kind event event/qmul-2022
+# or
+cp -Rv content/event/qmul-2022 content/event/casa-2022
 ```
 
 ```{r, eval=FALSE}
-file.edit("content/event/pcttraining2021/index.md")
+file.edit("content/event/casa-2022/index.md")
 
 # new blog post:
 blogdown::new_post(title = "open-access-events", ext = ".Rmd")

@@ -45,7 +45,7 @@ image:
 #   icon: twitter
 
 # Optional filename of your slides within your event's folder or a URL.
-url_slides: https://www.robinlovelace.net/presentations/qmul-2022.html
+url_slides: https://www.robinlovelace.net/presentations/casa-2022.html
 url_code: https://github.com/Robinlovelace/presentations/
 url_pdf:
 url_video:
