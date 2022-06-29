@@ -1,7 +1,7 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
 
-title: "Keynote: Open source software and open data in transport research, planning and modelling"
+title: "Keynote: Reproducible geocomputation for policy-relevant research"
 event: Centre for Advanced Spatial Analyisis student conference
 event_url: https://www.ucl.ac.uk/bartlett/casa/
 location:
