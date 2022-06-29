@@ -1,7 +1,7 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
 
-title: "Keynote: Reproducible geocomputation for policy-relevant research"
+title: "Keynote: Reproducible Geocomputation for Policy-Relevant Research"
 event: Centre for Advanced Spatial Analyisis student conference
 event_url: https://www.ucl.ac.uk/bartlett/casa/
 location:
