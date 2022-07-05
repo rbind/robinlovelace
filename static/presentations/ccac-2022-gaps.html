@@ -36,28 +36,22 @@ Reproducible source code: <a href="https://github.com/robinlovelace/presentation
 
 ## Overview
 
+#### 1 Introduction to policy need and current evidence
 
-#### 1 Introduction to my work and previous tools
-
-- https://www.pct.bike/
-- https://www.cyipt.bike/rapid/
-- https://github.com/ITSLeeds/
-
---
-
-#### 2 The ActDev tool
+- Local knowledge
+- The [Propensity to Cycle Tool (PCT)](https://www.pct.bike/)
+- The [Cycling Infrastructure Prioritisation Tool (CyIPT)](https://www.cyipt.bike/) prototype
+- The [Rapid Cycleway Prioritisation Tool (Rapid)](https://www.cyipt.bike/rapid/)
+- The [ActDev Tool](https://actdev.cyipt.bike/) prototype
 
 --
 
-#### 3 Live demo and testing: using the tool
+#### 2 Filling the gap
 
+--
 
+#### 3 Next steps
 
-#### 4 Coding and questions
-
-- Beginner in R: install R and follow instructions at https://itsleeds.github.io/rrsrr/
-- Intermediate level: work through the code in Chapter 13 of Geocomputation with R: https://geocompr.robinlovelace.net/transport.html
-- Advanced: Add a new site in the ActDev tool: https://github.com/cyipt/actdev/blob/main/code/tests/add-new-site.md
 
 ???
 
@@ -82,134 +76,110 @@ Duncan Dollimore, Head of Campaigns, Cycling UK
 
 ---
 
-## Introduction to me and my research
+## The Propensity to Cycle Tool + Filling Gaps
 
-![](https://user-images.githubusercontent.com/1825120/142075245-3dee4b6e-e4d6-424d-b4aa-a72458e88fd6.png)
+![](https://user-images.githubusercontent.com/1825120/177321129-36f239f8-28e9-4bdc-8516-4a36b1c6caac.png)
 
-See warm-up slides here: https://www.robinlovelace.net/presentations/dft-nexus#1
+Source: https://www.pct.bike/m/?r=south-yorkshire
+
+---
+
+## The PCT in rural areas
+
+
+![](https://user-images.githubusercontent.com/1825120/177321646-2781df5c-2bdc-4924-9c1c-31f017f3173b.png)
+
+---
+
+## The PCT School Layer
+
+![](https://user-images.githubusercontent.com/1825120/177321498-2cf33219-22a7-41aa-91c7-eb86a69e05fd.png)
+
+---
+
+## Data limitation: size of zones
+
+![](https://user-images.githubusercontent.com/1825120/177325287-5e2aee0a-5d08-4d39-af60-25a3d0b58720.png)
+Some LSOA zones are 5+ km wide!
+
+Source: https://www.pct.bike/m/?r=hereford-and-worcester
+
+---
+
+## Impacts of input data and (lack of) preprocessing
+
+![](https://user-images.githubusercontent.com/1825120/177326416-a34a239c-5144-4046-86bf-812326dad05a.png)
+---
+
+## Travel to school data: not enough on its own
+
+![](https://user-images.githubusercontent.com/1825120/177327233-4fb6886e-ac53-4747-9039-c7895ab356af.png)
+
+---
+
+### Increasing spatial resolution for rural areas
+
+![](https://github.com/Robinlovelace/odjitter/raw/main/README_files/figure-gfm/jitters-1.png)
+Source: Lovelace, Robin, Rosa Félix, and Dustin Carlino. “Jittering: A Computationally Efficient Method for Generating Realistic Route Networks from Origin-Destination Data.” Findings, April 8, 2022, 33873. https://doi.org/10.32866/001c.33873.
+
+---
+
+## Results of jittering
+
+![](https://user-images.githubusercontent.com/1825120/177327971-b92c7d5e-dfd4-43f3-bb12-5350f7dcdb2d.png)
+Source: sample of 2021-2022 data representing travel to school potential in Leeds
+
+Part of the Estimating Active Travel Potential to Schools project at 10DS
+
+
+
+---
+
+## The Rapid tool
+
+![](https://user-images.githubusercontent.com/1825120/177315108-8e968603-3996-4ae6-924d-7c80f2bbd69e.png)
+Source: https://www.cyipt.bike/rapid/sheffield-city-region/
 
 ???
 
-We have 5 research groups
-
-Working with TASM
-
-Links with WYCA
-
-Academic input
-
-Sarah Sharples
+Developed for a very specific purpose
 
 ---
 
+## Prioity links in Rapid
 
-#### The problem (source: Garden Villages and Garden Towns report, [TfNH](https://tps.org.uk/news/tfnh-report-on-garden-villages-and-garden-towns))
+![](https://user-images.githubusercontent.com/1825120/177318641-ed28e876-5ce7-4b54-84df-be60e145e70c.png)
+--
 
-Photo: Bicester Eco Town
+Which criteria to use?
 
-&lt;a data-flickr-embed="true" href="https://www.flickr.com/photos/transportfornewhomes/49995904016/in/album-72157714662617023/" title="Bicester 3"&gt;&lt;img src="https://live.staticflickr.com/65535/49995904016_3848a910c0_h.jpg" width="1600" height="1200" alt="Bicester 3"&gt;&lt;/a&gt;&lt;script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"&gt;&lt;/script&gt;
-
-&lt;!-- ![](https://user-images.githubusercontent.com/1825120/103755051-1b6b2f80-5005-11eb-988b-f7c8d3108e53.png) --&gt;
-
-&lt;!-- Source: ['Inside the black box' report](https://www.co.pierce.wa.us/DocumentCenter/View/755/A-GuideToModeling?bidId=) --&gt;
-
-???
-
-This housing estate in Bicester illustrates the problem: it's called the Bicester Eco-Town so you'd be forgiven for thinking that it has a low environmental impact
-
-A picture can tell a thousand words but it still can be deceptive: we need a more objective view of things
+- Road width
+- Segment length
+- Presence of spare lanes
+- Cycling levels (based on current of scenario levels of cycling)
 
 ---
 
-#### Marketting vs Reality
+## Zooming in on priority links
 
-![](https://www.willmottdixon.co.uk/asset/11080/crop/1428/768)
-
-Source: [Willmott Dixon](https://www.willmottdixon.co.uk/projects/north-west-bicester-eco-town)
-
-
-???
-
-When planning officers are presented with a proposal it is often difficult to evaluate sustainability claims
-
-Guidance and objective measures are scarce, meaning that intuition is often used
-
-What we need is an object evidence base
-
----
-
-background-image: url(https://user-images.githubusercontent.com/1825120/144555764-b085f647-6448-459a-84f5-4fc947ac2f43.png)
-background-size: contain
-
-#### Data driven evidence  (source: [https://actdev.cyipt.bike/bicester/](https://actdev.cyipt.bike/bicester/routenetwork,buildings/#9.75/51.9082/-1.2006))
-
-&lt;!-- ![](https://user-images.githubusercontent.com/1825120/144555764-b085f647-6448-459a-84f5-4fc947ac2f43.png) --&gt;
-
-???
-
-Why are housing developments being approved in places like this at a time of climate crises?
-
----
-
-# Demand for housing
-
-![](http://researchbriefings.files.parliament.uk/documents/CBP-7671/assets/b1a30d07-0fd0-4e31-88b3-fee717bbea88.png)&lt;!-- --&gt;
-
-Source: Tackling the under-supply of housing in England, [House of Commons Research Briefing Jan 2021](https://commonslibrary.parliament.uk/research-briefings/cbp-7671/)
-
----
-
-## Policy and research context
-
-![](https://user-images.githubusercontent.com/1825120/144556770-80237854-00d1-4211-bad5-bd5c3d478a1a.png)&lt;!-- --&gt;![](https://user-images.githubusercontent.com/1825120/144557012-d11d36cf-88e1-40ff-81a8-8e60de017510.png)&lt;!-- --&gt;
+![](https://user-images.githubusercontent.com/1825120/177318235-b89ea681-8b4d-4fcf-947b-a075f1da56c7.png)
 
 --
 
-- Tensions between vital policy objectives of [housing](https://commonslibrary.parliament.uk/research-briefings/cbp-7671/)/[levelling up](https://www.gov.uk/government/news/new-homes-to-be-built-as-part-of-government-drive-to-develop-brownfield-land-and-regenerate-communities) vs [decarbonisation](https://www.gov.uk/government/publications/transport-decarbonisation-plan)/[active travel](https://www.gov.uk/government/publications/gear-change-one-year-on-review)
+- Many factors to consider that are not captured in publicly available data
 
---
+---
 
-- Transport models were designed to support growth in car ownership and reduce journey times (Boyce and Williams, 2015)
+### Additional information 1
 
---
+Source: https://www.cyclestreets.net/journey/82479454/
 
-- Few tools for assessing active travel potential or provision in/around new developments (Megan Streb MSc)
+![](https://user-images.githubusercontent.com/1825120/177319991-4179114b-9f7e-449a-b746-b727fec351a9.png)
+## Additional information 2
 
---
+![](https://user-images.githubusercontent.com/1825120/177320446-115aa07a-c4ba-43c8-bd36-94222a05ccb2.png)
 
-&lt;!-- - Yet tools for transport planning and development are based on old priorities --&gt;
-
-
-???
-
-Governments must meet multiple competing objectives
-
-The August 2020 planning white paper outlined the need to create beautiful places and provide housing
-
-A House of [Commons Research Briefing](https://commonslibrary.parliament.uk/research-briefings/cbp-7671/) from January 2021 outlined the challenge of increasing housing supply to meet the aim of building 300k houses per year
-
-The July 2021 Decarbonising transport paper set out dramatic policies for the sector with rapid uptake of walking and cycling: "We will aim to have 
-half of all journeys 
-in towns and cities 
-cycled or walked"
-
-And in the 2021 Gear Change one year on policy paper, the prime minister said in the foreword
-
-"I support councils, of all parties, which are trying to promote cycling and bus
-use. And if you are going to oppose these schemes, you must tell us what
-your alternative is, because trying to squeeze more cars and delivery vans
-on the same roads and hoping for the best is not going to work."
-
-As we've seen the problem is largely political but it has has a substantial technical component
-
-The 'tools of the trade' 
-
-  - Climate science, air pollution and health force a shift in focus
-  - The concepts of 'participatory democracy' and 'citizen science' mean there is a need for collaborative solutions
-
-Despite substantial academic work on integrated land-use transport models and an entire academic journal dedicated to it
-
-Planning and transport not always joined up
+Source: https://goo.gl/maps/CiKR7U8iMLwfX3oX6
 
 ---
 
