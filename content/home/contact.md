@@ -27,6 +27,7 @@ design:
   columns: '2'
 ---
 
+
 Feel free to get in touch in using the form below.
 It may be worth considering contacting me in other ways, however, including:
 

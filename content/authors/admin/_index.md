@@ -65,9 +65,10 @@ Welcome to my personable website 🎉
 I'm a data scientist, geographer, transport modeller, software developer, and writer.
 This website should help you find out about my work.
 I mostly use it to share and promote my [publications](https://www.robinlovelace.net/#featured) and [talks](https://www.robinlovelace.net/#talks) but I also occassionally share blog posts and other things here.
-If you'd like to get in touch, see [here](https://www.robinlovelace.net/#contact).
+If you'd like to get in touch, see [here](https://www.robinlovelace.net/#contact) 🚀
 
-[Associate Professor of Transport Data Science](https://environment.leeds.ac.uk/transport/staff/953/dr-robin-lovelace) at the Leeds [Institute for Transport Studies](https://environment.leeds.ac.uk/transport) where I research, develop and teach free, open, reproducible and internationally scalable techniques for working with data to support evidence-based policies.
+In my main academic job I'm [Associate Professor of Transport Data Science](https://environment.leeds.ac.uk/transport/staff/953/dr-robin-lovelace) at the [University of Leeds](https://www.leeds.ac.uk/).
+At Leeds, I'm based primarily at the [Institute for Transport Studies](https://environment.leeds.ac.uk/transport) where I research, develop and teach free, open, reproducible and internationally scalable techniques for working with data to support evidence-based policies.
 
 I am author of papers and [books](https://www.robinlovelace.net/publication/#5) on transport planning, energy, geographic data analysis and modelling.
 I lead the Transport Data Science [module](https://github.com/ITSLeeds/TDS), which is available to students taking [Data Science and Data Analytics](https://courses.leeds.ac.uk/i071/data-science-and-analytics-msc) and [Data Science and Urban Analytics](https://courses.leeds.ac.uk/j135/urban-data-science-and-analytics-msc) courses at the University of Leeds.
