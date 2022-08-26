@@ -38,3 +38,4 @@ It may be worth considering contacting me in other ways, however, including:
   - I prioritise well-asked questions, ideally with a reproducible example, over vague questions sent directly to me!
 - In a comment below one of the pages on this website. See the bottom of [this page](https://www.robinlovelace.net/publication/lovelace-propensity-2017/) for an example of this in relation to the Propensity to Cycle Tool (note: you need a GitHub account to add comments in this way, as you do to ask questions on GitHub)
 - Via my work email address which you should be able to find online if it's directly related to my work
+- On social media and particular Twitter where I can be [found](https://twitter.com/robinlovelace), hopefully with the aim of increasing the signal-to-noise and light-vs-heat ratios on such platforms
