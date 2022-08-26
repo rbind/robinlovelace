@@ -1,11 +1,10 @@
-theme: "starter-hugo-academic"
 # Configuration of Hugo
 # Guide: https://wowchemy.com/docs/getting-started/
 # Hugo Documentation: https://gohugo.io/getting-started/configuration/#all-configuration-settings
 # This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
 
-title: Robin Lovelace # Website name
-baseURL: 'https://www.robinlovelace.net/' # Website URL
+title: Academic # Website name
+baseURL: 'https://example.com/' # Website URL
 
 ############################
 ## LANGUAGE
