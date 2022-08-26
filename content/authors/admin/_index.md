@@ -60,7 +60,7 @@ title: Robin Lovelace
 ---
 
 Hi, I'm Robin.
-Welcome to my personable website 🎉
+Welcome to my personal website 🎉
 
 I'm a data scientist, geographer, transport modeller, software developer, and writer.
 This website should help you find out about my work.
