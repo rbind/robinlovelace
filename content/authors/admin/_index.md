@@ -64,7 +64,8 @@ Welcome to my personal website 🎉
 
 I'm a data scientist, geographer, transport modeller, software developer, and writer.
 This website should help you find out about my work.
-I mostly use it to share and promote my [publications](https://www.robinlovelace.net/#featured) and [talks](https://www.robinlovelace.net/#talks) but I also occassionally share blog posts and other things here.
+I mostly use it to share and promote my [publications](https://www.robinlovelace.net/#featured) and [previous/upcoming talks](https://www.robinlovelace.net/#talks), with links aplenty to visual/audio/video content and lots of reproducible code for data science and reproducible research.
+I also occasionally share blog posts and other things here.
 If you'd like to get in touch, see [here](https://www.robinlovelace.net/#contact) 🚀
 
 In my main academic job I'm [Associate Professor of Transport Data Science](https://environment.leeds.ac.uk/transport/staff/953/dr-robin-lovelace) at the [University of Leeds](https://www.leeds.ac.uk/).
