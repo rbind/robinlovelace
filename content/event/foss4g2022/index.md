@@ -1,9 +1,10 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
 
-title: "Zonebuilders: cross-platform and language-agnostic tools for generating zoning systems for urban analysis and modelling"
-event: FOSS4G 2021
-event_url: https://2021.foss4g.org/
+title: "Jittering and routing options for converting origin-destination data into route networks
+"
+event: FOSS4G 2022
+event_url: https://2022.foss4g.org/
 location: Online
 address:
   street:
@@ -16,14 +17,14 @@ abstract:
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
-date: 2021-10-01T16:00:00Z
-date_end: 2021-10-01T16:30:00Z
+date: 2022-08-26T08:00:00Z
+date_end: 2022-08-26T08:30:00Z
 all_day: false
 
 # Schedule page publish date (NOT event date).
 publishDate: 2021-01-05T17:48:39Z
 
-authors: [Robin Lovelace, Martijn Tennekes, Dustin Carlino]
+authors: [Robin Lovelace, Rosa Félix, Dustin Carlino]
 tags: [geocomputation, software, tools]
 
 # Is this a featured event? (true/false)
