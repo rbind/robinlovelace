@@ -46,7 +46,7 @@ Click on the links below for details.
 I have develop and contribute to a number of popular open source projects.
 See my [GitHub profile](https://github.com/robinlovelace/) for details.
 
-# Software I recommend
+# Recommended software
 
 Scientific methods, and the truths they reveal, depend on transparency, collaboration and falsifiability.
 Translated into the 21^st^ Century and field of data science, this means using software that is open source (and therefore transparent), accessible and community-led (and therefore collaborative), and conducive to reproducible research (and therefore falsifiable).
@@ -118,9 +118,27 @@ Download the latest version of LogSeq in file format of your choice (I used the 
 
 ## File sharing
 
-### SyncThing
+### Syncthing
 
+ [Syncthing](https://apt.syncthing.net/) is a decentralised file sharing system that enables you to share folders between 2 or more devices.
+ It does this efficiently and with minimal hassle on many devices.
+ Its support for [Android](https://play.google.com/store/apps/details?id=com.nutomic.syncthingandroid&hl=en_GB&gl=US) on the Google Play Store makes it ideal for syncing things between laptop and mobile.
+ 
+ [Install it on Ubuntu/Debian](https://apt.syncthing.net/) systems with the following commands:
+ 
+ ```bash
+sudo curl -o /usr/share/keyrings/syncthing-archive-keyring.gpg https://syncthing.net/release-key.gpg
 
+# Add the "stable" channel to your APT sources:
+echo "deb [signed-by=/usr/share/keyrings/syncthing-archive-keyring.gpg] https://apt.syncthing.net/ syncthing stable" | sudo tee /etc/apt/sources.list.d/syncthing.list
+
+# Add the "candidate" channel to your APT sources:
+echo "deb [signed-by=/usr/share/keyrings/syncthing-archive-keyring.gpg] https://apt.syncthing.net/ syncthing candidate" | sudo tee /etc/apt/sources.list.d/syncthing.list
+
+# Update and install syncthing:
+sudo apt-get update
+sudo apt-get install syncthing
+```
 
 
 

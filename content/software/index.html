@@ -37,7 +37,7 @@ output:
 <div id="TOC">
 <ul>
 <li><a href="#software-i-have-developed" id="toc-software-i-have-developed">Software I have developed</a></li>
-<li><a href="#software-i-recommend" id="toc-software-i-recommend">Software I recommend</a>
+<li><a href="#recommended-software" id="toc-recommended-software">Recommended software</a>
 <ul>
 <li><a href="#operating-system-linux" id="toc-operating-system-linux">Operating system: Linux</a></li>
 <li><a href="#interactive-development-environments" id="toc-interactive-development-environments">Interactive development environments</a></li>
@@ -72,8 +72,8 @@ Click on the links below for details.</p>
 <p>I have develop and contribute to a number of popular open source projects.
 See my <a href="https://github.com/robinlovelace/">GitHub profile</a> for details.</p>
 </div>
-<div id="software-i-recommend" class="section level1">
-<h1>Software I recommend</h1>
+<div id="recommended-software" class="section level1">
+<h1>Recommended software</h1>
 <p>Scientific methods, and the truths they reveal, depend on transparency, collaboration and falsifiability.
 Translated into the 21<sup>st</sup> Century and field of data science, this means using software that is open source (and therefore transparent), accessible and community-led (and therefore collaborative), and conducive to reproducible research (and therefore falsifiable).</p>
 <p>Reproducible research based on open source software means that data scientists and researchers operating in the public domain gain trust not by relying on arguments of authority<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>
@@ -137,7 +137,22 @@ Download the latest version of LogSeq in file format of your choice (I used the 
 <div id="file-sharing" class="section level2">
 <h2>File sharing</h2>
 <div id="syncthing" class="section level3">
-<h3>SyncThing</h3>
+<h3>Syncthing</h3>
+<p><a href="https://apt.syncthing.net/">Syncthing</a> is a decentralised file sharing system that enables you to share folders between 2 or more devices.
+It does this efficiently and with minimal hassle on many devices.
+Its support for <a href="https://play.google.com/store/apps/details?id=com.nutomic.syncthingandroid&amp;hl=en_GB&amp;gl=US">Android</a> on the Google Play Store makes it ideal for syncing things between laptop and mobile.</p>
+<p><a href="https://apt.syncthing.net/">Install it on Ubuntu/Debian</a> systems with the following commands:</p>
+<pre class="bash"><code>sudo curl -o /usr/share/keyrings/syncthing-archive-keyring.gpg https://syncthing.net/release-key.gpg
+
+# Add the &quot;stable&quot; channel to your APT sources:
+echo &quot;deb [signed-by=/usr/share/keyrings/syncthing-archive-keyring.gpg] https://apt.syncthing.net/ syncthing stable&quot; | sudo tee /etc/apt/sources.list.d/syncthing.list
+
+# Add the &quot;candidate&quot; channel to your APT sources:
+echo &quot;deb [signed-by=/usr/share/keyrings/syncthing-archive-keyring.gpg] https://apt.syncthing.net/ syncthing candidate&quot; | sudo tee /etc/apt/sources.list.d/syncthing.list
+
+# Update and install syncthing:
+sudo apt-get update
+sudo apt-get install syncthing</code></pre>
 </div>
 </div>
 </div>
