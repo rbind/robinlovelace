@@ -1,0 +1,141 @@
+---
+# Documentation: https://wowchemy.com/docs/managing-content/
+
+title: "Software"
+subtitle: ""
+summary: ""
+authors: []
+tags: []
+categories: []
+date: 2022-10-16T11:28:13+01:00
+lastmod: 2022-10-16T11:28:13+01:00
+featured: false
+draft: false
+
+# Featured image
+# To use, add an image named `featured.jpg/png` to your page's folder.
+# Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
+image:
+  caption: ""
+  focal_point: ""
+  preview_only: false
+
+# Projects (optional).
+#   Associate this post with one or more of your projects.
+#   Simply enter your project's folder or file name without extension.
+#   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
+#   Otherwise, set `projects = []`.
+projects: []
+
+output:
+  blogdown::html_page:
+    toc: true
+---
+
+
+<div id="TOC">
+<ul>
+<li><a href="#software-i-use-and-recommend" id="toc-software-i-use-and-recommend">Software I use and recommend</a>
+<ul>
+<li><a href="#operating-system-linux" id="toc-operating-system-linux">Operating system: Linux</a>
+<ul>
+<li><a href="#ubuntu" id="toc-ubuntu">Ubuntu</a></li>
+</ul></li>
+<li><a href="#interactive-development-environment" id="toc-interactive-development-environment">Interactive development environment</a>
+<ul>
+<li><a href="#rstudio" id="toc-rstudio">RStudio</a></li>
+<li><a href="#vscode" id="toc-vscode">VSCode</a></li>
+</ul></li>
+<li><a href="#appimagelauncher" id="toc-appimagelauncher">AppImageLauncher</a></li>
+<li><a href="#note-taking-and-task-management" id="toc-note-taking-and-task-management">Note taking and task management</a>
+<ul>
+<li><a href="#logseq" id="toc-logseq">LogSeq</a></li>
+</ul></li>
+<li><a href="#file-sharing" id="toc-file-sharing">File sharing</a>
+<ul>
+<li><a href="#syncthing" id="toc-syncthing">SyncThing</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#software-i-have-developed" id="toc-software-i-have-developed">Software I have developed</a></li>
+</ul>
+</div>
+
+<p>Scientific methods, and the truths they reveal, depend on transparency, collaboration and falsifiability.
+Translated into the 21<sup>st</sup> Century and field of data science, this means using software that is open source (and therefore transparent), accessible and community-led (and therefore collaborative), and conducive to reproducible research (and therefore falsifiable).</p>
+<p>Reproducible research based on open source software means that data scientists and researchers operating in the public domain gain trust not by relying on arguments of authority<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>
+but by producing code that other people can run to verify their outputs.
+Researchers who are unable to show their workings are less well-trusted, resulting in virtuous feedback loops through communities of practice that encourage sharing and collaboration.</p>
+<p>Software is not just a static ‘tool of the trade’.
+It is lanuage — or rather multiple languages — in which society encodes its digital capabilities, rules, and aspirations.
+Software if vital for humanity in the 21<sup>st</sup> Century.
+This page provides a brief guide to software that I use and develop.
+I hope you will learn from it and maybe even install a few of the open source tools I recommend.</p>
+<p>All of the software listed on this page is free and open source.</p>
+<div id="software-i-use-and-recommend" class="section level1">
+<h1>Software I use and recommend</h1>
+<div id="operating-system-linux" class="section level2">
+<h2>Operating system: Linux</h2>
+<p>The operating system (OS) is the foundation on which all other programs that can (or cannot) run on your computer build.
+Many open source software projects are <em>platform agnostic</em>, meaning they work on all major operating systems.
+However, having the most appropriate OS for your needs installed is important for getting work done: poor choice of OS can lead to hours wasted setting things up and delays on new software being accessible.</p>
+<p>Windows and Mac have a near <a href="https://en.wikipedia.org/wiki/Duopoly">duopoly</a> over mainstream consumer laptop and desktop operating system markets.
+However, Linux forms the basis of the operating systems of choice for most serious software developers and many data scientists.
+I strongly recommend installing a Linux on at least one laptop or desktop that you have available if you have not done so already: it can be life changing.</p>
+<div id="ubuntu" class="section level3">
+<h3>Ubuntu</h3>
+<p>I use and recommend <a href="https://ubuntu.com/">Ubuntu</a>, an operating system built on Linux with a focus on user friendliness and mainstream adoption.
+Developed by the multinational company <a href="https://en.wikipedia.org/wiki/Canonical_(company)">Canonical</a>, Ubuntu is a popular Linux distribution (‘<a href="https://distrowatch.com/">distro</a>’), that you can install on most consumer desktops and laptops.</p>
+<p>I also recommend <a href="https://itsfoss.com/best-linux-beginners/">itsfoss.com’s article on Linux distros for beginners</a> if you’re getting started in this space.</p>
+</div>
+</div>
+<div id="interactive-development-environment" class="section level2">
+<h2>Interactive development environment</h2>
+<div id="rstudio" class="section level3">
+<h3>RStudio</h3>
+</div>
+<div id="vscode" class="section level3">
+<h3>VSCode</h3>
+</div>
+</div>
+<div id="appimagelauncher" class="section level2">
+<h2>AppImageLauncher</h2>
+<p>AppImage is a system for packaging applications that allows them to run, out of the box, on any Linux distro.
+<a href="https://github.com/TheAssassin/AppImageLauncher">AppImageLauncher</a> is a user friendly tool for managing AppImages.</p>
+<p><a href="https://github.com/TheAssassin/AppImageLauncher/wiki">Install</a> it with the following commands on <a href="https://github.com/TheAssassin/AppImageLauncher/wiki/Install-on-Ubuntu-or-Debian">Ubuntu</a>:</p>
+<pre class="bash"><code>sudo apt install software-properties-common
+sudo add-apt-repository ppa:appimagelauncher-team/stable
+sudo apt update
+sudo apt install appimagelauncher</code></pre>
+</div>
+<div id="note-taking-and-task-management" class="section level2">
+<h2>Note taking and task management</h2>
+<div id="logseq" class="section level3">
+<h3>LogSeq</h3>
+<p><a href="https://logseq.com/">LogSeq</a> has seen explosive growth since it was first launched in 2020.
+For me it has replaced about 3 other tools that I was using previously, functioning as:</p>
+<ul>
+<li>A todo list manager. Previously I was using TaskWarrior and TimeWarrior.</li>
+<li>A note taking app. I had tried a number of tools for this, including the excellent cross-platform <a href="https://joplinapp.org/">Joplin</a>.</li>
+<li>A diary. Previously I was using various tools including RedNotebook.</li>
+</ul>
+<p>Having all you notes and TODO items in one place is very handy, especially when you can sync your notes between computers using SyncThing.
+Download the latest version of LogSeq in file format of your choice (I used the AppImage version) from <a href="https://github.com/logseq/logseq/releases">github.com/logseq</a>.</p>
+</div>
+</div>
+<div id="file-sharing" class="section level2">
+<h2>File sharing</h2>
+<div id="syncthing" class="section level3">
+<h3>SyncThing</h3>
+</div>
+</div>
+</div>
+<div id="software-i-have-developed" class="section level1">
+<h1>Software I have developed</h1>
+</div>
+<div class="footnotes footnotes-end-of-document">
+<hr />
+<ol>
+<li id="fn1"><p>
+Ever heard someone say “trust me, I’m a data scientist”? Me neither!<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>

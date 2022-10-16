@@ -3,19 +3,24 @@
 
 # robinlovelace
 
-
 This is the source code of my website. I plan to store notes on how to
 use it here.
 
 New talk:
 
-    hugo new  --kind event event/qmul-2022
+``` bash
+hugo new  --kind event event/qmul-2022
+# or
+cp -Rv content/event/qmul-2022 content/event/casa-2022
+```
 
 ``` r
-file.edit("content/event/pcttraining2021/index.md")
+file.edit("content/event/casa-2022/index.md")
 
 # new blog post:
 blogdown::new_post(title = "open-access-events", ext = ".Rmd")
+
+blogdown::new_content(path = "software/index.Rmd")
 
 # serve site
 blogdown::serve_site()
