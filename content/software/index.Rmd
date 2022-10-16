@@ -30,13 +30,29 @@ projects: []
 output:
   blogdown::html_page:
     toc: true
+    toc_depth: 2
 ---
+
+# Software I have developed
+
+I have developed a number of tools for reproducible data analysis.
+Most of them support geographic data analysis, modelling and visualisation for more evidence based decision-making, especially in relation to transport planning and policy.
+Click on the links below for details.
+
+
+| [![](https://docs.ropensci.org/stplanr/reference/figures/stplanr.png)](https://docs.ropensci.org/stplanr/)|  [![](https://raw.githubusercontent.com/ropensci/stats19/master/man/figures/logo.png)](https://docs.ropensci.org/stats19/) | [![](https://docs.ropensci.org/osmextract/logo.svg)](https://docs.ropensci.org/osmextract/) |
+|--:|--:|--:|
+
+I have develop and contribute to a number of popular open source projects.
+See my [GitHub profile](https://github.com/robinlovelace/) for details.
+
+# Software I recommend
 
 Scientific methods, and the truths they reveal, depend on transparency, collaboration and falsifiability.
 Translated into the 21^st^ Century and field of data science, this means using software that is open source (and therefore transparent), accessible and community-led (and therefore collaborative), and conducive to reproducible research (and therefore falsifiable).
 
 Reproducible research based on open source software means that data scientists and researchers operating in the public domain gain trust not by relying on arguments of authority^[
-Ever heard someone say "trust me, I'm a data scientist"? Me neither!
+Ever heard someone say "trust me, I'm a data scientist"? If so, you can quickly check their credentials by looking at their history of publishing open and reproduicble scripts, and open source tools.
 ] 
 but by producing code that other people can run to verify their outputs.
 Researchers who are unable to show their workings are less well-trusted, resulting in virtuous feedback loops through communities of practice that encourage sharing and collaboration.
@@ -44,12 +60,10 @@ Researchers who are unable to show their workings are less well-trusted, resulti
 Software is not just a static 'tool of the trade'.
 It is lanuage --- or rather multiple languages --- in which society encodes its digital capabilities, rules, and aspirations.
 Software if vital for humanity in the 21^st^ Century.
-This page provides a brief guide to software that I use and develop.
-I hope you will learn from it and maybe even install a few of the open source tools I recommend.
+This realisation informs the software I use and develop.
+I hope you will take a look at and maybe even install a few of the open source tools I recommend below.
 
-All of the software listed on this page is free and open source.
-
-# Software I use and recommend
+Most of the software projects listed on this page are free and open source.
 
 ## Operating system: Linux
 
@@ -68,7 +82,7 @@ Developed by the multinational company [Canonical](https://en.wikipedia.org/wiki
 
 I also recommend [itsfoss.com's article on Linux distros for beginners](https://itsfoss.com/best-linux-beginners/) if you're getting started in this space.
 
-## Interactive development environment
+## Interactive development environments
 
 ### RStudio
 
@@ -107,7 +121,6 @@ Download the latest version of LogSeq in file format of your choice (I used the 
 ### SyncThing
 
 
-# Software I have developed
 
 
 

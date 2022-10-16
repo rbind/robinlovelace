@@ -30,36 +30,50 @@ projects: []
 output:
   blogdown::html_page:
     toc: true
+    toc_depth: 2
 ---
 
 
 <div id="TOC">
 <ul>
-<li><a href="#software-i-use-and-recommend" id="toc-software-i-use-and-recommend">Software I use and recommend</a>
-<ul>
-<li><a href="#operating-system-linux" id="toc-operating-system-linux">Operating system: Linux</a>
-<ul>
-<li><a href="#ubuntu" id="toc-ubuntu">Ubuntu</a></li>
-</ul></li>
-<li><a href="#interactive-development-environment" id="toc-interactive-development-environment">Interactive development environment</a>
-<ul>
-<li><a href="#rstudio" id="toc-rstudio">RStudio</a></li>
-<li><a href="#vscode" id="toc-vscode">VSCode</a></li>
-</ul></li>
-<li><a href="#appimagelauncher" id="toc-appimagelauncher">AppImageLauncher</a></li>
-<li><a href="#note-taking-and-task-management" id="toc-note-taking-and-task-management">Note taking and task management</a>
-<ul>
-<li><a href="#logseq" id="toc-logseq">LogSeq</a></li>
-</ul></li>
-<li><a href="#file-sharing" id="toc-file-sharing">File sharing</a>
-<ul>
-<li><a href="#syncthing" id="toc-syncthing">SyncThing</a></li>
-</ul></li>
-</ul></li>
 <li><a href="#software-i-have-developed" id="toc-software-i-have-developed">Software I have developed</a></li>
+<li><a href="#software-i-recommend" id="toc-software-i-recommend">Software I recommend</a>
+<ul>
+<li><a href="#operating-system-linux" id="toc-operating-system-linux">Operating system: Linux</a></li>
+<li><a href="#interactive-development-environments" id="toc-interactive-development-environments">Interactive development environments</a></li>
+<li><a href="#appimagelauncher" id="toc-appimagelauncher">AppImageLauncher</a></li>
+<li><a href="#note-taking-and-task-management" id="toc-note-taking-and-task-management">Note taking and task management</a></li>
+<li><a href="#file-sharing" id="toc-file-sharing">File sharing</a></li>
+</ul></li>
 </ul>
 </div>
 
+<div id="software-i-have-developed" class="section level1">
+<h1>Software I have developed</h1>
+<p>I have developed a number of tools for reproducible data analysis.
+Most of them support geographic data analysis, modelling and visualisation for more evidence based decision-making, especially in relation to transport planning and policy.
+Click on the links below for details.</p>
+<table>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="right"><a href="https://docs.ropensci.org/stplanr/"><img src="https://docs.ropensci.org/stplanr/reference/figures/stplanr.png" /></a></th>
+<th align="right"><a href="https://docs.ropensci.org/stats19/"><img src="https://raw.githubusercontent.com/ropensci/stats19/master/man/figures/logo.png" /></a></th>
+<th align="right"><a href="https://docs.ropensci.org/osmextract/"><img src="https://docs.ropensci.org/osmextract/logo.svg" /></a></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<p>I have develop and contribute to a number of popular open source projects.
+See my <a href="https://github.com/robinlovelace/">GitHub profile</a> for details.</p>
+</div>
+<div id="software-i-recommend" class="section level1">
+<h1>Software I recommend</h1>
 <p>Scientific methods, and the truths they reveal, depend on transparency, collaboration and falsifiability.
 Translated into the 21<sup>st</sup> Century and field of data science, this means using software that is open source (and therefore transparent), accessible and community-led (and therefore collaborative), and conducive to reproducible research (and therefore falsifiable).</p>
 <p>Reproducible research based on open source software means that data scientists and researchers operating in the public domain gain trust not by relying on arguments of authority<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>
@@ -68,11 +82,9 @@ Researchers who are unable to show their workings are less well-trusted, resulti
 <p>Software is not just a static ‘tool of the trade’.
 It is lanuage — or rather multiple languages — in which society encodes its digital capabilities, rules, and aspirations.
 Software if vital for humanity in the 21<sup>st</sup> Century.
-This page provides a brief guide to software that I use and develop.
-I hope you will learn from it and maybe even install a few of the open source tools I recommend.</p>
-<p>All of the software listed on this page is free and open source.</p>
-<div id="software-i-use-and-recommend" class="section level1">
-<h1>Software I use and recommend</h1>
+This realisation informs the software I use and develop.
+I hope you will take a look at and maybe even install a few of the open source tools I recommend below.</p>
+<p>Most of the software projects listed on this page are free and open source.</p>
 <div id="operating-system-linux" class="section level2">
 <h2>Operating system: Linux</h2>
 <p>The operating system (OS) is the foundation on which all other programs that can (or cannot) run on your computer build.
@@ -88,8 +100,8 @@ Developed by the multinational company <a href="https://en.wikipedia.org/wiki/Ca
 <p>I also recommend <a href="https://itsfoss.com/best-linux-beginners/">itsfoss.com’s article on Linux distros for beginners</a> if you’re getting started in this space.</p>
 </div>
 </div>
-<div id="interactive-development-environment" class="section level2">
-<h2>Interactive development environment</h2>
+<div id="interactive-development-environments" class="section level2">
+<h2>Interactive development environments</h2>
 <div id="rstudio" class="section level3">
 <h3>RStudio</h3>
 </div>
@@ -129,13 +141,10 @@ Download the latest version of LogSeq in file format of your choice (I used the 
 </div>
 </div>
 </div>
-<div id="software-i-have-developed" class="section level1">
-<h1>Software I have developed</h1>
-</div>
 <div class="footnotes footnotes-end-of-document">
 <hr />
 <ol>
 <li id="fn1"><p>
-Ever heard someone say “trust me, I’m a data scientist”? Me neither!<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+Ever heard someone say “trust me, I’m a data scientist”? If so, you can quickly check their credentials by looking at their history of publishing open and reproduicble scripts, and open source tools.<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
