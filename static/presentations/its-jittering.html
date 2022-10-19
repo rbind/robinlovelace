@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Jittering and routing options for converting origin-destination data into route networks</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Robin Lovelace, University of Leeds +Rosa Félix, Dustin Carlino" />
+    <script src="its-jittering_files/header-attrs-2.16/header-attrs.js"></script>
+    <link href="its-jittering_files/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="its-jittering_files/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Jittering and routing options for converting origin-destination data into route networks
+]
+.subtitle[
+## Towards accurate estimates of movement at the street level
+]
+.author[
+### Robin Lovelace, University of Leeds +<a href="http://www.rosafelix.bike/">Rosa Félix</a>, <a href="https://dabreegster.github.io/">Dustin Carlino</a>
+]
+.date[
+### ITS Leeds 2022-10-19
+]
+
+---
+
+
+
+
+---
+
+# Background
+
+- We need to build dense walking/cycling/wheeling networks
+- But where? 
+
+![](https://user-images.githubusercontent.com/1825120/186720374-e1de706a-5d13-4b7a-851c-c3dfa296a045.gif)
+
+Source: Cycle Routing Uptake and Scenario Estimation (CRUSE) tool
+
+---
+
+# Tools of the trade
+
+&lt;img src="https://docs.ropensci.org/stplanr/reference/figures/stplanr.png" width="30%" /&gt;&lt;img src="https://raw.githubusercontent.com/ropensci/stats19/master/man/figures/logo.png" width="30%" /&gt;&lt;img src="https://github.com/Robinlovelace/geocompr/blob/main/images/geocompr_hex.png?raw=true" width="30%" /&gt;
+
+--
+
+
+![](https://wiki.osgeo.org/w/images/8/8b/Osgeo-logo.png)
+
+???
+
+- Need for more sustainable transport systems
+- Local authorities need data
+- We've developed a number of tools that provide this data
+
+---
+
+### Modelling framework and long-standing limitations
+
+.left-column[
+
+
+Modular
+
+Future proof
+
+Scalable
+
+Vector/
+
+![](https://user-images.githubusercontent.com/1825120/141863981-31a11068-a5f3-4e19-9471-b03dbb36f9a8.png)
+
+Raster/
+
+![](https://geocompr.robinlovelace.net/02-spatial-data_files/figure-html/raster-intro-plot-1.png)
+Source: Morgan and Lovelace ([2020](https://doi.org/10.1177/2399808320942779 )) Implementation: [stplanr](https://docs.ropensci.org/stplanr/index.html)
+
+]
+
+--
+
+.right-column[
+
+![](https://user-images.githubusercontent.com/1825120/142071229-81358e26-5e8d-437e-9ef8-91704a4e690f.png)&lt;!-- --&gt;
+
+Approach: OD -&gt; Desire Line -&gt; Route -&gt; Route Networks
+
+]
+
+---
+
+## What is Jittering?
+
+![](https://user-images.githubusercontent.com/1825120/161987006-e5783db3-e3db-402b-9641-dc4aeb1d01d7.png)
+
+Source:  Lovelace, R., Félix, R., &amp; Carlino, D. (2022, January 13). Jittering: A computationally efficient method for generating realistic route networks from origin-destination data. Transport Findings, in Press https://doi.org/10.31219/osf.io/qux6g 
+
+---
+
+## Current default: centroid-based desire lines (+routes+rnets)
+
+![](https://github.com/Robinlovelace/odjitter/raw/main/figures/od-top-3-zones-metafigure.png)
+
+---
+
+## Jittering in action: minimal reproducible example
+
+![](https://github.com/Robinlovelace/odjitter/raw/main/README_files/figure-gfm/jitters-1.png)
+
+---
+
+### Jittering a larger dataset
+
+Adding value and detail to existing OD data.
+Source: Lovelace, Félix and Carlino ([2022](https://osf.io/qux6g/))
+
+![](https://raw.githubusercontent.com/Robinlovelace/odjitter/main/README_files/figure-gfm/jittered514-1.png)
+
+---
+
+## Resulting route network
+
+![](https://github.com/Robinlovelace/odjitter/raw/main/README_files/figure-gfm/rneted-1.png)
+
+---
+
+### Validating the approach: MKI
+
+Data from Edinburgh. Source: [GISRUK 2022 conference paper](https://zenodo.org/record/6410196).
+
+--
+
+.pull-left[
+
+![](https://github.com/Robinlovelace/odnet/raw/main/README_files/figure-gfm/overview-1.png)
+
+See slides [here](https://www.robinlovelace.net/presentations/gisruk2022-jittering.html#1 )
+
+]
+
+.pull-right[
+
+&lt;blockquote class="twitter-tweet"&gt;&lt;p lang="en" dir="ltr"&gt;Just presented new &amp;#39;jittering&amp;#39; approach to pre-processing origin-destination (OD) data by diversifying simulated O/D locations &lt;a href="https://twitter.com/GISRUK?ref_src=twsrc%5Etfw"&gt;@GISRUK&lt;/a&gt;🎉&lt;br&gt;&lt;br&gt;Great to get these new methods + reproducible implementation in open source software (&lt;a href="https://twitter.com/rustlang?ref_src=twsrc%5Etfw"&gt;@rustlang&lt;/a&gt; + &lt;a href="https://twitter.com/hashtag/RStats?src=hash&amp;amp;ref_src=twsrc%5Etfw"&gt;#RStats&lt;/a&gt; + ...) out there, give them a spin! &lt;a href="https://t.co/vaydCHajm8"&gt;pic.twitter.com/vaydCHajm8&lt;/a&gt;&lt;/p&gt;&amp;mdash; Robin Lovelace (@robinlovelace) &lt;a href="https://twitter.com/robinlovelace/status/1511739257962045440?ref_src=twsrc%5Etfw"&gt;April 6, 2022&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt; 
+
+]
+
+---
+
+### Model experiments: jittering parameters
+
+![](https://github.com/Robinlovelace/odnet/raw/main/README_files/figure-gfm/output1-1.png)
+---
+
+## Results From Edinburgh
+
+![](https://github.com/Robinlovelace/odnet/raw/main/README_files/figure-gfm/rnets-1.png)
+
+---
+
+# Changing jittering *and* routing params
+
+#### The 'jittering only' approach is assumes perfect routing, not true
+
+#### Model/data discrepancies may be more due to routing than jittering/OD parameters
+
+Enter Lisbon!
+
+![](https://github.com/Robinlovelace/foss4g22/raw/main/README_files/figure-gfm/lisbonmap-1.png)
+---
+
+# Network level results
+
+![](https://user-images.githubusercontent.com/1825120/186742985-ca9efb22-4d5d-462b-81cd-6b754afbe19f.png)
+
+---
+
+# Summary of results
+
+![](https://user-images.githubusercontent.com/1825120/186742560-e857704b-d53c-4852-a419-f2fae86fdca3.png)
+
+---
+
+## Using the results: biclar project
+
+- Project funded by Lisbon Metro Region's Department for Transport (population: 2.8m)
+- Need for evidence to support effective investment in cycle plans
+- Current level of cycling regionally: 0.5%
+- Targets: at least 4% by 2025 and 10% of trips by 2030 *with shift coming from cars* 
+- Comparison with UK: ~doubling from 2013 to 2025 in cycling
+  - from "0.8 billion stages in 2013 to 1.6 billion stages in 2025" (CWIS, 2017)
+  
+---
+
+## Biclar: approach
+
+- R package and open source code base building on PCT approach
+- See https://u-shift.github.io/biclar/ 
+
+![](https://user-images.githubusercontent.com/1825120/196645630-5120a5a4-ef85-4f55-a6a3-14bd27b09f24.png)
+
+---
+
+## Existing and simulated network
+
+&lt;img src="https://user-images.githubusercontent.com/1825120/196646753-c3c43db1-e10d-4967-9707-8ed56e56adba.png" width="49%" /&gt;&lt;img src="https://user-images.githubusercontent.com/1825120/196646582-26845aa3-656f-4ec1-9387-0d6bc96f8e81.png" width="49%" /&gt;
+
+---
+
+## Which trips will shift?
+
+![](https://user-images.githubusercontent.com/1825120/196647382-442cbabb-eb69-40aa-91d3-4791b12bbe11.png)
+
+---
+
+#### Next steps
+
+Exploring the parameter space: different origin and destination points + weights, routing 'engines', disaggregation.
+
+.pull-left[
+
+#### Selection of input data: open options
+
+- Estimates of cyclability (hackathon at 15:00 today)
+- Traffic count data
+- Urban Observatory type data (Newcastle, Birmingham, Manchester)
+- Faceboook and Google open mobility data
+- 'OSM2od' - spatial interaction model
+- Modelled data
+  - jittering: spatial disaggregation
+  - temporal disaggregation
+
+]
+
+.pull-right[
+
+#### Non-open data data
+
+- National Travel Survey
+- Mobile Telephone Data
+- Large GPS type data (biobank, Google timeline, Straval)
+
+]
+
+
+---
+
+## Appendix: Reproducible code I: Rust implementation
+
+See reproducible repo + manuscript here: https://github.com/Robinlovelace/odnet
+
+System command line implementation (compile Rust code):
+
+```bash
+cargo install --git https://github.com/dabreegster/odjitter
+
+odjitter jitter --od-csv-path od_iz_ed.csv \
+  --zones-path iz_zones11_ed.geojson \
+  --subpoints-path road_network_ed.geojson \
+  --max-per-od 10 --output-path output_max50.geojson
+```
+
+---
+
+# Reproducible code II: R implementation
+
+(See code in slides.Rmd in robinlovelace/foss4g22 for code to get data)
+
+
+
+
+```r
+remotes::install_github("dabreegster/odjitter", subdir = "r")
+```
+
+
+```r
+od = read_csv("od_iz_ed.csv")
+zones = sf::read_sf("iz_zones11_ed.geojson")
+```
+
+
+```r
+od_jittered = odjitter::jitter(
+  od = od,
+  zones = zones,
+  subpoints = sf::read_sf("road_network_ed.geojson")
+  )
+od_jittered2 = odjitter::jitter(
+  od = od,
+  zones = zones,
+  subpoints = sf::read_sf("road_network_ed.geojson"),
+  disaggregation_key = "all",
+  disaggregation_threshold = 10
+  )
+```
+
+---
+
+### Results of reprex 1
+
+
+```r
+od_sf = od::od_to_sf(
+  od,
+  zones
+)
+nrow(od_sf)
+```
+
+```
+## [1] 10394
+```
+
+```r
+nrow(od_jittered)
+```
+
+```
+## [1] 10394
+```
+
+```r
+nrow(od_jittered2)
+```
+
+```
+## [1] 22432
+```
+
+---
+
+# Plot of unjittered data
+
+
+```r
+library(dplyr)
+plot(od_sf$geometry,
+     lwd = od_sf$all / 500)
+```
+
+![](its-jittering_files/figure-html/unnamed-chunk-10-1.png)&lt;!-- --&gt;
+
+---
+
+### Results of reprex 2
+
+
+```r
+plot(od_jittered$geometry,
+     lwd = od_jittered$all / 500)
+```
+
+![](its-jittering_files/figure-html/unnamed-chunk-11-1.png)&lt;!-- --&gt;
+
+
+---
+
+### Results of reprex 3
+
+
+```r
+plot(od_jittered2$geometry,
+     lwd = od_jittered2$all / 50)
+```
+
+![](its-jittering_files/figure-html/unnamed-chunk-12-1.png)&lt;!-- --&gt;
+
+---
+
+### Alternative validation datasets: OA-WPZ data
+
+There are 17,848,366 OA to WPZ records, 170k OAs, 54k WPZ
+
+For 5km buffer around London, 1.5 million OD pairs with destinations
+
+[![](https://user-images.githubusercontent.com/1825120/152778656-603196b0-26d3-4c49-8940-6c0d3c9e1ce5.png)](https://rpubs.com/RobinLovelace/863109)
+
+---
+
+### Reproducible example
+
+.left-column[
+
+
+
+```r
+u = "https://github.com/ITSLeeds/od/releases/download/v0.3.1/od_intra_top_sf.geojson"
+desire_lines_oa_wpz_1k = sf::read_sf(u)
+oas_in_buffer = sf::read_sf("https://github.com/ITSLeeds/od/releases/download/v0.3.1/oas_in_buffer.geojson")
+wpz_in_buffer = sf::read_sf("https://github.com/ITSLeeds/od/releases/download/v0.3.1/wpz_in_buffer.geojson")
+library(tmap)
+tmap_mode("view")
+```
+
+```
+## tmap mode set to interactive viewing
+```
+
+```r
+m = tm_shape(desire_lines_oa_wpz_1k) +
+  tm_lines() +
+  tm_shape(oas_in_buffer) + tm_dots(col = "darkgreen") +
+  tm_shape(wpz_in_buffer) + tm_dots(col = "darkred")
+```
+
+]
+
+.right-column[
+
+See [here](https://rpubs.com/anon-user/887139) for map
+
+
+
+![](https://user-images.githubusercontent.com/1825120/161992916-2d1dfea6-e783-4b2d-b6b8-61522f38ad8e.png)
+
+]
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
