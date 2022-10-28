@@ -24,6 +24,7 @@ New talk:
 hugo new  --kind event event/qmul-2022
 # or
 cp -Rv content/event/qmul-2022 content/event/casa-2022
+cp -Rv content/event/qmul-2022 content/event/2022-mapathon-leeds
 ```
 
 ```{r, eval=FALSE}
