@@ -33,17 +33,17 @@ output:
     toc_depth: 2
 ---
 
-# Software I have developed
+# Software development
 
-I have developed a number of tools for reproducible data analysis.
-Most of them support geographic data analysis, modelling and visualisation for more evidence based decision-making, especially in relation to transport planning and policy.
-Click on the links below for details.
+I have developed and contributed to many software projects, with a focus on reproducible research, geocomputation, modelling and visualisation.
+All of them support evidence based decision-making, especially in relation to sustainable transport.
 
+The links below provide more details on popular R packages I have developed (Andrea Gilardi now leads the {osmextract} package).
 
-| [![](https://docs.ropensci.org/stplanr/reference/figures/stplanr.png)](https://docs.ropensci.org/stplanr/)|  [![](https://raw.githubusercontent.com/ropensci/stats19/master/man/figures/logo.png)](https://docs.ropensci.org/stats19/) | [![](https://docs.ropensci.org/osmextract/logo.svg)](https://docs.ropensci.org/osmextract/) |
+| [![](https://docs.ropensci.org/stplanr/reference/figures/stplanr.png)](https://docs.ropensci.org/stplanr/)|  [![](https://raw.githubusercontent.com/ropensci/stats19/master/man/figures/logo.png)](https://docs.ropensci.org/stats19/) | [![](https://user-images.githubusercontent.com/1825120/200123605-1349adbe-41a0-4fd0-a23e-99b62b4f75ae.png)](https://docs.ropensci.org/osmextract/) |
 |--:|--:|--:|
 
-I have develop and contribute to a number of popular open source projects.
+I also contribute to a number of popular open source projects.
 See my [GitHub profile](https://github.com/robinlovelace/) for details.
 
 # Recommended software

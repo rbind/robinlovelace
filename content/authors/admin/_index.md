@@ -76,6 +76,8 @@ At Leeds, I'm based primarily at the [Institute for Transport Studies](https://e
 I am author of papers and [books](https://www.robinlovelace.net/publication/#5) on transport planning, energy, geographic data analysis and modelling.
 I lead the Transport Data Science [module](https://github.com/ITSLeeds/TDS), which is available to students taking [Data Science and Data Analytics](https://courses.leeds.ac.uk/i071/data-science-and-analytics-msc) and [Data Science and Urban Analytics](https://courses.leeds.ac.uk/j135/urban-data-science-and-analytics-msc) courses at the University of Leeds.
 
+You can find me on various platforms, including <a rel="me" href="https://fosstodon.org/@robinlovelace">Mastodon</a>, <a rel="me" href="https://scholar.google.com/citations?user=xDJHVCAAAAAJ&hl=en">Google Scholar</a>, and [GitHub](https://github.com/robinlovelace/).
+
 <!--
 I am a big advocate of education and lifelong learning, but also of the power of technology and science to improve the world.
 A good example of this 'planning support systems' that can help invest funds more effectively to meet public policy objectives, e.g. for a zero carbon economy and to improve health and wellbeing through physical activity.
