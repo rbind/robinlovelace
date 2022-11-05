@@ -1,5 +1,5 @@
 ---
-title: "Setting-up Mastodon: an appropriate social media platform for the 2020s"
+title: "Setting-up Mastodon: an appropriate social media platform for the 2020s 🐘"
 author: Robin Lovelace
 date: '2022-11-05'
 slug: mastodon
@@ -17,4 +17,18 @@ image:
 projects: []
 ---
 
+This is brief post providing tips on setting-up a Mastodon account.
+With the purchase of Twitter by Elon Musk, a prominent car salesperson with questionable judgement, it seems that there Twitter has entered a period of rapid change, to put it mildly.
+
+According to one user, 
+
+>  A collapse in ad revenues has been followed with an immediate 50% reduction in employee headcount.
+
+> [Brace, Brace](https://nitter.it/ShannonRSingh/status/1588591603622772736)!
+
+<iframe src="https://fosstodon.org/@rochelimit/109290440817278785/embed" class="mastodon-embed" style="max-width: 100%; border: 0" width="400" allowfullscreen="allowfullscreen"></iframe><script src="https://fosstodon.org/embed.js" async="async"></script>
+
+Even the founder of Twitter, Jack Dorsey, signalled his regret about the direction of travel of the platform that he pioneered:
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Folks at Twitter past and present are strong and resilient. They will always find a way no matter how difficult the moment. I realize many are angry with me. I own the responsibility for why everyone is in this situation: I grew the company size too quickly. I apologize for that.</p>&mdash; jack (@jack) <a href="https://twitter.com/jack/status/1588913276980633600?ref_src=twsrc%5Etfw">November 5, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
 
