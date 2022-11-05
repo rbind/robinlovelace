@@ -12,13 +12,14 @@ New talk:
 hugo new  --kind event event/qmul-2022
 # or
 cp -Rv content/event/qmul-2022 content/event/casa-2022
+cp -Rv content/event/qmul-2022 content/event/2022-mapathon-leeds
 ```
 
 ``` r
 file.edit("content/event/casa-2022/index.md")
 
 # new blog post:
-blogdown::new_post(title = "open-access-events", ext = ".Rmd")
+blogdown::new_post(title = "mastodon", ext = ".Rmd")
 
 blogdown::new_content(path = "software/index.Rmd")
 
