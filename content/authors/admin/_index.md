@@ -52,6 +52,12 @@ social:
 - icon: github
   icon_pack: fab
   link: https://github.com/robinlovelace
+- icon: youtube
+  icon_pack: fab
+  link: https://www.youtube.com/c/RobinLovelace
+- icon: mastodon
+  icon_pack: fab
+  link: https://fosstodon.org/web/@robinlovelace
 # - icon: linkedin
 #   icon_pack: fab
 #   link: https://www.linkedin.com/
