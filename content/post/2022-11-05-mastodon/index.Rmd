@@ -30,7 +30,7 @@ It covers:
 
 # Introduction: why Mastodon
 
-Twitter has been purchased by Elon Musk, a prominent technologist and car salesperson with questionable judgement.
+Twitter has been purchased by Elon Musk, a prominent [technologist](https://www.youtube.com/watch?v=DxREm3s1scA) and [car salesperson](https://www.marketwatch.com/story/elon-musk-is-just-another-car-salesman-2019-04-22) with [questionable judgement](https://www.npr.org/2022/10/31/1132906782/elon-musk-twitter-pelosi-conspiracy) when it comes to social media.
 This, in combination with [evidence](https://www.theguardian.com/technology/2022/oct/28/twitter-takeover-fears-raised-over-disinformation-and-hate-speech) of rapid spread of disinformation and hatred on the platform, has triggered a period of rapid change for Twitter, to put it mildly.
 
 According to one user on the Twitter alternative Mastodon (the topic of this post):
@@ -56,7 +56,11 @@ Regarding the second point, the changes outlined above have the potential to gen
 So where to go?
 
 There are lots of alternatives but Mastodon is mature, relatively well-known and similar to Twitter in ways.
-Furthermore, with #mastodon trending on Twitter itself, it seems there is a group dynamic element to the mass uptake of Mastodon.
+It has more than 30k stars on GitHub so is much loved.
+
+<img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/mastodon/mastodon?style=social">
+
+Furthermore, [#Mastodon](https://twitter.com/search?q=%23Mastodon&src=typeahead_click) is trending on Twitter itself, signalling a group dynamic element.
 Many of the people I rate and follow on Twitter are already on Mastodon, including [@underdarkGIS](https://fosstodon.org/@underdarkGIS), [@djnavarro](https://fosstodon.org/@djnavarro) and [@UrbanDemog](https://toot.community/@UrbanDemog).
 
 As outlined in a [post](https://hub.fosstodon.org/elon-twitter-post-mortem/) by the people who run the fosstodon instance, sign-ups to the server are booming.
