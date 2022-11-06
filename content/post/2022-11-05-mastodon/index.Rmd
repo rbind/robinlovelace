@@ -87,7 +87,7 @@ Furthermore, [#Mastodon](https://twitter.com/search?q=%23Mastodon&src=typeahead_
 Many of the people I rate and follow on Twitter are already on Mastodon, including [\@underdarkGIS](https://fosstodon.org/@underdarkGIS), [\@djnavarro](https://fosstodon.org/@djnavarro) and [\@UrbanDemog](https://toot.community/@UrbanDemog).
 
 Fun theory on this: Elon Musk is genuinely committed to creating a more open world.
-But his approach to achieving it is not to "\'Open Source\' Twitter\'s Algorithms" as stated in a [Bloomberg article](https://www.bloomberg.com/news/articles/2022-04-28/why-musk-wants-to-open-source-twitter-s-algorithms-quicktake?leadSource=uverify%20wall) earlier this year, but to deliberately sabotage proprietary platforms so that open source alternatives flourish.
+But his approach to achieving it is not to "'Open Source' Twitter's Algorithms" as stated in a [Bloomberg article](https://www.bloomberg.com/news/articles/2022-04-28/why-musk-wants-to-open-source-twitter-s-algorithms-quicktake?leadSource=uverify%20wall) earlier this year, but to deliberately sabotage proprietary platforms so that open source alternatives flourish.
 That may seem far fetched but if it was Elon's true aim he has been successful: Mastodon already has a strong developer community (Mastodon's codebase has almost [700 contributors from around the world](https://github.com/mastodon/mastodon/graphs/contributors)) and could represent a short cut to ensuring that the dominant platforms people use are open source.
 
 As outlined in a [post](https://hub.fosstodon.org/elon-twitter-post-mortem/) by the people who run the fosstodon instance, sign-ups to the server are booming.
@@ -232,7 +232,9 @@ I'm glad to have received the message below!
 ![](https://user-images.githubusercontent.com/1825120/200148636-9db04d94-3641-4914-961e-186e0089629c.png)
 
 Like most people I am new to this space and am learning.
-So any tips/corrections that people have, like the reply to my first toot below, are welcome on Mastodon, Twitter, or in the comments below.
+So any tips/corrections that people have, like the reply to my first toot below from [`@rudolf@fosstodon.org`](https://fosstodon.org/web/@rudolf/109293436746688975), are welcome on [Mastodon](https://fosstodon.org/web/@robinlovelace/109297069622120822), [Twitter](https://twitter.com/robinlovelace/status/1589243690224332801), comments below or anywhere.
+
+\<iframe src="[https://fosstodon.org/\@rudolf/109293436746688975/embed"](https://fosstodon.org/@rudolf/109293436746688975/embed") class="mastodon-embed" style="max-width: 100%; border: 0" width="400" allowfullscreen="allowfullscreen"\>\</iframe\>\<script src="[https://fosstodon.org/embed.js"](https://fosstodon.org/embed.js") async="async"\>\</script\>
 
 As all social media platform pioneers know, the most valuable thing you can contribute is good content, however.
 I plan to post high quality content online, increasing the signal-to-noise ratio in online comms, countering disinformation, and building strong communities in the process.
