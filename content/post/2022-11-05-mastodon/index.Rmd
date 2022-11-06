@@ -25,7 +25,7 @@ It covers:
 - Why Mastodon?
 - Which Mastodon server to choose?
 - Getting set-up
-- Crossposting to Twitter with [moa.party](#moa)
+- Crossposting to Twitter with moa.party
 - Thoughts on appropriate social media platforms for the 2020s
 
 # Introduction: why Mastodon
@@ -84,7 +84,7 @@ Fosstodon.org is a reasonable choice for people interested in free and open sour
 The sign-up process is fairly simple: choose a server from   and click to sign up!
 There are detailed instructions in many articles online, one of the best I have found is published by [PC Mag](https://www.pcmag.com/how-to/how-to-get-started-on-mastodon-and-leave-twitter-behind).
 
-# Crossposting with moa.party (#moa)
+# Crossposting with moa.party
 
 [Crossposting](https://en.wikipedia.org/wiki/Crossposting) is the process of automatically posting from one platform or account to one or more other platforms or accounts.
 Although I like what I've seen of Mastodon so far, no online system can be guaranteed to see 100% uptime.
