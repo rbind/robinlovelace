@@ -15,19 +15,36 @@ image:
   focal_point: ''
   preview_only: no
 projects: []
+toc: true
 ---
 
 
+<div id="TOC">
+
+</div>
 
 <p>This is brief post providing tips on setting-up a Mastodon account.
-With the purchase of Twitter by Elon Musk, a prominent car salesperson with questionable judgement, it seems that there Twitter has entered a period of rapid change, to put it mildly.</p>
-<p>According to one user,</p>
+It’s mostly focussed on the tech but it deserves a brief intro on the wider context motivating this blog post.
+It covers:</p>
+<ul>
+<li>Why Mastodon?</li>
+<li>Which Mastodon server to choose?</li>
+<li>Getting set-up</li>
+<li>Crossposting to Twitter with <a href="#moa">moa.party</a></li>
+<li>Thoughts on appropriate social media platforms for the 2020s</li>
+</ul>
+<div id="introduction-why-mastodon" class="section level1">
+<h1>Introduction: why Mastodon</h1>
+<p>Twitter has been purchased by Elon Musk, a prominent technologist and car salesperson with questionable judgement.
+This, in combination with <a href="https://www.theguardian.com/technology/2022/oct/28/twitter-takeover-fears-raised-over-disinformation-and-hate-speech">evidence</a> of rapid spread of disinformation and hatred on the platform, has triggered a period of rapid change for Twitter, to put it mildly.</p>
+<p>According to one user on the Twitter alternative Mastodon (the topic of this post):</p>
 <blockquote>
 <p>A collapse in ad revenues has been followed with an immediate 50% reduction in employee headcount.</p>
 </blockquote>
 <blockquote>
 <p><a href="https://nitter.it/ShannonRSingh/status/1588591603622772736">Brace, Brace</a>!</p>
 </blockquote>
+<p>Incidentally, for a taster, this is how the post looks on the platform (surprisingly similar to Twitter):</p>
 <iframe src="https://fosstodon.org/@rochelimit/109290440817278785/embed" class="mastodon-embed" style="max-width: 100%; border: 0" width="400" allowfullscreen="allowfullscreen">
 </iframe>
 <script src="https://fosstodon.org/embed.js" async="async"></script>
@@ -39,3 +56,93 @@ Folks at Twitter past and present are strong and resilient. They will always fin
 — jack (<span class="citation">@jack</span>) <a href="https://twitter.com/jack/status/1588913276980633600?ref_src=twsrc%5Etfw">November 5, 2022</a>
 </blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p>These statements and associated events create two broad reasons to explore alternatives for people like me who like to share my views and engage in open and hopefully civil communications:</p>
+<ol style="list-style-type: decimal">
+<li>Many people do not want to be part of a platform that is becoming increasingly toxic.</li>
+<li>If the rate of change accelerates, some have suggested that the future of Twitter itself is at risk and it may be prudent to have some redundancy in your social media plans if so.</li>
+</ol>
+<p>Regarding the second point, the changes outlined above have the potential to generate knock-on feedback loops, as highlighted by people on <a href="https://twitter.com/search?q=%23twitterdown">Twitter</a> and elsewhere.
+So where to go?</p>
+<p>There are lots of alternatives but Mastodon is mature, relatively well-known and similar to Twitter in ways.
+Furthermore, with #mastodon trending on Twitter itself, it seems there is a group dynamic element to the mass uptake of Mastodon.
+Many of the people I rate and follow on Twitter are already on Mastodon, including <a href="https://fosstodon.org/@underdarkGIS"><span class="citation">@underdarkGIS</span></a>, <a href="https://fosstodon.org/@djnavarro"><span class="citation">@djnavarro</span></a> and <a href="https://toot.community/@UrbanDemog"><span class="citation">@UrbanDemog</span></a>.</p>
+<p>As outlined in a <a href="https://hub.fosstodon.org/elon-twitter-post-mortem/">post</a> by the people who run the fosstodon instance, sign-ups to the server are booming.</p>
+<p><img src="https://hub.fosstodon.org/assets/images/fosstodon-user-stats.webp" /></p>
+<p>So, assuming you want to join, let’s take a dive in!</p>
+</div>
+<div id="which-mastodon-server-to-join" class="section level1">
+<h1>Which Mastodon server to join?</h1>
+<p>Short answer: it’s up to you.
+Fosstodon.org seems like a good option to me.
+The choice of Mastodon server is covered in a blog post by Danielle Navarro, who points out advantages of the more decentralised model compared with Twitter’s centralised model:</p>
+<blockquote>
+<p>First off, mastodon is not a single application: it’s a distributed network of servers that all talk to each other using a shared protocol. If two servers talk to each other they are said to be “federated” with one another, and the network as a whole is referred to as the “fediverse”.</p>
+</blockquote>
+<blockquote>
+<p>There are many different servers out there that are independently running mastodon: these are called mastodon instances. You can sign up for an account at one or more of these servers. The most popular instance is mastodon.social, but for reasons I’ll talk about in a moment this might not be the best choice for you!</p>
+</blockquote>
+<p>That <a href="https://blog.djnavarro.net/posts/2022-11-03_what-i-know-about-mastodon/">post</a> goes on to highlight a key benefit of the approach: it does not matter that much which your primary account is because you can still interact with federated instances.
+You can choose from a range of servers, some of which are described later in the <a href="https://blog.djnavarro.net/posts/2022-11-03_what-i-know-about-mastodon/#which-server-should-i-sign-up-on,">post</a> based on your interests.
+Fosstodon.org is a reasonable choice for people interested in free and open source software and data science but there are many other good options.</p>
+</div>
+<div id="getting-set-up" class="section level1">
+<h1>Getting set-up</h1>
+<p>The sign-up process is fairly simple: choose a server from and click to sign up!
+There are detailed instructions in many articles online, one of the best I have found is published by <a href="https://www.pcmag.com/how-to/how-to-get-started-on-mastodon-and-leave-twitter-behind">PC Mag</a>.</p>
+</div>
+<div id="crossposting-with-moa.party-moa" class="section level1">
+<h1>Crossposting with moa.party (#moa)</h1>
+<p><a href="https://en.wikipedia.org/wiki/Crossposting">Crossposting</a> is the process of automatically posting from one platform or account to one or more other platforms or accounts.
+Although I like what I’ve seen of Mastodon so far, no online system can be guaranteed to see 100% uptime.
+Indeed, the great people running fosstodon.org <a href="https://hub.fosstodon.org/elon-twitter-post-mortem/">outlined</a> issues that they have faced already:</p>
+<blockquote>
+<p>This [surge of interest in alternatives to Twitter] effectively resulted in a sustained DDoS that lasted for around 36 hours. As you can imagine, that was a lot of fun for myself and the team.</p>
+</blockquote>
+<p>As shown in the screenshot below, I even experienced some temporary downtime shortly after joining (and getting lots of boosts):</p>
+<p><img src="https://user-images.githubusercontent.com/1825120/200144334-77132202-1c71-40ce-9a56-f2f1fb869a56.png" /></p>
+<p>In this context, redundancy is good. Furthermore, while I may have the capacity to set-up a new social media account, I cannot guarantee that others will.
+So, unlike the author of the PC Mag article on migrating, I plan to keep my Twitter account alive.
+If you do, crossposting can be good for various reasons, in particular for accessibility: making work widely available to the public is one way to maximise the chances of your work having positive impact beyond your immediate sphere of influence.</p>
+<p>So how to crosspost? Simple answer: enter <a href="https://moa.party/">moa.party</a>.</p>
+<p>As shown in the screenshot below, you can choose the options that are appropriate for you.</p>
+<p><img src="https://user-images.githubusercontent.com/1825120/200141939-c6146a3c-2f2c-4932-80a7-8f6d1e0fe689.png" /></p>
+<p>After that it simply worked!
+I cannot guarantee that it will always work and I don’t know how scalable the service is.
+But for now I’m stoked that not only have I set-up a new social media account — on a platform that is based on open source software and community values — but also have a way to get my work out to as many people as possible.</p>
+<p>Even if Twitter does become the MySpace of the 2020s, it is unlikely to happen over night.
+And the platform has many great people, despite some of the recent changes outlined above.
+Let’s see what happens.
+If nothing else, having alternatives like Mastodon allows you to choose to interact in the virtual spaces where you feel most at home.</p>
+</div>
+<div id="appropriate-social-media-platforms-for-the-2020s" class="section level1">
+<h1>Appropriate social media platforms for the 2020s</h1>
+<p>That brings me to my final thoughts on the topic, which informed the title of this article.
+What are the desirable attributes of social media platforms in the 2020s?
+A bit like with software, people choosing social media platforms today are lucky simply because they can choose.
+When MySpace, Facebook and other sites first launched they had ‘first mover’ advantage.
+There are now many options.
+I really liked Twitter because, unlike Facebook or LinkedIn, it had (and still has) a publicly-accessible-by-default policy.
+That encourages sharing, transparency and collaboration across borders and cultures.</p>
+<p>Unlike Twitter, however, social media platforms should be free and open source.
+This discourages (but may not completely prevent) abuses by the owners of the platforms for financial incentives.
+The excesses of large for-profit social media platforms are well documented in documentaries like <a href="https://en.wikipedia.org/wiki/The_Social_Dilemma">The Social Dilemma</a>.
+The fact that emerging social media platforms such as Mastodon are open source is not just important for transparency and data security: it encourages innovation and diversity.
+When the underlying technology is open, people are encouraged to set-up their own instances, spreading the compute, moderation, and content creation work widely.
+If you don’t like a particular space in this ‘fediverse’ world, you can simply move.
+And migrating from one Mastodon server to another <em>is easy</em>, as I have found, following in the <a href="https://twitter.com/underdarkGIS/status/1588645497988091904">footsteps of Anita Graser</a>: I set-up a Mastodon instance at <a href="https://mastodon.social/@robinlovelace" class="uri">https://mastodon.social/@robinlovelace</a> years ago out of interest.
+That now redirects to my current Mastodon home <a href="https://fosstodon.org/@robinlovelace"><span class="citation">@robinlovelace</span><span class="citation">@fosstodon.org</span></a>.</p>
+<p>In summary, there are good reasons for exploring alternatives to centralised for-profit social media platforms.
+Mastodon is relatively easy to set-up and seems to enable 2-way crossposting with Twitter.
+And social media platforms that are appropriate for the 2020s are:</p>
+<ul>
+<li>✅ Open source</li>
+<li>✅ Easy to migrate to and from different servers without lock-in</li>
+<li>✅ Fun to be a part of</li>
+</ul>
+<p>Mastodon ticks all those boxes and I recommend checking it out.
+I also recommend donating to the free and open social media platform of your choice.
+I have just set-up a recurring donation to fosstodon.org: if that allows it to grow, while providing good content to its users and hopefully minimising downtime, it’s money well spent for me.</p>
+<p>As all social media platform pioneers know, the most valuable thing you can contribute is good content, however.
+I plan to post high quality content online, increasing the signal-to-noise ratio in online comms, countering disinformation, and building strong communities in the process.
+I hope you will too!</p>
+</div>
