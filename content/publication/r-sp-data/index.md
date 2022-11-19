@@ -1,37 +1,12 @@
 ---
-# Documentation: https://wowchemy.com/docs/managing-content/
-
-title: 'spData: Datasets for Spatial Analysis'
-subtitle: ''
-summary: ''
-authors:
-- Roger Bivand
-- Jakub Nowosad
-- Robin Lovelace
-tags: []
-categories: []
-date: '2018-01-01'
-lastmod: 2020-12-30T16:27:37Z
+title: "spData: Datasets for Spatial Analysis"
+date: 2018-01-01
+publishDate: 2022-11-19T16:03:31.395604Z
+authors: ["Roger Bivand", "Jakub Nowosad", "Robin Lovelace"]
+publication_types: ["0"]
+abstract: ""
 featured: false
-draft: false
-
-# Featured image
-# To use, add an image named `featured.jpg/png` to your page's folder.
-# Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
-image:
-  caption: ''
-  focal_point: ''
-  preview_only: false
-
-# Projects (optional).
-#   Associate this post with one or more of your projects.
-#   Simply enter your project's folder or file name without extension.
-#   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
-#   Otherwise, set `projects = []`.
-projects: []
-publishDate: '2020-12-30T16:27:37.736213Z'
-publication_types:
-- '0'
-abstract: ''
-publication: ''
+publication: ""
+url_pdf: "https://github.com/Nowosad/spData"
 ---
+

@@ -1,35 +1,12 @@
 ---
-# Documentation: https://wowchemy.com/docs/managing-content/
-
-title: Fear
-subtitle: ''
-summary: ''
-authors:
-- Robin Lovelace
-tags: []
-categories: []
-date: '2010-11-01'
-lastmod: 2020-12-30T16:27:33Z
+title: "Fear"
+date: 2010-11-01
+publishDate: 2022-11-19T16:03:31.384859Z
+authors: ["Robin Lovelace"]
+publication_types: ["2"]
+abstract: ""
 featured: false
-draft: false
-
-# Featured image
-# To use, add an image named `featured.jpg/png` to your page's folder.
-# Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
-image:
-  caption: ''
-  focal_point: ''
-  preview_only: false
-
-# Projects (optional).
-#   Associate this post with one or more of your projects.
-#   Simply enter your project's folder or file name without extension.
-#   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
-#   Otherwise, set `projects = []`.
-projects: []
-publishDate: '2020-12-30T16:27:33.735803Z'
-publication_types:
-- '2'
-abstract: Money, staffies, and the apocalypse
-publication: '*Now Then*'
+publication: "*Now Then*"
+url_pdf: "http://nowthenmagazine.com/issue-33/fear/ http://ubuntuone.com/p/1FBX/"
 ---
+

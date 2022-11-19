@@ -1,36 +1,12 @@
 ---
-# Documentation: https://wowchemy.com/docs/managing-content/
-
-title: Spatial Data Visualisation with R
-subtitle: ''
-summary: ''
-authors:
-- James Cheshire
-- Robin Lovelace
-tags: []
-categories: []
-date: '2015-01-01'
-lastmod: 2020-12-30T16:27:31Z
+title: "Spatial Data Visualisation with R"
+date: 2015-01-01
+publishDate: 2022-11-19T16:03:31.373547Z
+authors: ["James Cheshire", "Robin Lovelace"]
+publication_types: ["6"]
+abstract: ""
 featured: false
-draft: false
-
-# Featured image
-# To use, add an image named `featured.jpg/png` to your page's folder.
-# Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
-image:
-  caption: ''
-  focal_point: ''
-  preview_only: false
-
-# Projects (optional).
-#   Associate this post with one or more of your projects.
-#   Simply enter your project's folder or file name without extension.
-#   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
-#   Otherwise, set `projects = []`.
-projects: []
-publishDate: '2020-12-30T16:27:31.651800Z'
-publication_types:
-- '6'
-abstract: ''
-publication: '*Geocomputation*'
+publication: "*Geocomputation*"
+url_pdf: "https://github.com/geocomPP/sdv"
 ---
+
