@@ -83,7 +83,7 @@ Also, UseRs are excellent communicators, as can be seen from a quick glance at t
 
 ```{r, echo=FALSE}
 blogdown::shortcode("tweet", "1149790615963615232")
-blogdown::shortcode("tweet", "1149680375817494529")
+# blogdown::shortcode("tweet", "1149680375817494529")
 blogdown::shortcode("tweet", "1149651592884285441")
 ```
 
