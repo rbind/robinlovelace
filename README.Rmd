@@ -31,7 +31,7 @@ cp -Rv content/event/qmul-2022 content/event/2022-mapathon-leeds
 file.edit("content/event/modeshift-2022/index.md")
 
 # new blog post:
-blogdown::new_post(title = "mastodon", ext = ".Rmd")
+blogdown::new_post(title = "2022-reflections", ext = ".Rmd")
 
 blogdown::new_content(path = "software/index.Rmd")
 
