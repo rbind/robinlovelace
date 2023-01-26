@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Open source and participatory transportation planning</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Robin Lovelace, University of Leeds" />
+    <meta name="date" content="2023-01-26" />
+    <script src="deri-2023_files/header-attrs-2.18/header-attrs.js"></script>
+    <link href="deri-2023_files/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="deri-2023_files/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Open source and participatory transportation planning
+]
+.subtitle[
+## DERI Seminar, London, Zoom
+]
+.author[
+### Robin Lovelace, University of Leeds
+]
+.date[
+### 2023-01-26
+]
+
+---
+
+
+
+
+## Outline plan
+
+
+#### 1 Introduction to open tools for transport planning
+
+- https://www.pct.bike/
+- https://www.cyipt.bike/rapid/
+- https://github.com/ITSLeeds/
+
+--
+
+#### 2 Case study: A/B Street (Dustin)
+
+--
+
+---
+
+## 1 Introduction to me and my research
+
+![](https://user-images.githubusercontent.com/1825120/142075245-3dee4b6e-e4d6-424d-b4aa-a72458e88fd6.png)
+
+Further info: https://www.robinlovelace.net/
+
+???
+
+We have 5 research groups
+
+Working with TASM
+
+Links with WYCA
+
+Academic input
+
+Sarah Sharples
+
+---
+
+# Data can make a difference
+
+![](https://github.com/npct/pct-team/blob/master/figures/front-page-leeds-pct-demo.png?raw=true)
+
+???
+
+Where I am now: PCT used by many in government
+
+---
+
+.left-column[
+
+### Too much data?
+
+A nice problem to have?
+
+Data historically a limiting factor
+
+New approaches needed to tackle 'big noise'
+
+Boyce, D.E., Williams, H.C.W.L., 2015. Forecasting Urban Travel: Past, Present and Future.
+
+]
+
+--
+
+.right-column[
+
+&lt;!-- ![](https://user-images.githubusercontent.com/1825120/167034112-b00e091a-9e2a-4ff3-9e4f-4e71e7fe18f6.png) --&gt;
+![](https://user-images.githubusercontent.com/1825120/161992916-2d1dfea6-e783-4b2d-b6b8-61522f38ad8e.png)
+
+Lovelace, Robin, Mark Birkin, Philip Cross, and Martin Clarke. 2016. ‘From Big Noise to Big Data' https://doi.org/10.1111/gean.12081.
+]
+
+???
+
+- For most of the history of transport planning data scarcity has been a major concern
+- Now we have an abundance of datasets, many of them incompatible
+- Concrete example: OD to WPZ data in central London (could ask if anyone knows, it's a mess hehe)
+
+---
+
+#### Problems worthy of your time
+
+--
+
+
+
+.left-column[
+
+# Ideas
+
+Hackathons
+
+Active travel
+
+Road safety policy
+
+Post COVID recovery
+
+Levelling up metrics
+
+Nature recovery networks
+
+Citizen science and data literacy
+
+]
+
+.right-column[
+
+![](https://saferactive.github.io/trafficalmr/articles/covid.png)
+
+![](https://a-b-street.github.io/docs/project/history/retrospective/edit_roads.gif)
+
+]
+
+---
+
+# Existing tools: The Propensity to Cycle Tool
+
+- Early prototype of the tool developed at Open Data Institute Leeds hackathon, 2015
+- National deployment of the Propensity to Cycle Tool 2 years later ([PCT.bike](http://www.pct.bike/)) (Lovelace et al. 2017)
+
+![](https://raw.githubusercontent.com/npct/pct-team/master/figures/early.png)&lt;!-- --&gt;
+
+---
+
+## Key aspects of the PCT
+
+- Based on open source code
+- Based on open data
+- Results published as open data
+- Publicly available web application encourages participation and evidence-based debate
+
+Open data and accessible results lead to participation. See https://twitter.com/search?q=cyipt.bike%2Frapid 
+
+![](https://user-images.githubusercontent.com/1825120/124230675-3d062900-db07-11eb-831e-f7f42e19aefc.png)
+
+---
+
+## How it works
+
+![](https://user-images.githubusercontent.com/1825120/123762809-0e940e00-d8bb-11eb-8dab-0e881299bbef.png)
+
+---
+
+## Making evidence meaningful and actionable
+
+Source: https://www.pct.bike/
+
+
+![](https://user-images.githubusercontent.com/1825120/123867504-5a2fd180-d926-11eb-9b7a-1988d4b6c830.png)
+
+---
+
+.left-column[
+
+### The future of transport tools
+
+Modular
+
+Future proof
+
+Scalable
+
+Vector/
+
+![](https://user-images.githubusercontent.com/1825120/141863981-31a11068-a5f3-4e19-9471-b03dbb36f9a8.png)
+
+Raster/
+
+![](https://geocompr.robinlovelace.net/02-spatial-data_files/figure-html/raster-intro-plot-1.png)
+Source: Morgan and Lovelace ([2020](https://doi.org/10.1177/2399808320942779 )) Implementation: [stplanr](https://docs.ropensci.org/stplanr/index.html)
+
+]
+
+--
+
+.right-column[
+
+![](https://user-images.githubusercontent.com/1825120/142071229-81358e26-5e8d-437e-9ef8-91704a4e690f.png)&lt;!-- --&gt;
+
+Approach: OD -&gt; Desire Line -&gt; Route -&gt; Route Networks
+
+]
+
+???
+
+So what's the overall approach here?
+
+---
+class: center, middle
+
+# Thanks!
+
+--
+
+## References
+
+--
+
+Lovelace, R., Goodman, A., Aldred, R., Berkoff, N., Abbas, A., Woodcock, J., 2017. The Propensity to Cycle Tool: An open source online system for sustainable transport planning. Journal of Transport and Land Use 10. https://doi.org/10.5198/jtlu.2016.862
+
+
+--
+
+Morgan, M., Lovelace, R., 2020. Travel flow aggregation: nationally scalable methods for interactive and online visualisation of transport behaviour at the road network level. Environment &amp; Planning B: Planning &amp; Design. https://doi.org/10.1177/2399808320942779
+
+--
+
+Lovelace, R., Tennekes, M., Carlino, D., 2021. ClockBoard: a zoning system for urban analysis. https://doi.org/10.31219/osf.io/vncgw
+
+--
+
+Lovelace, Robin, Rosa Félix, and Dustin Carlino. “Jittering: A Computationally Efficient Method for Generating Realistic Route Networks from Origin-Destination Data.” OSF Preprints, January 13, 2022. https://doi.org/10.31219/osf.io/qux6g.
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
