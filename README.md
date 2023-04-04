@@ -9,10 +9,8 @@ use it here.
 New talk:
 
 ``` bash
-hugo new  --kind event event/qmul-2022
-# or
-cp -Rv content/event/casa-2022 content/event/modeshift-2022
-cp -Rv content/event/qmul-2022 content/event/2022-mapathon-leeds
+hugo new  --kind event event/nhs-r-2023
+cp -Rv content/event/qmul-2022 content/event/nhs-r-2023
 ```
 
 ``` r
