@@ -370,6 +370,7 @@ Choosing the set-up that works for you, rather than just following others, is hi
 So I encourage you to NOT follow all these instructions verbatim.
 Do your own research.
 Try things out, uninstalling things that don't work for you, and keeping things that do.
+I outline some of the thinking around software choice [here](https://www.robinlovelace.net/software/#recommended-software) and plan to update that after the dust has settled around my updated set-up documented in this blog post and associated [repo.](https://github.com/Robinlovelace/install-geocomp-ubuntu)
 
 Ultimately, technology is about increasing what you can do.
 So the key thing is what you *do* with the technology.
