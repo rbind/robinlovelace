@@ -379,6 +379,7 @@ Chances are high that at least some of these tools, not covered here, will be of
 
 Another thing about open source communities is their emphasis on sharing and learning, which is what inspired me to document the steps I took and share them with the world.
 Feel free fork my repo, tell me about [issues]https://github.com/Robinlovelace/install-geocomp-ubuntu/issues and suggest changes via Pull Requests or in the comments below.
+
 One thing that I'm not sure of: how best to get a good Python environment up-and-running?
 For the [Geocomputation with Python](https://py.geocompx.org/) book project I have found that [micromamba](https://mamba.readthedocs.io/en/latest/user_guide/micromamba.html) works great, but that's in Docker and I'm not sure of the best way to set-up my default Python instance on Ubuntu.
 Any suggestions welcome.
