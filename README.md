@@ -9,12 +9,13 @@ use it here.
 New talk:
 
 ``` bash
-hugo new  --kind event event/nhs-r-2023
-cp -Rv content/event/qmul-2022 content/event/nhs-r-2023
+hugo new  --kind event event/ogh23
+cp -Rv content/event/qmul-2022 content/event/ogh23
 ```
 
 ``` r
 file.edit("content/event/modeshift-2022/index.md")
+blogdown::install_hugo()
 
 # new blog post:
 blogdown::new_post(title = "2022-reflections", ext = ".Rmd")
