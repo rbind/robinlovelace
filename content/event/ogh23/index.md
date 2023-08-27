@@ -21,7 +21,7 @@ date_end: 2023-09-01T17:00:00+02:00
 all_day: false
 
 # Schedule page publish date (NOT event date).
-# publishDate: 2022-05-21T07:43:56+01:00
+publishDate: 2022-05-21T07:43:56+01:00
 
 authors: []
 tags: []
