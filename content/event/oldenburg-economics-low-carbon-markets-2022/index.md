@@ -20,6 +20,9 @@ date: 2023-09-04T09:00:00+01:00
 date_end: 2023-09-05T17:00:00+01:00
 all_day: true
 
+# Schedule page publish date (NOT event date).
+publishDate: 2022-05-21T07:43:56+01:00
+
 authors: []
 tags: []
 
