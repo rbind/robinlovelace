@@ -13,7 +13,7 @@ main:
   - name: Software
     url: 'software'
     weight: 30
-  - name: Talks
+  - name: "Events"
     url: '#talks'
     weight: 40
   - name: Publications
