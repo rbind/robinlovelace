@@ -66,5 +66,5 @@ slides: ""
 projects: []
 ---
 
-The Economics of Low-Carbon Markets workshop will take place 4-5 September in Oldenburg (Germany), marking 10 years since the event was first held.
-I will be presenting at the "Policy Session" on open compuational tools such as the Propensity to Cycle Tool that have informed policy.
+The Economics of Low-Carbon Markets workshop, 4-5 September in Oldenburg (Germany), marks 10 years since the event was first held.
+The presentation is part of "Policy Session" on open compuational tools such as the Propensity to Cycle Tool that have informed policy.
