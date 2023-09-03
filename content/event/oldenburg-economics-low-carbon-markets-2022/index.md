@@ -68,3 +68,5 @@ projects: []
 
 The Economics of Low-Carbon Markets workshop, 4-5 September in Oldenburg (Germany), marks 10 years since the event was first held.
 The presentation is part of "Policy Session" on open compuational tools such as the Propensity to Cycle Tool that have informed policy.
+
+See more at the project homepage: https://sites.google.com/usp.br/lcmworkshop/home
