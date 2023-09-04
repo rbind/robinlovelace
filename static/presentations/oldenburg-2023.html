@@ -28,6 +28,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     /* CSS for citations */
     div.csl-bib-body { }
     div.csl-entry {
@@ -370,8 +435,12 @@
 <ul>
 <li class="fragment"><p>Geocomputation and spatial data science for research and evidence-based policies</p></li>
 <li class="fragment"><p>Open source software and research</p></li>
-<li class="fragment"><p>Reproducibility</p></li>
-<li class="fragment"><p>From research to impact</p></li>
+</ul>
+<!---
+ -   Reproducibility 
+--->
+<ul>
+<li class="fragment">From research to impact</li>
 </ul>
 </div>
 </section>
@@ -390,12 +459,43 @@
 
 <img data-src="https://user-images.githubusercontent.com/1825120/263552520-4079b188-f921-4c6f-9391-bfd7891a4f52.gif" class="r-stretch"><p>Source: <a href="https://ogh23.robinlovelace.net/tidy">Tidy geographic data</a> course notes from OpenGeoHub 2023, building on Geocomputation with R <span class="citation" data-cites="lovelace2019">Lovelace, Nowosad, and Muenchow (<a href="#/references" role="doc-biblioref" onclick="">2019</a>)</span>.</p>
 </section>
-<section id="geocomputation" class="slide level2">
+<section id="geocomputation" class="slide level2 smaller">
 <h2>Geocomputation</h2>
+<div class="columns">
+<div class="column">
 <blockquote>
 <p>Geocomputation is the application and development of computational methods for geographic data processing, analysis, modeling and visualisation with command-line tools and scripts, focussed on performance, reproducibility and modularity</p>
 </blockquote>
 <p>Source: Geocomputation with R <span class="citation" data-cites="lovelace2019">(<a href="#/references" role="doc-biblioref" onclick="">Lovelace, Nowosad, and Muenchow 2019</a>)</span></p>
+</div><div class="column">
+<div class="cell" data-hash="oldenburg-2023_cache/revealjs/unnamed-chunk-6_11295b95e91a0b936d1203d704585cbb">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(leaflet)</span>
+<span id="cb1-2"><a href="#cb1-2"></a>popup <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Robin"</span>, <span class="st">"Jakub"</span>, <span class="st">"Jannes"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">leaflet</span>() <span class="sc">|&gt;</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a>  <span class="fu">addProviderTiles</span>(<span class="st">"NASAGIBS.ViirsEarthAtNight2012"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a>  <span class="fu">addMarkers</span>(<span class="at">lng =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">3</span>, <span class="dv">23</span>, <span class="dv">11</span>),</span>
+<span id="cb1-6"><a href="#cb1-6"></a>             <span class="at">lat =</span> <span class="fu">c</span>(<span class="dv">52</span>, <span class="dv">53</span>, <span class="dv">49</span>), </span>
+<span id="cb1-7"><a href="#cb1-7"></a>             <span class="at">popup =</span> popup)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-6288126fcbebe47f9701" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-6288126fcbebe47f9701">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["NASAGIBS.ViirsEarthAtNight2012",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addMarkers","args":[[52,53,49],[-3,23,11],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Robin","Jakub","Jannes"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[49,53],"lng":[-3,23]}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="open-source-books" class="slide level2">
+<h2>Open source books</h2>
+<div class="columns">
+<div class="column">
+<p><img data-src="https://r.geocompx.org/images/cover.png"></p>
+</div><div class="column">
+<p>For more open source books see <a href="https://bookdown.org/home/archive/">bookdown.org</a> <img data-src="https://r-spatial.org/book/images/cover.jpg"></p>
+</div>
+</div>
+</section>
+<section id="reproducibility" class="slide level2">
+<h2>Reproducibility</h2>
 </section>
 <section id="economics-of-low-carbon-markets" class="slide level2">
 <h2>Economics of Low Carbon Markets</h2>
@@ -544,9 +644,14 @@ bibliography: references-oldenburg.bib
 <img data-src="images/paste-10.png" class="r-stretch"></section>
 <section id="disaggregating-origin-destination-data" class="slide level2">
 <h2>Disaggregating origin-destination data</h2>
+<div class="columns">
+<div class="column">
 <p>Souce: Lovelace et al (<a href="https://doi.org/10.32866/001c.33873">2022</a>) ‘Jittering: A Computationally Efficient Method for Generating Realistic Route Networks from Origin-Destination Data’.</p>
-
-<img data-src="images/paste-11.png" class="r-stretch"></section>
+</div><div class="column">
+<p><img data-src="images/paste-11.png"></p>
+</div>
+</div>
+</section>
 <section id="a-larger-od-dataset" class="slide level2">
 <h2>A larger OD dataset</h2>
 
@@ -555,6 +660,32 @@ bibliography: references-oldenburg.bib
 <h2>Resulting networks</h2>
 
 <img data-src="images/paste-13.png" class="r-stretch"></section>
+<section id="open-tools-to-inform-policy" class="slide level2">
+<h2>Open tools to inform policy</h2>
+<div class="columns">
+<div class="column">
+<div>
+<ul>
+<li class="fragment"><a href="https://www.pct.bike">www.pct.bike</a></li>
+<li class="fragment"><a href="https://www.cruse.bike">www.cruse.bike</a></li>
+<li class="fragment">biclaR, hosted at <a href="https://biclar.tmlmobilidade.pt/index/">biclar.tmlmobilidade.pt</a></li>
+<li class="fragment"><a href="https://nptscot.github.io">www.npt.scot</a></li>
+</ul>
+</div>
+</div><div class="column">
+<h3 id="live-demo">Live demo</h3>
+<p><img data-src="images/paste-14.png"></p>
+</div>
+</div>
+</section>
+<section id="open-question" class="slide level2">
+<h2>Open question</h2>
+<p>How can Geocomputation be better used to support low carbon economics research?</p>
+
+<img data-src="images/paste-15.png" class="r-stretch"><div class="smaller">
+<p>Source: Morton et al.&nbsp;<a href="https://doi.org/10.1016/j.trd.2018.07.008">2018</a> ‘Fuel Price Differentials and Car Ownership: A Spatial Analysis of Diesel Cars in Northern Ireland’.</p>
+</div>
+</section>
 <section id="more-info" class="slide level2">
 <h2>More info</h2>
 <p>See slides online at <a href="https://www.robinlovelace.net/presentations/oldenburg-2023.html">robinlovelace.net/presenations/oldenburg-2023.html</a></p>
