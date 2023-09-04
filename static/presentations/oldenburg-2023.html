@@ -455,7 +455,7 @@
 <div class="column">
 <div>
 <ul>
-<li class="fragment"><p>New tools such as Manubot make collaboration easier <span class="citation" data-cites="himmelstein2019">(<a href="#/references" role="doc-biblioref" onclick="">Himmelstein et al. 2019</a>)</span></p></li>
+<li class="fragment"><p>New tools such as Manubot and Quarto make collaboration easier</p></li>
 <li class="fragment"><p>Source code: <a href="https://github.com/manubot/" class="uri">https://github.com/manubot/</a></p></li>
 <li class="fragment"><p>Example of ‘tracked changes’ in GitHub: <a href="https://github.com/zonebuilders/zonebuilder/pull/38">github.com/zonebuilder</a></p></li>
 <li class="fragment"><p>Now published a fully reproducible paper <span class="citation" data-cites="lovelace2022">(<a href="#/references" role="doc-biblioref" onclick="">Lovelace, Tennekes, and Carlino 2022</a>)</span></p></li>
@@ -468,15 +468,101 @@
 </section>
 <section id="section" class="slide level2">
 <h2><img data-src="images/paste-5.png"></h2>
+<p>Collaborative writing platorms</p>
+</section>
+<section id="open-source-social-media" class="slide level2">
+<h2>Open source social media</h2>
+<div class="columns">
+<div class="column">
+<div class="fragment">
+<iframe src="https://fosstodon.org/@robinlovelace/111001094776247726/embed" class="mastodon-embed" style="max-width: 100%; border: 0" width="400" allowfullscreen="allowfullscreen">
+</iframe>
+<script src="https://fosstodon.org/embed.js" async="async"></script>
+</div>
+</div><div class="column">
+<div class="fragment">
+<p>Open source -&gt; options</p>
+<iframe src="https://fosstodon.org/@LeafyEricScott/111001275607941237/embed" class="mastodon-embed" style="max-width: 100%; border: 0" width="400" allowfullscreen="allowfullscreen">
+</iframe>
+<script src="https://fosstodon.org/embed.js" async="async"></script>
+</div>
+</div>
+</div>
+</section>
+<section id="quarto" class="slide level2">
+<h2>Quarto</h2>
+<ul>
+<li>These slides were built with <a href="https://quarto.org/">quarto</a></li>
+</ul>
+<pre><code>---
+title: "Geocomputation, reproducible research and open tools to inform the transition away from fossil fuels"
+subtitle: "Economics of Low-Carbon Markets workshop"
+format: revealjs
+execute: 
+  cache: true
+bibliography: references-oldenburg.bib
+---
+
+## Abstract</code></pre>
+<p>Source: https://github.com/Robinlovelace/presentations/blob/master/oldenburg-2023.qmd</p>
 </section>
 <section>
 <section id="low-carbon-research" class="title-slide slide level1 center">
 <h1>Low carbon research</h1>
 
 <img data-src="images/PXL_20230903_062531314.jpg" class="r-stretch"></section>
+<section id="tools-for-low-carbon-transport-planning" class="slide level2">
+<h2>Tools for low carbon transport planning</h2>
+<div class="columns">
+<div class="column">
+<div>
+<ul>
+<li class="fragment">Bid for funding outside our comfort zone (2014)</li>
+<li class="fragment">Development of a prototype tool (2015)</li>
+<li class="fragment">Lauch of national tool as part of investment strategy (2017)</li>
+<li class="fragment">Addition of travel to school (2019)</li>
+<li class="fragment">Extension to Wales, Scotland, Republic of Ireland, Portugal (2020+)</li>
+</ul>
+</div>
+</div><div class="column">
+<p><img data-src="images/paste-8.png"></p>
+</div>
+</div>
+</section>
+<section id="policy-impact" class="slide level2">
+<h2>Policy impact</h2>
+
+<img data-src="images/paste-7.png" class="r-stretch"></section>
+<section id="the-power-of-geographic-data" class="slide level2">
+<h2>The power of geographic data</h2>
+<p>Enables understanding of distributional impacts of policies, e.g.&nbsp;agglomeration. Source: <span class="citation" data-cites="moreno-monroy2018">Moreno-Monroy, Lovelace, and Ramos (<a href="#/references" role="doc-biblioref" onclick="">2018</a>)</span></p>
+
+<img data-src="images/paste-9.png" class="r-stretch"></section>
+<section id="generating-accessibility-data" class="slide level2">
+<h2>Generating accessibility data</h2>
+
+<img data-src="images/paste-10.png" class="r-stretch"></section>
+<section id="disaggregating-origin-destination-data" class="slide level2">
+<h2>Disaggregating origin-destination data</h2>
+<p>Souce: Lovelace et al (<a href="https://doi.org/10.32866/001c.33873">2022</a>) ‘Jittering: A Computationally Efficient Method for Generating Realistic Route Networks from Origin-Destination Data’.</p>
+
+<img data-src="images/paste-11.png" class="r-stretch"></section>
+<section id="a-larger-od-dataset" class="slide level2">
+<h2>A larger OD dataset</h2>
+
+<img data-src="images/paste-12.png" class="r-stretch"></section>
+<section id="resulting-networks" class="slide level2">
+<h2>Resulting networks</h2>
+
+<img data-src="images/paste-13.png" class="r-stretch"></section>
+<section id="more-info" class="slide level2">
+<h2>More info</h2>
+<p>See slides online at <a href="https://www.robinlovelace.net/presentations/oldenburg-2023.html">robinlovelace.net/presenations/oldenburg-2023.html</a></p>
+<p>For more on zoning systems, see: Lovelace, Robin, Martijn Tennekes, and Dustin Carlino. 2022. “ClockBoard: A Zoning System for Urban Analysis.” Journal of Spatial Information Science, no. 24 (June): 63–85. https://doi.org/10.5311/JOSIS.2022.24.172.</p>
+<p>For more on Geocomputation with R, see https://r.geocompx.org, and join our Discord server at https://discord.gg/PMztXYgNxp</p>
+</section>
 <section id="references" class="slide level2 smaller scrollable">
 <h2>References</h2>
-<p>See slides online at <a href="https://www.robinlovelace.net/presentations/oldenburg-2023.html">robinlovelace.net/presenations/oldenburg-2023.html</a></p>
 <div class="footer footer-default">
 
 </div>
@@ -487,14 +573,14 @@ Braga, Pedro Henrique Pereira, Katherine Hébert, Emma J. Hudgins, Eric R. Scott
 <div id="ref-gilardi2022" class="csl-entry" role="listitem">
 Gilardi, Andrea, Jorge Mateu, Riccardo Borgoni, and Robin Lovelace. 2022. <span>“Multivariate Hierarchical Analysis of Car Crashes Data Considering a Spatial Network Lattice.”</span> <em>Journal of the Royal Statistical Society: Series A (Statistics in Society)</em> 185 (3): 1150–77. <a href="https://doi.org/10.1111/rssa.12823">https://doi.org/10.1111/rssa.12823</a>.
 </div>
-<div id="ref-himmelstein2019" class="csl-entry" role="listitem">
-Himmelstein, Daniel S., Vincent Rubinetti, David R. Slochower, Dongbo Hu, Venkat S. Malladi, Casey S. Greene, and Anthony Gitter. 2019. <span>“Open Collaborative Writing with Manubot.”</span> <em>PLOS Computational Biology</em> 15 (6): e1007128. <a href="https://doi.org/10.1371/journal.pcbi.1007128">https://doi.org/10.1371/journal.pcbi.1007128</a>.
-</div>
 <div id="ref-lovelace2019" class="csl-entry" role="listitem">
 Lovelace, Robin, Jakub Nowosad, and Jannes Muenchow. 2019. <em>Geocomputation with r</em>. CRC Press. <a href="https://r.geocompx.org">https://r.geocompx.org</a>.
 </div>
 <div id="ref-lovelace2022" class="csl-entry" role="listitem">
 Lovelace, Robin, Martijn Tennekes, and Dustin Carlino. 2022. <span>“ClockBoard: A Zoning System for Urban Analysis.”</span> <em>Journal of Spatial Information Science</em>, no. 24 (June): 63–85. <a href="https://doi.org/10.5311/JOSIS.2022.24.172">https://doi.org/10.5311/JOSIS.2022.24.172</a>.
+</div>
+<div id="ref-moreno-monroy2018" class="csl-entry" role="listitem">
+Moreno-Monroy, Ana I., Robin Lovelace, and Frederico R. Ramos. 2018. <span>“Public Transport and School Location Impacts on Educational Inequalities: Insights from São Paulo.”</span> <em>Journal of Transport Geography</em> 67 (February): 110–18. <a href="https://doi.org/10.1016/j.jtrangeo.2017.08.012">https://doi.org/10.1016/j.jtrangeo.2017.08.012</a>.
 </div>
 </div>
 </section></section>
