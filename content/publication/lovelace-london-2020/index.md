@@ -8,7 +8,7 @@ abstract: ""
 featured: true
 publication: "*Transportation Research Part A: Policy and Practice*"
 tags: ["Big data", "Bikeshare", "Cycle hire", "Reproducible data science", "Transport equity"]
-url_pdf: "lovelace-london-2020/cycle-hire-preprint-final.pdf"
+url_pdf: "https://robinlovelace.net/publication/lovelace-london-2020/cycle-hire-preprint-final.pdf"
 doi: "10.1016/j.tra.2020.07.017"
 ---
 
