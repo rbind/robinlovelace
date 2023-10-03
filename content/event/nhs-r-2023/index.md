@@ -1,7 +1,8 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
 
-title: "From code to impact: reproducible research and open tools for evidence-based policy"
+# title: "From code to impact: reproducible research and open tools for evidence-based policy"
+title: "Data Science for Active Travel Planning: Streets, schemes and networks"
 event: NHS-R conference
 event_url: https://nhsrcommunity.com/
 location:
@@ -48,7 +49,7 @@ image:
 # Optional filename of your slides within your event's folder or a URL.
 url_slides: https://www.robinlovelace.net/
 url_code: https://github.com/Robinlovelace/presentations/
-url_pdf:
+url_pdf: nhs-r-conference.pdf
 url_video:
 
 # Markdown Slides (optional).

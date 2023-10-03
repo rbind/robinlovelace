@@ -5,10 +5,11 @@ publishDate: 2022-11-19T16:03:31.387030Z
 authors: ["Robin Lovelace", "Roger Beecham", "Eva Heinen", "Eugeni Vidal Tortosa", "Yuanxuan Yang", "Chris Slade", "Antonia Roberts"]
 publication_types: ["2"]
 abstract: ""
-featured: false
+featured: true
 publication: "*Transportation Research Part A: Policy and Practice*"
 tags: ["Big data", "Bikeshare", "Cycle hire", "Reproducible data science", "Transport equity"]
-url_pdf: "http://www.sciencedirect.com/science/article/pii/S0965856420306728"
+url_pdf: "lovelace-london-2020/cycle-hire-preprint-final.pdf"
 doi: "10.1016/j.tra.2020.07.017"
 ---
 
+See the source code for this paper at https://github.com/Robinlovelace/cycle-hire-inclusive
