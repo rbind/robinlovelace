@@ -67,4 +67,5 @@ slides: ""
 projects: []
 ---
 
-Details TBC
+This is the main annual event of the National Health Service's data science community.
+See details at [nhsrcommunity.com](https://nhsrcommunity.com/events/nhs-r-community-conference-2023-ticket-for-in-person-attendance-on-tuesday-17th-october-2023/)
