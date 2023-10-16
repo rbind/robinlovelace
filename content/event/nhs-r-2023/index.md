@@ -68,4 +68,6 @@ projects: []
 ---
 
 This is the main annual event of the National Health Service's data science community.
-See details at [nhsrcommunity.com](https://nhsrcommunity.com/events/nhs-r-community-conference-2023-ticket-for-in-person-attendance-on-tuesday-17th-october-2023/)
+See details at [nhsrcommunity.com](https://nhsrcommunity.com/events/nhs-r-community-conference-2023-ticket-for-in-person-attendance-on-tuesday-17th-october-2023/).
+
+Related slides by Dustin Carlino from the Alan Turing Institute can be found [online](https://docs.google.com/presentation/d/1qS6xS-11g3j3ioRJszvom-tGdyEr_Y1SGFrej-1DR04/).
