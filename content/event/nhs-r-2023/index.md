@@ -9,7 +9,7 @@ location:
 address:
   street: 
   city: Birmingham
-  region:
+  region: Edgbaston
   postcode: 
   country:
 summary:
@@ -49,7 +49,6 @@ image:
 # Optional filename of your slides within your event's folder or a URL.
 url_slides: https://www.robinlovelace.net/
 url_code: https://github.com/Robinlovelace/presentations/
-url_pdf: https://www.robinlovelace.net/talk/data-science-for-active-travel-planning-streets-schemes-and-networks/nhs-r-conference.pdf
 url_video:
 
 # Markdown Slides (optional).
