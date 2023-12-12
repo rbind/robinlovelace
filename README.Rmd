@@ -30,7 +30,7 @@ file.edit("content/event/modeshift-2022/index.md")
 blogdown::install_hugo()
 
 # new blog post:
-blogdown::new_post(title = "2022-reflections", ext = ".Rmd")
+blogdown::new_post(title = "testing-valhalla", ext = ".Rmd")
 
 blogdown::new_content(path = "software/index.Rmd")
 
