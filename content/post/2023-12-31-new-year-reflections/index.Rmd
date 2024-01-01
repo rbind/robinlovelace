@@ -52,7 +52,7 @@ Building on my links with the ATI as a Turing Fellow, and my previous working wi
 
 From the [Active Travel England press release](https://www.gov.uk/government/news/alan-turing-institute-partnership-brings-data-expertise-to-nationwide-walking-and-cycling-schemes):
 
-> This \[collaboration\] will enable the development of new functionality in the Active Travel Infrastructure Platform (ATIP), which helps councils to map out proposed schemes and see the impact they could have locally.
+> This [collaboration] will enable the development of new functionality in the Active Travel Infrastructure Platform (ATIP), which helps councils to map out proposed schemes and see the impact they could have locally.
 
 > These new tools will be paired with existing data sources such as OpenStreetMap, to create innovative solutions that will help build the evidence needed to meet national government’s objectives on active travel, including for 50% of short trips in urban areas to be made by walking, wheeling and cycling by 2030.
 > The investment will demonstrate how new software engineering and data science techniques can support evidence-based planning and support Active Travel England’s mission.
