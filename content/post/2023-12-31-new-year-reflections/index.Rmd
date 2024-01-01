@@ -26,7 +26,7 @@ Like last year's reflections post, I'm going to keep this one short and use it a
 It was a productive year for my research outputs, in which I was co-author on the following research outputs:
 
 -   [*Cycle network policy, planning and investment transformed by the Propensity to Cycle Tool*](https://www.robinlovelace.net/publication/lovelace-ref-2023/), not an academic paper but a case study about the pathways from research to impact, as part of the UK's Research Excellence Framework (REF).
-    The work was assessed as being a *4\** *REF Impact Case Study* according to the amazing team at the University of Leeds who helped me to lead on the report [@lovelace2023].
+    The work was assessed as being a *4\** *REF Impact Case Study* according to the amazing team at the University of Leeds who supported me to condense 5+ years of work into a single report [@lovelace2023].
 
 -   [*A road segment prioritization approach for cycling infrastructure*](https://www.robinlovelace.net/publication/mahfouz-road-2023/), a paper led by my PhD student Hussein Mahfouz, that explores methods for prioritising investment in active travel networks that take into account equity and cost effectiveness [@mahfouz2023].
     It took a LONG and occasionally frustrating amount of time to get through the peer review process but I'm really happy that this is now published in a top journal (JTG).
