@@ -63,15 +63,16 @@ The most credit goes to Dustin and everyone involved, it's still a work in progr
 See the open source code underlying the functionality plus links to a live web app at [github.com/acteng/atip](https://github.com/acteng/atip).
 
 Like the Propensity to Cycle Tool (which I got to demo to the then Secretary of State for transport in 2017), the ATIP project is highly conducive to collaborative planning and live demos.
-As shown below, we got a chance to demo the tool to the government minister with the active travel brief, Jesse Norman (credit to Danny Williams, CEO of Active Travel England, for the photo):
+<!-- As shown below, we got a chance to demo the tool to the government minister with the active travel brief, Jesse Norman (credit to Danny Williams, CEO of Active Travel England, for the photo): -->
+We got a chance to show off the tool during a [live demo with the government minister responsible for active travel](https://www.linkedin.com/embed/feed/update/urn:li:share:7041103074261626881), Jesse Norman (now [Guy Opperman](https://www.gov.uk/government/ministers/parliamentary-under-secretary-of-state--236) since November 2023).
 
-![](images/paste-3.png)
+<!-- ![](images/paste-3.png) -->
 
 <!-- ![](images/paste-2.png) -->
 
-<iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7041103074261626881" height="376" width="504" frameborder="0" allowfullscreen title="Embedded post">
+<!-- <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7041103074261626881" height="376" width="504" frameborder="0" allowfullscreen title="Embedded post">
 
-</iframe>
+</iframe> -->
 
 # Home at last
 
