@@ -10,7 +10,7 @@ address:
   postcode: 
   country: Ireland
 summary:
-abstract: "This talkr describes the design, features and potential use of the Cycle Route Uptake and Scenario Estimation (CRUSE) Tool for Ireland, commissioned to support cycle network planning, safety interventions, business cases and project evaluation. The resulting web application is available at <https://cruse.bike/>, enabling planners, engineers, and other stakeholders to make more evidence-based decisions."
+abstract: "This talk describes the design, features and potential use of the Cycle Route Uptake and Scenario Estimation (CRUSE) Tool for Ireland, commissioned to support cycle network planning, safety interventions, business cases and project evaluation. The resulting web application is available at <https://cruse.bike/>, enabling planners, engineers, and other stakeholders to make more evidence-based decisions."
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
 date: 2024-04-17T18:30:00+01:00
