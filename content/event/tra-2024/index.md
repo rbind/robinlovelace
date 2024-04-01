@@ -33,7 +33,7 @@ date_end: 2024-04-17T18:45:00+01:00
 all_day: false
 
 # Schedule page publish date (NOT event date).
-# publishDate: 2022-05-21T07:43:56+01:00
+publishDate: 2022-05-21T07:43:56+01:00
 
 authors: []
 tags: []
