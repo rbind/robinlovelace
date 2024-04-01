@@ -1,46 +1,4 @@
 ---
-# Documentation: https://wowchemy.com/docs/managing-content/
-
-
-# Header image
-
-#     Home
-#     Programme
-
-# Technical 1.1.10 Safety of Cycling
-# Tracks
-# Technical & Poster Sessions
-# 	Wednesday, April 17, 2024
-# 	5:45 PM - 6:45 PM
-# 	Hall 2A (Shelbourne Hall)
-# Details
-
-#                 Theme: Safe & Inclusive Transport
-            
-
-# Speaker
-# Prof. Luis de Picado Santos
-# Full Professor
-# IST, Universidade de Lisboa
-# Characterization of accidents with cyclists in Lisbon: Study on the Built Environment Factors.
-# 5:45 PM - 6:00 PM
-# Mrs Maria Pohle
-# Researcher
-# Fraunhofer IVI
-# Safe Route Algorithm for Vulnerable Road Users
-# 6:00 PM - 6:15 PM
-# Dr Yannick Cornet
-# Senior Researcher for Sustainable Mobility Systems
-# University Of Žilina
-# Oxford roundabout and the art of safety: resistance to cycling infrastructure intervention
-# 6:15 PM - 6:30 PM
-# Dr Robin Lovelace
-# Associate Professor of Transport Data Science
-# University Of Leeds
-# CRUSE to safe cycling in Ireland: an open source methodology to support active travel
-# 6:30 PM - 6:45 PM
-
-
 title:  "CRUSE to safe cycling in Ireland: an open source methodology to support active travel"
 event: TRA 2024
 event_url: https://traconference.eu/tra-2024-programme/
@@ -125,3 +83,50 @@ See the the website at [cruse.bike](https://cruse.bike/).
 Time of the session:  5:45 PM - 6:45 PM on Wednesday, April 17, 2024
 
 See [the confpartners website](https://confpartners.eventsair.com/QuickEventWebsitePortal/tra-2024/conference-programme/Agenda/AgendaItemDetail?id=bad08628-45e1-badd-42b8-3a0f9efdcccd) for details.
+
+<!-- # Documentation: https://wowchemy.com/docs/managing-content/
+
+
+# Header image
+
+#     Home
+#     Programme
+
+# Technical 1.1.10 Safety of Cycling
+# Tracks
+# Technical & Poster Sessions
+# 	Wednesday, April 17, 2024
+# 	5:45 PM - 6:45 PM
+# 	Hall 2A (Shelbourne Hall)
+# Details
+
+#                 Theme: Safe & Inclusive Transport
+            
+
+# Speaker
+# Prof. Luis de Picado Santos
+# Full Professor
+# IST, Universidade de Lisboa
+# Characterization of accidents with cyclists in Lisbon: Study on the Built Environment Factors.
+# 5:45 PM - 6:00 PM
+# Mrs Maria Pohle
+# Researcher
+# Fraunhofer IVI
+# Safe Route Algorithm for Vulnerable Road Users
+# 6:00 PM - 6:15 PM
+# Dr Yannick Cornet
+# Senior Researcher for Sustainable Mobility Systems
+# University Of Žilina
+# Oxford roundabout and the art of safety: resistance to cycling infrastructure intervention
+# 6:15 PM - 6:30 PM
+# Dr Robin Lovelace
+# Associate Professor of Transport Data Science
+# University Of Leeds
+# CRUSE to safe cycling in Ireland: an open source methodology to support active travel
+# 6:30 PM - 6:45 PM -->
+
+Additional speakers:
+
+- Prof. Luis de Picado Santos, Full Professor, IST, Universidade de Lisboa, Characterization of accidents with cyclists in Lisbon: Study on the Built Environment Factors.
+- Mrs Maria Pohle, Researcher, Fraunhofer IVI, Safe Route Algorithm for Vulnerable Road Users
+- Dr Yannick Cornet, Senior Researcher for Sustainable Mobility Systems, University Of Žilina, Oxford roundabout and the art of safety: resistance to cycling infrastructure intervention
