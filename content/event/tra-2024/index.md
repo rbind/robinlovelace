@@ -10,22 +10,7 @@ address:
   postcode: 
   country: Ireland
 summary:
-abstract: "Legislation mandates improved road safety and decarbonisation of predominantly road-based transport network in Ireland and other countries. Increasing cycling transport, making it safer and more attractive, is essential to this end. Cycling in Ireland represents only 3% of total modal share as of the latest Census (2016), but accounts for 20% of serious injuries and 7% of all fatalities. A planning tool based on high resolution datasets on baseline and potential cycling levels could greatly assist in achieving this goal.
-
-  This paper describes the design, features and potential use of the Cycle Route Uptake and Scenario Estimation (CRUSE) Tool for Ireland was commissioned to support cycle network planning, safety interventions, business cases and project evaluation. The resulting web application is available at <https://cruse.bike/>, enabling planners, engineers, and other stakeholders to make more evidence-based decisions.
-  CRUSE goes beyond previous work in several important ways.
-  It models networks at high levels of geographic resolution, simulates a wide range of trips including recreational, social, shopping and personal trips, in addition to trips to work and primary, secondary and tertiary education locations.
-  The tool provides key 'denominator' information to enable reporting of collision rates per billion km cycled.
-  
-  Another key feature of CRUSE is its use of frequently-updated OpenStreetMap data for route calculation and cycle friendliness estimates of all links on the network.
-  CRUSE provides three network types: the 'Fastest' network highlights routes for directness; 'Quietest' prioritises cycle friendliness, and 'Balanced' represents a balance between speed and comfort.
-  Trips are generated based on origin and destination data from the 2016 Census in combination with modeled demand data to estimate current and potential future cycling levels at area, route, and network levels for each county in Ireland.
-  
-  For investment in cycling to deliver on the huge potential benefits, cycling must become safer.
-  With growth in the ebike market, CRUSE will help inform inter-urban and rural networks to support the transfer of trips to sustainable modes for longer journeys.
-  Provision of open access data in a publicly available web tool will address the challenges faced by counties across Ireland in meeting their sustainability commitments.
-  The experience of developing a deploying CRUSE are relevant to countries with sustainable transport policies worldwide.."
-
+abstract: "This talkr describes the design, features and potential use of the Cycle Route Uptake and Scenario Estimation (CRUSE) Tool for Ireland, commissioned to support cycle network planning, safety interventions, business cases and project evaluation. The resulting web application is available at <https://cruse.bike/>, enabling planners, engineers, and other stakeholders to make more evidence-based decisions."
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
 date: 2024-04-17T18:30:00+01:00
@@ -39,7 +24,7 @@ authors: []
 tags: []
 
 # Is this a featured event? (true/false)
-featured: false
+featured: true
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder. 
