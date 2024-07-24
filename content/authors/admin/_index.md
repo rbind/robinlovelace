@@ -10,7 +10,7 @@ authors:
 superuser: true
 
 # Role/position
-role: Associate Professor of Transport Data Science
+role: Professor of Transport Data Science
 
 # Organizations/Affiliations
 organizations:
@@ -38,7 +38,7 @@ education:
 email: "_r.lovelace@leeds.ac.uk"
 highlight_name: false
 
-role: Associate Professor of Transport Data Science
+role: Professor of Transport Data Science
 social:
 - icon: envelope
   icon_pack: fas
@@ -73,7 +73,7 @@ I share lots of code for data science and reproducible research, this could be a
 I also occasionally share blog posts and other things here.
 If you'd like to get in touch, see [here](https://www.robinlovelace.net/#contact) 🚀
 
-In my main academic job I'm [Associate Professor of Transport Data Science](https://environment.leeds.ac.uk/transport/staff/953/dr-robin-lovelace) at the [University of Leeds](https://www.leeds.ac.uk/).
+In my main academic job I'm a [Professor of Transport Data Science](https://environment.leeds.ac.uk/transport/staff/953/dr-robin-lovelace) at the [University of Leeds](https://www.leeds.ac.uk/).
 At Leeds, I'm based primarily at the [Institute for Transport Studies](https://environment.leeds.ac.uk/transport) where I research, develop and teach free, open, reproducible and internationally scalable techniques for working with data to support evidence-based policies.
 
 I am author of papers and [books](https://www.robinlovelace.net/publication/#5) on transport planning, energy, geographic data analysis and modelling.
