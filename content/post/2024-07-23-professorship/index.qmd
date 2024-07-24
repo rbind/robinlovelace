@@ -21,8 +21,8 @@ output:
     toc: true
 ---
 
-I am delighted to announce that I have been appointed to a Professorship at the University of Leeds.
-Although it's a big leap in my academic careers, it's a small change in my actual job title: just removing the first word of my previous job title "Associate Professor of Transport Data Science" means a lot.
+I am delighted to announce that I have been appointed to a Professorship at the [University of Leeds](https://environment.leeds.ac.uk/transport/staff/953/dr-robin-lovelace).
+Although it's a big leap in my academic careers, it's a small change in my actual job title: just removing the first word of my previous job title "Associate Professor of Transport Data Science" means a lot, as shown in the '[diff](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/incorporating-feedback-in-your-pull-request)' (the standard way to track changes in code) below with GitHub-style formatting:
 
 ````{=html}
 <!-- ```diff
@@ -33,9 +33,7 @@ Although it's a big leap in my academic careers, it's a small change in my actua
 
 ![](images/paste-1.png)
 
-This post is a reflection on the path that got me here, provides some insight into the promotion system in the UK.
-It also contains content from my own job application portfolio that I'm proud of and that may be of use to others.
-This post is also an opportunity to talk about the people and topics that inspire me, to thank you to everyone who has helped me along the way, and to share ideas on how to translate academic research into impact and what I hope to achieve in the future.
+This post is a reflection on the path that got me here, provides some insight into the promotion system in the UK, and outlines some of the work that I'm most proud of.
 
 # My career path
 
@@ -85,7 +83,7 @@ The people on the panel asked very good questions about my application and my fu
 
 I share some of the portfolio that I'm proud of and which may be of use/interest to others below, starting with key publications and the reasons why they are important (this was a great opportunity to reflect on my favourite papers and the impact they have had, hence sharing here).
 
-## Key publications
+# Key publications
 
 I have more than 60 academic publications, including peer-reviewed
 papers in high-ranking journals, externally funded high-impact
@@ -300,26 +298,26 @@ academic research teams to deliver high-impact research, with
 co-authors from the bike share industry (Smoove), academia and the
 third sector (the shared mobility not-for-profit Co-Mo).
 
-## RIA5: School, faculty, university or academic discipline input
+# Portfolio
 
-My input into the overall strategic direction of transport planning and
+The portfolio was long and detailed.
+Some of the key bits from it are below:
+
+> My input into the overall strategic direction of transport planning and
 modelling disciplines is exemplified by two recent articles in transport
 practitioner-focused magazines. I was interviewed for the Chartered
 Institution of Highways & Transportation (*CIHT*) on new methods in
 Transport Planning for their [Transportation
 Professional](https://www.ciht.org.uk/members-area/transportation-professional)
-magazine, leading to an article in their magazine (see Figure 1). As
-outlined in RIA9 I was also interviewed as a leader in the field in the
+magazine, leading to an article in their magazine. As
+outlined in RIA9 I was also interviewed in the
 practitioner-focused magazine
 [TransportXtra](https://www.transportxtra.com/publications/local-transport-today/news/75942/open-your-heart-in-transport-modelling-)
 in May 2024.
 
-## RIA6: Research plan that aligns with the University's direction
+In terms of aligning with the University of Leeds' strategies, I wrote:
 
-**RIA7: "You have an ambitious and sustainable plan for research which
-reflects the University's direction"**
-
-My work has a strong ethical direction that aligns well with the
+> My work has a strong ethical direction that aligns well with the
 University of Leeds' strategies, especially its climate action strategy.
 As outlined in the [Climate Plan](https://spotlight.leeds.ac.uk/climate-plan/), "we shall
 increasingly reorient our research and teaching away from the fossil
@@ -331,25 +329,35 @@ impacts and potential for much greater future impacts, especially if I
 am supported to develop my team and apply for international funding
 bids.
 
-## RIA8: Teaching and student support
+Regarding 'translational' activity I wrote:
 
-**RIA8: "You have a sustained record of high quality contribution to
-taught student provision and the student experience, providing effective
-personal tutoring or other support and guidance to students."**
+> Most of my research has been **funded by industry, governments, and
+transnational organisations**, highlighting the high social, policy, and
+economic value of my work. National transport planning bodies including
+the **Department for Transport (DfT), Transport Scotland (TS)** and
+**Transport Infrastructure Ireland (TII**) have all funded tools which are now used in production by **50k+ people** each year
+... as described in a successful [REF Impact Case Study](https://results2021.ref.ac.uk/impact/847d1191-7f25-46ba-a399-b481125edc8f?page=1)
+that I led for ITS in collaboration with staff in the School of
+Geography.
 
-I have a sustained record of accomplishment leading outstanding
+Regarding teaching, I referred to the [Transport Data Science](https://github.com/ITSLeeds/TDS) course that I coordinate, writing:
+
+> I have a sustained record of accomplishment leading outstanding
 research-led and innovative teaching, as illustrated by my ongoing
 leadership of the Transport Data Science (TRAN5340M) module from 2019 to
 present. 
 
-# Inspiration and future plans
+# Reflections on incentives, inspiration and future plans
 
 An [article in the Guardian](https://www.theguardian.com/higher-education-network/2017/sep/29/work-academic-professional-hybrid-role-say-goodbye-career-progression) titled "Work in an academic-professional hybrid role? Say goodbye to career progression" argues that it's hard to progress if you undertake both professional and academic roles.
-Although the article is talking about taking on dual roles within the same institution, it implies that academia is too narrowly focussed.
-I agree that there is "a need in universities for a band of staff who bridge the two much larger groups" and my own experience in Leeds has been that high impact work has been rewarded.
+Although the article is talking about taking on dual roles within the same institution, it applies to academics like me who have taken a step outside higher education.
+I agree with the article's take that academic career progression is generally rather narrowly focussed, and that there is "a need in universities for a band of staff who bridge the two much larger groups".
+
+Unlike the author of the Guardian article, I have not found dual roles to be a barrier to progression, and this has been supported by the Research Excellence Framework (REF) process, a key feature of how UK research is evaluated.
+Despite issues with the REF, it clearly does incentivise people who are focussed on delivering outputs that go beyond papers and citations, with a [blog post by Jon Collett at the London School of Economics](https://blogs.lse.ac.uk/impactofsocialsciences/2024/04/08/what-is-the-value-of-four-star-ref-outputs-and-impact-case-studies/) showing that top case study submissions such as the one outlined above can lead to substantial financial rewards, directly and indirectly.
+REF also provides a chance for people to talk about how their work has be used in the real world during the promotion process, which is a good thing (my biggest issue with the process is that it's so time consuming for academics submitting them and feels a bit like 'marking your own homework', could REF shift to a process in which an independent body not affiliated with any university plays a greater role, I wonder).
 I'm not sure what promotion criteria are like in other universities, but I do think that having pathways for academics interested in "translational" research, or research that has a direct impact on policy and practice, is important.
 
-Unlike the author of the article, I have not found dual roles to be a barrier to progression.
 However, like [many others](https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=challenges+%22two+jobs%22+career+%22work-life+balance%22&btnG=), I have found having 2 jobs to be a challenge at times, while also being highly rewarding.
 It's clearly a good thing when academics get out of their comfort zones and step into the 'real world', whether that's in government, industry, or the third sector.
 However, it seems that there are disincentives to doing so: most jobs have a 'baseline level' of work that needs to be done, and if you take on a second job, you have to do two lots of baseline work.
@@ -359,6 +367,9 @@ It also suggests that employers should be flexible and should maybe even incenti
 
 All careers have their pros and cons and I think academia is unique in the level of flexibility and autonomy it offers, especially when you get to the lofty heights of a professorship.
 Each time I have had my doubts about the academic career path, I have been inspired by others who are using their positions to make a difference.
+I am inspired by people like [Edzer Pebesma](https://www.uni-muenster.de/Geoinformatics/en/institute/staff/index.php/119/edzer_pebesma), [Megan Ryerson](https://ldi.upenn.edu/fellows/fellows-directory/megan-ryerson-phd/), [John Parkin](https://people.uwe.ac.uk/Person/JohnParkin), [Rachel Aldred](https://www.westminster.ac.uk/about-us/our-people/directory/aldred-rachel), [Anna Goodman](https://www.lshtm.ac.uk/aboutus/people/goodman.anna), [Antonion Paez](https://experts.mcmaster.ca/display/paezha), [Lake Sagaris](https://en.wikipedia.org/wiki/Lake_Sagaris), and [Michael Szell](http://michael.szell.net/), who are all using their academic positions and roles to support positive changes within and beyond academia in a variety of ways.
+In turn, I hope that some of my work will inspire others.
+
 I'm still processing what it means to have reached the top of the academic career ladder but am committed to learning from others, sharing (including through this blog and through the amazing open source software community), and focussing on projects that are likely to have a positive impact as I go.
 
 I do have more specific plans for high-impact projects, but will save that for another day.
