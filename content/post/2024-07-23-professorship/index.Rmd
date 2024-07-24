@@ -1,11 +1,11 @@
 ---
-title: "Professorship"
+title: "The Pathway to Professorship"
+subtitle: "A celebratory post reflecting on the journey to becoming a Professor of Transport Data Science and reward systems in higher education"
 author: ''
 date: '2024-07-24'
 slug: professorship
 categories: []
 tags: []
-subtitle: ''
 summary: ''
 authors: []
 lastmod: '2024-07-23T19:48:11+01:00'
@@ -22,7 +22,7 @@ output:
 ---
 
 I am delighted to announce that I have been appointed to a Professorship at the [University of Leeds](https://environment.leeds.ac.uk/transport/staff/953/dr-robin-lovelace).
-Although it's a big leap in my academic careers, it's a small change in my actual job title: just removing the first word of my previous job title "Associate Professor of Transport Data Science" means a lot, as shown in the '[diff](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/incorporating-feedback-in-your-pull-request)' (the standard way to track changes in code) below with GitHub-style formatting:
+A small change in my job title (just removing the first word of my previous job title "Associate Professor of Transport Data Science" as shown in the '[diff](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/incorporating-feedback-in-your-pull-request)' below) means a lot for my career.
 
 ````{=html}
 <!-- ```diff
@@ -33,13 +33,13 @@ Although it's a big leap in my academic careers, it's a small change in my actua
 
 ![](images/paste-1.png)
 
-This post is a reflection on the path that got me here, provides some insight into the promotion system in the UK, and outlines some of the work that I'm most proud of.
+This post is a reflection on the path that got me here, provides some insight into the promotion system in the UK, outlines some of the work that I'm most proud of, and provides a chance to say thank you to the many people who have inspired and supported me along the way.
 
 # My career path
 
 I didn't set out to work in academia and certainly didn't plan to become a professor.
-Although my career has been 100% in the higher education sector, I think it is a little unusual in the way I've got there, with a big focus on impact and practical skills, rather than research outputs, administrative roles and memberships prestigious of committees and boards.
-As outlined in the evidence submitted to the promotion panel below, a large part of my career has been spent working on projects that have had a direct impact on policy and practice (indeed, one of the questions from the panel was whether there's a risk that my work becomes too much like consultancy).
+Although my career has been mostly in higher education, I think it is a little unusual in the way I've got there, with a big focus on impact and practical skills, rather than research outputs, administrative roles and memberships prestigious of committees and boards.
+As outlined in snippets from the evidence submitted to the promotion panel below, a large part of my career has been spent working on projects that have had a direct impact on policy and practice (indeed, one of the questions from the panel was whether there's a risk that my work becomes too much like consultancy).
 Before going into that, here's a brief overview of my career to date in reverse chronological order:
 
 -   2024 onwards: Professor of Transport Data Science at the University of Leeds
@@ -47,7 +47,7 @@ Before going into that, here's a brief overview of my career to date in reverse 
 -   2019-2024: Associate Professor of Transport Data Science at the University of Leeds (part time since 2023)
 -   2016-2019: University Academic Fellow in Transport and Big Data, at the Leeds Institute for Transport Studies ([ITS](https://environment.leeds.ac.uk/transport)), where I worked on a range of projects including the [Propensity to Cycle Tool](https://www.pct.bike), and where I'm still based
 -   2014-2016: Research fellow in Data Analytics (University of Leeds, Leeds Institute for Data Analytics), where I got stuck into data science and started to take computer science and programming seriously, leading to the book I co-authored with Colin Gillespie, [Efficient R Programming](https://bookdown.org/csgillespie/efficientR/)
--   2013-2014: My first job, an 18 month contract working on the National Centre for Research Methods ([NCRM](https://www.ncrm.ac.uk/about/phase3.php)) funded [TALISMAN](https://environment.leeds.ac.uk/geography-research/dir-record/research-projects/658/talisman-geospatial-data-analysis-and-simulation) project on geospatial data analysis and simulation project (huge credit to [Mark Birkin](https://environment.leeds.ac.uk/geography/staff/1005/professor-mark-birkin) who gave me my first job in academia and who encouraged me to persue my own research interests)
+-   2013-2014: My first job, an 18 month contract working on the National Centre for Research Methods ([NCRM](https://www.ncrm.ac.uk/about/phase3.php)) funded [TALISMAN](https://environment.leeds.ac.uk/geography-research/dir-record/research-projects/658/talisman-geospatial-data-analysis-and-simulation) project on geospatial data analysis and simulation project (huge credit to [Mark Birkin](https://environment.leeds.ac.uk/geography/staff/1005/professor-mark-birkin) who gave me my first job in academia and who encouraged me to pursue my own research interests)
 -   2009-2013: 4 year combined masters and PhD studentship as part of the EPSRC-funded E-Futures Doctoral Training Centre at the University of Sheffield, where my supervisors [Dimitri Ballas](https://www.rug.nl/staff/d.ballas/?lang=en), [Matt Watson](https://www.sheffield.ac.uk/geography-planning/people/academic-research/matt-watson), and [Stephen Beck](https://www.sheffield.ac.uk/mecheng/people/academic/stephen-beck) provided the skills across a range of disciplines (economics, microsimulation, policy engagement and engineering) that have been the foundation of my career
 -   2008-2009: Won a scholarship to study Environmental Science and Management at the University of York (an excellent course that I would recommend to anyone interested in the environment and sustainability, I'm glad to see that it's still going strong according to the [website](https://www.york.ac.uk/study/postgraduate-taught/courses/msc-environmental-science-management/))
 -   2004-2008: Studied Geography at the University of Bristol's [School of Geographical Sciences](https://www.bristol.ac.uk/geography/), where you were allowed to do combined physical and human geography, something at the time called Environmental Geography, an option that is sadly no longer available at the University of Bristol but which is happily available in a number of other UK and international universities (source: Google Searches with the text strings [`"environmental geography" site:ac.uk`](https://www.google.com/search?client=ubuntu-sn&channel=fs&q=%22environmental+geography%22+site%3Aac.uk) and [`"environmental geography" university course`](https://www.google.com/search?client=ubuntu-sn&channel=fs&q=%22environmental+geography%22+university+course))
@@ -85,7 +85,9 @@ I share some of the portfolio that I'm proud of and which may be of use/interest
 
 # Key publications
 
-I have more than 60 academic publications, including peer-reviewed
+Following in the footsteps of my colleague [Kate Pangbourne](https://environment.leeds.ac.uk/transport/staff/971/dr-kate-pangbourne), I provided a short description of each of 10 publications I could select for the submission, with the following intro (following the perhaps [problematic](https://www.reddit.com/r/academia/comments/1e3rjxe/why_paper_is_the_only_currency_in_academia/) ideas of '[publish or perish](https://en.wikipedia.org/wiki/Publish_or_perish)' and that papers are the '[universal currency](https://communities.springernature.com/posts/publication-a-universal-currency-in-academia)' of academia):
+
+> I have more than 60 academic publications, including peer-reviewed
 papers in high-ranking journals, externally funded high-impact
 reports, and four books.
 My work is highly cited, attracting 2,450
@@ -204,7 +206,7 @@ practical rationale for making transport modelling tools more open,
 reproducible and participatory.
 The paper has been cited by numerous
 subsequent papers, including in a recent review in the high-ranking
-journal Computers Environnement and Urban Systems that summarises the paper's findings, stating that "the review by [Lovelace
+journal Computers Environment and Urban Systems that summarises the paper's findings, stating that "the review by [Lovelace
 (2021)](https://www.sciencedirect.com/science/article/pii/S0198971522000692#bb0600) explores the current landscape of open source software and conclude
 that [open source
 solutions](https://www.sciencedirect.com/topics/computer-science/open-source-solution) can fulfill the professional needs of modern day transport planners"
@@ -370,6 +372,6 @@ Each time I have had my doubts about the academic career path, I have been inspi
 I am inspired by people like [Edzer Pebesma](https://www.uni-muenster.de/Geoinformatics/en/institute/staff/index.php/119/edzer_pebesma), [Megan Ryerson](https://ldi.upenn.edu/fellows/fellows-directory/megan-ryerson-phd/), [John Parkin](https://people.uwe.ac.uk/Person/JohnParkin), [Rachel Aldred](https://www.westminster.ac.uk/about-us/our-people/directory/aldred-rachel), [Anna Goodman](https://www.lshtm.ac.uk/aboutus/people/goodman.anna), [Antonion Paez](https://experts.mcmaster.ca/display/paezha), [Lake Sagaris](https://en.wikipedia.org/wiki/Lake_Sagaris), and [Michael Szell](http://michael.szell.net/), who are all using their academic positions and roles to support positive changes within and beyond academia in a variety of ways.
 In turn, I hope that some of my work will inspire others.
 
-I'm still processing what it means to have reached the top of the academic career ladder but am committed to learning from others, sharing (including through this blog and through the amazing open source software community), and focussing on projects that are likely to have a positive impact as I go.
+I'm still processing what it means to have reached the top of the academic career ladder (in terms of the UK grading system at least, there is a long way to go in terms of the work!), but am committed to continuing to learn from others, sharing (including through this blog and through the amazing open source software community), and focussing on projects that are likely to have a positive impact as I go.
 
 I do have more specific plans for high-impact projects, but will save that for another day.
