@@ -33,7 +33,7 @@ Although it's a big leap in my academic careers, it's a small change in my actua
 
 ![](images/paste-1.png)
 
-This post is a reflection on the path that got me here, provides some insight into the promotion system in the UK, and outlines some of the work that I'm most proud of.
+This post is a reflection on the path that got me here, provides some insight into the promotion system in the UK, outlines some of the work that I'm most proud of, and provides a chance to say thank you to the many people who have inspired and supported me along the way.
 
 # My career path
 
@@ -370,6 +370,6 @@ Each time I have had my doubts about the academic career path, I have been inspi
 I am inspired by people like [Edzer Pebesma](https://www.uni-muenster.de/Geoinformatics/en/institute/staff/index.php/119/edzer_pebesma), [Megan Ryerson](https://ldi.upenn.edu/fellows/fellows-directory/megan-ryerson-phd/), [John Parkin](https://people.uwe.ac.uk/Person/JohnParkin), [Rachel Aldred](https://www.westminster.ac.uk/about-us/our-people/directory/aldred-rachel), [Anna Goodman](https://www.lshtm.ac.uk/aboutus/people/goodman.anna), [Antonion Paez](https://experts.mcmaster.ca/display/paezha), [Lake Sagaris](https://en.wikipedia.org/wiki/Lake_Sagaris), and [Michael Szell](http://michael.szell.net/), who are all using their academic positions and roles to support positive changes within and beyond academia in a variety of ways.
 In turn, I hope that some of my work will inspire others.
 
-I'm still processing what it means to have reached the top of the academic career ladder but am committed to learning from others, sharing (including through this blog and through the amazing open source software community), and focussing on projects that are likely to have a positive impact as I go.
+I'm still processing what it means to have reached the top of the academic career ladder (in terms of the UK grading system at least, there is a long way to go in terms of the work!), but am committed to continuing to learn from others, sharing (including through this blog and through the amazing open source software community), and focussing on projects that are likely to have a positive impact as I go.
 
 I do have more specific plans for high-impact projects, but will save that for another day.
