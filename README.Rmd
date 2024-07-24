@@ -30,12 +30,15 @@ file.edit("content/event/modeshift-2022/index.md")
 blogdown::install_hugo()
 
 # new blog post:
-blogdown::new_post(title = "testing-valhalla", ext = ".Rmd")
+blogdown::new_post(title = "tartu2024", ext = ".Rmd")
 
 blogdown::new_content(path = "software/index.Rmd")
 
 # serve site
 blogdown::serve_site()
+
+# build site
+blogdown::build_site()
 ```
 
 To update publications run:
