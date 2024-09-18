@@ -46,8 +46,8 @@ image:
 #   icon: twitter
 
 # Optional filename of your slides within your event's folder or a URL.
-url_slides: https://spatial-data-science.github.io/2024/
-url_code: https://spatial-data-science.github.io/2024/
+url_slides: https://crosslanguage.robinlovelace.net/slides
+url_code: https://crosslanguage.robinlovelace.net/slides
 url_pdf:
 url_video:
 
