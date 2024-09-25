@@ -15,7 +15,7 @@ image:
   focal_point: ''
   preview_only: no
 projects: []
-bibliography: /home/robin/uaf/allrefs.bib
+bibliography: ../../../static/bibs/allrefs.bib
 ---
 
 Today I am presenting at the [Transport Research Board's 2021 Annual](http://www.trb.org/AnnualMeeting/AnnualMeeting.aspx) meeting, aka [#TRB2021](https://twitter.com/search?q=%23TRB2021).

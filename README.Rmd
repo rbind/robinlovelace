@@ -22,7 +22,7 @@ New talk:
 
 ```{bash, eval=FALSE}
 hugo new  --kind event event/ogh23
-cp -Rv content/event/qmul-2022 content/event/ogh23
+cp -Rv content/event/sdsl2024 content/event/glasgow2024
 ```
 
 ```{r, eval=FALSE}

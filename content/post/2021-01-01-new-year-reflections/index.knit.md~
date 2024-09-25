@@ -20,9 +20,7 @@ bibliography: ../../../static/bibs/allrefs.bib
 ---
 
 
-```{r, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-```
+
 
 
 2020 has been a crazy year all-round with US elections, Brexit negotiations reaching their conclusions and of course the global pandemic that has swept across countries and disrupted lives worldwide.
@@ -45,8 +43,9 @@ The increased emphasis on health and active travel that has been seen during the
 I was lucky enough to work from home meaning that I could plough on with my research and teaching in ITS.
 In fact, my first fully online-only taught lecture, part of the Transport Data Science module, was delivered on the 17^th^ March, as communicated in the Tweet below. 
 
-```{r}
-blogdown::shortcode("tweet", "1239930988416897033")
+
+```{=html}
+{{% tweet "1239930988416897033" %}}
 ```
 
 That was on 17 March, just one day after the Prime Minister advised against "non-essential" travel and in-person social interaction on [March 16th](https://en.wikipedia.org/wiki/Timeline_of_the_COVID-19_pandemic_in_the_United_Kingdom_(January%E2%80%93June_2020)#March_2020).
@@ -62,9 +61,10 @@ Aim of 2021: help get each of these packages onto the Comprehensive R Archive Ne
 Finally, I submitted the [`od` package](https://itsleeds.github.io/od/) which provides fast functions for working with origin-destination data, key to evidence-based transport planning decisions and prioritisation at the regional level in many cities, was published on [CRAN](https://cran.rstudio.com/web/packages/od/index.html).
 Working on that, perhaps in collaboration with Martijn Tennekes's work on OD data visualisation, is an enticing programming task for the new year.
 
-```{r slopes, fig.cap="Output from the in-development slopes pacakge, showing the gradient across a route in Lisbon, Portugal."}
-knitr::include_graphics("https://itsleeds.github.io/slopes/reference/figures/README-plot_slope-1.png")
-```
+<div class="figure">
+<img src="https://itsleeds.github.io/slopes/reference/figures/README-plot_slope-1.png" alt="Output from the in-development slopes pacakge, showing the gradient across a route in Lisbon, Portugal."  />
+<p class="caption">(\#fig:slopes)Output from the in-development slopes pacakge, showing the gradient across a route in Lisbon, Portugal.</p>
+</div>
 
 Beyond developing software, I also wrote about software, finishing-up a paper with John Parkin and Tom Cohen that had long-gestation period [@lovelace_open_2020].
 
@@ -76,8 +76,9 @@ However, with lectures being conducted remotely in most countries anyway, the 'b
 I found myself in the amazing situation of 'visiting' multiple countries via Zoom, Skype and Teams conversations from the confort of my bedroom some days and, despite the limitations of video calls compared with in-person links, found it enlightening.
 As shown below, I even dusted down my rusty Spanish and delivered a lecture for [Lake Sagaris](https://www.cedeus.cl/en/about-us/researchers/i-lake-sagaris/) in Santiago, Chile.
 
-```{r}
-blogdown::shortcode("tweet", "1260295157217480704")
+
+```{=html}
+{{% tweet "1260295157217480704" %}}
 ```
 
 ## Low traffic neighbourhoods
@@ -90,8 +91,9 @@ The methods described in that generated evidence that has helped to inform bids 
 Notably, LTNs have proliferated and academic researchers have been quick to explore the associated changes to travel behaviour: it seems they can lead to cost effective reductions in car dependency and increased walking and cycling [@aldred_low_2020a].
 In my city of Leeds, Active Travel Neighbourhoods (as the council calls them based on the fact that it's about increasing healthy kinds of traffic) are being trialled in a handful of locations including, coincidentally, on the street outside my house.
 
-```{r}
-blogdown::shortcode("tweet", "1333352487064104961")
+
+```{=html}
+{{% tweet "1333352487064104961" %}}
 ```
 
 
@@ -125,56 +127,15 @@ On that final note, I think there are many opportunities for new research projec
 It seems clear that people have adapted to working from home long-term, according to the figure below.
 The data displayed supports the conclusions of a recent paper on the topic [@barrero_why_2020].
 
-```{r wfh, fig.cap="Proportion of adults, Great Britain, 14 May to 6 December 2020, who worked from home exclusively has hovered around 30%, a huge increase compared with the 5% who worked from home in 2019. Source: [ONS](https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/conditionsanddiseases/bulletins/coronavirustheukeconomyandsocietyfasterindicators/10december2020)."}
-knitr::include_graphics("https://saferactive.github.io/trafficalmr/articles/wfh-trends-2020-12.png")
-```
+<div class="figure">
+<img src="https://saferactive.github.io/trafficalmr/articles/wfh-trends-2020-12.png" alt="Proportion of adults, Great Britain, 14 May to 6 December 2020, who worked from home exclusively has hovered around 30%, a huge increase compared with the 5% who worked from home in 2019. Source: [ONS](https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/conditionsanddiseases/bulletins/coronavirustheukeconomyandsocietyfasterindicators/10december2020)."  />
+<p class="caption">(\#fig:wfh)Proportion of adults, Great Britain, 14 May to 6 December 2020, who worked from home exclusively has hovered around 30%, a huge increase compared with the 5% who worked from home in 2019. Source: [ONS](https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/conditionsanddiseases/bulletins/coronavirustheukeconomyandsocietyfasterindicators/10december2020).</p>
+</div>
 
 Just looking at the graph below from the [SaferActive project](https://saferactive.github.io/trafficalmr/articles/report3.html) (the first time DfT data has been visualised in this way, to the best of my knowledge) suggests that transport systems could go in many directions in 2021.
 Will there be a return to the 'cycling boom' of spring/summer 2020? Or gridlock as people continue to shun public transport and flock to cars? Or will travel patterns go in a different direction entirely?
 The answers remains to be seen and to a large extent will depend on policies that are made in the post-pandemic world.
 The research opportunities and potential implications are huge but I will save that for another day.
 
-```{r covid, fig.cap="Travel by different modes of transport relative to pre-pandemic (early March) levels. Dark lines represent 30 day rolling averages. Source: [DfT](https://www.gov.uk/government/statistics/transport-use-during-the-coronavirus-covid-19-pandemic)", warning=FALSE, out.width="100%", message=FALSE}
-# Aim: get daily summary tables from UK's DfT
-library(dplyr)
-library(ggplot2)
-u = "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/942559/COVID-19-transport-use-statistics.ods"
-f = basename(u)
-download.file(u, f)
-d_original = tibble::tibble(readODS::read_ods(f, skip = 6))
-names(d_original) = gsub(pattern = "\\d", replacement = "", x = names(d_original))
-d = janitor::clean_names(d_original)
-d = d[nchar(d[[1]]) == 10, ]
-d$date = lubridate::dmy(d$date_weekends_and_bank_holidays_in_grey)
-d = d %>% select(-(cars:heavy_goods_vehicles))
-d = d %>%
-  mutate(across(all_motor_vehicles:cycling, as.numeric))
-  # mutate(across(cars:cycling, as.numeric))
-# summary(d)
-droll = d %>%
-  mutate(across(all_motor_vehicles:cycling, zoo::rollmean, k = 30, align = "right", fill = NA))
-  # mutate(across(cars:cycling, zoo::rollmean, k = 30, align = "right", fill = NA))
-# d
-# nrow(d)
-d_long = tidyr::pivot_longer(d, cols = all_motor_vehicles:cycling)
-droll_long = tidyr::pivot_longer(droll, cols = all_motor_vehicles:cycling)
-d_long$date = as.Date(d_long$date)
-droll_long$date = as.Date(droll_long$date)
-g = ggplot(droll_long) +
-  geom_line(aes(date, value, colour = name), size = 1.3) +
-  geom_line(aes(date, value, colour = name), alpha = 0.3, data = d_long) +
-  scale_y_continuous(labels = scales::percent) +
-  theme_bw()
-g
-# gp = plotly::ggplotly(g)
-# gp
-# w = plotly::as_widget(gp)
-# w
-removed = file.remove("COVID-19-transport-use-statistics.ods")
-```
 
-
-For now the only thing left to say is thans for reading and happy New Year 🎇🎇🎇
-
-## References
 

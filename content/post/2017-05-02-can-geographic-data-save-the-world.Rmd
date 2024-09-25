@@ -5,7 +5,7 @@ date: '2017-05-02'
 slug: ''
 categories: []
 tags: []
-bibliography: /home/robin/allrefs.bib
+bibliography: ../../static/bibs/allrefs.bib
 output: 
   html_document: 
     toc: yes
@@ -30,7 +30,7 @@ Over the years it has been referred to as Geographic Information Systems (GIS, w
 The talk started with an introduction that defined terms, in which I set-out what I thought made GDS different from its older brother GIS:
 
 ```{r, echo=FALSE}
-d = frame_data(
+d = tribble(
   ~Attribute, ~GIS, ~GDS,
   "Home disciplines", "Geography", "Geography, Computing, Statistics",
   "Software focus", "Graphic User Interface", "Code",
