@@ -41,7 +41,7 @@ abstract: 'This paper describes an approach for developing strategic cycle netwo
   rural cycle network designs. The approach is flexible and open source, allowing
   the underlying ideas and code to be adapted, supporting more evidence-based and
   effective cycling policies and interventions internationally.'
-featured: false
+featured: true
 publication: ''
 tags:
 - Active travel
