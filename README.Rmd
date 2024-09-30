@@ -23,6 +23,7 @@ New talk:
 ```{bash, eval=FALSE}
 hugo new  --kind event event/ogh23
 cp -Rv content/event/sdsl2024 content/event/glasgow2024
+code content/event/glasgow2024/index.md
 ```
 
 ```{r, eval=FALSE}
@@ -44,7 +45,10 @@ blogdown::build_site()
 To update publications run:
 
 ```bash
-pip3 install academic==0.5.1
+# pip3 install academic==0.5.1
+# pip3 install academic==0.11.2
+# Update:
+pip install --upgrade academic
 # academic import --bibtex static/bibs/robin-lovelaces-publications.bib
 academic import --bibtex static/bibs/robin-lovelaces-publications.bib --over
 ```
