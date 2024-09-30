@@ -49,8 +49,9 @@ To update publications run:
 # pip3 install academic==0.11.2
 # Update:
 pip install --upgrade academic
-# academic import --bibtex static/bibs/robin-lovelaces-publications.bib
-academic import --bibtex static/bibs/robin-lovelaces-publications.bib --over
+# overwrite existing:
+# academic import --bibtex static/bibs/my-citations-for-web.bib --over 
+academic import --bibtex static/bibs/my-citations-for-web.bib
 ```
 
 
