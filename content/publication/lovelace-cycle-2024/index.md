@@ -1,12 +1,10 @@
 ---
+# Documentation: https://wowchemy.com/docs/managing-content/
+
 title: 'Cycle Route Uptake and Scenario Estimation (CRUSE): An Approach for Developing
   Strategic Cycle Network Planning Tools'
-_build:
-  render: never
-  list: never
-  publishResources: false
-date: '2024-09-30'
-publishDate: '2024-09-30T10:46:07.446447Z'
+subtitle: ''
+summary: ''
 authors:
 - Robin Lovelace
 - Joey Talbot
@@ -17,6 +15,34 @@ authors:
 - Gary O’Toole
 - Dan Brennan
 - Suzanne Meade
+tags:
+- Active travel
+- Collaborative planning
+- Cycling
+- Open source
+- Road safety
+- Transport planning
+categories: []
+date: '2024-09-30'
+lastmod: 2024-09-30T12:19:25+01:00
+featured: false
+draft: false
+
+# Featured image
+# To use, add an image named `featured.jpg/png` to your page's folder.
+# Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: false
+
+# Projects (optional).
+#   Associate this post with one or more of your projects.
+#   Simply enter your project's folder or file name without extension.
+#   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
+#   Otherwise, set `projects = []`.
+projects: []
+publishDate: '2024-09-30T11:23:16.084094Z'
 publication_types:
 - '2'
 abstract: 'This paper describes an approach for developing strategic cycle network
@@ -41,18 +67,9 @@ abstract: 'This paper describes an approach for developing strategic cycle netwo
   rural cycle network designs. The approach is flexible and open source, allowing
   the underlying ideas and code to be adapted, supporting more evidence-based and
   effective cycling policies and interventions internationally.'
-featured: true
 publication: ''
-tags:
-- Active travel
-- Collaborative planning
-- Cycling
-- Open source
-- Road safety
-- Transport planning
 doi: 10.1186/s12544-024-00668-8
 links:
 - name: URL
   url: https://doi.org/10.1186/s12544-024-00668-8
 ---
-
