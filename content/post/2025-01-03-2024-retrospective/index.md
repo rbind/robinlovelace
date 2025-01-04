@@ -54,9 +54,10 @@ Positive societal impact has always been a key driver for me, and the opportunit
 
 My proudest achievements in ATE include:
 
-- Setting-up a grant funding agreement with the Alan Turing Institute to develop a new data science tool for transport planning, enabling Dustin Carlino and colleagues to develop tools that can feed directly into decision-making processes. (Incidentally, this was the first submission that ATE sent to then new government led by Rishi Sunak after the tumultuous and short-lived Liz Truss premiership.)
-- Instigating the Active Travel Infrastructure Platform (ATIP) project, which provides a new way for local authorities to plan and monitor active travel infrastructure and which is now hosted on Active Travel England's website at [plan.activetravelengland.gov.uk](https://plan.activetravelengland.gov.uk).
-- The SchoolRoutes project, which is a collaboration with the Department for Education to develop a new tool to support better planning of active travel interventions around and enabling safe travel to schools.
+- Setting-up a grant funding agreement between Active Travel England and the Alan Turing Institute (see details at [turing.ac.uk](https://www.turing.ac.uk/news/alan-turing-institute-brings-data-expertise-nationwide-walking-and-cycling-schemes) and [Forbes](https://www.forbes.com/sites/carltonreid/2023/04/04/active-travel-england-partners-with-alan-turing-institute-to-leverage-data-into-investment/)) enabling the development of new digital tools for more effective transport planning, including [planning](https://plan.activetravelengland.gov.uk) (see below) and '[inspectorate](https://acteng.github.io/inspectorate_tools/)' tools, supplementing the spreadsheet-based [Active Travel England design assistance tools](https://www.gov.uk/government/publications/active-travel-england-design-assistance-tools).
+<!-- (Incidentally, this was the first submission that ATE sent to then new government led by Rishi Sunak after the tumultuous and short-lived Liz Truss premiership.) -->
+- Instigating the 'ATIP' project hosted at [plan.activetravelengland.gov.uk](https://plan.activetravelengland.gov.uk) (see open source code at [github.com/acteng/atip](https://github.com/acteng/atip))
+- The [SchoolRoutes](https://acteng.github.io/netgen/articles/schoolroutes.html) project, which builds on [`od2net`](https://od2net.org) and the [Propensity to Cycle Tool](https://www.pct.bike) to help local authorities identify and prioritise school routes for investment in active travel infrastructure..
 
 <!-- # Academic exploits
 
