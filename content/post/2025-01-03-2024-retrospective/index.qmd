@@ -66,7 +66,10 @@ In 2024 I continued to work on a range of academic projects, with the focus bein
 Highlights included:
 
 - Completion of two books about Geocomputation, Geocomputation with R (second edition) and Geocomputation with Python, both of which are now with the publishers, CRC Press, are available for pre-order and will be published in 2025.
-- Attending and doing a keynote at the Mobile Tartu conference. 
+- Attending and delivering a keynote at the [Mobile Tartu conference](https://www.robinlovelace.net/post/tartu2024/).
+- Finally publishing our work on the the Cycle Route Uptake and Scenario Estimation (CRUSE) project in an academic paper (see [cruse.bike](https://cruse.bike/) for an interactive web app resulting from the research)
+- The internationalisation and extension of methods developed for the Propensity to Cycle Tool project.
+
 
 <!-- 
 
