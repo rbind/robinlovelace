@@ -284,6 +284,12 @@ The conference took place over 4 days, 5 including the excursion day on Saturday
 (I mis most of 'day 5' on the long journey home during which I wrote much of this blog post).
 The location was --- you guessed it from the name --- the Estonian town of Tartu, which is how I (and I suspect many others working in the mobility/transport sector) first heard of it.
 
+In summery, I really enjoyed the conference!
+I would highly recommend it to anyone working in the field of mobility and transport research.
+It had the highest quality of research focussed on origin-destination data and the use of mobile phone data for transport research that I have ever seen.
+I wonder: if there conference had a different name, e.g. the "Origin-destination and mobility data research conference", would it attract more people?
+Maybe, but the name should remain, Tartu is a fantastic place, and the strong links between the conference and the city are a big part of its appeal.
+
 # Tuesday 11th June
 
 Tuesday was the first day of the 2-day [PhD School](https://mobiletartu.ut.ee/phd-course/) that preceded and then joined the main conference.
@@ -321,11 +327,22 @@ Tired from all the activity of the first day we headed to Tartu where the rest o
 # Wednesday 12th June
 
 The second day involved a continuation of the PhD workshops, plus the opening of main Mobile Conference for all participants.
-There was plenty of time to work on the topics and other things: I decided to work on a related dataset and the nascent [{spanishoddata}](https://github.com/Robinlovelace/spanishoddata) package during some of this time.
+There was plenty of time to work on the topics and other things: I decided to work on a related dataset and the nascent [{spanishoddata}](https://github.com/Robinlovelace/spanishoddata) package during some of this time, thanks to an overdue meeting with [Egor Kotov](https://www.ekotov.pro/) from the Max Planck Institute for Demographic Research and Universitat Pompeu Fabra.
+
+*Update from January 2025: the package is now published on CRAN, and the source code is hosted on GitHub at [github.com/rOpenSpain/spanishoddata](https://github.com/rOpenSpain/spanishoddata).*
 
 # Thursday 13th June
 
-The first full day of the conference involved keynote talks by of Nico Van de Weghe from Ghent University and Anu Masso, interspersed with regular talks submitted by part
+The first full day of the conference involved keynote talks by Nico Van de Weghe from Ghent University and Anu Masso, interspersed with regular talks submitted by participants.
+
+Nico's talk was on the topic of "Exploring Possibilities: generative AI in human mobility research", and can be seen in the video below:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/rFjyxX2pHz8?si=BnGgsE_9bBgHRnXO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+Anu's talk was on the topic of "Mobility Data Justice: Estonian Data Manifesto", and can be seen in the video below:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9u7bFE_4N6Q?si=NpYgM62ABybi7mrD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 
 # Friday 14th June
 
@@ -347,7 +364,9 @@ The topics were
 The panel discussion, which I had the honour of being involved in, was on the topic of "Understanding accessibility and socio-spatial disparities with mobile big data", and highlighted the importance of open data and reproducible research to ensure that the benefits of new data sources are shared widely and equitably.
 It was refreshing to have the involvement of people not only in academia but also from the public sector and industry, including Kertu Vuks from the Tartu City Government, in the session.
 
+# Conclusion
 
+Mobile Tartu 2024 was a fantastic conference, one of the most enjoyable and productive I have ever attended.
+It was an honour to present and I thank the organisers for the opportunity.
 
-
-# Saturday
+I look forward to the next Mobile Tartu conference in 2026, and hope to see many of the same faces there.
