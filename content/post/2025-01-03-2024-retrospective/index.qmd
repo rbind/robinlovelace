@@ -68,20 +68,29 @@ Highlights included:
 - [x] Completion of two books on geographic data analysis with free and open-source programming languages for reproducible research, both of which are now with the publishers, CRC Press, are available for pre-order and will be published in 2025.
   - [x] Geocomputation with R (second edition), a major update of the first edition, which was published in 2019.
   - [x] Geocomputation with Python, a new book that builds on the success of the R book and applies the same principles to the Python programming language.
-- [x] Delivering a keynote at the [Mobile Tartu conference](https://www.robinlovelace.net/post/tartu2024/), and participating in the summer school that preceded it, leading to a new R package (see below).
-- [x] Instigating and co-authoring the new [`spanishoddata`](https://github.com/ropenspain/spanishoddata) R package, which enables reproducible scientific research and discovery in mobility and other fields based on the world's first open access and high-resolution national origin-destination dataset (thanks to the Spanish government for making this data open access and for Egor Kotov who led the development of the package after we met at the Mobile Tartu conference).
+- [x] Delivering a keynote at the [Mobile Tartu conference](https://www.robinlovelace.net/post/tartu2024/), and participating in the summer school that preceded it, which incidentally led to a new R package [`spanishoddata` (see below).
 - [x] The internationalisation and extension of methods developed for the Propensity to Cycle Tool project, including:
   - Publishing our work on the the Cycle Route Uptake and Scenario Estimation (CRUSE) project in an academic [paper](https://www.robinlovelace.net/publication/lovelace-cycle-2024/) (see [cruse.bike](https://cruse.bike/) for an interactive web app resulting from the research)
   - [x] Completion of the [Biclar](https://www.tmlmobilidade.pt/comunicacao/noticias/biclar-tml-chama-municipios-a-debater-rumo-a-um-futuro-ciclavel/) [web application](https://u-shift.github.io/biclarwww/) and paper, published in Computers, Environment and Urban Systems ([CEUS](https://www.sciencedirect.com/science/article/pii/S0198971522000731)) describing the underlying methods.
 
 - [x] Participating in the Spatial Data Science across Languages ([SDSL](https://spatial-data-science.github.io/2024/)) conference, which was held in-person in Prague in September 2024.
 
+# My year in open source
+
+In 2024 I continued to contribute to open source projects, including:
+
+- [x] Developing a simple R interface to the [`od2net`](https://od2net.org) Rust crate, which can generate route networks for OD data in a fraction of the time of other approaches.
+  - [x] This work was part of the the SchoolRoutes project, see the [acteng/netgen](https://acteng.github.io/netgen/) package for more details.
+- [x] Instigating and co-authoring the new [`spanishoddata`](https://github.com/ropenspain/spanishoddata) R package, which enables reproducible scientific research and discovery in mobility and other fields based on the world's first open access and high-resolution national origin-destination dataset (thanks to the Spanish government for making this data open access and for Egor Kotov who led the development of the package after we met at the Mobile Tartu conference).
+- [x] Contributing to the [`parenx`](https://github.com/anisotropi4/parenx) Python package, now on `pip` which provides functions for simplification of geographic representations of transport networks.
+- [x] Work on software for joining spatial networks, including improvements to the [`stplanr::rnet_join()`](https://docs.ropensci.org/stplanr/reference/rnet_join.html) function and contributions to the [`anime`](https://github.com/josiahparry/anime) (Approximate Network Integration, Matching and Enrichment) package for fast and flexible linestring matching in R, Rust and (hopefully soon) other languages.
+
+# Community projects
+
+
 
 <!-- 
 
-# My year in open source
-
-# Community projects
 
 # Thoughts on 2025
 
