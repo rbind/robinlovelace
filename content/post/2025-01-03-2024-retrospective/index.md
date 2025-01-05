@@ -101,7 +101,9 @@ These were a fun and rewarding outlet during downtime from work and family life 
 
 ## Bike fix Sunday
 
-![The Bike Fix Sunday Facebook group, we've got 150 members now and have fixed a similar number of bikes](images/paste-4.png)
+![](images/paste-4.png)
+
+*The Bike Fix Sunday Facebook group, we've got 150 members now and have fixed a similar number of bikes.*
 
 See the [Bike Fix Sunday](https://bikefs.org/) website for more details on the project, which is a great way to meet people in the local community and help people fix their bikes.
 
@@ -110,24 +112,34 @@ See the [Bike Fix Sunday](https://bikefs.org/) website for more details on the p
 [Chapeltown Cohousing](https://www.chapeltowncohousing.org.uk/) is a cohousing project in Leeds.
 It's a great place to live, with a decent amount of outdoor space that is ideal for children to run around in without the danger of the roads.
 
-![Chapeltown Cohousing in the sun, plus Katy and Rosa being surrounded by a rainbow](images/paste-7.png)
+![](images/paste-7.png)
+
+*Chapeltown Cohousing in the sun, plus Katy and Rosa being surrounded by a rainbow*
 
 Other than simply living there and chatting to our amazing neighbours, I've got involved in a few initiatives there, including getting a shared electric cargo bike, thanks to a grant from the [Leeds Community Climate Grant](https://www.leeds.gov.uk/community-climate-grants) initiative.
 
-![Chapeltown cohousing's shared electric bike, plus happy travellers on their way home on the nursery run](images/paste-8.png)
+![](images/paste-8.png)
+
+*Chapeltown cohousing's shared electric bike, plus happy travellers on their way home on the nursery run.*
+
+![](images/paste-9.png)
+
+*The electric cargo bike in action, showing how a good bike trailer + bike can conveniently carry more than many cars.*
 
 ## Oaty Cortado run club
 
 This isn't an official run club, just a group of mates who go for a coffee once a week or so, and fit in some runs too!
-I'm not on Strava much, but having seen the impressive [activity](https://www.strava.com/activities/13236925876) on there from Oaty Cortado run club member [Bobak Champion](https://www.bobakchampion.co.uk/), getting more involved in running and encouraging more people to do so seems a worth New Year's resolution!
+I'm not on Strava much, but having seen the impressive [activity](https://www.strava.com/activities/13236925876) on there from Oaty Cortado run club member [Bobak Champion](https://www.bobakchampion.co.uk/), getting more involved in running and encouraging more people to do so seems a worthy New Year's resolution!
 
 ![](images/paste-5.png)
+
+*Oaty Cortado run club in action.*
 
 I'd also like to go on more runs with the little runs: baby Rosa is yet to do a run in the buggy but that should change in 2025!
 
 ![](images/paste-6.png)
 
-Family run with the little ones in the bike trailer / running buggy
+*Family run with the little ones in the bike trailer / running buggy.*
 
 # Thoughts on 2025
 
@@ -140,4 +152,8 @@ Happy New Year to all from me and family, I hope to hear from many of you in 202
 
 ![](images/paste-2.png)
 
-![](images/paste-3.png) 
+*Kit enjoying the snow in 2024.*
+
+![](images/paste-3.png)
+
+*Kit and Rosa* 🥰
