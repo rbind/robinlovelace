@@ -57,13 +57,28 @@ My proudest achievements in ATE include:
 - Setting-up a grant funding agreement between Active Travel England and the Alan Turing Institute (see details at [turing.ac.uk](https://www.turing.ac.uk/news/alan-turing-institute-brings-data-expertise-nationwide-walking-and-cycling-schemes) and [Forbes](https://www.forbes.com/sites/carltonreid/2023/04/04/active-travel-england-partners-with-alan-turing-institute-to-leverage-data-into-investment/)) enabling the development of new digital tools for more effective transport planning, including [planning](https://plan.activetravelengland.gov.uk) (see below) and '[inspectorate](https://acteng.github.io/inspectorate_tools/)' tools, supplementing the spreadsheet-based [Active Travel England design assistance tools](https://www.gov.uk/government/publications/active-travel-england-design-assistance-tools).
 <!-- (Incidentally, this was the first submission that ATE sent to then new government led by Rishi Sunak after the tumultuous and short-lived Liz Truss premiership.) -->
 - Instigating the 'ATIP' project hosted at [plan.activetravelengland.gov.uk](https://plan.activetravelengland.gov.uk) (see open source code at [github.com/acteng/atip](https://github.com/acteng/atip))
-- The [SchoolRoutes](https://acteng.github.io/netgen/articles/schoolroutes.html) project, which builds on [`od2net`](https://od2net.org) and the [Propensity to Cycle Tool](https://www.pct.bike) to help local authorities identify and prioritise school routes for investment in active travel infrastructure..
+- The [SchoolRoutes](https://acteng.github.io/netgen/articles/schoolroutes.html) project, which builds on [`od2net`](https://od2net.org) and the [Propensity to Cycle Tool](https://www.pct.bike) to help local authorities identify and prioritise school routes for investment in active travel infrastructure.
 
-<!-- # Academic exploits
+# Academic exploits
+
+In 2024 I continued to work on a range of academic projects, with the focus being on the Network Planning Tool for Scotland ([NPT](https://www.npt.scot/)), the new BICISCHOOLS project with colleagues at the University of Lisbon, and various ongoing research projects and collaborations.
+
+Highlights included:
+
+- [x] Completion of two books on geographic data analysis with free and open-source programming languages for reproducible research, both of which are now with the publishers, CRC Press, are available for pre-order and will be published in 2025.
+  - [x] Geocomputation with R (second edition), a major update of the first edition, which was published in 2019.
+  - Geocomputation with Python, a new book that builds on the success of the R book and applies the same principles to the Python programming language.
+- [x] Attending and delivering a keynote at the [Mobile Tartu conference](https://www.robinlovelace.net/post/tartu2024/).
+- The internationalisation and extension of methods developed for the Propensity to Cycle Tool project, including:
+  - Publishing our work on the the Cycle Route Uptake and Scenario Estimation (CRUSE) project in an academic [paper](https://www.robinlovelace.net/publication/lovelace-cycle-2024/) (see [cruse.bike](https://cruse.bike/) for an interactive web app resulting from the research)
+  - Completion of the [Biclar](https://www.tmlmobilidade.pt/comunicacao/noticias/biclar-tml-chama-municipios-a-debater-rumo-a-um-futuro-ciclavel/) [web application](https://u-shift.github.io/biclarwww/) and paper, published in Computers, Environment and Urban Systems ([CEUS](https://www.sciencedirect.com/science/article/pii/S0198971522000731)) describing the underlying methods.
+
+- Participating in the Spatial Data Science across Languages ([SDSL](https://spatial-data-science.github.io/2024/)) conference, which was held in-person in Prague in September 2024.
+
+
+<!-- 
 
 # My year in open source
-
-# Travels and conferences
 
 # Community projects
 
