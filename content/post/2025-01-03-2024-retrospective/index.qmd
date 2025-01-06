@@ -17,17 +17,16 @@ image:
 projects: []
 ---
 
-It's been another busy year, and another year of change.
-In this post I'll look back on 2024 and forward to 2025.
+In this post I look back on 2024 and forward to 2025.
 
-Work-wise, I completed my contract in the [Civil Service](https://www.gov.uk/government/organisations/civil-service) where I've been working for the last 2 years in new government agency [Active Travel England](https://www.activetravelengland.gov.uk/) (note their shiny new website hosted at [activetravelengland.gov.uk](https://www.activetravelengland.gov.uk/), which has been a long time coming).
+Work-wise, I completed my contract in the [Civil Service](https://www.gov.uk/government/organisations/civil-service) where I've been working for the last 2 years in new government agency [Active Travel England](https://www.activetravelengland.gov.uk/)
+<!-- (note their shiny new website hosted at [activetravelengland.gov.uk](https://www.activetravelengland.gov.uk/), which has been a long time coming). -->
 I got a [promotion](https://www.robinlovelace.net/post/professorship/), and, from January 2025, will be back to the relative simplicity of having a single full time job.
-Data-driven research, teaching, and problem-solving is my calling, and I'm looking forward to getting back to it full time at the University of Leeds.
 
 Life-wise, I am happy to announce to the world that I've become a father, again!
 My wife Katy gave birth to a beautiful baby girl, Rosa Lovelace, on Tuesday 12th November 2024.
 Kit, who was born three years earlier, is being an excellent big brother.
-While it inevitably led less free time and some disrupted nights in the final part of the year, it has meant the world to us as a family.
+While it inevitably led to less free time and some disrupted nights in the final part of the year, it has meant the world to us as a family.
 
 Despite all this change, I've still found time to do some fun things outside work and to participate in amazing community projects.
 
@@ -36,7 +35,7 @@ If you're *really* interested, read on!
 
 # Working at Active Travel England
 
-My 2-year contract at Active Travel England finished on the 3rd of January 2025, representing the end of a detour in my career.
+My two-year contract at Active Travel England finished on the 3rd of January 2025, representing the end of a detour in my career.
 As I said in a previous [post](https://www.robinlovelace.net/post/professorship/), taking the job in the Civil Service and going part-time at the University of Leeds to enable it was a big decision.
 
 It is [well-documented](https://www.theguardian.com/higher-education-network/2017/sep/29/work-academic-professional-hybrid-role-say-goodbye-career-progression) that being an academic with a part-time job outside of academia is unusual and often challenging.
