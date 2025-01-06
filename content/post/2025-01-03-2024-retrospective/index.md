@@ -143,16 +143,16 @@ I'd also like to go on more runs with the little ones: baby Rosa is yet to do a 
 
 # Thoughts on 2025
 
-2025 is shaping up to be a significant year. I’m looking forward to diving into my new role at the University of Leeds, enjoying the increased bandwidth that comes with having only one job, maintaining a healthy work-life balance, and watching my children grow.
+I’m looking forward 2025, building on the foundations laid in 2024.
+Happy New Year everyone!
 
-With the extra bandwidth allowed by the completion of my work at Active Travel England, I'm also open to opportunities, so if you would like to get in touch about a project or collaboration, please do so in the comments below, via the [contact form](https://www.robinlovelace.net/#contact), or via email.
+<!-- With the extra bandwidth allowed by the completion of my work at Active Travel England, I'm also open to opportunities, so if you would like to get in touch about a project or collaboration, please do so in the comments below, via the [contact form](https://www.robinlovelace.net/#contact), or via email. -->
 
-Happy New Year to all from me and family, I hope to hear from many of you in 2025!
 
-![](images/paste-2.png)
+<!-- ![](images/paste-2.png)
 
 *Kit enjoying the snow in 2024.*
 
-![](images/paste-3.png)
+![](images/paste-3.png) -->
 
-*Kit and Rosa* 🥰
+<!-- *Kit and Rosa* 🥰 -->
