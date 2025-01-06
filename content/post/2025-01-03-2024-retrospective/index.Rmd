@@ -17,17 +17,16 @@ image:
 projects: []
 ---
 
-It's been another busy year, and another year of change.
-In this post I'll look back on 2024 and forward to 2025.
+In this post I look back on 2024 and forward to 2025.
 
-Work-wise, I completed my contract in the [Civil Service](https://www.gov.uk/government/organisations/civil-service) where I've been working for the last 2 years in new government agency [Active Travel England](https://www.activetravelengland.gov.uk/) (note their shiny new website hosted at [activetravelengland.gov.uk](https://www.activetravelengland.gov.uk/), which has been a long time coming).
+Work-wise, I completed my contract in the [Civil Service](https://www.gov.uk/government/organisations/civil-service) where I've been working for the last 2 years in new government agency [Active Travel England](https://www.activetravelengland.gov.uk/)
+<!-- (note their shiny new website hosted at [activetravelengland.gov.uk](https://www.activetravelengland.gov.uk/), which has been a long time coming). -->
 I got a [promotion](https://www.robinlovelace.net/post/professorship/), and, from January 2025, will be back to the relative simplicity of having a single full time job.
-Data-driven research, teaching, and problem-solving is my calling, and I'm looking forward to getting back to it full time at the University of Leeds.
 
-Life-wise, I am happy to announce to the world that I've become a father, again!
+On a personal note, I’m thrilled to announce that I’ve become a father again!
 My wife Katy gave birth to a beautiful baby girl, Rosa Lovelace, on Tuesday 12th November 2024.
 Kit, who was born three years earlier, is being an excellent big brother.
-While it inevitably led less free time and some disrupted nights in the final part of the year, it has meant the world to us as a family.
+While it inevitably led to less free time and some disrupted nights in the final part of the year, it has meant the world to us as a family.
 
 Despite all this change, I've still found time to do some fun things outside work and to participate in amazing community projects.
 
@@ -36,15 +35,14 @@ If you're *really* interested, read on!
 
 # Working at Active Travel England
 
-My 2-year contract at Active Travel England finished on the 3rd of January 2025, representing the end of a detour in my career.
-As I said in a previous [post](https://www.robinlovelace.net/post/professorship/), taking the job in the Civil Service and going part-time at the University of Leeds to enable it was a big decision.
+My two-year contract at Active Travel England concluded on January 3, 2025, marking the end of a detour in my career.
+As outlined in a previous [post](https://www.robinlovelace.net/post/professorship/), taking the job in the Civil Service and going part-time at the University of Leeds to enable it was a big decision.
 
-It is [well-documented](https://www.theguardian.com/higher-education-network/2017/sep/29/work-academic-professional-hybrid-role-say-goodbye-career-progression) that being an academic with a part-time job outside of academia is unusual and often challenging.
+<!-- Balancing an academic career with a part-time role outside academia was a challenge. 
 The nature of academic work lends itself to an 'all in' approach, especially when it comes to research and the pressure/expectation/enjoyment of publishing.
-That 'all in' mentality wouldn't normally apply so much to the Civil Service (as outlined in [Reddit thread](https://www.reddit.com/r/TheCivilService/comments/14ga6j4/what_are_the_positives_and_negatives_of_working/) on the pros and cons of working there), but in a new and exciting government agency like ATE I knew that many people were 100% committed to it.
-(After my experience there, I would *highly* recommend working in the Civil Service to anyone who is interested in making a positive impact on society and has the skills to do so, see job opportunities at [civilservicejobs.service.gov.uk](https://www.civilservicejobs.service.gov.uk/csr/index.cgi?SID=cGFnZWNsYXNzPVNlYXJjaCZwYWdlYWN0aW9uPXNlYXJjaGNvbnRleHQmb3duZXI9NTA3MDAwMCZvd25lcnR5cGU9ZmFpciZjb250ZXh0aWQ9MTExNDU0MzU1JnJlcXNpZz0xNzM2MDg2MTMxLTUxMTE3Mjc4NGUwNDczYWQ4N2I1NDIzNzU0MDMyN2Q3ZGZkNzA0ZGQ=).)
+That 'all in' mentality wouldn't normally apply so much to the Civil Service (as outlined in [Reddit thread](https://www.reddit.com/r/TheCivilService/comments/14ga6j4/what_are_the_positives_and_negatives_of_working/) on the pros and cons of working there), but in a new and exciting government agency like ATE I knew that many people were 100% committed to it. -->
 
-The decision to go part time in both jobs was the right one though: it allowed me to follow-through on the belief that publicly-funded researchers owe it to society (including tax payers) to 'give back'.
+The decision to go part time in both jobs was the right one though: it allowed me to follow through on the belief that publicly-funded researchers owe it to society to 'give back'.
 Plus, the differences between academia and the Civil Service are not too big: both are knowledge-based institutions with a focus on evidence and the public good.
 (In some countries such as Germany, academics are civil servants.)
 
@@ -64,42 +62,44 @@ My proudest achievements in ATE include:
 -   Instigating the 'ATIP' project hosted at [plan.activetravelengland.gov.uk](https://plan.activetravelengland.gov.uk) (see open source code at [github.com/acteng/atip](https://github.com/acteng/atip))
 -   The [SchoolRoutes](https://acteng.github.io/netgen/articles/schoolroutes.html) project, which builds on [`od2net`](https://od2net.org) and the [Propensity to Cycle Tool](https://www.pct.bike) to help local authorities identify and prioritise school routes for investment in active travel infrastructure.
 
+After my experience there, I would recommend working in the Civil Service to anyone who is interested in making a positive impact on society and has the skills to do so, see job opportunities at [civilservicejobs.service.gov.uk](https://www.civilservicejobs.service.gov.uk/csr/index.cgi?SID=cGFnZWNsYXNzPVNlYXJjaCZwYWdlYWN0aW9uPXNlYXJjaGNvbnRleHQmb3duZXI9NTA3MDAwMCZvd25lcnR5cGU9ZmFpciZjb250ZXh0aWQ9MTExNDU0MzU1JnJlcXNpZz0xNzM2MDg2MTMxLTUxMTE3Mjc4NGUwNDczYWQ4N2I1NDIzNzU0MDMyN2Q3ZGZkNzA0ZGQ=).
+
 # Academic exploits
 
 In 2024 I continued to work on a range of academic projects, with the focus being on the Network Planning Tool for Scotland ([NPT](https://www.npt.scot/)), the new BICISCHOOLS project with colleagues at the University of Lisbon, and various ongoing research projects and collaborations.
 
 Highlights included:
 
--   [x] Completion of two books on geographic data analysis with free and open-source programming languages for reproducible research, both of which are now with the publishers, CRC Press, are available for pre-order and will be published in 2025.
-    -   [x] Geocomputation with R (second edition), a major update of the first edition, which was published in 2019.
-    -   [x] Geocomputation with Python, a new book that builds on the success of the R book and applies the same principles to the Python programming language.
--   [x] Delivering a keynote at the [Mobile Tartu conference](https://www.robinlovelace.net/post/tartu2024/), and participating in the summer school that preceded it, which incidentally led to a new R package \[`spanishoddata` (see below).
--   [x] The internationalisation and extension of methods developed for the Propensity to Cycle Tool project, including:
-    -   Publishing our work on the the Cycle Route Uptake and Scenario Estimation (CRUSE) project in an academic [paper](https://www.robinlovelace.net/publication/lovelace-cycle-2024/) (see [cruse.bike](https://cruse.bike/) for an interactive web app resulting from the research)
-    -   [x] Completion of the [Biclar](https://www.tmlmobilidade.pt/comunicacao/noticias/biclar-tml-chama-municipios-a-debater-rumo-a-um-futuro-ciclavel/) [web application](https://u-shift.github.io/biclarwww/) and paper, published in Computers, Environment and Urban Systems ([CEUS](https://www.sciencedirect.com/science/article/pii/S0198971522000731)) describing the underlying methods.
--   [x] Participating in the Spatial Data Science across Languages ([SDSL](https://spatial-data-science.github.io/2024/)) conference, which was held in-person in Prague in September 2024.
+-   I completed two books on geographic data analysis using free and open-source programming languages for reproducible research. Both are now with CRC Press, available for pre-order, and will be published in 2025.
+    -   Geocomputation with R (second edition), a major update of the first edition, which was published in 2019.
+    -   Geocomputation with Python, a new book that builds on the success of the R book and applies the same principles to the Python programming language.
+-   Delivering a keynote at the [Mobile Tartu conference](https://www.robinlovelace.net/post/tartu2024/), and participating in the summer school that preceded it, which incidentally led to a new R package \[`spanishoddata` (see below).
+-   The internationalisation and extension of methods developed for the Propensity to Cycle Tool project, including:
+    -   Publishing our work on the Cycle Route Uptake and Scenario Estimation (CRUSE) project in an academic [paper](https://www.robinlovelace.net/publication/lovelace-cycle-2024/) (see [cruse.bike](https://cruse.bike/) for an interactive web app resulting from the research)
+    -   Completion of the [Biclar](https://www.tmlmobilidade.pt/comunicacao/noticias/biclar-tml-chama-municipios-a-debater-rumo-a-um-futuro-ciclavel/) [web application](https://u-shift.github.io/biclarwww/) and paper, published in Computers, Environment and Urban Systems ([CEUS](https://www.sciencedirect.com/science/article/pii/S0198971522000731)) describing the underlying methods.
+-   Participating in the Spatial Data Science across Languages ([SDSL](https://spatial-data-science.github.io/2024/)) conference, which was held in-person in Prague in September 2024.
 
 # My year in open source
 
 In 2024 I continued to contribute to open source projects, including:
 
--   [x] Developing a simple R interface to the [`od2net`](https://od2net.org) Rust crate, which can generate route networks for OD data in a fraction of the time of other approaches.
-    -   [x] This work was part of the the SchoolRoutes project, see the [acteng/netgen](https://acteng.github.io/netgen/) package for more details.
--   [x] Instigating and co-authoring the new [`spanishoddata`](https://github.com/ropenspain/spanishoddata) R package, which enables reproducible scientific research and discovery in mobility and other fields based on the world's first open access and high-resolution national origin-destination dataset (thanks to the Spanish government for making this data open access and for Egor Kotov who led the development of the package after we met at the Mobile Tartu conference).
--   [x] Contributing to the [`parenx`](https://github.com/anisotropi4/parenx) Python package, now on `pip` which provides functions for simplification of geographic representations of transport networks.
--   [x] Work on software for joining spatial networks, including improvements to the [`stplanr::rnet_join()`](https://docs.ropensci.org/stplanr/reference/rnet_join.html) function and contributions to the [`anime`](https://github.com/josiahparry/anime) (Approximate Network Integration, Matching and Enrichment) package for fast and flexible linestring matching in R, Rust and (hopefully soon) other languages.
+-   Developing a simple R interface to the [`od2net`](https://od2net.org) Rust crate, which can generate route networks for OD data in a fraction of the time of other approaches.
+    -   This work was part of the SchoolRoutes project, see the [acteng/netgen](https://acteng.github.io/netgen/) package for more details.
+-   Instigating and co-authoring the new [`spanishoddata`](https://github.com/ropenspain/spanishoddata) R package, which enables reproducible scientific research and discovery in mobility and other fields based on the world's first open access and high-resolution national origin-destination dataset. Thanks to the Spanish government for making this data open access and to Egor Kotov, who led the development of the package after we met at the Mobile Tartu conference.
+-   Contributing to the [`parenx`](https://github.com/anisotropi4/parenx) Python package, now on `pip` which provides functions for simplification of geographic representations of transport networks.
+-   Work on software for joining spatial networks, including improvements to the [`stplanr::rnet_join()`](https://docs.ropensci.org/stplanr/reference/rnet_join.html) function and contributions to the [`anime`](https://github.com/josiahparry/anime) (Approximate Network Integration, Matching and Enrichment) package for fast and flexible linestring matching in R, Rust and (hopefully soon) other languages.
 
 See my [GitHub profile](https://github.com/robinlovelace) for more details on my open source work.
 
 # Community projects
 
-All that time in front of the computer, Working on all three jobs --- as Lead Data Scientist at Active Travel England, an academic at the University of Leeds, and as an author and maintainer of open source software --- involved a lot of screen time.
+Working across three roles as Lead Data Scientist at Active Travel England, an academic at the University of Leeds, and an author and maintainer of open-source software involved a lot of screen time.
 The perfect antidote to that is getting outside and doing things with other people and 2024 was pretty strong in that regard.
 I had three main outlets for my outdoorsy and social side in 2024: the community-run [Bike Fix Sunday](https://bikefs.org/) project to help people fix their bikes in the local community, the Chapeltown Cohousing community-led housing project where I live, and the 'Oaty Cortado run club'.
 
 These were a fun and rewarding outlet during downtime from work and family life and, as the photos below convey, were great fun.
 
-## Bike fix Sunday
+## Bike Fix Sunday
 
 ![](images/paste-4.png)
 
@@ -143,8 +143,7 @@ I'd also like to go on more runs with the little ones: baby Rosa is yet to do a 
 
 # Thoughts on 2025
 
-2025 is going to be a big year.
-I'm looking forward to it all, getting cranking in my new role at the University of Leeds and having more bandwidth with only one job, continuing to have a good work-life balance, and seeing how the kids grow up.
+2025 is shaping up to be a significant year. I’m looking forward to diving into my new role at the University of Leeds, enjoying the increased bandwidth that comes with having only one job, maintaining a healthy work-life balance, and watching my children grow.
 
 With the extra bandwidth allowed by the completion of my work at Active Travel England, I'm also open to opportunities, so if you would like to get in touch about a project or collaboration, please do so in the comments below, via the [contact form](https://www.robinlovelace.net/#contact), or via email.
 
