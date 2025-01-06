@@ -20,7 +20,7 @@ projects: []
 It's been another busy year, and another year of change.
 In this post I'll look back on 2024 and forward to 2025.
 
-Work-wise, I completed my contract in the [Civil Service](https://www.gov.uk/government/organisations/civil-service) where I've been working for the last 2 years in new government agency [Active Travel England](https://www.activetravelengland.gov.uk/) (note their shiny new website hosted at [activetravelengland.gov.uk](https://www.activetravelengland.gov.uk/), which has been a long timing coming).
+Work-wise, I completed my contract in the [Civil Service](https://www.gov.uk/government/organisations/civil-service) where I've been working for the last 2 years in new government agency [Active Travel England](https://www.activetravelengland.gov.uk/) (note their shiny new website hosted at [activetravelengland.gov.uk](https://www.activetravelengland.gov.uk/), which has been a long time coming).
 I got a [promotion](https://www.robinlovelace.net/post/professorship/), and, from January 2025, will be back to the relative simplicity of having a single full time job.
 Data-driven research, teaching, and problem-solving is my calling, and I'm looking forward to getting back to it full time at the University of Leeds.
 
@@ -41,7 +41,7 @@ As I said in a previous [post](https://www.robinlovelace.net/post/professorship/
 
 It is [well-documented](https://www.theguardian.com/higher-education-network/2017/sep/29/work-academic-professional-hybrid-role-say-goodbye-career-progression) that being an academic with a part-time job outside of academia is unusual and often challenging.
 The nature of academic work lends itself to an 'all in' approach, especially when it comes to research and the pressure/expectation/enjoyment of publishing.
-That 'all in' mentality wouldn't normally apply so much to the Civil Service (as outlined in [Reddit thread](https://www.reddit.com/r/TheCivilService/comments/14ga6j4/what_are_the_positives_and_negatives_of_working/) on the pros and cons of working there), but in a new and exciting government agency like ATE many I knew that many people were 100% committed to it.
+That 'all in' mentality wouldn't normally apply so much to the Civil Service (as outlined in [Reddit thread](https://www.reddit.com/r/TheCivilService/comments/14ga6j4/what_are_the_positives_and_negatives_of_working/) on the pros and cons of working there), but in a new and exciting government agency like ATE I knew that many people were 100% committed to it.
 (After my experience there, I would *highly* recommend working in the Civil Service to anyone who is interested in making a positive impact on society and has the skills to do so, see job opportunities at [civilservicejobs.service.gov.uk](https://www.civilservicejobs.service.gov.uk/csr/index.cgi?SID=cGFnZWNsYXNzPVNlYXJjaCZwYWdlYWN0aW9uPXNlYXJjaGNvbnRleHQmb3duZXI9NTA3MDAwMCZvd25lcnR5cGU9ZmFpciZjb250ZXh0aWQ9MTExNDU0MzU1JnJlcXNpZz0xNzM2MDg2MTMxLTUxMTE3Mjc4NGUwNDczYWQ4N2I1NDIzNzU0MDMyN2Q3ZGZkNzA0ZGQ=).)
 
 The decision to go part time in both jobs was the right one though: it allowed me to follow-through on the belief that publicly-funded researchers owe it to society (including tax payers) to 'give back'.
@@ -49,7 +49,7 @@ Plus, the differences between academia and the Civil Service are not too big: bo
 (In some countries such as Germany, academics are civil servants.)
 
 More specifically, accepting the offer to work part time in a new part of central government, devoted to a topic that I am passionate about, was exciting.
-Iit allowed me to build a data and digital team and help shape a rapidly-evolving organisation.
+It allowed me to build a data and digital team and help shape a rapidly-evolving organisation.
 Furthermore, I knew that the role in Active Travel England would allow me to work on projects that will have huge impacts for years to come, while continuing to work with outstanding people as part of my main career in academia.
 
 The job at ATE didn't come out of the blue.
@@ -135,7 +135,7 @@ I'm not on Strava much, but having seen the impressive [activity](https://www.st
 
 *Oaty Cortado run club in action.*
 
-I'd also like to go on more runs with the little runs: baby Rosa is yet to do a run in the buggy but that should change in 2025!
+I'd also like to go on more runs with the little ones: baby Rosa is yet to do a run in the buggy but that should change in 2025!
 
 ![](images/paste-6.png)
 
