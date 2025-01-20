@@ -22,7 +22,7 @@ New talk:
 
 ```{bash, eval=FALSE}
 hugo new  --kind event event/ogh23
-cp -Rv content/event/sdsl2024 content/event/glasgow2024
+cp -Rv content/event/sdsl2024 content/event/transportai-2025
 code content/event/glasgow2024/index.md
 ```
 
@@ -37,6 +37,7 @@ blogdown::new_content(path = "software/index.Rmd")
 
 # serve site
 blogdown::serve_site()
+blogdown::stop_server()
 
 # build site
 blogdown::build_site()
