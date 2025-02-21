@@ -15,8 +15,8 @@ abstract: "Transport planning has always been a complex and multi-disciplinary e
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
-date: 2024-10-10T14:00:00+01:00
-date_end: 2024-10-10T15:00:00+01:00
+date: 2025-05-20T14:00:00+01:00
+date_end: 2025-05-20T15:00:00+01:00
 all_day: false
 
 # # Schedule page publish date (NOT event date).
@@ -70,7 +70,7 @@ format: gfm
 [Robin Lovelace](https://www.robinlovelace.net) is Professor of Transport Data Science at the Leeds Institute for Transport Studies ([ITS](https://environment.leeds.ac.uk/transport/staff/953/dr-robin-lovelace)) and Head of Data Science at the UK government agency [Active Travel England](https://activetravelengland.gov.uk/).
 Robin specializes in data science and geocomputation, with a focus on developing geographic methods applied to modeling transport systems, active travel, and decarbonisation.
 Robin has experience not only researching but deploying transport models in inform sustainable policies and more effective use of transport investment, including as Lead Developer of the Propensity to Cycle Tool (see www.pct.bike), the basis of strategic cycle network plans nationwide.
-Robin has led numerous data science projects for organizations ranging from the Department for Transport and Transport Infrastructure Ireland to the World Bank.
+Robin has led numerous data science projects for organizations ranging from the Deparfalsetment for Transport and Transport Infrastructure Ireland to the World Bank.
 
 Illustration of the Network Planning Tool (NPT) results for St Andrews
 
