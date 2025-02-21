@@ -67,7 +67,7 @@ format: gfm
 
 ## Blurb
 
-[Robin Lovelace](https://www.robinlovelace.net) is Professor of Transport Data Science at the Leeds Institute for Transport Studies ([ITS](https://environment.leeds.ac.uk/transport/staff/953/dr-robin-lovelace)) and Head of Data Science at the UK government agency [Active Travel England](https://activetravelengland.gov.uk/).
+[Robin Lovelace](https://www.robinlovelace.net) is Professor of Transport Data Science at the Leeds Institute for Transport Studies ([ITS](https://environment.leeds.ac.uk/transport/staff/953/dr-robin-lovelace)).
 Robin specializes in data science and geocomputation, with a focus on developing geographic methods applied to modeling transport systems, active travel, and decarbonisation.
 Robin has experience not only researching but deploying transport models in inform sustainable policies and more effective use of transport investment, including as Lead Developer of the Propensity to Cycle Tool (see www.pct.bike), the basis of strategic cycle network plans nationwide.
 Robin has led numerous data science projects for organizations ranging from the Deparfalsetment for Transport and Transport Infrastructure Ireland to the World Bank.
