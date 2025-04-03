@@ -15,14 +15,18 @@ image:
   focal_point: ''
   preview_only: no
 projects: []
+bibliography: references.bib
 ---
 
-I spent the last three days in Copenhagen, the capital of bike-friendly Denmark and inspiration for the 'Copenhaganize index' (which Copenhagen leads, with a score of 90.2% as of 2019).
-It assumed it would have a lot to offer a transport researcher, and it did not disappoint.
+I spent the last three days in Copenhagen, the capital of bike-friendly Denmark and inspiration for the '[Copenhaganize index](https://copenhagenizeindex.eu/)' (which Copenhagen leads, with a score of 90.2% as of 2019).
+I assumed it would have a lot to offer a transport researcher, and it did not disappoint.
 
 In fact, transport research *was* the reason I went.
 Specifically, I went to examine a PhD, the second that I have had the privileged of passing judgment on, and the first PhD I had examined outside the UK.
-The "PhD defense" process is very different in Denmark is different in many ways than the closed-to-the-public viva system we have in the UK, and includes the requirement that at least one of the roles must be based outside of Denmark.
+
+The "PhD defense" (also known as the viva) processes [vary](https://eprints.bournemouth.ac.uk/37508/7/624-Article%20Text-966-1-10-20230112.pdf) from country to country and even from university-to-university within the same country [@vanteijlingen2022].
+In the UK, vivas take place in a "non-public" space.
+In Denmark (and many other countries) and includes the requirement that at least one of the roles must be based outside of Denmark.
 I was honored to be invited, and didn't fully realise what I was getting myself into (in a good way) until I was there.
 - The PhD student I examined was Anastassia Vybornova and her thesis is titled "Urban Data Science for Sustainable Mobility".
 
