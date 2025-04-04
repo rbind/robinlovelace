@@ -98,6 +98,68 @@ There are [entire books](https://www.detail.de/de_en/kobehavn-englisch) on the t
 <figcaption aria-hidden="true">The plane that took me to Copenhagen. There is a tension between the benefits of international links which can grow with in-person meetings and the benefits of reducing travel demand, highlighted by the “<a href="https://noflyclimatesci.org/">No Fly Climate Sci</a>” movement and the article “<a href="https://www.theguardian.com/travel/2019/may/22/could-you-give-up-flying-meet-the-no-plane-pioneers">Could you give up flying? Meet the no-plane pioneers</a>”.</figcaption>
 </figure>
 
+<figure>
+<img src="images/paste-8.png" alt="The first bit of cycle infrastructure I came across on the walk from the metro station to Zoku, the place I was staying. This infrastructure is not really good from a utilitarian perspective but it’s good from a fun perspective, highlighting the fact that infrastructure should be fun and child-friendly in places." />
+<figcaption aria-hidden="true">The first bit of cycle infrastructure I came across on the walk from the metro station to Zoku, the place I was staying. This infrastructure is not really good from a utilitarian perspective but it’s good from a fun perspective, highlighting the fact that infrastructure should be fun and child-friendly in places.</figcaption>
+</figure>
+
+<figure>
+<img src="images/paste-9.png" alt="The first view I got of the rush hour, from a run on my first day in Copenhagen. Note: cycles outnumber cars by around 3:1. I suspect that that modal split is about right for many roads in central cophagen." />
+<figcaption aria-hidden="true">The first view I got of the rush hour, from a run on my first day in Copenhagen. Note: cycles outnumber cars by around 3:1. I suspect that that modal split is about right for many roads in central cophagen.</figcaption>
+</figure>
+
+<figure>
+<img src="images/paste-10.png" alt="The main building of the IT University of Copenhagen where the research and defense took place." />
+<figcaption aria-hidden="true">The main building of the <a href="https://itu.dk/">IT University of Copenhagen</a> where the research and defense took place.</figcaption>
+</figure>
+
+<figure>
+<img src="images/paste-11.png" alt="The view from an office in ITU." />
+<figcaption aria-hidden="true">The view from an office in ITU.</figcaption>
+</figure>
+
+<figure>
+<img src="images/paste-13.png" alt="Anasstasia in action during the presentation of the thesis" />
+<figcaption aria-hidden="true">Anasstasia in action during the presentation of the thesis</figcaption>
+</figure>
+
+<figure>
+<img src="images/paste-14.png" alt="A typical arterial road in Denmark. Note: the amount of space taken by private motorised modes is greater than the amount of space dedicated for active travel. This suggests that there is room for improvement for active travel provision and quick wins even in cities with active travel levels that are high compared with most cities worldwide but which still have a high level of car ownership and use in absolute terms." />
+<figcaption aria-hidden="true">A typical arterial road in Denmark. Note: the amount of space taken by private motorised modes is greater than the amount of space dedicated for active travel. This suggests that there is room for improvement for active travel provision and quick wins even in cities with active travel levels that are high compared with most cities worldwide but which still have a high level of car ownership and use in absolute terms.</figcaption>
+</figure>
+
+<figure>
+<img src="images/paste-15.png" alt="One of many bridges for active travel in Copenhagen. Note the width of the paths and space enabling high levels of cycle and foot traffic. It is a beautiful site to behold." />
+<figcaption aria-hidden="true">One of many bridges for active travel in Copenhagen. Note the width of the paths and space enabling high levels of cycle and foot traffic. It is a beautiful site to behold.</figcaption>
+</figure>
+
+<figure>
+<img src="images/paste-17.png" alt="Another car-free bridge, highlighting the scale of active travel infrastructure and investment for a joined-up network." />
+<figcaption aria-hidden="true">Another car-free bridge, highlighting the scale of active travel infrastructure and investment for a joined-up network.</figcaption>
+</figure>
+
+<figure>
+<img src="images/paste-18.png" alt="The Copehagen skyline" />
+<figcaption aria-hidden="true">The Copehagen skyline</figcaption>
+</figure>
+
+<figure>
+<img src="images/paste-19.png" alt="An example of clear separation between cycling and walking modes." />
+<figcaption aria-hidden="true">An example of clear separation between cycling and walking modes.</figcaption>
+</figure>
+
+<figure>
+<img src="images/paste-20.png" alt="Central Copenhagen, highlighting the high throughflow of pedestrians and cyclists enabled by space allocation policies, and the fact that there are bike parking spaces *everywhere* in the city." />
+<figcaption aria-hidden="true">Central Copenhagen, highlighting the high throughflow of pedestrians and cyclists enabled by space allocation policies, and the fact that there are bike parking spaces *everywhere* in the city.</figcaption>
+</figure>
+
+Overall it was an inspiring trip.
+There are many research ideas brewing, and I look forward to putting some of them into thought, words, code and action over the coming months.
+I would love to learn more about how Copenhagen and other cities with high percentages of trips made by active modes got there so feel free to get in touch on that.
+If you’re interested in any of the code underlying Anastassia’s thesis, check out the [NERDSITU GitHub organisation](https://github.com/NERDSITU/).
+
+More could be said on the research and city sides, I would love to create a photo map of my trip, but that can wait for another day.
+
 # References
 
 <div id="refs" class="references csl-bib-body hanging-indent">
