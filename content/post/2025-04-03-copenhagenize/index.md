@@ -88,17 +88,4 @@ Teijlingen, Edwin van, Bibha Simkhada, Pramod Regmi, Padam Simkhada, Vanora Hund
 
 </div>
 
-[^1]: I was a reviewer of a thesis by Christian Werner on “Integrated geospatial network assessment for planning support in cycling mobility”
-
-    <blockquote class="bluesky-embed" data-bluesky-uri="at://did:plc:scyxpltepxvut6akgwojidty/app.bsky.feed.post/3llxvrb652c2e" data-bluesky-cid="bafyreifaqjq5s2tcta26aaotobnhxbjyfgfq4yw3swwrtd5tlkh7wi2zjm" data-bluesky-embed-color-mode="system">
-    <p lang="en">
-
-    Belated congratulations to Christian Werner!
-    I was a small part of the process as an external review and fully agree: excellent piece of work that contributes to the field and provides a strong foundation for other researchers with open and reproducible code and new ideas for network planning 🚲<br><br><a href="https://bsky.app/profile/did:plc:scyxpltepxvut6akgwojidty/post/3llxvrb652c2e?ref_src=embed">\[image or embed\]</a>
-
-    </p>
-
-    — Robin Lovelace (<a href="https://bsky.app/profile/did:plc:scyxpltepxvut6akgwojidty?ref_src=embed">(**robinlovelace.bsky.social?**)</a>) <a href="https://bsky.app/profile/did:plc:scyxpltepxvut6akgwojidty/post/3llxvrb652c2e?ref_src=embed">April 4, 2025 at 8:35 AM</a>
-
-    </blockquote>
-    <script async src="https://embed.bsky.app/static/embed.js" charset="utf-8"></script>
+[^1]: I was a reviewer of a [thesis](https://bsky.app/profile/robinlovelace.bsky.social/post/3llxvrb652c2e) by Christian Werner on “Integrated geospatial network assessment for planning support in cycling mobility”
