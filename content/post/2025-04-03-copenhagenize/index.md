@@ -119,8 +119,8 @@ There are [entire books](https://www.detail.de/de_en/kobehavn-englisch) on the t
 </figure>
 
 <figure>
-<img src="images/paste-13.png" alt="Anasstasia in action during the presentation of the thesis" />
-<figcaption aria-hidden="true">Anasstasia in action during the presentation of the thesis</figcaption>
+<img src="images/paste-13.png" alt="Anastassia in action during the presentation of the thesis" />
+<figcaption aria-hidden="true">Anastassia in action during the presentation of the thesis</figcaption>
 </figure>
 
 <figure>
