@@ -62,8 +62,11 @@ The thesis is composed of the following papers:
 8.  Paper 8: “Urban highways are barriers to social ties” (**aiello2024?**)
 
 That is a *lot* of ground covered in a single PhD and testament to the collaborative teamwork in action in the NERDS lab.
+4 out of the 8 papers focussed on cycle network design a topic that is right up my street, and something that I could comment on.
+After an excellent presentation providing an overview of the work, and ideas that held the papers listed above together into a cohesive whole, there was an in-depth discussion in which the others on the committee and I asked many questions and got detailed answers.
+Happy to say: Anastassia passed with flying colours 🎉
 
-4 out of the 8 papers (outlined below) focussed on cycle network design, aligning with w.
+![](images/paste-2.png)
 
 # The city
 
