@@ -18,8 +18,9 @@ projects: []
 bibliography: references.bib
 ---
 
-I spent the last three days in Copenhagen, the capital of bike-friendly Denmark and inspiration for the ‘[Copenhaganize index](https://copenhagenizeindex.eu/)’ (which Copenhagen leads, with a score of 90.2% as of 2019).
-I assumed it would have a lot to offer a transport researcher, and it did not disappoint.
+I spent the last three days in Copenhagen to examine a [thesis](https://en.itu.dk/Research/PhD-Programme/PhD-Defences/PhD-Defences-2025/March/Anastassia-Vybornova).
+I assumed the capital of bike-friendly Denmark and inspiration for the ‘[Copenhaganize index](https://copenhagenizeindex.eu/)’ (which Copenhagen of course leads, with a score of 90.2% as of 2019) would have a lot to offer a transport researcher, and it did not disappoint.
+For some thoughts, links and photos from the trip, rea
 
 In fact, transport research was the reason I went: to be part of the committee examining a PhD.
 This was the second PhD defense (also known as a viva) that I’ve done, and the first outside the UK.[^1]
@@ -66,9 +67,20 @@ That is a *lot* of ground covered in a single PhD and testament to the collabora
 After an excellent presentation providing an overview of the work, and ideas that held the papers listed above together into a cohesive whole, there was an in-depth discussion in which the others on the committee and I asked many questions and got detailed answers.
 Happy to say: Anastassia passed with flying colours 🎉
 
-![](images/paste-2.png)
+<figure>
+<img src="images/paste-2.png" data-fig-alt="Meal in Copenhagen" alt="Meal with Anastassia, PhD supervisor Michael, and the 3/2rds of the examination committee to celebrate" />
+<figcaption aria-hidden="true">Meal with Anastassia, PhD supervisor Michael, and the 3/2rds of the examination committee to celebrate</figcaption>
+</figure>
 
 # The city
+
+The city of Copenhagen is beautiful, child-friendly and highly conducive to active travel, things that are enabled by comparatively low (but still harmful) levels of car ownership and driving in city.
+There are [entire books](https://www.detail.de/de_en/kobehavn-englisch) on the topic that I cannot do justice to here, so I will just share some photos I took during the trip order.
+
+<figure>
+<img src="images/paste-4.png" alt="Photo of Manchester from the train to the airport on the way to Copenhage, highlighting the fact that there is great potential to ‘copenhagenize’ and make existing cities more liveable. Small interventions like providing clearly demarcated space for cycling and narrowing the carriageway that has low levels of traffic could help, as illustrated in the image below." />
+<figcaption aria-hidden="true">Photo of Manchester from the train to the airport on the way to Copenhage, highlighting the fact that there is great potential to ‘copenhagenize’ and make existing cities more liveable. Small interventions like providing clearly demarcated space for cycling and narrowing the carriageway that has low levels of traffic could help, as illustrated in the image below.</figcaption>
+</figure>
 
 # References
 
