@@ -83,6 +83,21 @@ There are [entire books](https://www.detail.de/de_en/kobehavn-englisch) on the t
 <figcaption aria-hidden="true">Photo of Manchester from the train to the airport on the way to Copenhage, highlighting the fact that there is great potential to ‘copenhagenize’ and make existing cities more liveable. Small interventions like providing clearly demarcated space for cycling and narrowing the carriageway that has low levels of traffic could help, as illustrated in the image below.</figcaption>
 </figure>
 
+<figure>
+<img src="images/paste-5.png" alt="Illustration of “edge lane roads” implemented on a growing number of residential roads in Denmark, providing a cost-effective way of creating space for cycling while reducing vehicle speeds (note the lack of a centreline, encouraging safe driving). Source, the Cycling Emassy of Denmark website, hosted at cylingsolutions.info." />
+<figcaption aria-hidden="true">Illustration of “edge lane roads” implemented on a growing number of residential roads in Denmark, providing a cost-effective way of creating space for cycling while reducing vehicle speeds (note the lack of a centreline, encouraging safe driving). Source, the <a href="https://cyclingsolutions.info/edge-lane-roads/">Cycling Emassy of Denmark website, hosted at cylingsolutions.info</a>.</figcaption>
+</figure>
+
+<figure>
+<img src="images/paste-6.png" alt="Another photo of central Manchester from the train on the way to the airport. This image shows that there are some very liveable and beautiful spaces in the UK, a major issue being the lack of safe active travel routes between them, something that is tackled in “paper 5” of Anastassia’s thesis, on identifying gaps in networks." />
+<figcaption aria-hidden="true">Another photo of central Manchester from the train on the way to the airport. This image shows that there are some very liveable and beautiful spaces in the UK, a major issue being the lack of safe active travel routes between them, something that is tackled in “paper 5” of Anastassia’s thesis, on identifying gaps in networks.</figcaption>
+</figure>
+
+<figure>
+<img src="images/paste-7.png" alt="The plane that took me to Copenhagen. There is a tension between the benefits of international links which can grow with in-person meetings and the benefits of reducing travel demand, highlighted by the “No Fly Climate Sci” movement and the article “Could you give up flying? Meet the no-plane pioneers”." />
+<figcaption aria-hidden="true">The plane that took me to Copenhagen. There is a tension between the benefits of international links which can grow with in-person meetings and the benefits of reducing travel demand, highlighted by the “<a href="https://noflyclimatesci.org/">No Fly Climate Sci</a>” movement and the article “<a href="https://www.theguardian.com/travel/2019/may/22/could-you-give-up-flying-meet-the-no-plane-pioneers">Could you give up flying? Meet the no-plane pioneers</a>”.</figcaption>
+</figure>
+
 # References
 
 <div id="refs" class="references csl-bib-body hanging-indent">
