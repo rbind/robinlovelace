@@ -56,12 +56,12 @@ The contents of the thesis ‘walk the walk’ by tackling the challenge head-on
 The thesis is composed of the following papers:
 
 1.  Paper 1: “A shape-based heuristic for the detection of urban block artifacts in street networks” (Fleischmann and Vybornova 2024)
-2.  Paper 2: “BikeDNA: A tool for bicycle infrastructure data and network assessment” \[Vierø, Vybornova, and Szell (2024)
-3.  Paper 3: “How Good Is Open Bicycle Network Data? A Countrywide Case Study of Denmark” \[Vierø, Vybornova, and Szell (2025)
+2.  Paper 2: “BikeDNA: A tool for bicycle infrastructure data and network assessment” (Vierø, Vybornova, and Szell 2024)
+3.  Paper 3: “How Good Is Open Bicycle Network Data? A Countrywide Case Study of Denmark” (Vierø, Vybornova, and Szell 2025)
 4.  Paper 4: “You Don’t Have to Live Next to Me: Towards a Demobilization of Individualistic Bias in Computational Approaches to Urban Segregation” (A. Vybornova and Verma 2024)
-5.  Paper 5: “Automated Detection of Missing Links in Bicycle Networks” \[Anastassia Vybornova et al. (2022)
+5.  Paper 5: “Automated Detection of Missing Links in Bicycle Networks” (Anastassia Vybornova et al. 2022)
 6.  Paper 6: “BikeNodePlanner: a data-driven decision support tool for bicycle node network planning” (Anastassia Vybornova et al., n.d.)
-7.  Paper 7: “superblockify: A Python Package for Automated Generation, Visualization, and Analysis of Potential Superblocks in Cities” \[Büth, Vybornova, and Szell (2024)
+7.  Paper 7: “superblockify: A Python Package for Automated Generation, Visualization, and Analysis of Potential Superblocks in Cities” (Büth, Vybornova, and Szell 2024)
 8.  Paper 8: “Urban highways are barriers to social ties” (Aiello et al., n.d.)
 
 That is a *lot* of ground covered in a single PhD and testament to the collaborative teamwork in action in the [NERDS lab](https://nerds.itu.dk/).
