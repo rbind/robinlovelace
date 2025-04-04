@@ -26,7 +26,8 @@ The reason for the trip was to be part of the committee examining a PhD.
 This was the second PhD defense (also known as a viva) that I've done, and the first outside the UK, so quite a big occasion for me.[^1]
 It was also a big occasion for the NERDS group in which the research was based, as it was the first PhD that had been completed in the lab.
 
-[^1]: I was a reviewer of a [thesis](https://bsky.app/profile/robinlovelace.bsky.social/post/3llxvrb652c2e) by Christian Werner on "Integrated geospatial network assessment for planning support in cycling mobility"
+[^1]: I was a reviewer of a [thesis](https://bsky.app/profile/robinlovelace.bsky.social/post/3llxvrb652c2e) by [Christian Werner](https://christianwerner.at/) on "Integrated geospatial network assessment for planning support in cycling mobility" but was not part of the defense committee.
+    The first PhD thesis I examined was "Rethinking streets: a study of streetspace allocation metrics and street networks in London" by [Nicolas Palominos](https://npalomin.github.io/).
 
 The "PhD defense" (also known as the viva) processes [vary](https://eprints.bournemouth.ac.uk/37508/7/624-Article%20Text-966-1-10-20230112.pdf) from country to country and even from university-to-university within the same country [@vanteijlingen2022].
 In the UK, vivas take place in a "[non-public](https://vitae.ac.uk/resource/working-in-research/doctoral-research/the-viva/)" space, typically with two examiners, one internal (based in the same institution as the student) and the other external (a subject expert from a different institution).

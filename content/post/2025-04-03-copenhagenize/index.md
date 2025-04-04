@@ -226,4 +226,5 @@ Vybornova, A., and T. Verma. 2024. “You Don’t Have to Live Next to Me: Towar
 
 </div>
 
-[^1]: I was a reviewer of a [thesis](https://bsky.app/profile/robinlovelace.bsky.social/post/3llxvrb652c2e) by Christian Werner on “Integrated geospatial network assessment for planning support in cycling mobility”
+[^1]: I was a reviewer of a [thesis](https://bsky.app/profile/robinlovelace.bsky.social/post/3llxvrb652c2e) by [Christian Werner](https://christianwerner.at/) on “Integrated geospatial network assessment for planning support in cycling mobility” but was not part of the defense committee.
+    The first PhD thesis I examined was “Rethinking streets: a study of streetspace allocation metrics and street networks in London” by [Nicolas Palominos](https://npalomin.github.io/).
