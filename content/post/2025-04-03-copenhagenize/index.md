@@ -1,5 +1,5 @@
 ---
-title: Copenhagenize
+title: "Copenhagenize: examining a thesis on urban data science for sustainable mobility and developing bike/research networks"
 author: ''
 date: '2025-04-03'
 slug: copenhagenize
@@ -20,10 +20,11 @@ bibliography: references.bib
 
 I spent the last three days in Copenhagen to examine a [thesis](https://en.itu.dk/Research/PhD-Programme/PhD-Defences/PhD-Defences-2025/March/Anastassia-Vybornova).
 I assumed the capital of bike-friendly Denmark and inspiration for the ‘[Copenhaganize index](https://copenhagenizeindex.eu/)’ (which Copenhagen of course leads, with a score of 90.2% as of 2019) would have a lot to offer a transport researcher, and it did not disappoint.
-For some thoughts, links and photos from the trip, rea
+For some thoughts, links and photos from the trip, read on!
 
-In fact, transport research was the reason I went: to be part of the committee examining a PhD.
-This was the second PhD defense (also known as a viva) that I’ve done, and the first outside the UK.[^1]
+The reason for the trip was to be part of the committee examining a PhD.
+This was the second PhD defense (also known as a viva) that I’ve done, and the first outside the UK, so quite a big occasion for me.[^1]
+It was also a big occasion for the NERDS group in which the research was based, as it was the first PhD that had been completed in the lab.
 
 The “PhD defense” (also known as the viva) processes [vary](https://eprints.bournemouth.ac.uk/37508/7/624-Article%20Text-966-1-10-20230112.pdf) from country to country and even from university-to-university within the same country (Teijlingen et al. 2022).
 In the UK, vivas take place in a “[non-public](https://vitae.ac.uk/resource/working-in-research/doctoral-research/the-viva/)” space, typically with two examiners, one internal (based in the same institution as the student) and the other external (a subject expert from a different institution).
@@ -36,7 +37,7 @@ As the title suggests, it was a multi-disciplinary thesis, combining elements of
 4 out of the 8 papers focussed on cycle network design, a topic that is right up my street, and something that I could comment on.
 This focus on cycling: research into active modes is “dwarfed” research into motorised modes, as the thesis rightly points out, and the papers in this thesis help address the imbalance.
 
-I recommend anyone with an interest in the topic to take a read of the papers (see below).
+I recommend anyone with an interest in the topic to take a read of the papers (see below), you can also download the [full PhD Thesis from the website itu.dk](https://en.itu.dk/Research/PhD-Programme/PhD-Defences/PhD-Defences-2025/March/Anastassia-Vybornova).
 A particular highlight for me was the strength of the introduction that tied all the papers together: each aspect of the thesis’s title Urban Data Science for Sustainable Mobility was discussed and defined upfront, setting the scene for the papers.
 
 I was particularly struck by the discussion of data science, something that I often take for granted.
@@ -46,7 +47,7 @@ One thing that I learned from the thesis was that the term “data science” wa
 This early commercial focus (or even its reason for existing) may come as a surprise given how prominent the term is in academic and public-sector research: data science is now taught as an academic subject in many if not most universities, and several academic journals bear its name.
 There are even job titles such as my job as Professor of Transport Data Science.
 Contemporary usage emphasise computational and data-driven techniques while perhaps glossing-over the term’s commercial origins.
-That’s not to imply that data science is bad, but the history of the term suggests that it could benefit from being reclaimed, as stated in this apt quote from the thesis:
+That’s not to imply that data science is bad, but the history of the term suggests that it could benefit from being reclaimed, as stated in this apt quote from the [thesis](Trip%20to%20Copenhagen%20to%20examine%20a%20thesis%20on%20urban%20data%20science%20for%20sustainable%20mobility%20and%20to%20explore%20and%20develop%20bike%20and%20collaborative%20research%20networks):
 
 > The challenge therefore lies in repurposing digital tools and methods, putting them into service of a sustainable mobility shift instead.
 
@@ -75,7 +76,7 @@ Happy to say: Anastassia passed with flying colours 🎉
 # The city
 
 The city of Copenhagen is beautiful, child-friendly and highly conducive to active travel, things that are enabled by comparatively low (but still harmful) levels of car ownership and driving in city.
-There are [entire books](https://www.detail.de/de_en/kobehavn-englisch) on the topic that I cannot do justice to here, so I will just share some photos I took during the trip order.
+There are [entire books](https://www.detail.de/de_en/kobehavn-englisch) on the topic that I cannot do justice to here, so I will just share some photos I took during the trip.
 
 <figure>
 <img src="images/paste-4.png" alt="Photo of Manchester from the train to the airport on the way to Copenhage, highlighting the fact that there is great potential to ‘copenhagenize’ and make existing cities more liveable. Small interventions like providing clearly demarcated space for cycling and narrowing the carriageway that has low levels of traffic could help, as illustrated in the image below." />
