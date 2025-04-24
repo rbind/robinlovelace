@@ -54,7 +54,7 @@ links:
 url_slides: ""
 url_code: "https://github.com/Robinlovelace/" # Generic link, update if specific repo exists
 url_pdf: ""
-url_video: ""
+url_video: "https://youtu.be/6mimz_gN-V8?si=_N2KIoeO7SCrbSfO"
 
 # Markdown Slides (optional).
 #   Associate this event with Markdown slides.
@@ -70,3 +70,8 @@ slides: ""
 #   Otherwise, set `projects = []`.
 projects: ["geocomputation"] # Assuming related to geocomputation
 ---
+
+
+See a video from the talk below:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6mimz_gN-V8?si=L7Beog5C39LWCfUl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
