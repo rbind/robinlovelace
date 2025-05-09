@@ -39,6 +39,10 @@ image:
 # Custom links (optional).
 #   Uncomment and edit lines below to show custom links.
 links:
+- name: Event page
+  url: https://itsleeds.github.io/tds/dstp.html
+  icon_pack: fas
+  icon: link
 - name: Tickets
   url: https://store.leeds.ac.uk/product-catalogue/environment/transport-studies/short-courses/0925dstp2-data-science-for-transport-planning
   icon_pack: fas
