@@ -46,9 +46,9 @@ image:
 #   icon: twitter
 
 # Optional filename of your slides within your event's folder or a URL.
-url_slides: 
-url_code: 
-url_pdf:
+url_slides: https://robinlovelace.github.io/datadriven25/slides.html
+url_code: https://github.com/robinlovelace/datadriven25
+url_pdf: https://github.com/Robinlovelace/datadriven25/releases/download/v0.0.1/datadriven25-slides-rl.pdf
 url_video:
 
 # Markdown Slides (optional).
@@ -67,3 +67,6 @@ projects: [NPT]
 ---
 
 Presentation based on work by me and colleagues on the Network Planning Tool for Scotland (NPT) project, funded by Transport Scotland and delivered in collaboration with Sustrans Scotland.
+
+
+
