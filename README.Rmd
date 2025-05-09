@@ -27,6 +27,7 @@ code content/event/glasgow2024/index.md
 ```
 
 ```{r, eval=FALSE}
+remotes::install_cran("blogdown")
 file.edit("content/event/modeshift-2022/index.md")
 blogdown::install_hugo()
 

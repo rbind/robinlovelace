@@ -1,7 +1,7 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
 
-title:  "My Inaugural Lecture: Data Science for Future-Proof Transport Planning"
+title:  "Inaugural Lecture: Data Science for Future-Proof Transport Planning"
 event: Inaugural Lecture
 event_url: https://environment.leeds.ac.uk/faculty/events/event/6159/inaugural-lecture-professor-robin-lovelace
 location: University of Leeds
