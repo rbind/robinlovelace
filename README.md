@@ -16,8 +16,8 @@ code content/event/st-andrews2025/index.md
 
 ``` r
 # Equivalent copying code in R:
-system("cp -Rv content/event/glasgow2024 content/event/st-andrews2025")
-file.copy("content/event/st-andrews2025/index.qmd", "content/event/st-andrews2025/index.Rmd", overwrite = TRUE)
+system("cp -Rv content/event/glasgow2024 content/event/st-andrews-2025")
+file.copy("content/event/st-andrews-2025/index.qmd", "content/event/st-andrews-2025/index.Rmd", overwrite = TRUE)
 #> [1] TRUE
 ```
 
