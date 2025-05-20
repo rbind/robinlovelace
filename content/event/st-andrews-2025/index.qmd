@@ -45,8 +45,8 @@ image:
 #   icon: twitter
 
 # Optional filename of your slides within your event's folder or a URL.
-url_slides: https://www.robinlovelace.net/
-url_code: https://github.com/Robinlovelace/presentations/
+url_slides: https://robinlovelace.github.io/future-proof-transport-planning/st-andrews#/title-slide
+url_code: https://github.com/Robinlovelace/future-proof-transport-planning
 url_video:
 
 # Markdown Slides (optional).
