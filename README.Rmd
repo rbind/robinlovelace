@@ -22,8 +22,14 @@ New talk:
 
 ```{bash, eval=FALSE}
 hugo new  --kind event event/ogh23
-cp -Rv content/event/sdsl2024 content/event/transportai-2025
-code content/event/glasgow2024/index.md
+cp -Rv content/event/glasgow2024 content/event/st-andrews2025
+code content/event/st-andrews2025/index.md
+```
+
+```{r}
+# Equivalent copying code in R:
+system("cp -Rv content/event/glasgow2024 content/event/st-andrews2025")
+file.copy("content/event/st-andrews2025/index.qmd", "content/event/st-andrews2025/index.Rmd", overwrite = TRUE)
 ```
 
 ```{r, eval=FALSE}
