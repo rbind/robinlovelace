@@ -2,7 +2,7 @@
 # Documentation: https://wowchemy.com/docs/managing-content/
 title: "Integrating diverse data sources to support future-proof transport modelling"
 event: "57th Universities Transport Studies Group (UTSG) Annual Conference"
-event_url: "" # TODO: Add actual conference URL
+event_url: "https://utsg.net/annual-conference_2025"
 location: "University College Dublin"
 address:
   street: "University College Dublin"
@@ -23,7 +23,7 @@ all_day: false
 publishDate: 2022-05-21T07:43:56+01:00
 
 authors:
-  - admin # Robin Lovelace
+  - admin
   - Zhao Wang
   - Hussein Mahfouz
   - Juan Jose Fonseca Zamora
@@ -36,12 +36,15 @@ authors:
 tags: []
 
 # Is this a featured event? (true/false)
-featured: false
+featured: true
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder. 
 # Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
-image: ""
+image:
+  caption: ""
+  focal_point: ""
+  preview_only: false
 
 # Custom links (optional).
 #   Uncomment and edit lines below to show custom links.
@@ -63,12 +66,13 @@ url_video: ""
 #   Otherwise, set `slides = ""`.
 slides: ""
 
-# Projects (optional).
-#   Associate this post with one or more of your projects.
-#   Simply enter your project's folder or file name without extension.
-#   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
-#   Otherwise, set `projects = []`.
 projects: []
 format: gfm
 ---
+
+I presented an extended abstract at the 57th Universities Transport Studies Group (UTSG) Annual Conference, held at University College Dublin on 25th June 2025.
+The abstract is titled "Integrating diverse data sources to support future-proof transport modelling" and discusses the limitations of traditional transport models that rely on limited input datasets, leading to biases and blind-spots in model outputs.
+The presentation highlights a case study of the Network Planning Tool for Scotland (NPT), which integrates multiple datasets to support more evidence-based and data-driven transport strategies.
+
+The extended abstract can be found [here](https://github.com/nptscot/osmactive/releases/download/v0.1/307.pdf).
 
