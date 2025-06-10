@@ -62,3 +62,17 @@ I am looking forward to leading the closing plenary session at Modelling World 2
 My session, titled "New ways of working for a new generation of transport modellers", will be a discussion across generations.
 We will explore the evolving practices, tools, skills, and mindsets shaping the future of transport modelling.
 More information about the conference can be found on the [official event website](https://www.modelling-world.com/conference-2025).
+
+<!-- Social media:
+
+Short version for Twitter:
+
+I will be leading a plenary session at Modelling World 2025 in Manchester, discussing the evolving practices, tools, skills, and mindsets for the next generation of transport modellers. More info: https://www.modelling-world.com/conference-2025 #ModellingWorld2025 #TransportModelling
+
+Longer version for LinkedIn:
+
+I am excited to announce that I will be leading a plenary session at Modelling World 2025 in Manchester, where we will explore the evolving practices, tools, skills, and mindsets for the next generation of transport modellers. This session will address how the current generation of modellers needs to adapt, the role of AI in forecasting, the sufficiency of visualisation and data science, methods for evaluating model realism, and the importance of bold scenarios for substantial change. Join us for this insightful discussion! More info: https://www.modelling-world.com/conference-2025 #ModellingWorld2025 #TransportModelling
+
+
+-->
+
