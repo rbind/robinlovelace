@@ -48,15 +48,15 @@ image:
 
 # Custom links (optional).
 #   Uncomment and edit lines below to show custom links.
-# links:
-# - name: Follow
-#   url: https://twitter.com
-#   icon_pack: fab
-#   icon: twitter
+links:
+- name: Event page
+  url: https://itsleeds.github.io/tds/dstp.html
+  icon_pack: fas
+  icon: link
 
 # Optional filename of your slides within your event's folder or a URL.
 url_slides: ""
-url_code: ""
+url_code: "https://nptscot.github.io/osmactive/"
 url_video: ""
 
 # Markdown Slides (optional).
