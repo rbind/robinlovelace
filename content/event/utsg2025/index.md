@@ -1,8 +1,7 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
-
 title: "Integrating diverse data sources to support future-proof transport modelling"
-event: "57th Universities’ Transport Studies Group (UTSG) Annual Conference"
+event: "57th Universities Transport Studies Group (UTSG) Annual Conference"
 event_url: "" # TODO: Add actual conference URL
 location: "University College Dublin"
 address:
