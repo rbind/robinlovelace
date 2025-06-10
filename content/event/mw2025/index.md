@@ -11,7 +11,7 @@ address:
   postcode: "M1 3BB"
   country: "UK"
 summary: "Leading a plenary session at Modelling World 2025 in Manchester, discussing the evolving practices, tools, skills, and mindsets for the next generation of transport modellers."
-abstract: "The transport modelling community faces challenges in supporting an Integrated National Transport Strategy that prioritizes people and integrated solutions. Modelling World 2025 will explore key questions around model integration, enhancing existing approaches, data adequacy, the role of AI, vision-led planning under the revised NPPF, and the contribution of open data/source models. Prof Robin Lovelace will lead a closing plenary session titled 'New ways of working for a new generation of transport modellers'. This session will delve into the evolving practices, tools, skills, and mindsets shaping the future of transport modelling, addressing how the current generation of modellers needs to adapt, the role of AI in forecasting, the sufficiency of visualisation and data science, methods for evaluating model realism, and the importance of bold scenarios for substantial change."
+abstract: "Closing plenary: New ways of working for a new generation of transport modellers"
 
 # Talk start and end times.
 date: 2025-06-17T14:00:00+01:00
@@ -59,7 +59,19 @@ format: gfm
 ---
 
 I am looking forward to leading the closing plenary session at Modelling World 2025, which will be held from 17-18 June 2025 at the Manchester Conference Centre.
-My session, titled "New ways of working for a new generation of transport modellers", will be a discussion across generations.
+
+
+I'm chairing the final session of the conference, 15:45-17:00 on Wednesday 18th titled "New ways of working for a new generation of transport modellers".
+In it we will hear from the following panelists about new tools and ways of working across generations:
+
+- Robin North, CEO and Lead Technologist, Immense Simulations
+- Raquel Sánchez, R&D Data Scientist, Nommon Solutions and Technologies
+- James Hulse, Analyst, Transport for the North
+- Francesca Bryden, Head of Data Engineering, Department for Transport
+- Martin Campbell, Associate Director - Digital, SYSTRA
+- Ian Williams, Independent Transport and Land Use Consultant
+
+
 We will explore the evolving practices, tools, skills, and mindsets shaping the future of transport modelling.
 More information about the conference can be found on the [official event website](https://www.modelling-world.com/conference-2025).
 
