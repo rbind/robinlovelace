@@ -76,3 +76,15 @@ The presentation highlights a case study of the Network Planning Tool for Scotla
 
 The extended abstract can be found [here](https://github.com/nptscot/osmactive/releases/download/v0.1/307.pdf).
 
+<!-- Social media posts:
+
+Just signed-up to the #UTSG2025 conference in Dublin, 25th-27th June. Looking forward to presenting our work on integrating multiple network datasets for the Network Planning Tool, funded by Transport Scotland and developed in collaboration with Sustrans. This is the first time that cycling Level of Service (LoS) has been calculated for every road and presented alongside estimates of cycling potential nationwide anywhere, to the best of my knowledge. The tool is open source and will be publicly available soon. See you there! #NPT #geocompx
+
+## Short version for x:
+
+Just signed-up to the #UTSG2025 conference in Dublin, 25th-27th June. Looking forward to presenting our work on transport data integration to calculate Level of Service on every road in Scotland. Thanks to colleagues, Transport Scotland + Sustrans. See you there! #NPT #geocompx
+
+
+
+ -->
+
