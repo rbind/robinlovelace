@@ -1,7 +1,7 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
 
-title: "Future-Proof Transport Planning"
+title: "Future-Proof Transport Planning: Cities Workshop"
 event: "Cleaner and Healthier Cities Workshop"
 event_url: https://its-uol-yy.notion.site/Sustainable-Transport-and-Planning-for-Cleaner-and-Healthier-Cities-Workshop-25d33f989ee8805d988cd8a5d5a3753d
 location: "Online"
@@ -26,13 +26,16 @@ publishDate: 2025-08-01T00:00:00+01:00
 authors: ["admin"]
 tags: ["Transport Planning", "Data Science", "Open Source", "Future-Proofing"]
 
-# Is this a featured event? (true/false)
-featured: true
+# # Is this a featured event? (true/false)
+# featured: true
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder. 
 # Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
-image: ""
+image:
+  caption: ""
+  focal_point: ""
+  preview_only: false
 
 # Custom links (optional).
 #   Uncomment and edit lines below to show custom links.
@@ -68,5 +71,3 @@ projects: []
 This is the keynote talk for the Sustainable Transport and Planning for Cleaner and Healthier Cities Workshop.
 
 [Robin Lovelace](https://www.robinlovelace.net) is Professor of Transport Data Science at the Leeds Institute for Transport Studies and Head of Data Science at Active Travel England.
-</content>
-<parameter name="filePath">/home/robin/robinlovelace/content/event/2025-cleaner-healthier-cities-workshop/index.qmd
