@@ -29,7 +29,7 @@ image:
   focal_point: ""
   preview_only: false
 
-url_slides: "https://github.com/robinlovelace/presentations/blob/main/presentations/finnish-embassy.qmd"
+url_slides: "https://www.robinlovelace.net/presentations/finnish-embassy.html"
 url_code: "https://github.com/robinlovelace/presentations"
 url_video: ""
 
