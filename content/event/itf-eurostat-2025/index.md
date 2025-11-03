@@ -30,7 +30,7 @@ image:
   focal_point: ""
   preview_only: false
 
-url_slides: "https://github.com/robinlovelace/presentations/blob/main/presentations/itf2025.qmd"
+url_slides: "https://www.robinlovelace.net/presentations/itf2025.html"
 url_code: "https://github.com/robinlovelace/presentations"
 url_video: ""
 
