@@ -31,7 +31,7 @@ image:
   focal_point: ""
   preview_only: false
 
-url_slides: ""
+url_slides: "https://www.robinlovelace.net/presentations/zurich25"
 url_code: ""
 url_pdf: ""
 url_video: ""
