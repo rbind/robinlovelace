@@ -12,7 +12,7 @@ date_end: 2026-02-11T13:30:00Z
 all_day: false
 
 # Schedule page publish date (NOT event date).
-publishDate: 2026-02-03T00:00:00Z
+publishDate: 2026-02-01T00:00:00Z
 
 authors: ["admin"]
 tags: ["Transport Policy", "Academic Engagement", "Active Travel", "UK Parliament", "Data Science"]
