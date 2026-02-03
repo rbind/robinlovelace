@@ -20,12 +20,6 @@ tags: ["Transport Policy", "Academic Engagement", "Active Travel", "UK Parliamen
 # Is this a featured event? (true/false)
 featured: true
 
-# Featured image
-image:
-  caption: "Portcullis House, Westminster. Source: [UK Parliament](https://www.parliament.uk/)"
-  focal_point: "Center"
-  preview_only: false
-
 links:
 - name: Transport Committee
   url: https://committees.parliament.uk/committee/153/transport-committee
