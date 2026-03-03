@@ -44,16 +44,24 @@ links:
   url: https://www.ticketsource.com/whats-on/leeds/esther-simpson-building-lt-1-01/data-science-for-future-proof-transport-planning-inaugural-lecture-by-professor-robin-lovelace/2025-05-08/16:30/t-avnjvar
   icon_pack: fas
   icon: ticket-alt
+- name: Watch Recording
+  url: https://www.youtube.com/watch?v=znmy_frG1FU
+  icon_pack: fab
+  icon: youtube
+- name: View Slides
+  url: https://robinlovelace.github.io/future-proof-transport-planning/slides.html#/title-slide
+  icon_pack: fas
+  icon: chalkboard-teacher
 # - name: Follow
 #   url: https://twitter.com/robinlovelace
 #   icon_pack: fab
 #   icon: twitter
 
 # Optional filename of your slides within your event's folder or a URL.
-url_slides: ""
+url_slides: "https://robinlovelace.github.io/future-proof-transport-planning/slides.html#/title-slide"
 url_code: "https://github.com/Robinlovelace/"
 url_pdf: ""
-url_video: ""
+url_video: "https://www.youtube.com/watch?v=znmy_frG1FU"
 
 # Markdown Slides (optional).
 #   Associate this event with Markdown slides.
