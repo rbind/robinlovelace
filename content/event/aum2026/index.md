@@ -11,8 +11,8 @@ address:
   region: Cambridgeshire
   postcode: CB2 1TA
   country: United Kingdom
-summary: "Presenting research on modelling multi-model traffic, casualties and risk at the Applied Urban Modelling (AUM) 2026 symposium in Cambridge, including the pre-conference seminar on Modelling Active Mobility."
-abstract: "I'm presenting at the 2026 Applied Urban Modelling (AUM) symposium, hosted jointly by the Department of Land Economy and the Martin Centre for Architecture and Urban Studies at the University of Cambridge.\n\n**Presentation Title:** Modelling multi-model traffic, casualties and risk: a data-driven approach to improve government guidance on critical safety issues for walking and cycling\n\nThis work builds on research funded by Active Travel England (ATE), developing a data science codebase to improve guidance on Critical Safety Issues (CSIs) for walking, wheeling, and cycling. The research addresses 16 street layout and condition risks defined in the ATE route check tool and LTN 1/20, including:\n\n*   Conflict at junctions and access points\n*   Lane widths and road space allocation\n*   Trip hazards and surface defects\n*   Motor traffic speed and volume\n*   Crossing provision and pedestrian infrastructure\n*   Integration of evidence into policy and planning\n\n**Pre-conference Seminar: Modelling Active Mobility (26-27 June 2026)**\n\nI'll be attending the pre-conference seminar on Modelling Active Mobility, which convenes scholars, practitioners, and policy makers to discuss current state and future frontiers of modelling pedestrians' and cyclists' interactions with built environments. Topics include:\n\n*   Land-use and transport interaction models for walking and biking\n*   Pedestrian and cycling trip generation, distribution, mode choice, and route choice\n*   Preference and behaviour heterogeneity across traveller types\n*   Integration of analytic models into public policy and design\n*   Gaps in representation of non-motorised modes in current mobility models\n*   Pedestrian behaviours beyond utilitarian travel\n\n**Main AUM Symposium (29 June - 1 July 2026)**\n\nThe main symposium maintains a tradition of plenary-style sessions with ample time for informal discussions and networking. Topics span:\n\n*   Artificial Intelligence (AI) in models and for cities\n*   Economics and econometrics for cities and infrastructure\n*   Land-use, transport and other interactions (LUTI+)\n*   Modelling of agent and micro-level behaviour\n*   Urban analytics for real policy purposes\n*   Active mobility\n*   Net-zero and climate resilience\n\n**Schedule:**\n*   26-27 June 2026: Pre-conference seminar (Bateman Auditorium, Gonville & Caius College - Old Courts)\n*   29 June - 1 July 2026: Main AUM sessions (Cavonius Centre, Gonville & Caius College - Harvey Court)\n\nThe pre-conference seminar is sponsored by VREF (Volvo Research and Educational Foundations). Attendance is optional for AUM participants."
+summary: "Presenting research on modelling multi-model traffic, casualties and risk at AUM2026 in Cambridge, including the pre-conference seminar on Modelling Active Mobility."
+abstract: "I'm presenting at the 2026 Applied Urban Modelling (AUM) symposium at the University of Cambridge.\n\n**Presentation:** Modelling multi-model traffic, casualties and risk: a data-driven approach to improve government guidance on critical safety issues for walking and cycling\n\nThis work builds on Active Travel England (ATE) funded research developing a data science codebase to improve guidance on Critical Safety Issues (CSIs) for walking, wheeling, and cycling.\n\n**Pre-conference Seminar: Modelling Active Mobility (26-27 June 2026)**\n\nConvening scholars, practitioners, and policy makers to discuss modelling pedestrians' and cyclists' interactions with built environments.\n\n**Main AUM Symposium (29 June - 1 July 2026)**\n\nTopics include AI in urban models, economics and econometrics, land-use and transport interactions, agent-based modelling, urban analytics, active mobility, and net-zero.\n\n**Schedule:**\n*   26-27 June: Pre-conference seminar (Bateman Auditorium, Old Courts)\n*   29 June - 1 July: Main symposium (Cavonius Centre, Harvey Court)\n\nPre-conference seminar sponsored by VREF. Attendance optional for AUM participants."
 
 # Event start and end dates/times
 # Pre-conference seminar dates
@@ -66,38 +66,22 @@ projects: ["geocomputation"]
 ## Event Details
 
 ### Pre-conference Seminar: Modelling Active Mobility
-
-**Dates:** Friday 26 - Saturday 27 June 2026
-
-**Venue:** Bateman Auditorium, Gonville & Caius College (Old Courts), Cambridge
-
-**Format:**
-- Day 1 (26 June): Presentations by invitation
-- Day 2 (27 June): Group discussion
-
-**Sponsor:** VREF (Volvo Research and Educational Foundations)
+- **Dates:** 26-27 June 2026
+- **Venue:** Bateman Auditorium, Gonville & Caius College (Old Courts)
+- **Format:** Day 1 presentations by invitation; Day 2 group discussion
+- **Sponsor:** VREF (Volvo Research and Educational Foundations)
 
 ### Main AUM2026 Symposium
-
-**Dates:** Monday 29 June - Wednesday 1 July 2026
-
-**Venue:** Cavonius Centre, Gonville & Caius College (Harvey Court), Cambridge
-
-**Organisers:** Department of Land Economy and Martin Centre for Architecture and Urban Studies, University of Cambridge
+- **Dates:** 29 June - 1 July 2026
+- **Venue:** Cavonius Centre, Gonville & Caius College (Harvey Court)
+- **Organisers:** Department of Land Economy and Martin Centre, University of Cambridge
 
 ### Registration
-
-Registration is required and covers:
-- Symposium organisation
-- Refreshments and buffet lunches on all five days
-- Formal dinner on 29 June at Gonville & Caius College
-
-**Note:** Accommodation is not included. Limited college guestrooms have been pre-booked for participants; booking instructions will be provided via email after registration.
+Registration covers symposium organisation, refreshments, and buffet lunches. Accommodation not included (limited college guestrooms available).
 
 ### Contact
-
-For enquiries: [aum@landecon.cam.ac.uk](mailto:aum@landecon.cam.ac.uk)
+[aum@landecon.cam.ac.uk](mailto:aum@landecon.cam.ac.uk)
 
 ---
 
-*This event is part of ongoing research funded by Active Travel England on Critical Safety Issues for walking, wheeling, and cycling.*
+*Part of Active Travel England funded research on Critical Safety Issues.*
