@@ -30,7 +30,7 @@ publication_short: ''
 
 doi: ''
 
-abstract: Book on geographic data with R.
+abstract: "Geocomputation with R is an open source book on geographic data analysis, visualization, and modeling with R. Described as 'a superb resource for spatial analysis in R' and widely cited in academic literature, the book covers vector and raster data processing, spatial data operations, and reproducible workflows. Now in its second edition, it has an active community of contributors and users. The book is free to read online at [geocompx.org](https://geocompx.org), part of a wider family of open source Geocomputation books including the Python and Julia editions. Contributions and feedback are welcome via GitHub."
 
 # Summary. An optional shortened abstract.
 summary: ''
