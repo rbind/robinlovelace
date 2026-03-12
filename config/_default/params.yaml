@@ -18,8 +18,8 @@ marketing:
     site_type: Person
     local_business_type: ''
     org_name: ''
-    description: 'A highly-customizable Hugo academic resume theme powered by Wowchemy website builder.'
-    twitter: 'wowchemy'
+    description: 'Robin Lovelace — Professor of Transport Data Science at the University of Leeds. Geocomputation, open source tools, and data science for sustainable transport.'
+    twitter: 'robinlovelace'
   analytics:
     google_analytics: ''
     baidu_tongji: ''
