@@ -43,7 +43,7 @@ summary: ''
 tags: []
 
 # Display this page in a list of Featured pages?
-featured: false
+featured: true
 
 # Links
 url_pdf: ''
@@ -63,8 +63,8 @@ url_video: ''
 # Publication image
 # Add an image named `featured.jpg/png` to your page's folder then add a caption below.
 image:
-  caption: ''
-  focal_point: ''
+  caption: 'Animated visualisation of daily mobility flows across Spain using data accessed via the spanishoddata package.'
+  focal_point: Center
   preview_only: false
 
 # Associated Projects (optional).
