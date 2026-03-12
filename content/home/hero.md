@@ -5,7 +5,7 @@ headless = true
 active = true
 weight = 10
 
-title = "Robin Lovelace"
+title = ""
 
 [design.background]
   gradient_start = "#4bb4e3"
@@ -26,6 +26,6 @@ title = "Robin Lovelace"
   label = "Professor of Transport Data Science · University of Leeds"
 +++
 
-**Geocomputation, open source tools, and data science for sustainable transport**
+**Data science for transport planning**
 
-Author of [Geocomputation with R](https://geocompr.robinlovelace.net/) · Creator of the [Propensity to Cycle Tool](https://www.pct.bike/) · [geocompx.org](https://geocompx.org)
+Builder of [geocompx.org](https://geocompx.org) · developer of [pct.bike](https://www.pct.bike/) · datasets → insights
