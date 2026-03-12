@@ -24,7 +24,7 @@ publication_types:
 - "5"
 
 # Publication name and optional abbreviated publication name.
-publication: ''
+publication: '*CRAN*'
 publication_short: ''
 
 doi: 10.32614/CRAN.package.flowcluster

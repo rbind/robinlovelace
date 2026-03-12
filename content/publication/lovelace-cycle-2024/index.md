@@ -32,7 +32,7 @@ publication_types:
 - "2"
 
 # Publication name and optional abbreviated publication name.
-publication: ''
+publication: '*European Transport Research Review*'
 publication_short: ''
 
 doi: 10.1186/s12544-024-00668-8

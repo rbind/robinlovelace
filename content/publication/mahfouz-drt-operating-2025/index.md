@@ -27,7 +27,7 @@ publication_types:
 - "2"
 
 # Publication name and optional abbreviated publication name.
-publication: ''
+publication: '*Journal of Urban Mobility*'
 publication_short: ''
 
 doi: 10.1016/j.urbmob.2025.100135

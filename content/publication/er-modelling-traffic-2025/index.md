@@ -27,7 +27,7 @@ publication_types:
 - "2"
 
 # Publication name and optional abbreviated publication name.
-publication: ''
+publication: '*Applied Spatial Analysis and Policy*'
 publication_short: ''
 
 doi: 10.1007/s12061-025-09703-0

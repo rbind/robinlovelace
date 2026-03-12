@@ -26,7 +26,7 @@ publication_types:
 - "3"
 
 # Publication name and optional abbreviated publication name.
-publication: ''
+publication: '*SocArXiv*'
 publication_short: ''
 
 doi: 10.31235/osf.io/cgjmr

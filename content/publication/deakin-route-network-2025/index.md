@@ -26,7 +26,7 @@ publication_types:
 - "2"
 
 # Publication name and optional abbreviated publication name.
-publication: ''
+publication: '*Environment and Planning B: Urban Analytics and City Science*'
 publication_short: ''
 
 doi: 10.1177/23998083251387986
