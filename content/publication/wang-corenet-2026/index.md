@@ -39,7 +39,7 @@ publication_short: ''
 
 doi: 10.1016/j.jtrangeo.2026.104549
 
-abstract: ''
+abstract: 'Mode shift to cycling is a policy objective in many countries. However, cycling infrastructure designs often fail to produce the joined-up, direct, and safe networks needed for trips to switch. Planned interventions rarely align with demand, creating disjointed networks and ineffective investment. This paper introduces a new ‘corenet’ method for developing core cycling networks that provides complete and connected infrastructure designs for places with or without existing cycling networks. The method demonstrates its application in the Network Planning Tool for Scotland (NPT) to support city-wide network designs and serves as the foundation for the Network Planning Workspace (NPW) tool, enabling local authorities to plan cycle networks through a structured, tiered approach. The method integrates multiple datasets, including estimates of current and future demand and network geometries from multiple sources. It enables users to generate designs suited to local needs by balancing network cohesion, coverage, and directness metrics. The ‘corenet’ method also simulates network growth, supporting strategic expansion of cycling infrastructure in a prioritised sequence. Furthermore, a set of network evaluation metrics has been developed, enabling rigorous assessment of both proposed and existing cycling networks. We conclude by discussing how the method can be extended in future research and integrated with established processes for strategic network planning.'
 
 # Summary. An optional shortened abstract.
 summary: ''

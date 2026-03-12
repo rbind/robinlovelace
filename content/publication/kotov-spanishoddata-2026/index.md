@@ -35,7 +35,7 @@ publication_short: ''
 
 doi: 10.1177/23998083251415040
 
-abstract: ''
+abstract: '	We present spanishoddata, an R package that enables fast and efficient access to Spain’s open, high-resolution origin-destination human mobility datasets, derived from anonymised mobile-phone records and released by the Ministry of Transport and Sustainable Mobility. The package directly addresses challenges of data accessibility, reproducibility, and efficient processing identified in prior studies. spanishoddata automates retrieval from the official source, performs file and schema validation, and converts the data to efficient, analysis-ready formats (DuckDB and Parquet) that enable multi-month and multi-year analysis on consumer-grade hardware. The interface handles complexities associated with these datasets, enabling a wide range of people – from data science beginners to experienced practitioners with domain expertise – to start using the data with just a few lines of code. We demonstrate the utility of the package with example applications in urban transport planning, such as assessing cycling potential or understanding mobility patterns by activity type. By simplifying data access and promoting reproducible workflows, spanishoddata lowers the barrier to entry for researchers, policymakers, transport planners or anyone seeking to leverage mobility datasets.'
 
 # Summary. An optional shortened abstract.
 summary: ''
