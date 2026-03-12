@@ -1,39 +1,37 @@
 ---
-# Documentation: https://wowchemy.com/docs/managing-content/
-
 title: 'A Path Toward the Use of Trail Users’ Tweets to Assess Effectiveness of the
   Environmental Stewardship Scheme: An Exploratory Analysis of the Pennine Way National
   Trail'
-subtitle: ''
-summary: ''
+
+# Authors
+# A YAML list of author names
+# If you created a profile for a user (e.g. the default `admin` user at `content/authors/admin/`), 
+# write the username (folder name) here, and it will be replaced with their full name and linked to their profile.
 authors:
 - Tom Wilson
 - Robin Lovelace
 - Andrew J. Evans
-tags: []
-categories: []
+
+# Author notes (such as 'Equal Contribution')
+# A YAML list of notes for each author in the above `authors` list
+author_notes: []
+
 date: '2016-08-02'
-lastmod: 2024-09-30T12:19:32+01:00
-featured: false
-draft: false
 
-# Featured image
-# To use, add an image named `featured.jpg/png` to your page's folder.
-# Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
-image:
-  caption: ''
-  focal_point: ''
-  preview_only: false
+# Date to publish webpage (NOT necessarily Bibtex publication's date).
+publishDate: '2026-03-12T13:11:19.788468Z'
 
-# Projects (optional).
-#   Associate this post with one or more of your projects.
-#   Simply enter your project's folder or file name without extension.
-#   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
-#   Otherwise, set `projects = []`.
-projects: []
-publishDate: '2024-09-30T11:23:20.193357Z'
+# Publication type.
+# A single CSL publication type but formatted as a YAML list (for Hugo requirements).
 publication_types:
-- '2'
+- "2"
+
+# Publication name and optional abbreviated publication name.
+publication: ''
+publication_short: ''
+
+doi: 10.1007/s12061-016-9201-7
+
 abstract: Large and unofficial data sets, for instance those gathered from social
   media, are increasingly being used in geographical research and explored as decision
   support tools for policy development. Social media data have the potential to provide
@@ -53,9 +51,42 @@ abstract: Large and unofficial data sets, for instance those gathered from socia
   such as questionnaires and interviews. Furthermore, we provide guidance on how social
   media could be effectively used by conservation bodies, such as Natural England,
   which are charged with the management of areas of environmental value worldwide.
-publication: ''
-doi: 10.1007/s12061-016-9201-7
+
+# Summary. An optional shortened abstract.
+summary: ''
+
+tags: []
+
+# Display this page in a list of Featured pages?
+featured: false
+
+# Links
+url_pdf: ''
+url_code: ''
+url_dataset: ''
+url_poster: ''
+url_project: ''
+url_slides: ''
+url_source: ''
+url_video: ''
+
+# Custom links (uncomment lines below)
+# links:
+# - name: Custom Link
+#   url: http://example.org
+
+# Publication image
+# Add an image named `featured.jpg/png` to your page's folder then add a caption below.
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: false
+
+# Associated Projects (optional).
+#   Associate this publication with one or more of your projects.
+projects: []
 links:
 - name: URL
   url: https://link.springer.com/article/10.1007/s12061-016-9201-7
 ---
+

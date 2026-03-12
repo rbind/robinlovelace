@@ -1,10 +1,11 @@
 ---
-# Documentation: https://wowchemy.com/docs/managing-content/
-
 title: 'Cycle Route Uptake and Scenario Estimation (CRUSE): An Approach for Developing
   Strategic Cycle Network Planning Tools'
-subtitle: ''
-summary: ''
+
+# Authors
+# A YAML list of author names
+# If you created a profile for a user (e.g. the default `admin` user at `content/authors/admin/`), 
+# write the username (folder name) here, and it will be replaced with their full name and linked to their profile.
 authors:
 - Robin Lovelace
 - Joey Talbot
@@ -15,36 +16,27 @@ authors:
 - Gary O’Toole
 - Dan Brennan
 - Suzanne Meade
-tags:
-- Active travel
-- Collaborative planning
-- Cycling
-- Open source
-- Road safety
-- Transport planning
-categories: []
+
+# Author notes (such as 'Equal Contribution')
+# A YAML list of notes for each author in the above `authors` list
+author_notes: []
+
 date: '2024-09-30'
-lastmod: 2024-09-30T12:19:25+01:00
-featured: true
-draft: false
 
-# Featured image
-# To use, add an image named `featured.jpg/png` to your page's folder.
-# Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
-image:
-  caption: ''
-  focal_point: ''
-  preview_only: false
+# Date to publish webpage (NOT necessarily Bibtex publication's date).
+publishDate: '2026-03-12T13:11:19.572429Z'
 
-# Projects (optional).
-#   Associate this post with one or more of your projects.
-#   Simply enter your project's folder or file name without extension.
-#   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
-#   Otherwise, set `projects = []`.
-projects: []
-publishDate: '2024-09-30T11:23:16.084094Z'
+# Publication type.
+# A single CSL publication type but formatted as a YAML list (for Hugo requirements).
 publication_types:
-- '2'
+- "2"
+
+# Publication name and optional abbreviated publication name.
+publication: '*European Transport Research Review*'
+publication_short: ''
+
+doi: 10.1186/s12544-024-00668-8
+
 abstract: 'This paper describes an approach for developing strategic cycle network
   planning tools. Based on our experience developing and deploying the Cycle Route
   Uptake and Scenario Estimation (CRUSE) Tool for Ireland, we outline the underlying
@@ -67,9 +59,48 @@ abstract: 'This paper describes an approach for developing strategic cycle netwo
   rural cycle network designs. The approach is flexible and open source, allowing
   the underlying ideas and code to be adapted, supporting more evidence-based and
   effective cycling policies and interventions internationally.'
-publication: ''
-doi: 10.1186/s12544-024-00668-8
+
+# Summary. An optional shortened abstract.
+summary: ''
+
+tags:
+- Active travel
+- Collaborative planning
+- Cycling
+- Open source
+- Road safety
+- Transport planning
+
+# Display this page in a list of Featured pages?
+featured: true
+
+# Links
+url_pdf: ''
+url_code: ''
+url_dataset: ''
+url_poster: ''
+url_project: ''
+url_slides: ''
+url_source: ''
+url_video: ''
+
+# Custom links (uncomment lines below)
+# links:
+# - name: Custom Link
+#   url: http://example.org
+
+# Publication image
+# Add an image named `featured.jpg/png` to your page's folder then add a caption below.
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: false
+
+# Associated Projects (optional).
+#   Associate this publication with one or more of your projects.
+projects: []
 links:
 - name: URL
   url: https://doi.org/10.1186/s12544-024-00668-8
 ---
+

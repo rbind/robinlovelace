@@ -23,14 +23,11 @@ image:
 
 # Projects (optional).
 #   Associate this post with one or more of your projects.
-#   Simply enter your project's folder or file name without extension.
-#   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
-#   Otherwise, set `projects = []`.
 projects: []
 publishDate: '2024-09-30T11:19:26.269005Z'
 publication_types:
 - '2'
-abstract: ''
+abstract: 'Creating and maintaining large spatial address datasets to an exceptional standard of currency and accuracy requires specialist skills and expertise.'
 publication: ''
 links:
 - name: URL

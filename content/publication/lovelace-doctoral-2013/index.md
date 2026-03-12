@@ -23,14 +23,11 @@ image:
 
 # Projects (optional).
 #   Associate this post with one or more of your projects.
-#   Simply enter your project's folder or file name without extension.
-#   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
-#   Otherwise, set `projects = []`.
 projects: []
 publishDate: '2024-09-30T11:19:25.124184Z'
 publication_types:
 - '2'
-abstract: ''
+abstract: '  More captivating than any sci-fi book I''ve ever read.'
 publication: ''
 url_pdf: http://www.sheffield.ac.uk/polopoly_fs/1.271737!/file/DoctoralTimes-Spring2013.pdf
 ---

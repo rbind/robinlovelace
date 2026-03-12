@@ -1,42 +1,73 @@
 ---
-# Documentation: https://wowchemy.com/docs/managing-content/
-
 title: Street Networks in R
-subtitle: ''
-summary: ''
+
+# Authors
+# A YAML list of author names
+# If you created a profile for a user (e.g. the default `admin` user at `content/authors/admin/`), 
+# write the username (folder name) here, and it will be replaced with their full name and linked to their profile.
 authors:
 - Andrea Gilardi
 - Robin Lovelace
+
+# Author notes (such as 'Equal Contribution')
+# A YAML list of notes for each author in the above `authors` list
+author_notes: []
+
+date: '2020-05-29'
+
+# Date to publish webpage (NOT necessarily Bibtex publication's date).
+publishDate: '2026-03-12T13:11:19.527457Z'
+
+# Publication type.
+# A single CSL publication type but formatted as a YAML list (for Hugo requirements).
+publication_types:
+- "2"
+
+# Publication name and optional abbreviated publication name.
+publication: '*OSF*'
+publication_short: ''
+
+doi: 10.17605/OSF.IO/WTQAS
+
+abstract: The idea of this project is to compare stplanr and dodgr approaches to street
+  networks in R. This is a draft for the paper.       Hosted on the Open Science Framework
+
+# Summary. An optional shortened abstract.
+summary: ''
+
 tags:
 - R
-categories: []
-date: '2020-05-29'
-lastmod: 2024-09-30T12:19:23+01:00
-featured: false
-draft: false
 
-# Featured image
-# To use, add an image named `featured.jpg/png` to your page's folder.
-# Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
+# Display this page in a list of Featured pages?
+featured: false
+
+# Links
+url_pdf: ''
+url_code: ''
+url_dataset: ''
+url_poster: ''
+url_project: ''
+url_slides: ''
+url_source: ''
+url_video: ''
+
+# Custom links (uncomment lines below)
+# links:
+# - name: Custom Link
+#   url: http://example.org
+
+# Publication image
+# Add an image named `featured.jpg/png` to your page's folder then add a caption below.
 image:
   caption: ''
   focal_point: ''
   preview_only: false
 
-# Projects (optional).
-#   Associate this post with one or more of your projects.
-#   Simply enter your project's folder or file name without extension.
-#   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
-#   Otherwise, set `projects = []`.
+# Associated Projects (optional).
+#   Associate this publication with one or more of your projects.
 projects: []
-publishDate: '2024-09-30T11:23:15.299326Z'
-publication_types:
-- '2'
-abstract: The idea of this project is to compare stplanr and dodgr approaches to street
-  networks in R. This is a draft for the paper.       Hosted on the Open Science Framework
-publication: '*OSF*'
-doi: 10.17605/OSF.IO/WTQAS
 links:
 - name: URL
   url: https://osf.io/wtqas/
 ---
+

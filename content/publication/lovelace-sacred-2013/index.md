@@ -25,9 +25,6 @@ image:
 
 # Projects (optional).
 #   Associate this post with one or more of your projects.
-#   Simply enter your project's folder or file name without extension.
-#   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
-#   Otherwise, set `projects = []`.
 projects: []
 publishDate: '2024-09-30T11:19:28.033305Z'
 publication_types:
