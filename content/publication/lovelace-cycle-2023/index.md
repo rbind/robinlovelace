@@ -74,13 +74,9 @@ image:
 
 # Associated Projects (optional).
 #   Associate this publication with one or more of your projects.
-#   Simply enter your project's folder or file name without extension.
-#   E.g. `projects: ['internal-project']` links to `content/project/internal-project/index.md`.
-#   Otherwise, set `projects: []`.
 projects: []
 links:
 - name: URL
   url: https://results2021.ref.ac.uk/impact/847d1191-7f25-46ba-a399-b481125edc8f?page=1
 ---
 
-Add the **full text** or **supplementary notes** for the publication here using Markdown formatting.

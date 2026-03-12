@@ -87,13 +87,9 @@ image:
 
 # Associated Projects (optional).
 #   Associate this publication with one or more of your projects.
-#   Simply enter your project's folder or file name without extension.
-#   E.g. `projects: ['internal-project']` links to `content/project/internal-project/index.md`.
-#   Otherwise, set `projects: []`.
 projects: []
 links:
 - name: URL
   url: https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0233105
 ---
 
-Add the **full text** or **supplementary notes** for the publication here using Markdown formatting.
