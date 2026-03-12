@@ -8,8 +8,8 @@ weight = 10
 title = "Robin Lovelace"
 
 [design.background]
-  gradient_start = "#003078"
-  gradient_end = "#0071c5"
+  gradient_start = "#4bb4e3"
+  gradient_end = "#2b94c3"
   text_color_light = true
 
 [cta]
