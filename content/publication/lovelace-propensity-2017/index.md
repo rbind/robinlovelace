@@ -1,10 +1,11 @@
 ---
-# Documentation: https://wowchemy.com/docs/managing-content/
-
 title: 'The Propensity to Cycle Tool: An Open Source Online System for Sustainable
   Transport Planning'
-subtitle: ''
-summary: ''
+
+# Authors
+# A YAML list of author names
+# If you created a profile for a user (e.g. the default `admin` user at `content/authors/admin/`), 
+# write the username (folder name) here, and it will be replaced with their full name and linked to their profile.
 authors:
 - Robin Lovelace
 - Anna Goodman
@@ -12,33 +13,27 @@ authors:
 - Nikolai Berkoff
 - Ali Abbas
 - James Woodcock
-tags:
-- Cycling
-- Participatory
-- Planning
-categories: []
+
+# Author notes (such as 'Equal Contribution')
+# A YAML list of notes for each author in the above `authors` list
+author_notes: []
+
 date: '2017-01-01'
-lastmod: 2024-09-30T12:19:27+01:00
-featured: false
-draft: false
 
-# Featured image
-# To use, add an image named `featured.jpg/png` to your page's folder.
-# Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
-image:
-  caption: ''
-  focal_point: ''
-  preview_only: false
+# Date to publish webpage (NOT necessarily Bibtex publication's date).
+publishDate: '2026-03-12T13:11:19.640839Z'
 
-# Projects (optional).
-#   Associate this post with one or more of your projects.
-#   Simply enter your project's folder or file name without extension.
-#   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
-#   Otherwise, set `projects = []`.
-projects: []
-publishDate: '2024-09-30T11:23:17.422859Z'
+# Publication type.
+# A single CSL publication type but formatted as a YAML list (for Hugo requirements).
 publication_types:
-- '2'
+- "0"
+
+# Publication name and optional abbreviated publication name.
+publication: ''
+publication_short: ''
+
+doi: 10.5198/jtlu.2016.862
+
 abstract: Getting people cycling is an increasingly common objective in transport
   planning institutions worldwide. A growing evidence base indicates that high quality
   infrastructure can boost local cycling rates. Yet for infrastructure and other cycling
@@ -60,9 +55,49 @@ abstract: Getting people cycling is an increasingly common objective in transpor
   facilitating the creation of scenarios and deployment in new contexts. We conclude
   that the PCT illustrates the potential of online tools to inform transport decisions
   and raises the wider issue of how models should be used in transport planning.
-publication: ''
-doi: 10.5198/jtlu.2016.862
+
+# Summary. An optional shortened abstract.
+summary: ''
+
+tags:
+- Cycling
+- Participatory
+- Planning
+
+# Display this page in a list of Featured pages?
+featured: false
+
+# Links
+url_pdf: ''
+url_code: ''
+url_dataset: ''
+url_poster: ''
+url_project: ''
+url_slides: ''
+url_source: ''
+url_video: ''
+
+# Custom links (uncomment lines below)
+# links:
+# - name: Custom Link
+#   url: http://example.org
+
+# Publication image
+# Add an image named `featured.jpg/png` to your page's folder then add a caption below.
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: false
+
+# Associated Projects (optional).
+#   Associate this publication with one or more of your projects.
+#   Simply enter your project's folder or file name without extension.
+#   E.g. `projects: ['internal-project']` links to `content/project/internal-project/index.md`.
+#   Otherwise, set `projects: []`.
+projects: []
 links:
 - name: URL
   url: https://doi.org/10.5198/jtlu.2016.862
 ---
+
+Add the **full text** or **supplementary notes** for the publication here using Markdown formatting.
