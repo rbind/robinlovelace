@@ -28,4 +28,4 @@ title = ""
 
 **Data science for transport planning**
 
-Builder of [geocompx.org](https://geocompx.org) · developer of [pct.bike](https://www.pct.bike/) · datasets → insights
+Author: [geocompx](https://geocompx.org). Developer: [pct.bike](https://www.pct.bike/). Data → insights 🚀
