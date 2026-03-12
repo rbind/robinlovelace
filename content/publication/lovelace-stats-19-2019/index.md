@@ -31,7 +31,7 @@ publication_short: ''
 
 doi: 10.21105/joss.01181
 
-abstract: ''
+abstract: '  stplanr - R package providing functions and data access for transport research'
 
 # Summary. An optional shortened abstract.
 summary: ''

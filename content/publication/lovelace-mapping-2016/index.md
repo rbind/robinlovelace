@@ -28,7 +28,7 @@ publication_short: ''
 
 doi: ''
 
-abstract: ''
+abstract: '  In the context of reduced public transport capacity in the wake of the COVID-19 pandemic, governments are scrambling to enable walking and cycling while adhering to physical distancing guidelines. Many pop-up options exist. Of these, road space reallocation represents a `quick win'' for cities with `spare space'' along continuous road sections that have high latent cycling potential. We developed methods to condense the complexity of city networks down to the most promising roads for road space reallocation schemes. The resulting Rapid Cycleway Prioritisation Tool has been deployed for all cities in England to help prioritise emergency funds for new cycleways nationwide. The methods and concepts could be used to support investment in pop-up infrastructure in cities worldwide.'
 
 # Summary. An optional shortened abstract.
 summary: ''

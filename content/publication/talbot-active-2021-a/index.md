@@ -38,7 +38,7 @@ publication_short: ''
 
 doi: ''
 
-abstract: ''
+abstract: 'The location of new housing developments, and the provision of safe space for walking and cycling to key destinations around them, have major and long lasting impacts on travel behaviour, health, and environmental outcomes. Transit Oriented Development (TOD) is a well-recognised concept in urban planning, but systemic evidence is often lacking on the likely `active travel performance'' of new developments, making it hard for the planning process to support sustainable transport objectives. This paper articulates the concept of `Active Travel Oriented Development'' (ATOD) and describes methods for operationalising it. We demonstrate the use of a set of simple metrics to assess the active travel performance of new and proposed development sites. ATOD has the benefits of building on the established concept of TOD and being easy to assess. We conclude that ATOD, and tools for measuring it, are needed to ensure that transport and development policies work in harmony.'
 
 # Summary. An optional shortened abstract.
 summary: ''

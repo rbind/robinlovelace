@@ -27,7 +27,7 @@ projects: []
 publishDate: '2024-09-30T11:19:26.269005Z'
 publication_types:
 - '2'
-abstract: ''
+abstract: 'Creating and maintaining large spatial address datasets to an exceptional standard of currency and accuracy requires specialist skills and expertise.'
 publication: ''
 links:
 - name: URL

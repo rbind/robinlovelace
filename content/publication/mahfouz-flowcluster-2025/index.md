@@ -29,7 +29,7 @@ publication_short: ''
 
 doi: 10.32614/CRAN.package.flowcluster
 
-abstract: ''
+abstract: 'This paper presents a new density-based clustering algorithm, ST-DBSCAN, which is based on DBSCAN. We propose three marginal extensions to DBSCAN related with the identification of (i) core objects, (ii) noise objects, and (iii) adjacent clusters. In contrast to the existing density-based clustering algorithms, our algorithm has the ability of discovering clusters according to non-spatial, spatial and temporal values of the objects. In this paper, we also present a spatial–temporal data warehouse system designed for storing and clustering a wide range of spatial–temporal data. We show an implementation of our algorithm by using this data warehouse and present the data mining results.'
 
 # Summary. An optional shortened abstract.
 summary: ''

@@ -29,6 +29,6 @@ projects: []
 publishDate: '2024-09-30T11:19:27.454717Z'
 publication_types:
 - '2'
-abstract: ''
+abstract: '  In this podcast, ICE''s Adam Kirkup interviews~Dr. Robin Lovelace, University of Leeds, discussing the development of the Propensity to Cycle Toolkit (PCT), and how it can be used to prioritise investments and interventions which promote cycling.'
 publication: ''
 ---

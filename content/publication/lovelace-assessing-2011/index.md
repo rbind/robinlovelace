@@ -32,7 +32,7 @@ publication_short: ''
 
 doi: 10.1016/j.enpol.2011.01.051
 
-abstract: ''
+abstract: 'Origin-destination (OD) datasets are widely available but transport interventions require network level data. OD-‘desire line’-route-‘route network’ conversion techniques are typically based on lines between zone centroids. This approach fails to show the diffuse nature of travel patterns. This paper presents ‘jittering’ methods to overcome these limitations and seeks to assess them. We find that jittered OD datasets result in a closer fit between observed and estimated flow in a reproducible case study using open data in Edinburgh. We conclude that jittering can add value to OD but work is needed to parameteterise them in the context of route network generation techniques'
 
 # Summary. An optional shortened abstract.
 summary: ''

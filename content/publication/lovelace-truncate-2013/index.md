@@ -30,7 +30,7 @@ publication_short: ''
 
 doi: ''
 
-abstract: ''
+abstract: 'Estimates of the volume of travel between zones or locations is often a necessary step in transportation studies. This paper suggests a method of estimating origin/destination volumes, using a direct demand function and incomplete, aggregate data. Most attention is devoted to demand functions which are linear in their parameters. With such demand functions, volume estimates are obtained from a quadratic programming problem, which minimizes the sum of squared errors from a direct demand function, subject to constraints derived from observations of some travel volumes. A decomposition algorithm is suggested for solving the programming problem and is proven to converge. The method may also be used in the trip distribution phase of the conventional urban transportation model systems (UTMS).'
 
 # Summary. An optional shortened abstract.
 summary: ''

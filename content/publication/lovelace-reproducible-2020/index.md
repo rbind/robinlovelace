@@ -27,7 +27,7 @@ projects: []
 publishDate: '2024-09-30T11:19:27.693879Z'
 publication_types:
 - '4'
-abstract: ''
+abstract: 'Route network datasets, crucial to transport models, have grown complex, leading to visualization issues and potential misinterpretations. We address this by presenting two methods for simplifying these datasets: image skeletonization and Voronoi diagram-centreline identification. We have developed two packages, the ‘parenx’ Python package (available on pip) and the ‘rnetmatch’ R package (available on GitHub) to implement these methods. The approach has applications in transportation, demonstrated by their use in the publicly available Network Planning Tool funded by Transport for Scotland.'
 publication: ''
 url_pdf: https://www.racfoundation.org/wp-content/uploads/Reproducible_road_safety_research_with_R_Lovelace_December_2020.pdf
 ---

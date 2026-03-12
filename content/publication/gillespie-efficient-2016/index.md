@@ -29,7 +29,7 @@ publication_short: ''
 
 doi: ''
 
-abstract: ''
+abstract: 'Learn the fundamentals for R programming and gain the tools needed for doing data science.'
 
 # Summary. An optional shortened abstract.
 summary: ''

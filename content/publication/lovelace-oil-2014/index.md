@@ -30,7 +30,7 @@ publication_short: ''
 
 doi: http://dx.doi.org/10.1016/j.geoforum.2013.11.005
 
-abstract: ''
+abstract: 'This paper reviews research traditions of vulnerability to environmental change and the challenges for present vulnerability research in integrating with the domains of resilience and adaptation. Vulnerability is the state of susceptibility to harm from exposure to stresses associated with environmental and social change and from the absence of capacity to adapt. Antecedent traditions include theories of vulnerability as entitlement failure and theories of hazard. Each of these areas has contributed to present formulations of vulnerability to environmental change as a characteristic of social-ecological systems linked to resilience. Research on vulnerability to the impacts of climate change spans all the antecedent and successor traditions. The challenges for vulnerability research are to develop robust and credible measures, to incorporate diverse methods that include perceptions of risk and vulnerability, and to incorporate governance research on the mechanisms that mediate vulnerability and promote adaptive action and resilience. These challenges are common to the domains of vulnerability, adaptation and resilience and form common ground for consilience and integration. © 2006 Elsevier Ltd. All rights reserved.'
 
 # Summary. An optional shortened abstract.
 summary: ''

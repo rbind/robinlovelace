@@ -29,7 +29,7 @@ publication_short: ''
 
 doi: ''
 
-abstract: ''
+abstract: '  More captivating than any sci-fi book I''ve ever read.'
 
 # Summary. An optional shortened abstract.
 summary: ''

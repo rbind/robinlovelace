@@ -31,7 +31,7 @@ publication_short: ''
 
 doi: ''
 
-abstract: ''
+abstract: 'Information on the marginal external costs method in transport modelling and appraisal.'
 
 # Summary. An optional shortened abstract.
 summary: ''

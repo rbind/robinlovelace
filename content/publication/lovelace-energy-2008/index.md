@@ -28,7 +28,7 @@ publication_short: ''
 
 doi: ''
 
-abstract: ''
+abstract: 'Sustainability in Sheffield and beyond'
 
 # Summary. An optional shortened abstract.
 summary: ''
