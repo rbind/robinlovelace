@@ -22,7 +22,7 @@ publishDate: '2026-03-12T13:11:19.693438Z'
 # Publication type.
 # A single CSL publication type but formatted as a YAML list (for Hugo requirements).
 publication_types:
-- "0"
+- "2"
 
 # Publication name and optional abbreviated publication name.
 publication: '*SAGE PublicationsSage UK: London, England*'

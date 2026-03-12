@@ -83,8 +83,7 @@ image:
 projects: []
 links:
 - name: URL
-  url: 
-    https://www.elgaronline.com/edcollchap/book/9781802203233/book-part-9781802203233-19.xml
+  url: "https://www.elgaronline.com/edcollchap/book/9781802203233/book-part-9781802203233-19.xml"
 ---
 
 Add the **full text** or **supplementary notes** for the publication here using Markdown formatting.

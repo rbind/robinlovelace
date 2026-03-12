@@ -23,10 +23,10 @@ publishDate: '2026-03-12T13:11:19.710606Z'
 # Publication type.
 # A single CSL publication type but formatted as a YAML list (for Hugo requirements).
 publication_types:
-- "0"
+- "2"
 
 # Publication name and optional abbreviated publication name.
-publication: '*[object Object]*'
+publication: 'Journal of Open Source Software'
 publication_short: ''
 
 doi: 10.21105/joss.00305
