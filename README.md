@@ -45,17 +45,19 @@ To update publications:
 pip install --upgrade academic
 
 # 1. Update the BibTeX file with new entries (from Zotero or manually)
-academic import --overwrite --normalize static/bibs/my-citations-for-web.bib content/publication/
+academic import --overwrite --normalize --bibtex static/bibs/my-citations-for-web.bib content/publication/
 ```
 
 **⚠️ Known issues with `academic import --overwrite`:**
 
 - **Abstracts are cleared** — the import sets `abstract: ''` for all
-  pages. Restore from Zotero:
+  pages. Restore from Git:
 
   ``` bash
-  # Extract abstracts from Zotero export and update index.md files
-  python3 scripts/restore-abstracts.py
+  # Restore publication pages from before the import (commit first so you can diff)
+  git diff HEAD -- content/publication/ > /tmp/import-changes.diff
+  git checkout HEAD~1 -- content/publication/
+  # Then re-run import with --bibtex and selectively merge changes
   ```
 
 - **`publication_types` must be integers** — import may output strings
@@ -63,7 +65,7 @@ academic import --overwrite --normalize static/bibs/my-citations-for-web.bib con
   = journal article, `5` = book. Fix:
 
   ``` bash
-  find content/publication/ -name "index.md" -exec sed -i 's/- article-journal$/- "2"/' {} \;
+  find content/publication/ -name "index.md" -exec sed -i.bak 's/- article-journal$/- "2"/' {} \; && find content/publication/ -name "*.bak" -delete
   ```
 
 - **Featured publications reset** — `--overwrite` sets `featured: false`
@@ -77,7 +79,7 @@ academic import --overwrite --normalize static/bibs/my-citations-for-web.bib con
   placeholder text. Remove:
 
   ``` bash
-  find content/publication/ -name "index.md" -exec sed -i '/Add the \*\*full text\*\*/d' {} \;
+  find content/publication/ -name "index.md" -exec sed -i.bak '/Add the \*\*full text\*\*/d' {} \; && find content/publication/ -name "*.bak" -delete
   ```
 
 **Adding new papers from Zotero:**
