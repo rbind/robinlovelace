@@ -39,14 +39,52 @@ blogdown::stop_server()
 blogdown::build_site()
 ```
 
-To update publications run:
+To update publications:
 
 ``` bash
-# pip3 install academic==0.5.1
-# pip3 install academic==0.11.2
-# Update:
 pip install --upgrade academic
-# overwrite existing:
-# academic import --bibtex static/bibs/my-citations-for-web.bib --over 
-academic import --bibtex static/bibs/my-citations-for-web.bib
+
+# 1. Update the BibTeX file with new entries (from Zotero or manually)
+academic import --overwrite --normalize --bibtex static/bibs/my-citations-for-web.bib content/publication/
+```
+
+**⚠️ Known issues with `academic import --overwrite`:**
+
+- **Abstracts are cleared** — the import sets `abstract: ''` for all
+  pages. Restore from Git:
+
+  ``` bash
+  # Restore publication pages from before the import (commit first so you can diff)
+  git diff HEAD -- content/publication/ > /tmp/import-changes.diff
+  git checkout HEAD~1 -- content/publication/
+  # Then re-run import with --bibtex and selectively merge changes
+  ```
+
+- **`publication_types` must be integers** — import may output strings
+  like `"article-journal"`. Wowchemy requires: `0` = uncategorized, `2`
+  = journal article, `5` = book. Fix:
+
+  ``` bash
+  find content/publication/ -name "index.md" -exec sed -i.bak 's/- article-journal$/- "2"/' {} \; && find content/publication/ -name "*.bak" -delete
+  ```
+
+- **Featured publications reset** — `--overwrite` sets `featured: false`
+  on all pages. Re-enable:
+
+  ``` bash
+  # Set featured: true in index.md for key publications
+  ```
+
+- **Template placeholders** — import leaves `Add the **full text**...`
+  placeholder text. Remove:
+
+  ``` bash
+  find content/publication/ -name "index.md" -exec sed -i.bak '/Add the \*\*full text\*\*/d' {} \; && find content/publication/ -name "*.bak" -delete
+  ```
+
+**Adding new papers from Zotero:**
+
+``` bash
+# Export from Zotero, compare DOIs, add missing entries to my-citations-for-web.bib
+# Then run import and fix issues above
 ```
