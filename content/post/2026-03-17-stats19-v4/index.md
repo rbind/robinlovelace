@@ -18,9 +18,10 @@ authors: []
 lastmod: '2026-03-17T16:30:00+00:00'
 featured: yes
 image:
-  caption: ''
-  focal_point: ''
+  caption: 'stats19 R package logo and crash data visualisation'
+  focal_point: 'center'
   preview_only: no
+  filename: featured.png
 projects: []
 ---
 
