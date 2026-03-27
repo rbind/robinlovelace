@@ -71,7 +71,7 @@ This talk presents data-driven approaches for modelling multi-modal traffic inte
 
 
 
-## Event Details
+<!-- ## Event Details
 
 ### Pre-conference Seminar: Modelling Active Mobility
 - **Dates:** 26-27 June 2026
@@ -88,8 +88,6 @@ This talk presents data-driven approaches for modelling multi-modal traffic inte
 Registration covers symposium organisation, refreshments, and buffet lunches. Accommodation not included (limited college guestrooms available).
 
 ### Contact
-[aum@landecon.cam.ac.uk](mailto:aum@landecon.cam.ac.uk)
+[aum@landecon.cam.ac.uk](mailto:aum@landecon.cam.ac.uk) -->
 
----
 
-*Part of Active Travel England funded research on Critical Safety Issues.*
