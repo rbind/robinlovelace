@@ -11,8 +11,8 @@ address:
   region: Cambridgeshire
   postcode: CB2 1TA
   country: United Kingdom
-summary: "Presenting research on modelling multi-model traffic, casualties and risk at AUM2026 in Cambridge, including the pre-conference seminar on Modelling Active Mobility."
-abstract: "I'm presenting at the 2026 Applied Urban Modelling (AUM) symposium at the University of Cambridge.\n\n**Presentation:** Modelling multi-model traffic, casualties and risk: a data-driven approach to improve government guidance on critical safety issues for walking and cycling\n\nThis work builds on Active Travel England (ATE) funded research developing a data science codebase to improve guidance on Critical Safety Issues (CSIs) for walking, wheeling, and cycling.\n\n**Pre-conference Seminar: Modelling Active Mobility (26-27 June 2026)**\n\nConvening scholars, practitioners, and policy makers to discuss modelling pedestrians' and cyclists' interactions with built environments.\n\n**Main AUM Symposium (29 June - 1 July 2026)**\n\nTopics include AI in urban models, economics and econometrics, land-use and transport interactions, agent-based modelling, urban analytics, active mobility, and net-zero.\n\n**Schedule:**\n*   26-27 June: Pre-conference seminar (Bateman Auditorium, Old Courts)\n*   29 June - 1 July: Main symposium (Cavonius Centre, Harvey Court)\n\nPre-conference seminar sponsored by VREF. Attendance optional for AUM participants."
+summary: "Presenting research on modelling multi-modal traffic, casualties and risk at AUM2026 in Cambridge, including the pre-conference seminar on Modelling Active Mobility."
+abstract: "I'm presenting at the 2026 Applied Urban Modelling (AUM) symposium at the University of Cambridge."
 
 # Event start and end dates/times
 # Pre-conference seminar dates
@@ -62,6 +62,14 @@ slides: ""
 # Projects (optional).
 projects: ["geocomputation"]
 ---
+
+I'll be presenting on **Modelling multi-modal traffic interactions, casualties, and safety risk for people walking and cycling**.
+
+## Abstract
+
+This talk presents data-driven approaches for modelling multi-modal traffic interactions, casualties, and safety risk for people walking and cycling, with the aim of informing government guidance on critical safety issues for walking, wheeling, and cycling. The presentation will cover: data engineering pipelines designed to ingest large volumes of pedestrian and cycle count data; the integration of casualty and traffic data to characterise risk; and open-source tools and reproducible methods used to build models capable of informing evidence-based policy and design guidance. The work draws on and extends existing transport modelling frameworks and speaks to the broader challenge of making active travel the natural choice for short trips in UK cities and towns.
+
+
 
 ## Event Details
 
