@@ -1,7 +1,6 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
 
-title: "Modelling multi-modal traffic, casualties and risk: a data-driven approach to improve government guidance on critical safety issues for walking and cycling"
 event: International Research Seminar on Modelling Active Mobility
 event_url: https://www.landecon.cam.ac.uk/news/aum2026
 location: Gonville & Caius College, University of Cambridge
@@ -11,8 +10,7 @@ address:
   region: Cambridgeshire
   postcode: CB2 1TA
   country: United Kingdom
-summary: "Invited presentation at the International Research Seminar on Modelling Active Mobility, convened at Gonville & Caius College, University of Cambridge, presenting work on data-driven approaches to model pedestrian and cycling safety as part of work to inform government guidance on critical safety issues for walking, wheeling, and cycling."
-abstract: "This talk presents data-driven approaches for modelling multi-modal traffic interactions, casualties, and safety risk for people walking and cycling, with the aim of informing government guidance on critical safety issues for walking, wheeling, and cycling. The presentation will cover: data engineering pipelines designed to ingest large volumes of pedestrian and cycle count data; the integration of casualty and traffic data to characterise risk; and open-source tools and reproducible methods used to build models capable of informing evidence-based policy and design guidance. The work draws on and extends existing transport modelling frameworks and speaks to the broader challenge of making active travel the natural choice for short trips in UK cities and towns."
+
 
 # Talk start and end times.
 date: 2026-06-26T09:00:00+01:00
@@ -68,10 +66,18 @@ slides: ""
 projects: []
 ---
 
-Invited presentation at the **International Research Seminar on Modelling Active Mobility**, a two-day event convening active mobility modelling experts and policymakers from around the world at [Gonville & Caius College](https://www.cai.cam.ac.uk/), University of Cambridge.
+I was invited to give a presentation at the **International Research Seminar on Modelling Active Mobility**, a two-day event convening active mobility modelling experts and policymakers from around the world at [Gonville & Caius College](https://www.cai.cam.ac.uk/), University of Cambridge.
+
+I'll be presenting on **Modelling multi-modal traffic interactions, casualties, and safety risk for people walking and cycling**.
+
+## Abstract
+
+This talk presents data-driven approaches for modelling multi-modal traffic interactions, casualties, and safety risk for people walking and cycling, with the aim of informing government guidance on critical safety issues for walking, wheeling, and cycling. The presentation will cover: data engineering pipelines designed to ingest large volumes of pedestrian and cycle count data; the integration of casualty and traffic data to characterise risk; and open-source tools and reproducible methods used to build models capable of informing evidence-based policy and design guidance. The work draws on and extends existing transport modelling frameworks and speaks to the broader challenge of making active travel the natural choice for short trips in UK cities and towns.
+
+## Event details
 
 The seminar is co-sponsored by the [Volvo Research and Educational Foundation (VREF)](https://www.vref.se/) as part of its *Walking as a Mode of Transport* research programme, and is organised as a pre-conference event preceding the [Applied Urban Modelling (AUM) 2026 symposium](https://www.landecon.cam.ac.uk/news/aum2026) (29 June – 1 July 2026).
 
-Participants are experts who have developed open-access tools or approaches to model pedestrian or cycling trips in cities, or who are involved in applying them in research, policy, and planning practice. Discussions will focus on charting frontiers for research and policymaking in active mobility modelling, identifying common high-priority research questions, and exploring potential collaborations that can inform urban design, planning, and transport policy around sustainable mobility.
+<!-- Participants are experts who have developed open-access tools or approaches to model pedestrian or cycling trips in cities, or who are involved in applying them in research, policy, and planning practice. Discussions will focus on charting frontiers for research and policymaking in active mobility modelling, identifying common high-priority research questions, and exploring potential collaborations that can inform urban design, planning, and transport policy around sustainable mobility.
 
-My presentation will draw on work carried out under contract with [Active Travel England](https://www.gov.uk/government/organisations/active-travel-england) to build data-driven models of pedestrian and cycling risk to support updated guidance on [critical safety issues for walking, wheeling, and cycling](https://www.gov.uk/government/publications/critical-safety-issues-for-walking-wheeling-and-cycling/critical-safety-issues-for-walking-wheeling-and-cycling).
+My presentation will draw on work carried out under contract with [Active Travel England](https://www.gov.uk/government/organisations/active-travel-england) to build data-driven models of pedestrian and cycling risk to support updated guidance on [critical safety issues for walking, wheeling, and cycling](https://www.gov.uk/government/publications/critical-safety-issues-for-walking-wheeling-and-cycling/critical-safety-issues-for-walking-wheeling-and-cycling). -->
