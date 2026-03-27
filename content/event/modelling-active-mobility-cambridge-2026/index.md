@@ -11,7 +11,7 @@ address:
   region: Cambridgeshire
   postcode: CB2 1TA
   country: United Kingdom
-summary: "Invited presentation at the International Research Seminar on Modelling Active Mobility, convened at Gonville & Caius College, University of Cambridge, presenting work on data-driven approaches to model pedestrian and cycling safety as part of an Active Travel England contract."
+summary: "Invited presentation at the International Research Seminar on Modelling Active Mobility, convened at Gonville & Caius College, University of Cambridge, presenting work on data-driven approaches to model pedestrian and cycling safety as part of work to inform government guidance on critical safety issues for walking, wheeling, and cycling."
 abstract: "This talk presents data-driven approaches for modelling multi-modal traffic interactions, casualties, and safety risk for people walking and cycling, with the aim of informing government guidance on critical safety issues for walking, wheeling, and cycling. The presentation will cover: data engineering pipelines designed to ingest large volumes of pedestrian and cycle count data; the integration of casualty and traffic data to characterise risk; and open-source tools and reproducible methods used to build models capable of informing evidence-based policy and design guidance. The work draws on and extends existing transport modelling frameworks and speaks to the broader challenge of making active travel the natural choice for short trips in UK cities and towns."
 
 # Talk start and end times.
