@@ -4,7 +4,7 @@ subtitle: ""
 date: 2026-05-18T14:00:00+01:00
 date_end: 2026-05-18T17:00:00+01:00
 all_day: false
-event: ""
+event: "Data-Driven Transport Planning Hackathon"
 event_url: ""
 location: "Queen's University Belfast, David Keir Building (room TBD)"
 address:
