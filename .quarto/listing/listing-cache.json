@@ -1,0 +1,18 @@
+{
+  "listingMap": {
+    "posts.qmd": [
+      "posts",
+      "posts/post-links.yml"
+    ],
+    "projects.qmd": [
+      "projects.yml"
+    ],
+    "people.qmd": [
+      "/people/pi.yml"
+    ],
+    "index.qmd": [
+      "posts",
+      "posts/post-links.yml"
+    ]
+  }
+}
